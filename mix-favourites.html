@@ -1437,7 +1437,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
     </div>
 
     <div class="media rv" id="heroMedia">
-      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/wp-content/uploads/JunkRemovalHeader.jpg" aria-label="Jeff's Junk crew and bins on a job site"></video>
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/wp-content/uploads/hero-poster.webp" aria-label="Jeff's Junk crew and bins on a job site"></video><script>(function(v){if(matchMedia('(min-width:768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)v.src='demo/hero.mp4';})(document.getElementById('heroVideo'));</script>
       <span class="chip chip-top" style="padding-left:14px">Show us your junk!</span>
       <div class="chips">
         <span class="chip"><span class="dot" aria-hidden="true"><svg><use href="#i-check"/></svg></span>Wood under every bin, no driveway marks</span>
@@ -1885,7 +1885,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   /* ---------- hero video: desktop + motion-OK only ---------- */
   var vid = document.getElementById('heroVideo'), media = document.getElementById('heroMedia'), vBtn = document.getElementById('vidToggle');
   if (window.matchMedia('(min-width:768px)').matches && !reduce) {
-    vid.src = 'demo/hero.mp4';
+    if (!vid.getAttribute('src')) vid.src = 'demo/hero.mp4';
     media.classList.add('has-video');
     var p = vid.play(); if (p && p.catch) p.catch(function(){ setPaused(true); });
   } else {
