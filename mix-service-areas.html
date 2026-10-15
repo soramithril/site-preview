@@ -1354,6 +1354,13 @@ body.nt-on .nt-pin{display:grid}
 @media (min-width:1000px){#estimate.est-wide .est{grid-template-columns:1fr 1fr}}
 @media (min-width:1200px){#estimate.est-wide .ticks.priced button b{font-size:1.25rem}#estimate.est-wide .ticks.priced button{padding:14px 6px}}
 #pricing{display:block;position:relative;top:-8px}
+.est-guide{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);text-decoration:none;color:var(--ink);transition:border-color .2s,background-color .2s}
+.est-guide:hover{border-color:var(--ink);background:#fff}
+.est-guide span{display:grid;gap:2px}
+.est-guide b{font-size:.9375rem;font-weight:600}
+.est-guide small{font-size:.8125rem;color:var(--muted);line-height:1.4}
+.est-guide i{font-style:normal;font-size:1.125rem;color:var(--green-ink);transition:transform .2s}
+.est-guide:hover i{transform:translateX(3px)}
 .pop{padding:clamp(28px,4vw,44px) 0!important;border-top:1px solid var(--line)}
 .pop .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 18px}
 .pop-k{margin:0;font-size:.8125rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
