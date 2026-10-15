@@ -1376,7 +1376,8 @@ body.nt-on .nt-pin{display:grid}
 .film-v figcaption a{color:#c9cfca;font-size:.9375rem;font-weight:500}
 .film-v figcaption a:hover{color:#fff}
 /* a video in the page header (Junk removal) */
-@media (min-width:900px){.ph-grid.has-vid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}   /* the header video gets more room (Jake) */
+.pagehead:has(.has-vid){--wrap:1340px}
+@media (min-width:900px){.ph-grid.has-vid{grid-template-columns:minmax(0,.86fr) minmax(0,1fr)}}   /* bigger header video, text kept at its old width (Jake) */
 .phvid{position:relative;aspect-ratio:16/9;border-radius:var(--r-xl);overflow:hidden;background:#15191c;box-shadow:0 24px 60px -30px rgba(21,25,28,.45)}
 .phvid .yt-btn{height:100%;border-radius:0;aspect-ratio:auto}
 .phvid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
@@ -1560,7 +1561,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
         </div>
 
         <div id="paneJunk">
-          <label class="est-label" for="fill">How much of our 14-yard bin will it fill?</label>
+          <label class="est-label" for="fill">How much of our 20-yard bin will it fill?</label>
           <input class="range" id="fill" type="range" min="0" max="4" step="1" value="1" aria-valuetext="Quarter bin, $250">
           <div class="ticks" aria-label="Fill levels" role="group">
             <button type="button" data-l="0">Min</button>
@@ -1589,7 +1590,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
         <div>
           <p class="price-k" id="priceK">Junk removal · ¼ bin</p>
           <p class="price" id="price">$250</p>
-          <p class="price-sub" id="priceSub">About a quarter of our 14-yard bin, loaded by our crew.</p>
+          <p class="price-sub" id="priceSub">About a quarter of our 20-yard bin, loaded by our crew.</p>
         </div>
 
         <figure class="load" id="binVis" role="img" aria-label="Bin filled to a quarter" data-l="1" style="--f:.25"><div class="load-truck"><img src="assets/wp-content/uploads/est/truck-side.webp" width="400" height="240" alt=""><div class="fillbox"><span class="fill" id="binLvl"></span><span class="pin"></span></div></div><div class="piles"><img src="assets/wp-content/uploads/est/pile-0.webp" width="455" height="284" alt=""><img src="assets/wp-content/uploads/est/pile-1.webp" width="455" height="284" alt=""><img src="assets/wp-content/uploads/est/pile-2.webp" width="455" height="284" alt=""><img src="assets/wp-content/uploads/est/pile-3.webp" width="455" height="284" alt=""><img src="assets/wp-content/uploads/est/pile-4.webp" width="455" height="284" alt=""></div></figure>
@@ -1708,10 +1709,10 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   /* ---------- estimator ---------- */
   var LEVELS = [
     {k:'Minimum',  price:125, f:.08, sub:'A few items. Our minimum charge.', v:'just a few items'},
-    {k:'¼ bin',    price:250, f:.25, sub:'About a quarter of our 14-yard bin, loaded by our crew.', v:'a quarter'},
-    {k:'½ bin',    price:375, f:.50, sub:'About half of our 14-yard bin, loaded by our crew.', v:'half'},
-    {k:'¾ bin',    price:500, f:.75, sub:'About three quarters of our 14-yard bin, loaded by our crew.', v:'three quarters'},
-    {k:'Full bin', price:600, f:1,   sub:'A full 14-yard bin, loaded by our crew.', v:'the top'}
+    {k:'¼ bin',    price:250, f:.25, sub:'About a quarter of our 20-yard bin, loaded by our crew.', v:'a quarter'},
+    {k:'½ bin',    price:375, f:.50, sub:'About half of our 20-yard bin, loaded by our crew.', v:'half'},
+    {k:'¾ bin',    price:500, f:.75, sub:'About three quarters of our 20-yard bin, loaded by our crew.', v:'three quarters'},
+    {k:'Full bin', price:600, f:1,   sub:'A full 20-yard bin, loaded by our crew.', v:'the top'}
   ];
   var BINS = {
     '4':  {k:'4-yard bin',  price:'$325', unit:'/ 1–7 days', sub:'Dirt bin $325 or concrete bin $375 for 1–7 days. Yard waste, dirt or concrete only. Flat rate, no dump fee.', img:'assets/wp-content/uploads/bins-2026/bin-4-yard.webp'},
