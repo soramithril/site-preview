@@ -1349,6 +1349,10 @@ body.nt-on .nt-pin{display:grid}
 .ticks.priced button.on{background:var(--ink-2);border-color:var(--ink-2);color:rgba(255,255,255,.75)}
 .ticks.priced button.on b{color:#fff}
 #estimate .town-line{text-align:center;margin-top:var(--s4)}
+/* wider on the Junk removal page (Jake), with the slider side as wide as the price side */
+#estimate.est-wide{--wrap:1440px}
+@media (min-width:1000px){#estimate.est-wide .est{grid-template-columns:1fr 1fr}}
+@media (min-width:1200px){#estimate.est-wide .ticks.priced button b{font-size:1.25rem}#estimate.est-wide .ticks.priced button{padding:14px 6px}}
 #pricing{display:block;position:relative;top:-8px}
 .pop{padding:clamp(28px,4vw,44px) 0!important;border-top:1px solid var(--line)}
 .pop .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 18px}
@@ -1492,7 +1496,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 </header>
 
 <main id="main">
-<section class="pagehead"><div class="wrap"><p class="crumb"><a href="mix-favourites.html">Home</a> / Junk removal</p><div class="ph-grid has-pic"><div><h1>Junk removal in Barrie &amp; <span class="accent">Simcoe County</span>.</h1><p class="lede">You call us, we pick it up. Our crew does the sorting, lifting, carrying, loading, hauling and disposal. Most jobs are priced by the space your junk takes up in the bin, and the quote is free.</p><div class="hero-btns"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline" href="#pricing">See prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div><img class="phimg" src="assets/wp-content/uploads/JunkRemovalHeader.jpg" alt="Two Jeff's Junk crew members sitting in an empty bin" loading="lazy"></div><div class="jump"><span>On this page</span><a href="#pricing">Prices</a><a href="#take">What we take</a><a href="#how">How it works</a><a href="#jobs">Common jobs</a><a href="#faq">Questions</a></div></div></section><span id="pricing" aria-hidden="true"></span><section class="sec jjnew-sec" id="estimate" aria-labelledby="est-h">
+<section class="pagehead"><div class="wrap"><p class="crumb"><a href="mix-favourites.html">Home</a> / Junk removal</p><div class="ph-grid has-pic"><div><h1>Junk removal in Barrie &amp; <span class="accent">Simcoe County</span>.</h1><p class="lede">You call us, we pick it up. Our crew does the sorting, lifting, carrying, loading, hauling and disposal. Most jobs are priced by the space your junk takes up in the bin, and the quote is free.</p><div class="hero-btns"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline" href="#pricing">See prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div><img class="phimg" src="assets/wp-content/uploads/JunkRemovalHeader.jpg" alt="Two Jeff's Junk crew members sitting in an empty bin" loading="lazy"></div><div class="jump"><span>On this page</span><a href="#pricing">Prices</a><a href="#take">What we take</a><a href="#how">How it works</a><a href="#jobs">Common jobs</a><a href="#faq">Questions</a></div></div></section><span id="pricing" aria-hidden="true"></span><section class="sec jjnew-sec est-wide" id="estimate" aria-labelledby="est-h">
   <div class="wrap">
     <div class="sec-head center rv">
       <h2 id="est-h">Junk removal prices, <span class="accent">by the load</span>.<span class="jjnew" title="Added in the Oct 15 round">Just added</span></h2>
@@ -1501,7 +1505,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 
     <div class="est rv">
       <div class="est-l">
-        <div class="seg" role="group" aria-label="Choose a service">
+        <div class="seg" role="group" aria-label="Choose a service" style="display:none">
           <button type="button" id="tabJunk" aria-pressed="true" aria-controls="paneJunk">Junk removal</button>
           <button type="button" id="tabBin" aria-pressed="false" aria-controls="paneBin">Bin rental</button>
         </div>
@@ -1519,16 +1523,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
           <p class="fill-note" id="fillNote" style="margin-top:var(--s3)">Our crew loads it. Most jobs are priced by how much of the bin your junk fills.</p>
         </div>
 
-        <div id="paneBin" hidden>
-          <span class="est-label" id="binLbl">Pick a bin size</span>
-          <div class="bins" role="group" aria-labelledby="binLbl">
-            <button type="button" data-bin="4" aria-pressed="false"><img src="assets/wp-content/uploads/bins-2026/bin-4-yard.webp" width="700" height="401" alt=""><b>4 yard</b><small>Dirt, concrete, yard waste</small></button>
-            <button type="button" data-bin="7" aria-pressed="false"><img src="assets/wp-content/uploads/bins-2026/bin-7-yard.webp" width="700" height="401" alt=""><b>7 yard</b><small>Dirt, concrete</small></button>
-            <button type="button" data-bin="14" aria-pressed="true"><img src="assets/wp-content/uploads/bins-2026/bin-14-yard.webp" width="700" height="401" alt=""><b>14 yard</b><small>Most booked</small></button>
-            <button type="button" data-bin="20" aria-pressed="false"><img src="assets/wp-content/uploads/bins-2026/bin-20-yard.webp" width="700" height="401" alt=""><b>20 yard</b><small>Construction sites</small></button>
-          </div>
-          <p class="fill-note" id="binNote" style="margin-top:var(--s3)">We place wood under the bin so it doesn't mark your driveway.</p>
-        </div>
+        <div id="paneBin" hidden></div>
       </div>
 
       <div class="est-r">
