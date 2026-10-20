@@ -31,7 +31,7 @@
   --paper-2:#fafbfa;
   --r-sm:10px; --r:16px; --r-lg:24px; --r-xl:32px;
   --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:40px; --s6:48px; --s8:64px; --s10:80px; --s12:96px; --s16:128px;
-  --sans:"Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --sans:"Inter Tight", "Inter Tight Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --serif:"Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
   --ease:cubic-bezier(.2,.7,.2,1);
   --wrap:1200px;
@@ -58,7 +58,7 @@ h2{font-size:clamp(2rem,4.4vw,3.5rem);letter-spacing:-.035em}
 h3{font-size:1.25rem;letter-spacing:-.015em;line-height:1.25}
 p{margin:0}
 .accent{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--green-ink);letter-spacing:-.01em;font-size:1.08em;line-height:.9;padding-right:.04em}
-.lede{font-size:clamp(1.0625rem,1.6vw,1.25rem);color:var(--muted);line-height:1.55;max-width:60ch}
+.lede{font-size:clamp(1.0625rem,1.6vw,1.25rem);color:var(--muted);line-height:1.55;max-width:34.69em}
 .eyebrow:not(.fc *):not(.fd *){display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .eyebrow:not(.fc *):not(.fd *)::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-tint);flex:none}
 .sec:not(.fc *):not(.fd *){padding:clamp(72px,10vw,128px) 0}
@@ -124,8 +124,8 @@ a:hover > .arrow{transform:translateX(3px)}
 .hero::after{content:"";position:absolute;z-index:-1;left:50%;top:-180px;width:900px;height:520px;transform:translateX(-50%);
   background:radial-gradient(closest-side,rgba(47,178,85,.13),transparent);pointer-events:none}
 .hero-copy{text-align:center;display:grid;justify-items:center;gap:var(--s3)}
-.hero h1{max-width:15ch}
-.hero .lede{margin:0 auto;max-width:56ch}
+.hero h1{max-width:9.83em}
+.hero .lede{margin:0 auto;max-width:32.37em}
 .hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:var(--s1)}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;font-size:.875rem;color:var(--muted);list-style:none;padding:0;margin:0}
 .trust li{display:inline-flex;align-items:center}
@@ -265,7 +265,7 @@ a:hover > .arrow{transform:translateX(3px)}
 .stat:nth-child(n+3){border-bottom:0}
 @media (min-width:900px){.stat{border-bottom:0;border-right:1px solid var(--line)!important}.stat:last-child{border-right:0!important}}
 .stat b{display:block;font-size:clamp(2.5rem,5vw,3.75rem);font-weight:600;letter-spacing:-.05em;line-height:1;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.stat span{display:block;margin-top:10px;font-size:.9375rem;color:var(--muted);max-width:22ch}
+.stat span{display:block;margin-top:10px;font-size:.9375rem;color:var(--muted);max-width:12.72em}
 .fb{margin-top:var(--s3);display:grid;gap:var(--s4);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--s2);background:var(--paper-2);align-items:center}
 @media (min-width:900px){.fb{grid-template-columns:1fr 1.1fr;gap:var(--s8);padding:var(--s3)}}
 .fb img{width:100%;height:auto;object-position:62% 50%;border-radius:var(--r);aspect-ratio:5/4;object-fit:cover}
@@ -344,7 +344,7 @@ a:hover > .arrow{transform:translateX(3px)}
 .small-bin img{width:160px;height:auto;aspect-ratio:700/401;object-fit:contain}
 .small-bin p{color:var(--muted);font-size:.9375rem}
 .small-bin h3{font-size:1.0625rem;margin-bottom:4px}
-.fine{margin-top:var(--s3);font-size:.8125rem;color:var(--muted);max-width:90ch;line-height:1.55}
+.fine{margin-top:var(--s3);font-size:.8125rem;color:var(--muted);max-width:52.03em;line-height:1.55}
 
 /* ---------- take / can't ---------- */
 .take-grid:not(.fc *):not(.fd *){display:grid;gap:var(--s2)}
@@ -392,11 +392,11 @@ a:hover > .arrow{transform:translateX(3px)}
   background-image:linear-gradient(to right,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);background-size:40px 40px;
   -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 0%,#000,transparent 80%);mask-image:radial-gradient(ellipse 70% 80% at 50% 0%,#000,transparent 80%)}
 .band::after{content:"";position:absolute;z-index:-1;left:50%;bottom:-260px;width:800px;height:420px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(47,178,85,.28),transparent)}
-.band h2{color:#fff;max-width:16ch}
+.band h2{color:#fff;max-width:10.08em}
 .band .accent{color:var(--green)}
 .band .eyebrow:not(.fc *):not(.fd *){color:#b9c0bb}
 .band .eyebrow:not(.fc *):not(.fd *)::before{box-shadow:0 0 0 4px rgba(47,178,85,.2)}
-.band p{color:#c4cac6;max-width:52ch}
+.band p{color:#c4cac6;max-width:30.06em}
 .band .hours{font-size:.875rem;color:#aab2ad;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 0;list-style:none;margin:0;padding:0}
 .band .hours li + li::before{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:#59616a;margin:0 14px;vertical-align:middle}
 
@@ -407,7 +407,7 @@ a:hover > .arrow{transform:translateX(3px)}
 .foot-brand{grid-column:1/-1;display:grid;gap:var(--s2);align-content:start}
 @media (min-width:900px){.foot-brand{grid-column:auto}}
 .foot-brand img.logo-f{height:48px;width:auto}
-.foot-brand p{color:var(--muted);font-size:.9375rem;max-width:34ch}
+.foot-brand p{color:var(--muted);font-size:.9375rem;max-width:19.66em}
 .foot h4{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:var(--s2)}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.9375rem}
 .foot a{text-decoration:none}
@@ -639,7 +639,13 @@ body{padding-bottom:84px}
 .fc .how-panel .btn-soft:hover{border-color:#fff}
 .fc .how-panel .btn-soft .i{color:#2fb255}
 /* accent words: the brand's marker font, always green */
-.accent,.fc em.soft,main em{font-family:"Permanent Marker","Marker Felt",cursive!important;font-style:normal!important;font-weight:400!important;letter-spacing:.01em!important;font-size:.9em!important;line-height:1!important}
+/* stand-in fonts sized to the real ones, so nothing jumps when Inter Tight and Permanent Marker finish loading (2026-10-18). Sizes tuned by
+   measuring real headings and paragraphs in Chrome against each stand-in (scratchpad fontratio.js); Arial Bold covers both 600 and 700, so each gets its own size */
+@font-face{font-family:'Inter Tight Fallback';src:local('Arial'),local('ArialMT'),local('Helvetica'),local('Roboto');font-weight:100 549;size-adjust:96.40%;ascent-override:100.49%;descent-override:25.02%;line-gap-override:0%}
+@font-face{font-family:'Inter Tight Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Helvetica Bold'),local('Roboto Bold');font-weight:550 649;size-adjust:93.05%;ascent-override:104.10%;descent-override:25.92%;line-gap-override:0%}
+@font-face{font-family:'Inter Tight Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Helvetica Bold'),local('Roboto Bold');font-weight:650 900;size-adjust:94.05%;ascent-override:103.00%;descent-override:25.65%;line-gap-override:0%}
+@font-face{font-family:'Marker Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Helvetica Bold'),local('Roboto Bold');size-adjust:110.36%;ascent-override:100.52%;descent-override:28.75%;line-gap-override:2.74%}
+.accent,.fc em.soft,main em{font-family:"Permanent Marker","Marker Fallback","Marker Felt",cursive!important;font-style:normal!important;font-weight:400!important;letter-spacing:.01em!important;font-size:.9em!important;line-height:1!important}
 .fc em.soft,main em{color:var(--green-ink)}
 .final .accent,.hero h1 .accent{color:#2fb255!important}
 /* videos */
@@ -807,7 +813,7 @@ body{padding-bottom:84px}
   .plan-wide .btn{width:auto!important;margin:0!important}
 }
 /* the company hashtag */
-.hash{font-family:"Permanent Marker","Marker Felt",cursive;font-size:clamp(1.25rem,2vw,1.625rem)!important;color:#2fb255!important;margin:0;line-height:1.1;letter-spacing:.01em;text-decoration:none}
+.hash{font-family:"Permanent Marker","Marker Fallback","Marker Felt",cursive;font-size:clamp(1.25rem,2vw,1.625rem)!important;color:#2fb255!important;margin:0;line-height:1.1;letter-spacing:.01em;text-decoration:none}
 a.hash:hover{text-decoration:underline}
 /* ---------- follow us on Instagram ---------- */
 .ig{margin-top:clamp(40px,6vw,72px);display:grid;gap:clamp(28px,5vw,56px);align-items:center;padding:clamp(28px,4vw,48px);border-radius:var(--r-xl);background:#23282d;color:#e8ebe9;overflow:hidden}
@@ -820,7 +826,7 @@ a.hash:hover{text-decoration:underline}
 .ig-id small{display:block;font-size:.8125rem;color:#b9c0bb}
 .ig h3{color:#fff;font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.035em;line-height:1.02}
 .ig h3 .accent{color:#2fb255!important}
-.ig p{margin:0;color:#c9cfca;font-size:1.0625rem;max-width:34ch}
+.ig p{margin:0;color:#c9cfca;font-size:1.0625rem;max-width:19.66em}
 .ig-follow{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 24px 0 8px;border-radius:999px;background:#fff;color:#15191c;font-weight:700;text-decoration:none;
   transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
 .ig-follow:hover{transform:translateY(-3px);box-shadow:0 18px 34px -16px rgba(0,0,0,.7)}
@@ -850,7 +856,7 @@ a.hash:hover{text-decoration:underline}
 .fbs{display:grid;gap:18px 28px;align-items:center;padding:clamp(16px,2vw,22px);border:1px solid var(--line);border-radius:var(--r-xl);background:#fff}
 .fbs img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--r-lg);display:block}
 .fbs h2{font-size:clamp(1.375rem,2.2vw,1.875rem)}
-.fbs p{margin:8px 0 0;color:var(--muted);font-size:.9375rem;max-width:62ch}
+.fbs p{margin:8px 0 0;color:var(--muted);font-size:.9375rem;max-width:35.84em}
 .fbs p b{color:var(--ink-2)}
 @media (min-width:860px){.fbs{grid-template-columns:210px minmax(0,1fr) auto}.fbs img{aspect-ratio:16/10}}
 /* "Can you take my ___?": a cursor blinks on the line until you click in, so it is clearly somewhere to type */
@@ -891,7 +897,7 @@ a.hash:hover{text-decoration:underline}
 .hero .trust{color:rgba(255,255,255,.85)}
 .hero .trust li+li::before{background:rgba(255,255,255,.55)}
 .hero .btn-outline{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.hero .ticker{margin-top:0;position:relative;z-index:1}
+.hero .ticker{margin-top:0;position:relative;z-index:1;order:1}
 .mixnote{background:var(--ink-2);color:#fff;font:500 13.5px/1.4 var(--sans);text-align:center;padding:9px 14px}
 .mixnote b{color:#9fe0b4;font-weight:600}
 
@@ -1008,9 +1014,11 @@ a.hash:hover{text-decoration:underline}
 .pagehead{padding:clamp(48px,7vw,96px) 0 clamp(36px,5vw,64px);background:var(--green-wash);border-bottom:1px solid var(--line)}
 .pagehead .crumb{font-size:.875rem;color:var(--muted);margin-bottom:var(--s3)}
 .pagehead .crumb a{color:inherit}
-.pagehead h1{font-size:clamp(2.25rem,5.4vw,4.25rem);max-width:18ch}
+.pagehead h1{font-size:clamp(2.25rem,5.4vw,4.25rem);max-width:11.8em}
 .pagehead .lede{margin-top:var(--s3)}
 .pagehead .hero-btns{justify-content:flex-start;margin-top:var(--s4)}
+/* phones: the two page-top buttons stack full width and the "On this page" links scroll in one row, so their height never depends on which font has loaded (2026-10-18) */
+@media (max-width:479px){.pagehead .hero-btns .btn{flex:1 1 100%;justify-content:center}.pagehead .jump{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}.pagehead .jump::-webkit-scrollbar{display:none}.pagehead .jump>*{flex:0 0 auto}}
 .jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--line-2)}
 .jump span{font-size:.8125rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-self:center;margin-right:6px}
 .jump a{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;background:#fff;border:1px solid var(--line-2);font-weight:600;font-size:.9375rem;text-decoration:none;color:var(--ink)}
@@ -1187,10 +1195,10 @@ h1.h-sec{font-size:clamp(2rem,4.4vw,3.5rem);letter-spacing:-.035em;line-height:1
 .foot .slogan{font-size:1.5rem!important;color:var(--green);margin:10px 0 6px}
 .need.block{padding:28px;border-radius:var(--r-lg)}
 .doorvid{aspect-ratio:16/9;max-width:860px}
-.doorvid span{max-width:46ch}
+.doorvid span{max-width:26.59em}
 .revs+.revs{margin-top:var(--s2)}
 .soon{display:inline-block;background:var(--green-tint);color:var(--green-d);border-radius:999px;padding:3px 10px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;justify-self:start}
-.prose{max-width:68ch}
+.prose{max-width:39.31em}
 .prose h2{font-size:clamp(1.5rem,2.4vw,2rem);margin:var(--s6) 0 var(--s2)}
 .prose p,.prose li{font-size:1.0625rem;line-height:1.65;color:var(--ink)}
 .prose p{margin:0 0 var(--s2)}
@@ -1253,7 +1261,7 @@ body.nt-on .nt-pin{display:grid}
 .req-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
 @media (min-width:980px){.req-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}.req-copy{position:sticky;top:calc(var(--head-h,80px) + 28px)}}
 .req-copy h2{font-size:clamp(1.875rem,3.6vw,2.875rem)}
-.req-copy .lede{margin:var(--s3) 0 0;max-width:44ch}
+.req-copy .lede{margin:var(--s3) 0 0;max-width:25.44em}
 .req-copy .checks{margin-top:var(--s4);border-top:0;padding-top:0}
 .req-call{margin:var(--s4) 0 0;padding-top:var(--s3);border-top:1px solid var(--line-2);color:var(--muted)}
 .req-call a{color:var(--ink-2);font-weight:700;text-decoration:none;border-bottom:2px solid #2fb255;white-space:nowrap}
@@ -1283,6 +1291,7 @@ body.nt-on .nt-pin{display:grid}
 .req-foot p{margin:0;color:var(--muted);font-size:.875rem;flex:1 1 220px}
 .req-done{display:grid;gap:8px;justify-items:start;padding:8px 0}
 .req-done[hidden]{display:none}
+.hpf{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .req-done .tick{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#2fb255;color:#fff;margin-bottom:6px}
 .req-done .tick svg{width:26px;height:26px}
 .req-done b{font-size:1.375rem;color:var(--ink-2)}
@@ -1316,7 +1325,7 @@ body.nt-on .nt-pin{display:grid}
 .ladder li>*{position:relative}
 .ladder span{font-size:.875rem;font-weight:600;color:var(--muted)}
 .ladder b{font-size:clamp(1.75rem,3vw,2.25rem);letter-spacing:-.03em;line-height:1;color:var(--ink-2)}
-.ladder-note{margin-top:var(--s3);color:var(--muted);max-width:70ch}
+.ladder-note{margin-top:var(--s3);color:var(--muted);max-width:40.47em}
 @media (max-width:759px){.ladder li{min-height:104px}.ladder li:last-child{grid-column:span 2}}
 @media (max-width:599px){.svc{grid-template-columns:1fr 1fr;gap:10px}.svc a{grid-template-columns:1fr;gap:6px;padding:14px}.svc .si{grid-row:auto;width:38px;height:38px}.svc b{font-size:1rem}}
 .ladder-note a{color:var(--ink);font-weight:600}
@@ -1333,11 +1342,13 @@ body.nt-on .nt-pin{display:grid}
 .fphotos input[type=file]{padding:14px;border:2px dashed var(--line-2)!important;border-radius:var(--r-sm)!important;background:var(--paper-2);width:100%;font:inherit}
 .fphotos small{display:block;margin-top:6px;color:var(--muted);font-size:.8125rem}
 .region .towns a{display:inline-flex;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:5px 12px;font-size:.875rem;font-weight:600;text-decoration:none}
-.zone-note{margin-top:var(--s3);color:var(--muted);max-width:80ch}
+.zone-note{margin-top:var(--s3);color:var(--muted);max-width:46.25em}
 .story{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:1fr;align-items:start}
 @media (min-width:900px){.story{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 .story .prose p{font-size:1.0625rem}
 .story .cimg{border-radius:var(--r-lg)}
+/* phones: the story photo stays inside the page (the card rule pulls .cimg 16px past each edge, which made About scroll sideways; 2026-10-19) */
+@media (max-width:767px){.story .cimg{width:100%;margin-left:0;margin-right:0}}
 .town-line{margin-top:var(--s3);color:var(--muted)}
 .town-line a{color:var(--ink);font-weight:600}
 /* Junk removal page: the estimator's fill buttons carry the prices (prices and estimator in one) */
@@ -1354,6 +1365,57 @@ body.nt-on .nt-pin{display:grid}
 @media (min-width:1000px){#estimate.est-wide .est{grid-template-columns:1fr 1fr}}
 @media (min-width:1200px){#estimate.est-wide .ticks.priced button b{font-size:1.25rem}#estimate.est-wide .ticks.priced button{padding:14px 6px}}
 #pricing{display:block;position:relative;top:-8px}
+/* the Bin rental page's two 14 yard deals, side by side (not shown since 2026-10-16; kept with BIN_PRICE) */
+@media (min-width:768px){.plans.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:880px;margin:0 auto}}
+/* size cards that carry a "What fits" line and a Book button (Bin rental) */
+.cards3 .card p.fits{color:var(--ink);font-size:.9375rem}
+.cards3 .card p.fits b{color:var(--green-ink)}
+.card .card-book{margin-top:auto;justify-content:center}
+.card .card-book + .card-link{align-self:center}
+.loads-note{margin-top:var(--s3);text-align:center;font-size:.875rem;color:var(--muted)}
+/* Bin rental: the dark size cards (the home page's price cards, plus a "What fits" line and the 3-day deal) */
+/* Bin rental: the trust strip under the header */
+.trust-strip{padding:18px 0;background:var(--ink);color:#c9cfcb}
+.trust-strip .wrap{display:flex;align-items:center;justify-content:center;gap:12px}
+.trust-strip ul{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin:0;padding:0;list-style:none}
+.trust-strip li{display:flex;align-items:center;gap:9px;font-size:.9375rem;line-height:1.3}
+.trust-strip li b{color:#fff;font-weight:600}
+.trust-strip svg{width:20px;height:20px;flex:none;color:var(--green)}
+.trust-strip .wrap{position:relative}
+@media (min-width:1000px){.trust-strip .jjnew{position:absolute;right:var(--s4);top:50%;transform:translateY(-50%)}}
+@media (max-width:640px){.trust-strip ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}.trust-strip li{font-size:.875rem;align-items:flex-start}}
+.bincards .plan-k{flex-direction:column;align-items:flex-start;gap:8px}
+.bincards .checks li .ph,#ready .checks li .ph,#mattress .checks li .ph{margin-top:4px}
+.bincards .pill-k.soft{background:rgba(255,255,255,.12);color:#e8ebe9}
+.bincards .plan.top{box-shadow:0 0 0 2px var(--green),0 30px 60px -30px rgba(21,25,28,.55)}
+.bincards .fits{margin:12px 0 0;font-size:.9375rem;line-height:1.5;color:#e8ebe9}
+.bincards .fits b{color:#9fe0b2;font-weight:600}
+.bincards .ph{color:#b9c0bb;border-color:rgba(255,255,255,.28)}
+.bincards .deal-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:12px 0 0;font-size:.9375rem;color:#b9c0bb}
+.bincards .deal-line span{padding:4px 9px;border-radius:999px;font-size:.625rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);
+  background-image:linear-gradient(110deg,#f2b705 42%,#ffe89a 50%,#f2b705 58%);background-size:260% 100%;animation:flipShine 3.2s linear infinite}
+.bincards .deal-line b{color:#fff;font-size:1.125rem}
+.bincards .plan .btn{margin-top:auto}
+@media (prefers-reduced-motion:reduce){.bincards .deal-line span{animation:none}}
+/* icons in the job table and on the getting-ready cards */
+.jobs-t tbody th{display:flex;align-items:center;gap:12px}
+.jt-i,.card-i{display:inline-grid;place-items:center;flex:none;border-radius:12px;background:var(--green-wash);color:var(--green-ink)}
+.jt-i{width:36px;height:36px}.jt-i svg{width:19px;height:19px}
+.card-i{width:52px;height:52px;border-radius:16px}.card-i svg{width:26px;height:26px}
+.jobs-t tbody tr{transition:background-color .2s}
+.jobs-t tbody tr:hover{background:var(--paper-2)}
+/* "Which bin for your job?" table (Bin rental) */
+.jobs-t{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff}
+.jobs-t table{width:100%;border-collapse:collapse;font-size:1rem;line-height:1.45}
+.jobs-t th,.jobs-t td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.jobs-t tbody tr:last-child>*{border-bottom:0}
+.jobs-t thead th{background:var(--green-wash);font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.jobs-t tbody th{font-weight:600;color:var(--ink-2)}
+.jobs-t td:nth-child(2){font-weight:600;white-space:nowrap}
+.jobs-t td:nth-child(2) a{color:var(--green-ink)}
+.jobs-t td:nth-child(3){color:var(--muted)}
+@media (max-width:640px){.jobs-t thead{display:none}.jobs-t tr{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .jobs-t tbody tr:last-child{border-bottom:0}.jobs-t th,.jobs-t td{padding:0;border:0}.jobs-t td:nth-child(3){grid-column:1/-1;font-size:.9375rem}.jobs-t td:nth-child(2){white-space:normal;text-align:right}}
 .est-guide{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);text-decoration:none;color:var(--ink);transition:border-color .2s,background-color .2s}
 .est-guide:hover{border-color:var(--ink);background:#fff}
 .est-guide span{display:grid;gap:2px}
@@ -1400,8 +1462,9 @@ body.nt-on .nt-pin{display:grid}
 @media (prefers-reduced-motion:reduce){.jjnew::before{animation:none}}
 h1 .jjnew,h2 .jjnew{font-size:.75rem;transform:translateY(-.35em)}
 .nav .jjnew,.mnav .jjnew{margin-left:6px;font-size:.5625rem;padding:2px 7px 2px 6px}
-.jjnew-sec{position:relative;outline:3px dashed #f2b705;outline-offset:-10px}
-.jjnew-card{outline:3px dashed #f2b705;outline-offset:3px}
+.jjnew-sec.now{position:relative;outline:3px dashed #f2b705;outline-offset:-10px}
+.jjnew-card.now{outline:3px dashed #f2b705;outline-offset:3px}
+.jjnew.old{display:none}
 html.jj-hide-new .jjnew{display:none}
 html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 /* the "What's new" tab and panel (left edge, under the other demo tabs) */
@@ -1420,8 +1483,480 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 .jjwn label{display:flex;gap:8px;align-items:center;font-size:13px;border-top:1px solid #eee;padding-top:10px;cursor:pointer}
 .jjwn .x{position:absolute;right:8px;top:6px;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:#5b6168}
 @media (max-width:899px){.jjwn-tab{top:auto;bottom:96px}.jjwn{top:auto;bottom:90px;transform:none}}
+
+/* ===== round Oct 19: shared bits ===== */
+.r9 .r9-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.r9 .r9-btns.center{justify-content:center}
+.r9 .r9-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin:36px 0 0;text-align:center;font-weight:600}
+.r9 h3{letter-spacing:-.02em}
+
+/* switcher */
+.r9s{display:grid;gap:18px}
+@media (min-width:900px){.r9s{grid-template-columns:minmax(260px,.82fr) 1.6fr;gap:28px;align-items:start}}
+.r9s-list{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--gut)*-1);padding:2px var(--gut) 6px;scroll-snap-type:x mandatory}
+.r9s-list::-webkit-scrollbar{display:none}
+@media (min-width:900px){.r9s-list{flex-direction:column;overflow:visible;margin:0;padding:0}}
+.r9s-list [role=tab]{flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:12px;text-align:left;min-height:56px;padding:10px 16px 10px 10px;border-radius:16px;
+  border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s,transform .15s}
+.r9s-list [role=tab]:hover{border-color:var(--line-2);transform:translateY(-1px)}
+.r9s-list [role=tab][aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 14px 30px -18px rgba(21,25,28,.6)}
+.r9s-list [role=tab] b{display:block;font-size:.98rem;font-weight:650;white-space:nowrap}
+.r9s-list [role=tab] small{display:none;color:var(--muted);font-size:.84rem;line-height:1.35}
+@media (min-width:900px){.r9s-list [role=tab] small{display:block}.r9s-list [role=tab] b{white-space:normal}}
+.r9s-list [role=tab][aria-selected=true] small{color:rgba(255,255,255,.72)}
+.r9s-i{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--green-tint);color:var(--green-d)}
+.r9s-i svg{width:20px;height:20px}
+[aria-selected=true] .r9s-i{background:var(--green);color:var(--ink)}
+.r9s-panel{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(21,25,28,.35)}
+.r9s-panel[hidden]{display:none}
+.r9s .r9s-panel{animation:r9in .35s var(--ease) both}
+@keyframes r9in{from{opacity:0;transform:translateY(8px)}}
+/* junk removal jobs panel */
+.r9-jobs .r9s-panel{display:grid}
+@media (min-width:700px){.r9-jobs .r9s-panel{grid-template-columns:1fr 1fr}}
+.r9j-fig{position:relative;aspect-ratio:4/3;background:var(--ink)}
+@media (min-width:700px){.r9j-fig{aspect-ratio:auto;min-height:100%}}
+.r9j-fig img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+/* photos inside the new sections: undo the card photo rule (.cimg pulls itself out to the card edges) */
+.r9 .cimg{width:100%;max-width:none;margin:0;border-radius:0}
+.r9 .r9q-pics .cimg{aspect-ratio:1/1;height:auto;border-radius:10px}
+.r9 .r9m-s .cimg{width:120px;height:96px;aspect-ratio:auto;border-radius:14px}
+.r9w-t.has-fig h3{color:#fff}
+/* the green handwriting on the dark bands: the light green, so it reads */
+.r9-road h2 .accent,.r9-plan h2 .accent,.r9-band .accent{color:#5fd383}
+.r9j-body{padding:clamp(22px,3vw,34px)}
+.r9j-body h3{font-size:clamp(1.5rem,2.4vw,2rem);margin:0 0 8px}
+.r9j-body p{color:var(--muted);margin:0 0 14px}
+.r9j-body .checks{margin:0}
+
+/* road: four ways to get rid of it */
+.r9-road{background:var(--ink);color:#fff}
+.r9-road .sec-head h2{color:#fff}
+.r9-road .sec-head .lede{color:rgba(255,255,255,.72)}
+.r9r{position:relative}
+.r9r-track{position:absolute;left:21px;top:8px;bottom:8px;width:6px;border-radius:6px;background:repeating-linear-gradient(180deg,#f2b705 0 14px,transparent 14px 26px),#2b3237}
+.r9r-truck{position:absolute;left:0;bottom:0;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--ink);box-shadow:0 0 0 6px rgba(47,178,85,.22);}
+.r9r-truck svg{width:20px;height:20px}
+.r9r-truck{z-index:2}
+/* the truck moves with transform only (no layout work each frame: moving top/left stopped slow phones painting at all, 2026-10-19) */
+.r9r-move{position:absolute;z-index:2;pointer-events:none;left:-15px;top:0;bottom:0;width:36px;animation:r9mv-v 9s ease-in-out infinite alternate;will-change:transform}
+@keyframes r9mv-v{from{transform:translateY(calc(-100% + 36px))}to{transform:none}}
+.r9r-stops{list-style:none;margin:0;padding:0 0 0 64px;display:grid;gap:26px;counter-reset:r9r}
+.r9r-stops li{position:relative}
+.r9r-dot{position:absolute;left:-62px;top:0;display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#fff;color:var(--ink)}
+.r9r-dot svg{width:22px;height:22px}
+.r9r-stops h3{color:#fff;font-size:1.3rem;margin:4px 0 6px}
+.r9r-stops p{color:rgba(255,255,255,.72);margin:0 0 8px}
+.r9r-go{display:inline-flex;align-items:center;gap:6px;font-weight:650;color:#5fd383;text-decoration:none}
+.r9r-go:hover{color:#fff}
+@media (min-width:900px){
+  .r9r-track{left:0;right:0;top:22px;bottom:auto;width:auto;height:6px;background:repeating-linear-gradient(90deg,#f2b705 0 18px,transparent 18px 32px),#2b3237}
+  .r9r-move{left:0;right:0;top:-15px;bottom:auto;width:auto;height:36px;animation-name:r9mv-h}
+  .r9r-truck{left:auto;right:0;bottom:auto;top:0}
+  .r9r-stops{grid-template-columns:repeat(4,1fr);padding:64px 0 0;gap:28px}
+  .r9r-dot{left:0;top:-64px}
+}
+@keyframes r9mv-h{from{transform:translateX(calc(-100% + 36px))}to{transform:none}}
+.r9-road .r9-cta{color:rgba(255,255,255,.85)}
+@media (prefers-reduced-motion:reduce){.r9r-move,.r9h-move,.r9s .r9s-panel{animation:none}}
+
+/* bin matcher */
+.r9s-chips{grid-template-columns:1fr}
+@media (min-width:900px){.r9s-chips{grid-template-columns:1.1fr 1fr}}
+.r9s-chips .r9s-list{flex-wrap:nowrap}
+@media (min-width:900px){.r9s-chips .r9s-list{flex-direction:row;flex-wrap:wrap;align-content:start;gap:10px}}
+.r9s-chips [role=tab]{min-height:48px;padding:8px 14px 8px 8px;border-radius:999px}
+.r9s-chips .r9s-i{width:32px;height:32px;border-radius:50%}
+.r9s-chips .r9s-i svg{width:17px;height:17px}
+.r9s-chips [role=tab] b{white-space:nowrap;font-size:.94rem}
+.r9b-card{padding:clamp(22px,3vw,32px)}
+.r9b-k{margin:0;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.r9b-card h3{font-size:clamp(1.4rem,2.2vw,1.85rem);margin:4px 0 6px}
+.r9b-rent{margin:0 0 14px;font-size:1.15rem}
+.r9b-rent b{color:var(--green-ink)}
+.r9b-rent a{color:inherit}
+.r9b-pic{display:flex;align-items:flex-end;justify-content:center;height:clamp(120px,22vw,190px);border-radius:18px;background:linear-gradient(180deg,var(--green-wash),#fff);padding:10px 14px 0}
+.r9b-pic img{display:block;width:calc(var(--s,1)*100%);height:auto;transition:width .45s var(--ease)}
+.r9b-q{align-items:center;font:700 64px/1 var(--sans);color:var(--line-2)}
+.r9b-dims{margin:8px 0 0;text-align:center;font-size:.85rem;color:var(--muted)}
+.r9b-note{margin:14px 0 0;color:var(--ink-2)}
+
+/* driveway drawing */
+.r9d{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.r9d{grid-template-columns:1fr 1fr;gap:48px}}
+.r9d-fig{margin:0}
+.r9d-svg{display:block;width:100%;height:auto;filter:drop-shadow(0 26px 40px rgba(21,25,28,.14))}
+.r9d-lab{font:600 13px var(--sans);fill:#5a6168}
+.r9d-bin{font:800 22px var(--sans);fill:#15191c;letter-spacing:.12em}
+.r9d-dim{font:600 12px var(--sans);fill:#15191c}
+.r9d-warn{font:700 12px var(--sans);fill:#8a6a00}
+.r9d-n circle{fill:#15191c}
+.r9d-n text{font:800 14px var(--sans);fill:#fff;text-anchor:middle}
+.r9d-tips{list-style:none;margin:0;padding:0;display:grid;gap:22px}
+.r9d-tips>li{display:flex;gap:16px}
+.r9d-num{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800}
+.r9d-tips h3{margin:4px 0 4px;font-size:1.2rem}
+.r9d-tips p{margin:0 0 8px;color:var(--muted)}
+.r9d-tips .checks{margin:0}
+
+/* what can't go in: stamped tiles */
+.r9n{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:700px){.r9n{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.r9n{grid-template-columns:repeat(6,1fr)}}
+.r9n li{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 12px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:1.05rem;text-align:center}
+.r9n-x{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fde8e6;color:#b42318;font-size:26px;line-height:1}
+.r9n-st{position:absolute;right:-26px;top:12px;transform:rotate(35deg);padding:2px 30px;background:#b42318;color:#fff;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* who we work for (Commercial) */
+.r9w{display:grid;gap:14px}
+@media (min-width:700px){.r9w{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.r9w{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.r9w.r9w-4{grid-template-columns:repeat(2,1fr)}}   /* four tiles: 2 x 2, none left alone (town pages, 2026-10-19) */
+.r9w-t{display:flex;flex-direction:column;border-radius:22px;background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.r9w-t:hover{transform:translateY(-3px);box-shadow:0 24px 44px -30px rgba(21,25,28,.45)}
+.r9w-t.has-fig{background:var(--ink);color:#fff;border-color:var(--ink)}
+@media (min-width:1000px){.r9w-t.has-fig{grid-row:span 2}}
+.r9w-t img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.r9w-b{padding:22px}
+.r9w-i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--green-tint);color:var(--green-d);margin-bottom:12px}
+.r9w-i svg{width:22px;height:22px}
+.r9w-t h3{margin:0 0 6px;font-size:1.25rem}
+.r9w-t p{margin:0;color:var(--muted)}
+.r9w-t.has-fig p{color:rgba(255,255,255,.75)}
+.r9w-c{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.r9w-c li{padding:5px 11px;border-radius:999px;background:var(--green-wash);color:var(--green-d);font-size:.82rem;font-weight:600}
+.r9w-t.has-fig .r9w-c li{background:rgba(255,255,255,.1);color:#fff}
+
+/* numbered steps on a line */
+.r9t{list-style:none;margin:0;padding:0;display:grid;gap:18px;position:relative}
+@media (min-width:900px){.r9t{grid-template-columns:repeat(4,1fr);gap:22px}
+  .r9t::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:2px;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 16px)}}
+.r9t li{position:relative;padding:0 0 0 64px}
+@media (min-width:900px){.r9t li{padding:66px 0 0}}
+.r9t-n{position:absolute;left:0;top:0;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--ink);color:#fff;font-weight:800;box-shadow:0 0 0 6px var(--paper-2,#f6f8f7)}
+.r9t-i{display:none}
+.r9t h3{margin:4px 0 6px;font-size:1.2rem}
+.r9t p{margin:0;color:var(--muted)}
+.r9-band{display:grid;gap:18px;align-items:center;margin-top:40px;padding:clamp(24px,4vw,40px);border-radius:24px;background:var(--ink);color:#fff}
+@media (min-width:900px){.r9-band{grid-template-columns:1fr auto}.r9-band.stack{grid-template-columns:1fr}}
+.r9-band h3{margin:0 0 6px;font-size:clamp(1.4rem,2.4vw,1.9rem);color:#fff}
+.r9-band p{margin:0;color:rgba(255,255,255,.75)}
+.r9-band .r9-btns{margin:0}
+.r9-band .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+
+/* demolition: small to big */
+.r9k-scale{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.r9k-scale i{flex:1;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--green-tint),var(--green))}
+.r9k{list-style:none;margin:0 calc(var(--gut)*-1);padding:4px var(--gut) 12px;display:grid;grid-auto-flow:column;grid-auto-columns:min(78%,300px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+@media (min-width:1000px){.r9k{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);margin:0;padding:0;overflow:visible}}
+.r9k-c{scroll-snap-align:start;display:flex;flex-direction:column;border-radius:22px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.r9k-c img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.r9k-b{position:relative;padding:20px 20px 26px;flex:1}
+.r9k-n{font:800 .8rem/1 var(--sans);letter-spacing:.12em;color:var(--green-ink)}
+.r9k-c h3{margin:8px 0 6px;font-size:1.25rem}
+.r9k-c p{margin:0 0 8px;color:var(--muted)}
+.r9k-bar{position:absolute;left:20px;right:20px;bottom:12px;height:4px;border-radius:4px;background:var(--line)}
+.r9k-bar i{display:block;height:100%;width:calc(var(--z)*100%);border-radius:4px;background:var(--green)}
+
+/* demolition: photo quote on a phone */
+.r9q{display:grid;gap:36px;align-items:center}
+@media (min-width:900px){.r9q{grid-template-columns:minmax(300px,380px) 1fr;gap:64px}}
+.r9q-phone{width:min(100%,360px);margin:0 auto;border-radius:38px;background:#15191c;padding:12px;box-shadow:0 40px 70px -40px rgba(21,25,28,.7)}
+.r9q-top{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:28px 28px 0 0;background:#fff;border-bottom:1px solid var(--line)}
+.r9q-av{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--ink);font-weight:800;font-size:.8rem}
+.r9q-top b{font-size:.95rem}
+.r9q-top small{margin-left:auto;color:var(--muted);font-size:.78rem}
+.r9q-chat{display:flex;flex-direction:column;gap:8px;padding:16px 12px;background:#fff;min-height:330px}
+.r9q-m{max-width:80%;margin:0;padding:9px 13px;border-radius:18px;font-size:.92rem;line-height:1.35}
+.r9q-m.me{align-self:flex-end;background:#2f7cf6;color:#fff;border-bottom-right-radius:6px}
+.r9q-m.us{align-self:flex-start;background:#eceef0;color:var(--ink);border-bottom-left-radius:6px}
+.r9q-m.pics{padding:4px;background:none}
+.r9q-pics{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:220px}
+.r9q-pics img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.r9q-type{padding:10px 12px 14px;border-radius:0 0 28px 28px;background:#fff}
+.r9q-type span{display:block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:.85rem}
+.r9q-steps{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.r9q-steps li{display:flex;gap:16px}
+.r9q-steps .r9t-n{position:static;flex:none;box-shadow:none}
+.r9q-steps h3{margin:4px 0 4px;font-size:1.2rem}
+.r9q-steps p{margin:0;color:var(--muted)}
+
+/* contractors: plan and spec */
+.r9-plan{background:#1b2126;color:#fff}
+.r9-plan .sec-head h2{color:#fff}
+.r9-plan .sec-head .lede{color:rgba(255,255,255,.72)}
+.r9p{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.r9p{grid-template-columns:1.25fr 1fr;gap:48px}}
+.r9p-fig{margin:0;border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:16px;background:#20282e}
+.r9p-svg{display:block;width:100%;height:auto}
+.r9p-fig figcaption{margin-top:6px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);text-align:right}
+.r9p-dim{font:600 13px var(--sans);fill:#fff}
+.r9p-big{font:800 34px var(--sans);fill:#5fd383;letter-spacing:.08em}
+.r9p-spec{margin:0;display:grid;gap:0;border-top:1px solid rgba(255,255,255,.14)}
+.r9p-spec div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.r9p-spec dt{color:rgba(255,255,255,.65)}
+.r9p-spec dd{margin:0;font-weight:700;text-align:right}
+.r9p-svc{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:14px}
+@media (min-width:900px){.r9p-svc{grid-template-columns:repeat(3,1fr)}}
+.r9p-svc li{display:flex;gap:14px;padding:20px;border-radius:20px;background:#20282e;border:1px solid rgba(255,255,255,.1)}
+.r9p-svc .r9w-i{flex:none;background:rgba(47,178,85,.16);color:#5fd383;margin:0}
+.r9p-svc h3{margin:2px 0 4px;font-size:1.1rem;color:#fff}
+.r9p-svc p{margin:0 0 6px;color:rgba(255,255,255,.7)}
+/* rate card */
+.r9c{max-width:760px;margin:0 auto;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(21,25,28,.4);overflow:hidden}
+.r9c-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 24px;background:var(--ink);color:#fff}
+.r9c-top span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.r9c table{width:100%;border-collapse:collapse}
+.r9c th,.r9c td{padding:16px 24px;border-bottom:1px dashed var(--line-2);text-align:left;vertical-align:top}
+.r9c th{font-weight:700}
+.r9c th small{display:block;margin-top:3px;font-weight:400;color:var(--muted);font-size:.86rem}
+.r9c td{text-align:right;font:800 1.25rem/1.2 var(--sans);white-space:nowrap}
+.r9c-foot{padding:18px 24px 22px}
+.r9c-foot p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+/* trusted by (slot) */
+.r9u{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:700px){.r9u{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.r9u{grid-template-columns:repeat(6,1fr)}}
+.r9u li{display:grid;place-items:center;height:84px;border-radius:16px;border:2px dashed var(--line-2);color:var(--muted);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.r9u-note{margin:18px 0 0}
+
+/* furniture: a chair's trip */
+.r9h{position:relative}
+.r9h-track{position:absolute;left:23px;top:10px;bottom:10px;width:3px;background:repeating-linear-gradient(180deg,var(--green) 0 6px,transparent 6px 12px)}
+.r9h-chair{position:absolute;left:0;bottom:0;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--ink);color:#fff;}
+.r9h-chair svg{width:20px;height:20px}
+.r9h-chair{z-index:2}
+.r9h-move{position:absolute;z-index:2;pointer-events:none;left:-17px;top:0;bottom:0;width:38px;animation:r9mv-cv 8s ease-in-out infinite alternate;will-change:transform}
+@keyframes r9mv-cv{from{transform:translateY(calc(-100% + 38px))}to{transform:none}}
+.r9h-stops{list-style:none;margin:0;padding:0 0 0 70px;display:grid;gap:26px}
+.r9h-stops li{position:relative}
+.r9h-dot{position:absolute;left:-70px;top:0;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--green);color:var(--green-d)}
+.r9h-dot svg{width:22px;height:22px}
+.r9h-k{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-ink)}
+.r9h-stops h3{margin:4px 0 6px;font-size:1.25rem}
+.r9h-stops p{margin:0;color:var(--muted)}
+@media (min-width:900px){
+  .r9h-track{left:0;right:0;top:23px;bottom:auto;width:auto;height:3px;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 16px)}
+  .r9h-move{left:0;right:0;top:-17px;bottom:auto;width:auto;height:38px;animation-name:r9mv-ch}
+  .r9h-chair{left:auto;right:0;bottom:auto;top:0}
+  .r9h-stops{grid-template-columns:repeat(4,1fr);padding:72px 0 0;gap:26px}
+  .r9h-dot{left:0;top:-72px}
+}
+@keyframes r9mv-ch{from{transform:translateX(calc(-100% + 38px))}to{transform:none}}
+.r9-trip .r9-btns{margin-top:36px}
+
+/* about: timeline */
+.r9y-wrap{display:grid;gap:36px}
+@media (min-width:900px){.r9y-wrap{grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}}
+.r9y{list-style:none;margin:0;padding:0;position:relative}
+.r9y::before{content:"";position:absolute;left:82px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.r9y li{position:relative;display:grid;grid-template-columns:70px 1fr;gap:34px;padding:0 0 26px}
+.r9y li::after{content:"";position:absolute;left:76px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #fff}
+.r9y-y{font:400 1.3rem/1.1 "Permanent Marker","Marker Fallback",cursive;color:var(--green-ink);text-align:right;padding-top:2px;white-space:nowrap}
+.r9y h3{margin:0 0 4px;font-size:1.2rem}
+.r9y p{margin:0;color:var(--muted)}
+/* about: badges */
+.r9g{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (min-width:900px){.r9g{grid-template-columns:repeat(4,1fr)}}
+.r9g li>a,.r9g li{text-decoration:none;color:inherit}
+.r9g li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.r9g li>a{display:flex;flex-direction:column;align-items:center;gap:12px}
+.r9g-ring{display:grid;place-items:center;align-content:center;width:132px;height:132px;border-radius:50%;background:#fff;border:3px solid var(--green);box-shadow:inset 0 0 0 6px #fff,inset 0 0 0 8px var(--green-tint),0 20px 34px -24px rgba(21,25,28,.4);transition:transform .2s}
+.r9g a:hover .r9g-ring{transform:rotate(-6deg) scale(1.04)}
+.r9g-ring b{font:800 1.5rem/1 var(--sans);color:var(--ink)}
+.r9g-ring small{margin-top:4px;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-ink);max-width:96px}
+.r9g p{margin:0;max-width:220px;color:var(--muted);font-size:.95rem}
+
+/* guides: magazine */
+.r9m{display:grid;gap:16px}
+@media (min-width:900px){.r9m{grid-template-columns:1.35fr 1fr;gap:20px}}
+.r9m a{display:block;text-decoration:none;color:inherit}
+.r9m-lead a{height:100%;border-radius:24px;overflow:hidden;background:var(--ink);color:#fff}
+.r9m-lead img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;opacity:.9}
+.r9m-b{padding:clamp(22px,3vw,32px)}
+.r9m-lead h3{margin:8px 0 8px;font-size:clamp(1.6rem,2.8vw,2.2rem);color:#fff}
+.r9m-lead p{margin:0 0 14px;color:rgba(255,255,255,.75)}
+.r9m-lead .card-link{color:#5fd383}
+.r9m-k{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-ink)}
+.r9m-lead .r9m-k{color:#5fd383}
+.r9m-side{display:grid;gap:16px;align-content:start}
+.r9m-s a{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;padding:12px;border-radius:20px;background:#fff;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.r9m-s a:hover,.r9m-lead a:hover{transform:translateY(-2px);box-shadow:0 22px 40px -30px rgba(21,25,28,.5)}
+.r9m-s img{display:block;width:120px;height:96px;object-fit:cover;border-radius:14px}
+.r9m-s h3{margin:6px 0 4px;font-size:1.1rem}
+.r9m-s p{margin:0;color:var(--muted);font-size:.9rem}
+.r9m-more{display:grid;gap:16px;margin-top:20px}
+@media (min-width:900px){.r9m-more{grid-template-columns:1fr 1fr}}
+.r9m-more>div{padding:24px;border-radius:22px;background:var(--paper-2,#f6f8f7);border:1px solid var(--line)}
+.r9m-more h3{margin:0 0 12px;font-size:1.15rem}
+.r9m-more ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.r9m-more li{padding:7px 12px;border-radius:999px;background:#fff;border:1px dashed var(--line-2);font-size:.88rem;color:var(--ink-2)}
+.r9m-ask{background:var(--green-wash)!important;border-color:var(--green-tint)!important}
+.r9m-ask p{margin:0;color:var(--muted)}
+.r9m-ask .r9-btns{margin-top:14px}
+
+/* service areas: nearby line */
+.r9a-near{margin:10px 0 0;font-size:.9rem;color:var(--muted)}
+.r9a-any{display:grid;gap:14px;align-items:center;margin-top:28px;padding:22px 24px;border-radius:20px;background:var(--ink);color:#fff}
+@media (min-width:800px){.r9a-any{grid-template-columns:1fr auto}}
+.r9a-any h3{margin:0 0 4px;color:#fff;font-size:1.3rem}
+.r9a-any p{margin:0;color:rgba(255,255,255,.75)}
+/* ---------- shared bits ---------- */
+.lx{--lx-ink:#15191c;--lx-paper:#fbf6ea;--lx-yel:#ffd23f;--lx-red:#e5484d;--lx-sky:#bfe6ff;position:relative;overflow:hidden;padding:clamp(64px,9vw,120px) 0}
+.lx *{box-sizing:border-box}
+.lx h2,.lx h3,.lx p,.lx ul,.lx ol,.lx li{margin:0}
+.lx h2,.lx h3{color:inherit;max-width:none}
+.lx ul,.lx ol{padding:0;list-style:none}
+.lx .lx-head{display:grid;gap:14px;margin-bottom:clamp(32px,5vw,56px);max-width:820px}
+.lx .lx-lede{font-size:1.125rem;line-height:1.55;color:inherit;opacity:.82;max-width:60ch}
+.lx-scrib{font-family:"Permanent Marker","Marker Fallback","Marker Felt",cursive;font-weight:400;letter-spacing:0}
+.lx .ph{background:#fff;border:2px dashed #9aa39d;color:#59616a;padding:1px 6px;border-radius:6px;font-size:.92em}
+.lx a:focus-visible,.lx button:focus-visible,.lx input:focus-visible,.lx label:focus-within{outline:3px solid var(--green);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.lx *,.lx *::before,.lx *::after{animation:none!important;transition:none!important}}
+
+/* ---------- C: Poster ---------- */
+.lx-p{background:var(--green);color:var(--lx-ink)}
+.lx-p.ink{background:var(--lx-ink);color:#fff}
+.lx-p.paper{background:var(--lx-paper)}
+.lx-p .lx-h2{font:900 clamp(2.8rem,8.6vw,7.4rem)/.86 var(--sans);letter-spacing:-.055em;text-transform:uppercase}
+.lx-p .lx-h2 .lx-scrib{text-transform:none;letter-spacing:0;font-size:.62em;display:inline-block;transform:rotate(-4deg) translateY(-.1em)}
+.lx-p.ink .lx-h2 .lx-scrib{color:var(--green)}
+.lx-out{color:transparent!important;-webkit-text-stroke:2px var(--lx-ink)}
+.lx-p.ink .lx-out{-webkit-text-stroke-color:#fff}
+.lx-mega{font:900 clamp(4.5rem,15vw,12rem)/.8 var(--sans);letter-spacing:-.06em}
+.lx-marq{overflow:hidden;border-block:3px solid var(--lx-ink);background:var(--lx-yel);color:var(--lx-ink);padding:12px 0;white-space:nowrap}
+.lx-marq>div{display:inline-flex;gap:32px;padding-right:32px;animation:lxmarq 28s linear infinite;font:900 clamp(1.1rem,2.4vw,1.6rem)/1 var(--sans);text-transform:uppercase;letter-spacing:-.01em}
+.lx-marq span::after{content:"\2726";margin-left:32px;color:var(--green-d)}
+@keyframes lxmarq{to{transform:translateX(-50%)}}
+.lx-p .btn{border-radius:0!important;border:3px solid currentColor!important;text-transform:uppercase;letter-spacing:.02em;font-weight:900}
+.lx-p .btn-primary{background:var(--lx-ink);color:#fff}
+.lx-p.ink .btn-primary{background:var(--green);color:var(--lx-ink);border-color:var(--green)!important}
+.lx-p .btn-outline{background:transparent;color:inherit}
+/* 4C hazard tape */
+.lxh-tape{margin:0 -20px;transform:rotate(-1.6deg);padding:14px 0;overflow:hidden;white-space:nowrap;border-block:3px solid var(--lx-ink);
+  background:repeating-linear-gradient(-45deg,var(--lx-yel) 0 26px,var(--lx-ink) 26px 52px)}
+.lxh-tape>div{display:inline-flex;gap:22px;padding-right:22px;animation:lxmarq 24s linear infinite}
+.lxh-tape span{background:var(--lx-ink);color:var(--lx-yel);padding:8px 16px;font:900 clamp(1rem,2.2vw,1.4rem)/1 var(--sans);text-transform:uppercase}
+.lxh{display:grid;gap:36px}
+@media (min-width:860px){.lxh{grid-template-columns:1fr 1fr;gap:56px}}
+.lxh>div{display:grid;gap:14px;align-content:start;justify-items:start}
+.lxh-k{font:900 clamp(3.4rem,8vw,6rem)/.85 var(--sans);letter-spacing:-.06em;text-transform:uppercase;color:#ff6b6b}
+.lxh-k.yes{color:var(--green)}
+.lxh ul{display:grid;gap:4px}
+.lxh-no li{font:900 clamp(1.6rem,3.4vw,2.6rem)/1.05 var(--sans);text-transform:uppercase;letter-spacing:-.03em;text-decoration:line-through;text-decoration-color:#ff6b6b;text-decoration-thickness:.12em}
+.lxh-yes li{font:800 clamp(1.15rem,2vw,1.45rem)/1.2 var(--sans);text-transform:uppercase}
+.lxh p{line-height:1.5;opacity:.9}.lxh p a{color:var(--green)}
+.lxr-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+.lx .lx-h2{font:800 clamp(2.3rem,5.2vw,4rem)/.98 var(--sans);letter-spacing:-.045em}
+.lx .lx-h2 .lx-scrib{color:var(--green-d);display:inline-block;transform:rotate(-2deg);font-size:1.02em}
+.lx-soft{box-shadow:0 1px 2px rgba(21,25,28,.06),0 12px 32px rgba(21,25,28,.08)}
+
+/* D1 bin finder quiz */
+.lq-sec{background:#f6f4ee}
+.lq{display:grid;gap:22px;align-items:start}
+@media (min-width:1000px){.lq{grid-template-columns:1.15fr 1fr;gap:44px}}
+.lq-line{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(6px,1.4vw,18px);align-items:end;padding:clamp(18px,3vw,34px) clamp(10px,2vw,22px) 16px;
+  background:#fff;border-radius:24px;box-shadow:0 1px 2px rgba(21,25,28,.06),0 12px 32px rgba(21,25,28,.08);position:relative}
+.lq-line::after{content:"";position:absolute;left:5%;right:5%;bottom:58px;border-bottom:3px dashed #d5d1c4}
+@media (min-width:1000px){.lq-line{order:2;position:sticky;top:calc(var(--head-h,80px) + 70px)}}
+.lq-bin{position:relative;z-index:1;margin:0;display:grid;gap:8px;justify-items:center;transition:opacity .35s,filter .35s,transform .35s}
+.lq-bin img{width:100%;height:auto}
+.lq-bin[data-bin="4"] img{width:78%}.lq-bin[data-bin="7"] img{width:86%}
+.lq-bin figcaption{display:grid;justify-items:center;text-align:center;font-size:.78rem;line-height:1.2;color:var(--muted)}
+.lq-bin figcaption b{font:800 clamp(.95rem,1.8vw,1.25rem)/1.1 var(--sans);color:var(--lx-ink)}
+.lq-bin.dim{opacity:.25;filter:grayscale(1)}
+.lq-bin.lit{transform:translateY(-8px)}
+.lq-pick{position:absolute;top:-30px;left:50%;transform:translateX(-50%) rotate(-3deg);opacity:0;transition:opacity .3s;
+  font:800 11px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;background:var(--green);color:var(--lx-ink);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.lq.done .lq-bin.lit .lq-pick{opacity:1}
+.lq-card{background:#fff;border-radius:28px;padding:clamp(24px,4vw,44px);box-shadow:0 1px 2px rgba(21,25,28,.06),0 18px 48px rgba(21,25,28,.10)}
+.lq-step{display:grid;gap:14px;animation:lqin .35s ease both}
+@keyframes lqin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lq-prog{font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--green-ink)}
+.lq-q{font:800 clamp(1.6rem,3vw,2.2rem)/1.1 var(--sans);letter-spacing:-.03em;margin-bottom:6px}
+.lq-opts{display:grid;gap:10px}
+.lq-opt{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:14px 14px 14px 20px;border:2px solid #cfd8d1;border-radius:16px;background:#fff;
+  color:var(--lx-ink);font:700 1.05rem/1.25 var(--sans);text-align:left;text-decoration:none;cursor:pointer;
+  box-shadow:0 1px 0 rgba(21,25,28,.05),0 3px 8px rgba(21,25,28,.07);transition:border-color .15s,background .15s,transform .15s,box-shadow .15s}
+.lq-opt svg{flex:none;width:38px;height:38px;padding:10px;border-radius:50%;background:var(--green);color:var(--lx-ink);transition:transform .15s}
+.lq-opt:hover{border-color:var(--green);background:var(--green-wash);transform:translateY(-2px);box-shadow:0 8px 20px rgba(21,25,28,.12)}
+.lq-opt:hover svg{transform:translateX(3px)}
+.lq-opt:active{transform:translateY(0);box-shadow:0 1px 3px rgba(21,25,28,.12)}
+.lq-opt:focus-visible{outline:3px solid var(--green-d);outline-offset:2px}
+.lq-hint{display:flex;align-items:center;gap:8px;margin:-4px 0 4px;font:600 14px/1.2 var(--sans);color:var(--muted)}
+.lq-hint::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(47,178,85,.5);animation:ltping 1.8s infinite}
+@keyframes ltping{70%{box-shadow:0 0 0 8px rgba(47,178,85,0)}100%{box-shadow:0 0 0 0 rgba(47,178,85,0)}}
+.lq-back{justify-self:start;display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:0;font:700 14px/1 var(--sans);color:var(--muted);cursor:pointer}
+.lq-back svg{width:16px;height:16px;transform:rotate(180deg)}
+.lq-job{font-weight:600;color:var(--muted)}
+.lq-big{font-size:clamp(3rem,7vw,4.6rem);line-height:.9;color:var(--green-d)}
+.lq-size{display:inline-block;justify-self:start;font:700 13px/1 var(--sans);padding:8px 12px;border-radius:999px;background:#f1efe8}
+.lq-note{line-height:1.5}.lq-note a,.lq-crew a,.lq-help a{color:var(--green-d);font-weight:700}
+.lq-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.lq-crew{padding:12px 14px;border-radius:12px;background:var(--green-wash);line-height:1.45}
+.lq-again{justify-self:start;border:0;background:none;padding:0;font:700 14px/1 var(--sans);text-decoration:underline;color:var(--muted);cursor:pointer}
+.lq-help{margin-top:26px;font-size:1.05rem}
+
+/* D5 taped photo cards */
+.lw-sec{background:#f6f4ee}
+.lw-hazard{height:16px;background:repeating-linear-gradient(-45deg,var(--lx-yel) 0 18px,var(--lx-ink) 18px 36px);position:absolute;left:0;right:0;top:0}
+.lw{display:grid;gap:24px}
+@media (min-width:700px){.lw{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.lw{grid-template-columns:repeat(4,1fr)}}
+.lw-card{position:relative;display:grid;align-content:end;min-height:420px;border-radius:22px;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;
+  box-shadow:0 1px 2px rgba(21,25,28,.08),0 16px 36px rgba(21,25,28,.14)}
+.lw-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
+.lw-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,25,28,0) 35%,rgba(21,25,28,.88) 100%)}
+.lw-card:hover img{transform:scale(1.05)}
+.lw-label{position:absolute;top:18px;left:14px;padding:8px 16px 7px;background:rgba(244,236,206,.95);color:var(--lx-ink);font-size:1.45rem;line-height:1;transform:rotate(-3deg);
+  box-shadow:0 2px 6px rgba(0,0,0,.2);clip-path:polygon(0 6%,4% 0,8% 7%,12% 0,88% 0,92% 7%,96% 0,100% 6%,100% 94%,96% 100%,92% 93%,88% 100%,12% 100%,8% 93%,4% 100%,0 94%)}
+.lw-body{display:grid;gap:12px;padding:22px}
+.lw-body span{line-height:1.45}
+.lw-body b{display:inline-flex;align-items:center;gap:8px;font:800 15px/1 var(--sans);color:var(--green)}
+.lw-body svg{width:16px;height:16px}
+.lw-ask{font:700 1.1rem/1.3 var(--sans);align-self:center}
+#lx-photoways .lxr-cta{align-items:center}
+.lx-sec-btn,.lt-sec .btn-outline,.lq-sec .btn-outline,.lp-sec .btn-outline,.lw-sec .btn-outline{background:#fff!important;color:var(--lx-ink)!important;border:1.5px solid #d8d4c8!important}
+.lx-nw{white-space:nowrap}
+/* E1 annotated photo */
+.le-sec{background:#fff}
+.le{display:grid;gap:30px;align-items:start}
+@media (min-width:1000px){.le{grid-template-columns:1.25fr 1fr;gap:48px}}
+.le-fig{margin:0}
+.le-shot{position:relative}   /* the callouts are placed on the photo alone, not photo + caption */
+.le-fig img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 1px 2px rgba(21,25,28,.08),0 18px 44px rgba(21,25,28,.16)}
+.le-fig figcaption{margin-top:12px;font-size:.92rem;color:var(--muted)}
+.le-pin{position:absolute;left:var(--x);top:var(--y);transform:translate(-16px,-50%);display:flex;align-items:center;gap:8px}   /* the number sits on the spot */
+.le-pin.l{flex-direction:row-reverse;transform:translate(calc(-100% + 16px),-50%)}
+@media (max-width:700px){.le-pin,.le-pin.l{transform:translate(-50%,-50%)}}
+.le-pin b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--lx-ink);font:800 15px/1 var(--sans);
+  box-shadow:0 0 0 4px rgba(255,255,255,.35),0 4px 12px rgba(0,0,0,.35);animation:lepulse 2.4s ease-in-out infinite}
+@keyframes lepulse{50%{box-shadow:0 0 0 9px rgba(255,255,255,0),0 4px 12px rgba(0,0,0,.35)}}
+.le-tag{padding:7px 11px;border-radius:999px;background:rgba(21,25,28,.82);color:#fff;font:700 13px/1 var(--sans);white-space:nowrap;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@media (max-width:700px){.le-tag{display:none}.le-pin b{width:28px;height:28px;font-size:13px}}
+.le-steps{display:grid;gap:22px;counter-reset:none}
+.le-steps>li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.le-n{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--lx-ink);color:#fff;font:800 15px/1 var(--sans)}
+.le-steps h3{font:800 1.3rem/1.2 var(--sans);letter-spacing:-.02em;margin-bottom:4px}
+.le-steps p{line-height:1.5;color:#3d454c}
+.le-steps ul{display:grid;gap:6px;margin-top:8px}
+.le-steps ul li{position:relative;padding-left:20px;line-height:1.45;color:#3d454c}
+.le-steps ul li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:2px;background:var(--green)}
+.le-foot{margin-top:34px;font-size:1.05rem}.le-foot a{color:var(--green-d);font-weight:700}
+
+
+/* the hazard tape section on a light background (Jake: "not black background") */
+.lxh-sec{background:#f6f4ee;color:var(--lx-ink)}
+.lxh-sec .lx-h2{font:900 clamp(2.8rem,8vw,6.6rem)/.88 var(--sans);letter-spacing:-.055em;text-transform:uppercase}
+.lxh-sec .lx-out{-webkit-text-stroke:2.5px var(--lx-ink)}
+.lxh-sec .lxh-k{color:#d23c3c}
+.lxh-sec .lxh-k.yes{color:var(--green-d)}
+.lxh-sec .lxh-no li{text-decoration-color:#d23c3c}
+.lxh-sec .lxh p a{color:var(--green-d);font-weight:700}
+.lxh-sec .btn-primary{background:var(--lx-ink);color:#fff}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://jeffsjunk.ca/#business","name":"Jeff's Junk","url":"https://jeffsjunk.ca/","slogan":"We haul it all","foundingDate":"1992","telephone":"+1-705-333-7767","email":"hello@jeffsjunk.ca","logo":"https://jeffsjunk.ca/wp-content/uploads/jeffs-junk-logo.png","address":{"@type":"PostalAddress","streetAddress":"92 Davidson Street, Unit 2","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4M 3R8","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Barrie"},{"@type":"City","name":"Angus"},{"@type":"City","name":"Anten Mills"},{"@type":"City","name":"Midhurst"},{"@type":"City","name":"Minesing"},{"@type":"City","name":"Shanty Bay"},{"@type":"City","name":"Thornton"},{"@type":"City","name":"Elmvale"},{"@type":"City","name":"Hillsdale"},{"@type":"City","name":"Oro-Medonte"},{"@type":"City","name":"Innisfil"},{"@type":"City","name":"Bradford"},{"@type":"City","name":"Beeton"},{"@type":"City","name":"Gilford"},{"@type":"City","name":"Alliston"},{"@type":"City","name":"Tottenham"},{"@type":"City","name":"Schomberg"},{"@type":"City","name":"Orillia"},{"@type":"City","name":"Warminster"},{"@type":"City","name":"Severn"},{"@type":"City","name":"Washago"},{"@type":"City","name":"Ramara"},{"@type":"City","name":"Brechin"},{"@type":"City","name":"Midland"},{"@type":"City","name":"Penetanguishene"},{"@type":"City","name":"Victoria Harbour"},{"@type":"City","name":"Waubaushene"},{"@type":"City","name":"Port McNicoll"},{"@type":"City","name":"Tiny Township"},{"@type":"City","name":"Wasaga Beach"},{"@type":"City","name":"Collingwood"},{"@type":"City","name":"Stayner"},{"@type":"City","name":"Creemore"},{"@type":"City","name":"Blue Mountains"},{"@type":"City","name":"Thornbury"},{"@type":"City","name":"Mansfield"},{"@type":"City","name":"Mulmur"},{"@type":"City","name":"Shelburne"},{"@type":"City","name":"Newmarket"},{"@type":"City","name":"Aurora"},{"@type":"City","name":"King City"},{"@type":"City","name":"Gravenhurst"},{"@type":"City","name":"Bracebridge"},{"@type":"City","name":"Huntsville"},{"@type":"City","name":"Port Carling"},{"@type":"City","name":"Bala"},{"@type":"City","name":"Muskoka"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"paymentAccepted":"Visa, Mastercard, American Express, Visa Debit, e-Transfer","sameAs":["https://www.instagram.com/jeffsjunkbarrie/","https://www.facebook.com/jeffsjunkbarrie","https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw"]},{"@type":"WebPage","@id":"https://jeffsjunk.ca/service-areas/innisfil/","url":"https://jeffsjunk.ca/service-areas/innisfil/","name":"Junk removal and bin rental in Innisfil","about":{"@id":"https://jeffsjunk.ca/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jeffsjunk.ca/"},{"@type":"ListItem","position":2,"name":"Service areas","item":"https://jeffsjunk.ca/service-areas/"},{"@type":"ListItem","position":3,"name":"Innisfil","item":"https://jeffsjunk.ca/service-areas/innisfil/"}]},{"@type":"Service","name":"Junk removal in Innisfil","serviceType":"Junk removal in Innisfil","description":"Crew pickups anywhere in Innisfil. Quotes are free.","provider":{"@id":"https://jeffsjunk.ca/#business"},"areaServed":[{"@type":"City","name":"Innisfil"}],"offers":[{"@type":"Offer","name":"Junk removal, minimum charge","price":"125","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, quarter of a 20 yard bin","price":"250","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, half a 20 yard bin","price":"375","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, three quarters of a 20 yard bin","price":"500","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, full 20 yard bin","price":"600","priceCurrency":"CAD"}]},{"@type":"Service","name":"Bin rental in Innisfil","serviceType":"Bin rental in Innisfil","description":"4, 7, 14 and 20 yard bins, including the 3 day Zone 1 rental.","provider":{"@id":"https://jeffsjunk.ca/#business"},"areaServed":[{"@type":"City","name":"Innisfil"}],"offers":[{"@type":"Offer","name":"4 yard dirt bin, 1 to 7 days","price":"325","priceCurrency":"CAD","description":"Yard waste, dirt or concrete only. Flat rate, no dump fee. Zone 1 price. 12 ft long, 4.5 ft wide, 2 ft high."},{"@type":"Offer","name":"4 yard concrete bin, 1 to 7 days","price":"375","priceCurrency":"CAD","description":"Flat rate, no dump fee. Zone 1 price."},{"@type":"Offer","name":"7 yard dirt bin, 1 to 7 days","price":"425","priceCurrency":"CAD","description":"Dirt only. Flat rate, no dump fee. Zone 1 price. 12 ft long, 4.5 ft wide, 3.5 ft high."},{"@type":"Offer","name":"7 yard concrete bin, 1 to 7 days","price":"475","priceCurrency":"CAD","description":"Concrete only. Flat rate, no dump fee. Zone 1 price."},{"@type":"Offer","name":"14 yard bin, 7 days","price":"195","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1 price (Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and Innisfil). Anywhere else, call for the price. 12 ft long, 7 ft wide, 5 ft high."},{"@type":"Offer","name":"14 yard bin, 3 days (Zone 1 only)","price":"150","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1: Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and Innisfil."},{"@type":"Offer","name":"20 yard bin, 1 to 7 days","price":"250","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1 price. 12 ft long, 8 ft wide, 5.5 ft high."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you serve all of Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Yes, anywhere in Innisfil, including Alcona, Lefroy, Stroud, Cookstown and Gilford."}},{"@type":"Question","name":"How much does junk removal cost in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Most jobs are priced by how much of our 20 yard bin your junk fills: minimum $125, a quarter bin $250, half a bin $375, three quarters $500 and a full bin $600. Some jobs are priced by labour instead. The quote is free."}},{"@type":"Question","name":"How much is a bin rental in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Innisfil is in Zone 1. The 14 yard bin is $195 for 7 days, or $150 for 3 days, plus the dump fee. The 20 yard bin is $250 for 1 to 7 days, plus the dump fee. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee."}},{"@type":"Question","name":"Can I rent a bin for just 3 days in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Yes. Innisfil is in Zone 1, so the 14 yard bin can go out for 3 days at $150 plus the dump fee."}},{"@type":"Question","name":"What is the dump fee?","acceptedAnswer":{"@type":"Answer","text":"The dump fee is $135 for up to 1 tonne (2,200 lb), and it is prorated after that. It applies to the 14 and 20 yard bins only."}},{"@type":"Question","name":"When are you open?","acceptedAnswer":{"@type":"Answer","text":"Monday to Friday 8am to 6pm, and Saturday 8am to 12pm. We are closed on Sundays and holidays."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://jeffsjunk.ca/#business","name":"Jeff's Junk","url":"https://jeffsjunk.ca/","slogan":"We haul it all","foundingDate":"1992","telephone":"+1-705-333-7767","email":"hello@jeffsjunk.ca","logo":"https://jeffsjunk.ca/wp-content/uploads/jeffs-junk-logo.png","address":{"@type":"PostalAddress","streetAddress":"92 Davidson Street, Unit 2","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4M 3R8","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Barrie"},{"@type":"City","name":"Angus"},{"@type":"City","name":"Anten Mills"},{"@type":"City","name":"Midhurst"},{"@type":"City","name":"Minesing"},{"@type":"City","name":"Shanty Bay"},{"@type":"City","name":"Thornton"},{"@type":"City","name":"Elmvale"},{"@type":"City","name":"Hillsdale"},{"@type":"City","name":"Oro-Medonte"},{"@type":"City","name":"Innisfil"},{"@type":"City","name":"Bradford"},{"@type":"City","name":"Beeton"},{"@type":"City","name":"Gilford"},{"@type":"City","name":"Alliston"},{"@type":"City","name":"Tottenham"},{"@type":"City","name":"Schomberg"},{"@type":"City","name":"Orillia"},{"@type":"City","name":"Warminster"},{"@type":"City","name":"Severn"},{"@type":"City","name":"Washago"},{"@type":"City","name":"Ramara"},{"@type":"City","name":"Brechin"},{"@type":"City","name":"Midland"},{"@type":"City","name":"Penetanguishene"},{"@type":"City","name":"Victoria Harbour"},{"@type":"City","name":"Waubaushene"},{"@type":"City","name":"Port McNicoll"},{"@type":"City","name":"Tiny Township"},{"@type":"City","name":"Wasaga Beach"},{"@type":"City","name":"Collingwood"},{"@type":"City","name":"Stayner"},{"@type":"City","name":"Creemore"},{"@type":"City","name":"Blue Mountains"},{"@type":"City","name":"Thornbury"},{"@type":"City","name":"Mansfield"},{"@type":"City","name":"Mulmur"},{"@type":"City","name":"Shelburne"},{"@type":"City","name":"Newmarket"},{"@type":"City","name":"Aurora"},{"@type":"City","name":"King City"},{"@type":"City","name":"Gravenhurst"},{"@type":"City","name":"Bracebridge"},{"@type":"City","name":"Huntsville"},{"@type":"City","name":"Port Carling"},{"@type":"City","name":"Bala"},{"@type":"City","name":"Muskoka"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"paymentAccepted":"Visa, Mastercard, American Express, Visa Debit, e-Transfer","sameAs":["https://www.instagram.com/jeffsjunkbarrie/","https://www.facebook.com/jeffsjunkbarrie","https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw"]},{"@type":"WebPage","@id":"https://jeffsjunk.ca/service-areas/innisfil/","url":"https://jeffsjunk.ca/service-areas/innisfil/","name":"Junk removal and bin rental in Innisfil","about":{"@id":"https://jeffsjunk.ca/#business"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jeffsjunk.ca/"},{"@type":"ListItem","position":2,"name":"Service areas","item":"https://jeffsjunk.ca/service-areas/"},{"@type":"ListItem","position":3,"name":"Innisfil","item":"https://jeffsjunk.ca/service-areas/innisfil/"}]},{"@type":"Service","name":"Junk removal in Innisfil","serviceType":"Junk removal in Innisfil","description":"Crew pickups anywhere in Innisfil. Quotes are free.","provider":{"@id":"https://jeffsjunk.ca/#business"},"areaServed":[{"@type":"City","name":"Innisfil"}],"offers":[{"@type":"Offer","name":"Junk removal, minimum charge","price":"125","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, quarter of a 20 yard bin","price":"250","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, half a 20 yard bin","price":"375","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, three quarters of a 20 yard bin","price":"500","priceCurrency":"CAD"},{"@type":"Offer","name":"Junk removal, full 20 yard bin","price":"600","priceCurrency":"CAD"}]},{"@type":"Service","name":"Bin rental in Innisfil","serviceType":"Bin rental in Innisfil","description":"4, 7, 14 and 20 yard bins, including the 3 day Zone 1 rental.","provider":{"@id":"https://jeffsjunk.ca/#business"},"areaServed":[{"@type":"City","name":"Innisfil"}],"offers":[{"@type":"Offer","name":"4 yard dirt bin, 1 to 7 days","price":"325","priceCurrency":"CAD","description":"Yard waste, dirt or concrete only. Flat rate, no dump fee. Zone 1 price. 12 ft long, 4.5 ft wide, 2 ft high."},{"@type":"Offer","name":"4 yard concrete bin, 1 to 7 days","price":"375","priceCurrency":"CAD","description":"Flat rate, no dump fee. Zone 1 price."},{"@type":"Offer","name":"7 yard dirt bin, 1 to 7 days","price":"425","priceCurrency":"CAD","description":"Dirt only. Flat rate, no dump fee. Zone 1 price. 12 ft long, 4.5 ft wide, 3.5 ft high."},{"@type":"Offer","name":"7 yard concrete bin, 1 to 7 days","price":"475","priceCurrency":"CAD","description":"Concrete only. Flat rate, no dump fee. Zone 1 price."},{"@type":"Offer","name":"14 yard bin, 7 days","price":"195","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1 price (Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and Innisfil). Anywhere else, call for the price. 12 ft long, 7 ft wide, 5 ft high."},{"@type":"Offer","name":"14 yard bin, 3 days (Zone 1 only)","price":"150","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1: Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and Innisfil."},{"@type":"Offer","name":"20 yard bin, 1 to 7 days","price":"250","priceCurrency":"CAD","description":"Plus the dump fee: $135 for up to 1 tonne (2,200 lb), prorated after that. Zone 1 price. 12 ft long, 8 ft wide, 5.5 ft high."}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you serve all of Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Yes, anywhere in Innisfil, including Alcona, Lefroy, Stroud, Cookstown and Gilford."}},{"@type":"Question","name":"How much does junk removal cost in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Most jobs are priced by how much of our 20 yard bin your junk fills: minimum $125, a quarter bin $250, half a bin $375, three quarters $500 and a full bin $600. Some jobs are priced by labour instead. The quote is free."}},{"@type":"Question","name":"How much is a bin rental in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Innisfil is in Zone 1. The 14 yard bin is $195 for 7 days, or $150 for 3 days, plus the dump fee. The 20 yard bin is $250 for 1 to 7 days, plus the dump fee. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee."}},{"@type":"Question","name":"Can I rent a bin for just 3 days in Innisfil?","acceptedAnswer":{"@type":"Answer","text":"Yes. Innisfil is in Zone 1, so the 14 yard bin can go out for 3 days at $150 plus the dump fee."}},{"@type":"Question","name":"What is the dump fee?","acceptedAnswer":{"@type":"Answer","text":"The dump fee is $135 for up to 1 tonne (2,200 lb), and it is prorated after that. It applies to the 14 and 20 yard bins only."}},{"@type":"Question","name":"Where is the dump for Innisfil?","acceptedAnswer":{"@type":"Answer","text":"There is no landfill in Innisfil. Residents use the County of Simcoe waste drop-offs, mainly on Line 12 in Bradford or Old Barrie Road West in Oro-Medonte, and need proof that they live in the County. The Barrie landfill only takes Barrie residents."}},{"@type":"Question","name":"Does Innisfil pick up furniture at the curb?","acceptedAnswer":{"@type":"Answer","text":"Yes, for a fee. The County of Simcoe picks up bulky items at the curb when you book through Service Simcoe, with extra fees for mattresses and fridges. For more than a few items, or anything heavy, a junk removal visit or a bin is simpler."}},{"@type":"Question","name":"When are you open?","acceptedAnswer":{"@type":"Answer","text":"Monday to Friday 8am to 7pm, and Saturday 8am to 12pm. We are closed on Sundays and holidays."}}]}]}</script>
 </head>
 <body>
 
@@ -1496,7 +2031,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="n-steps" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></g></symbol><symbol id="n-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1"/></g></symbol><symbol id="n-sofa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/><path d="M4 18v2"/><path d="M20 18v2"/></g></symbol><symbol id="n-help" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></g></symbol><symbol id="n-hammer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.4 8.4a2.1 2.1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.9-1.9A2 2 0 0 1 19 8.2V7l-2.3-2.3A6 6 0 0 0 12.5 3H9l.9.8A6.2 6.2 0 0 1 12 8.4V10l2 2h1.2a2 2 0 0 1 1.4.6l1.9 1.9"/></g></symbol><symbol id="n-ruler" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></g></symbol><symbol id="n-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></g></symbol><symbol id="n-hat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></g></symbol><symbol id="n-heart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></g></symbol><symbol id="n-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.6a1 1 0 0 0-.2-.6l-3.5-4.4a1 1 0 0 0-.8-.4H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g></symbol><symbol id="n-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></g></symbol><symbol id="n-play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></g></symbol><symbol id="n-star" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.8 1.2 6.9-6.2-3.2L5.8 21 7 14.1 2 9.3l6.9-1z"/></g></symbol><symbol id="n-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></g></symbol><symbol id="n-tub" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V6a2 2 0 0 1 3.5-1.3"/><path d="M7 19l-1 2"/><path d="M17 19l1 2"/></g></symbol><symbol id="n-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol><symbol id="n-fridge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14"/><path d="M9 5v2"/><path d="M9 13v3"/></g></symbol><symbol id="n-house" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></g></symbol><symbol id="n-shed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 5l9 6"/><path d="M5 10v11h14V10"/><path d="M9 21v-7h6v7"/><path d="M9 17.5h6"/></g></symbol><symbol id="n-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.2-6"/></g></symbol></svg>
 <header class="site-head" id="top">
   <div class="wrap head-in">
-    <a class="logo" href="mix-favourites.html" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo.png" width="448" height="202" alt="Jeff's Junk"></a>
+    <a class="logo" href="mix-favourites.html" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo.webp" srcset="assets/wp-content/uploads/jeffs-junk-logo-222.webp 222w, assets/wp-content/uploads/jeffs-junk-logo.webp 448w" sizes="111px" width="448" height="202" alt="Jeff's Junk"></a>
     <nav class="nav" aria-label="Main">
       <ul>
         <li class="dd"><a class="top" href="mix-junk-removal.html">Junk removal</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show Junk removal links"></button><ul class="dd-panel"><li><a href="mix-junk-removal.html#pricing"><span class="di"><svg aria-hidden="true"><use href="#n-tag"/></svg></span><span class="dt"><b>Pricing</b><small>From $125, free quotes</small></span></a></li><li><a href="mix-junk-removal.html#take"><span class="di"><svg aria-hidden="true"><use href="#n-help"/></svg></span><span class="dt"><b>What we take</b><small>Check an item before you call</small></span></a></li><li><a href="mix-junk-removal.html#jobs"><span class="di"><svg aria-hidden="true"><use href="#n-sofa"/></svg></span><span class="dt"><b>Common jobs</b><small>Furniture, appliances, hot tubs and more</small></span></a></li><li class="pg first"><a href="mix-commercial.html"><span class="di"><svg aria-hidden="true"><use href="#n-building"/></svg></span><span class="dt"><b>Commercial</b><small>Offices, shops and rental units</small></span></a></li><li class="pg"><a href="mix-demolition.html"><span class="di"><svg aria-hidden="true"><use href="#n-hammer"/></svg></span><span class="dt"><b>Demolition <span class="tagnew">New</span></b><small>Decks, fences, pools and more</small></span></a></li></ul></li>
@@ -1504,7 +2039,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
         <li class="dd"><a class="top" href="mix-contractors.html">Contractors</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show Contractors links"></button><ul class="dd-panel"><li><a href="mix-contractors.html#work"><span class="di"><svg aria-hidden="true"><use href="#n-hat"/></svg></span><span class="dt"><b>Work with us</b><small>Bins, accounts and tear-downs</small></span></a></li><li><a href="mix-contractors.html#pricing"><span class="di"><svg aria-hidden="true"><use href="#n-tag"/></svg></span><span class="dt"><b>Pricing</b><small>Weekly and monthly rentals</small></span></a></li><li class="pg first"><a href="mix-demolition.html"><span class="di"><svg aria-hidden="true"><use href="#n-hammer"/></svg></span><span class="dt"><b>Demolition <span class="tagnew">New</span></b><small>Strip-outs and tear-downs</small></span></a></li></ul></li>
         <li class="dd"><a class="top" href="mix-furniture-bank.html">Furniture donation</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show Furniture donation links"></button><ul class="dd-panel"><li><a href="mix-furniture-bank.html#donate"><span class="di"><svg aria-hidden="true"><use href="#n-steps"/></svg></span><span class="dt"><b>How it works</b><small>A pickup and a tax receipt</small></span></a></li><li><a href="mix-furniture-bank.html#request"><span class="di"><svg aria-hidden="true"><use href="#n-sofa"/></svg></span><span class="dt"><b>Donate furniture</b><small>Book a pickup</small></span></a></li><li><a href="mix-furniture-bank.html#impact"><span class="di"><svg aria-hidden="true"><use href="#n-heart"/></svg></span><span class="dt"><b>Who it helps</b><small>Our work with Furniture Bank</small></span></a></li></ul></li>
         <li class="dd"><a class="top" href="mix-service-areas.html" aria-current="true">Service areas</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show the main towns"></button><ul class="dd-panel towns"><li><a href="mix-area-barrie.html">Barrie</a></li><li><a href="mix-area-orillia.html">Orillia</a></li><li><a href="mix-area-innisfil.html">Innisfil</a></li><li><a href="mix-service-areas.html#areas">Collingwood</a></li><li><a href="mix-service-areas.html#areas">Wasaga Beach</a></li><li><a href="mix-service-areas.html#areas">Midland</a></li><li><a href="mix-service-areas.html#areas">Alliston</a></li><li><a href="mix-service-areas.html#areas">Bradford</a></li><li><a href="mix-service-areas.html#areas">Newmarket</a></li><li><a href="mix-service-areas.html#areas">Aurora</a></li><li><a href="mix-service-areas.html#areas">Bracebridge</a></li><li><a href="mix-service-areas.html#areas">Huntsville</a></li><li><a href="mix-service-areas.html#areas">Gravenhurst</a></li><li class="all"><a href="mix-service-areas.html">All 47 communities <span aria-hidden="true">→</span></a></li></ul></li>
-        <li class="dd"><a class="top" href="mix-about.html">About</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show About links"></button><ul class="dd-panel"><li><a href="mix-about.html#story"><span class="di"><svg aria-hidden="true"><use href="#n-book"/></svg></span><span class="dt"><b>Our story</b><small>A family business since 1992</small></span></a></li><li class="pg first"><a href="mix-reviews.html"><span class="di"><svg aria-hidden="true"><use href="#n-star"/></svg></span><span class="dt"><b>Reviews</b><small>What customers say</small></span></a></li><li class="pg"><a href="mix-guides.html"><span class="di"><svg aria-hidden="true"><use href="#n-book"/></svg></span><span class="dt"><b>Tips &amp; guides</b><small>Answers before you book</small></span></a></li><li class="pg"><a href="mix-contact.html"><span class="di"><svg aria-hidden="true"><use href="#n-mail"/></svg></span><span class="dt"><b>Contact<span class="jjnew" title="Added in the Oct 15 round">Just added</span></b><small>Call, text, email or visit</small></span></a></li></ul></li>
+        <li class="dd"><a class="top" href="mix-about.html">About</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show About links"></button><ul class="dd-panel"><li><a href="mix-about.html#story"><span class="di"><svg aria-hidden="true"><use href="#n-book"/></svg></span><span class="dt"><b>Our story</b><small>A family business since 1992</small></span></a></li><li class="pg first"><a href="mix-reviews.html"><span class="di"><svg aria-hidden="true"><use href="#n-star"/></svg></span><span class="dt"><b>Reviews</b><small>What customers say</small></span></a></li><li class="pg"><a href="mix-guides.html"><span class="di"><svg aria-hidden="true"><use href="#n-book"/></svg></span><span class="dt"><b>Tips &amp; guides</b><small>Answers before you book</small></span></a></li><li class="pg"><a href="mix-contact.html"><span class="di"><svg aria-hidden="true"><use href="#n-mail"/></svg></span><span class="dt"><b>Contact</b><small>Call, text, email or visit</small></span></a></li></ul></li>
       </ul>
     </nav>
     <div class="head-cta">
@@ -1520,14 +2055,14 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
       <li class="mrow"><div class="mtop"><a class="mlink" href="mix-contractors.html">Contractors</a><button class="m-more" type="button" aria-expanded="false" aria-label="Show Contractors links"></button></div><ul class="msub"><li><a href="mix-contractors.html#work">Work with us</a></li><li><a href="mix-contractors.html#pricing">Pricing</a></li><li><a href="mix-demolition.html">Demolition <span class="tagnew">New</span></a></li></ul></li>
       <li class="mrow"><div class="mtop"><a class="mlink" href="mix-furniture-bank.html">Furniture donation</a><button class="m-more" type="button" aria-expanded="false" aria-label="Show Furniture donation links"></button></div><ul class="msub"><li><a href="mix-furniture-bank.html#donate">How it works</a></li><li><a href="mix-furniture-bank.html#request">Donate furniture</a></li><li><a href="mix-furniture-bank.html#impact">Who it helps</a></li></ul></li>
       <li class="mrow"><div class="mtop"><a class="mlink" href="mix-service-areas.html">Service areas</a><button class="m-more" type="button" aria-expanded="false" aria-label="Show the main towns"></button></div><ul class="msub"><li><a href="mix-area-barrie.html">Barrie</a></li><li><a href="mix-area-orillia.html">Orillia</a></li><li><a href="mix-area-innisfil.html">Innisfil</a></li><li><a href="mix-service-areas.html#areas">Collingwood</a></li><li><a href="mix-service-areas.html#areas">Wasaga Beach</a></li><li><a href="mix-service-areas.html#areas">Midland</a></li><li><a href="mix-service-areas.html#areas">Alliston</a></li><li><a href="mix-service-areas.html#areas">Bradford</a></li><li><a href="mix-service-areas.html#areas">Newmarket</a></li><li><a href="mix-service-areas.html#areas">Aurora</a></li><li><a href="mix-service-areas.html#areas">Bracebridge</a></li><li><a href="mix-service-areas.html#areas">Huntsville</a></li><li><a href="mix-service-areas.html#areas">Gravenhurst</a></li><li><a href="mix-service-areas.html">All 47 communities</a></li></ul></li>
-      <li class="mrow"><div class="mtop"><a class="mlink" href="mix-about.html">About</a><button class="m-more" type="button" aria-expanded="false" aria-label="Show About links"></button></div><ul class="msub"><li><a href="mix-about.html#story">Our story</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-contact.html">Contact<span class="jjnew" title="Added in the Oct 15 round">Just added</span></a></li></ul></li>
+      <li class="mrow"><div class="mtop"><a class="mlink" href="mix-about.html">About</a><button class="m-more" type="button" aria-expanded="false" aria-label="Show About links"></button></div><ul class="msub"><li><a href="mix-about.html#story">Our story</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-contact.html">Contact</a></li></ul></li>
       <li><a class="mlink" href="mix-favourites.html#estimate">Get a price in 30 seconds <span aria-hidden="true">→</span></a></li>
     </ul>
   </nav>
 </header>
 
 <main id="main">
-<section class="pagehead"><div class="wrap"><p class="crumb"><a href="mix-favourites.html">Home</a> / <a href="mix-service-areas.html">Service areas</a> / Innisfil</p><div class="ph-grid has-pic"><div><h1>Junk removal and bin rentals in <span class="accent">Innisfil</span>.</h1><p class="lede">Our crew picks up anywhere in Innisfil, from Alcona and Lefroy to Stroud and Cookstown. Innisfil is in Zone 1, so you get our lowest prices, including the 3 day bin rental.</p><div class="hero-btns"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline" href="#pricing">See Innisfil prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div><img class="phimg" src="assets/wp-content/uploads/BinRentalTruck2.jpg" alt="The truck tipping a bin off onto a driveway" loading="lazy"></div><div class="jump"><span>On this page</span><a href="#services">Services</a><a href="#pricing">Innisfil prices</a><a href="#jobs">Recent jobs</a><a href="#nearby">Nearby towns</a><a href="#faq">Questions</a></div></div></section><section class="sec " id="services"><div class="wrap"><div class="sec-head rv"><h2>What we do <span class="accent">here</span>.</h2></div><div class="cards3"><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/JunkRemovalHeader.jpg" alt="Two crew members sitting in an empty bin" loading="lazy"><h3>Junk removal</h3><p>You call us, we pick it up. From $125, and most jobs are priced by how much of the bin you fill.</p><a class="card-link" href="mix-junk-removal.html">Junk removal <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/bins-2026/bin-14-yard.webp" alt="A green 14 yard bin" loading="lazy"><h3>Bin rentals</h3><p>4, 7, 14 and 20 yard bins. The 14 yard is $195 for 7 days or $150 for 3 days, plus the dump fee.</p><a class="card-link" href="mix-bin-rental.html">Bin rentals <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/bins-2026/bin-4-yard.webp" alt="A green 4 yard bin" loading="lazy"><h3>Dirt &amp; concrete bins</h3><p>The 4 and 7 yard bins, flat rate with no dump fee.</p><a class="card-link" href="mix-dirt-concrete-bins.html">Dirt and concrete bins <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><div class="cimg need" role="img" aria-label="Photo needed: a tear-down job in Innisfil"><b>Photo needed</b><span>a tear-down job in Innisfil</span></div><h3>Demolition <span class="tagnew">New</span></h3><p>Decks, sheds, kitchens and bathrooms, down and gone in one visit.</p><a class="card-link" href="mix-demolition.html">Demolition <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><h3>Contractors</h3><p>A 20 yard bin for the job site, and the tear-down debris hauled away.</p><a class="card-link" href="mix-contractors.html">Contractors <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><h3>Donate your furniture</h3><p>Gently used furniture goes to families through Furniture Bank.</p><a class="card-link" href="mix-furniture-bank.html">Donate your furniture <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article></div></div></section><section class="sec" id="pricing" aria-labelledby="price-h">
+<section class="pagehead"><div class="wrap"><p class="crumb"><a href="mix-favourites.html">Home</a> / <a href="mix-service-areas.html">Service areas</a> / Innisfil</p><div class="ph-grid has-pic"><div><h1>Junk removal and bin rentals in <span class="accent">Innisfil</span>.</h1><p class="lede">Our crew picks up anywhere in Innisfil, from Alcona and Lefroy to Stroud and Cookstown. Innisfil is in Zone 1, so you get our lowest prices, including the 3 day bin rental.</p><div class="hero-btns"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline" href="#pricing">See Innisfil prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div><img class="phimg" src="assets/wp-content/uploads/bin-truck-drop.webp" width="800" height="533" alt="The truck tipping a bin off onto a driveway" fetchpriority="high"></div><div class="jump"><span>On this page</span><a href="#services">Services</a><a href="#pricing">Innisfil prices</a><a href="#local">Your options</a><a href="#jobs">Recent jobs</a><a href="#nearby">Nearby towns</a><a href="#faq">Questions</a></div></div></section><section class="sec " id="services"><div class="wrap"><div class="sec-head rv"><h2>What we do <span class="accent">here</span>.</h2></div><div class="cards3"><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/JunkRemovalHeader-w800.webp" width="800" height="395" alt="Two crew members sitting in an empty bin" loading="lazy"><h3>Junk removal</h3><p>You call us, we pick it up. From $125, and most jobs are priced by how much of the bin you fill.</p><a class="card-link" href="mix-junk-removal.html">Junk removal <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="800" height="452" alt="A green 14 yard bin" loading="lazy"><h3>Bin rentals</h3><p>4, 7, 14 and 20 yard bins. The 14 yard is $195 for 7 days or $150 for 3 days, plus the dump fee.</p><a class="card-link" href="mix-bin-rental.html">Bin rentals <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><img class="cimg" src="assets/wp-content/uploads/bins-2026/bin-4-yard-w800.webp" width="800" height="450" alt="A green 4 yard bin" loading="lazy"><h3>Dirt &amp; concrete bins</h3><p>The 4 and 7 yard bins, flat rate with no dump fee.</p><a class="card-link" href="mix-dirt-concrete-bins.html">Dirt and concrete bins <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><img class="cimg placeholder" src="assets/wp-content/uploads/placeholder-a-tear-down-job-in-innisfil.webp" width="800" height="500" alt="Placeholder: replace with a tear-down job in Innisfil" loading="lazy"><h3>Demolition <span class="tagnew">New</span></h3><p>Decks, sheds, kitchens and bathrooms, down and gone in one visit.</p><a class="card-link" href="mix-demolition.html">Demolition <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><h3>Contractors</h3><p>A 20 yard bin for the job site, and the tear-down debris hauled away.</p><a class="card-link" href="mix-contractors.html">Contractors <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article><article class="card rv"><h3>Donate your furniture</h3><p>Gently used furniture goes to families through Furniture Bank.</p><a class="card-link" href="mix-furniture-bank.html">Donate your furniture <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></article></div></div></section><section class="sec" id="pricing" aria-labelledby="price-h">
   <div class="wrap">
     <div class="sec-head center rv">
       <h2 id="price-h">Straight prices, <span class="accent">no surprises</span>.</h2>
@@ -1564,12 +2099,12 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
       </article></div>
 <p class="fine rv">Dump fee on the 14 and 20 yard bins is $135 for up to 1 tonne (2,200 lb), prorated after that. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee. The 14 yard price is for Zone 1: Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and Innisfil. Anywhere else, call for the price. Junk removal prices are subject to change based on the job.</p>
   </div>
-</section><section class="sec wash" id="jobs"><div class="wrap"><div class="sec-head rv"><h2>Around <span class="accent">town</span>.</h2></div><div class="cards3"><article class="card rv"><div class="cimg need" role="img" aria-label="Photo needed: a finished job in Innisfil, somewhere locals will recognise"><b>Photo needed</b><span>a finished job in Innisfil, somewhere locals will recognise</span></div><h3><span class="ph">[Neighbourhood or street]</span></h3><p><span class="ph">[What we hauled, which bin, how long it took]</span></p></article><article class="card rv"><div class="cimg need" role="img" aria-label="Photo needed: a finished job in Innisfil, somewhere locals will recognise"><b>Photo needed</b><span>a finished job in Innisfil, somewhere locals will recognise</span></div><h3><span class="ph">[Neighbourhood or street]</span></h3><p><span class="ph">[What we hauled, which bin, how long it took]</span></p></article><article class="card rv"><div class="cimg need" role="img" aria-label="Photo needed: a finished job in Innisfil, somewhere locals will recognise"><b>Photo needed</b><span>a finished job in Innisfil, somewhere locals will recognise</span></div><h3><span class="ph">[Neighbourhood or street]</span></h3><p><span class="ph">[What we hauled, which bin, how long it took]</span></p></article></div></div></section><section class="sec " id="nearby"><div class="wrap"><div class="sec-head rv"><h2>Just outside <span class="accent">Innisfil</span>?</h2><p class="lede">We cover these too.</p></div><ul class="townchips rv"><li><a href="mix-area-barrie.html">Barrie</a></li><li><a href="mix-service-areas.html#areas">Bradford</a></li><li><a href="mix-service-areas.html#areas">Gilford</a></li><li><a href="mix-service-areas.html#areas">Beeton</a></li><li><a class="has" href="mix-service-areas.html">All 47 communities</a></li></ul></div></section><section class="sec wash" id="reviews"><div class="wrap"><div class="sec-head rv"><h2>What Innisfil <span class="accent">says</span>.</h2></div><div class="revs"><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure></div><p class="more-link"><a class="card-link" href="mix-reviews.html">Read all reviews <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></p></div></section><section class="sec " id="faq"><div class="wrap"><div class="sec-head rv"><h2>Innisfil, <span class="accent">answered</span>.</h2></div><div class="tqs"><details class="tq rv"><summary>Do you serve all of Innisfil?</summary><div><p>Yes, anywhere in Innisfil, including Alcona, Lefroy, Stroud, Cookstown and Gilford.</p></div></details><details class="tq rv"><summary>How much does junk removal cost in Innisfil?</summary><div><p>Most jobs are priced by how much of our 20 yard bin your junk fills: minimum $125, a quarter bin $250, half a bin $375, three quarters $500 and a full bin $600. Some jobs are priced by labour instead. The quote is free.</p></div></details><details class="tq rv"><summary>How much is a bin rental in Innisfil?</summary><div><p>Innisfil is in Zone 1. The 14 yard bin is $195 for 7 days, or $150 for 3 days, plus the dump fee. The 20 yard bin is $250 for 1 to 7 days, plus the dump fee. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee.</p></div></details><details class="tq rv"><summary>Can I rent a bin for just 3 days in Innisfil?</summary><div><p>Yes. Innisfil is in Zone 1, so the 14 yard bin can go out for 3 days at $150 plus the dump fee.</p></div></details><details class="tq rv"><summary>What is the dump fee?</summary><div><p>The dump fee is $135 for up to 1 tonne (2,200 lb), and it is prorated after that. It applies to the 14 and 20 yard bins only.</p></div></details><details class="tq rv"><summary>When are you open?</summary><div><p>Monday to Friday 8am to 6pm, and Saturday 8am to 12pm. We are closed on Sundays and holidays.</p></div></details></div></div></section>
+</section><section class="sec r9 jjnew-sec now r9-who" id="local"><div class="wrap"><div class="sec-head rv"><h2>Getting rid of junk in <span class="accent">Innisfil</span>.<span class="jjnew" title="Added in the Oct 19 round">Just added</span></h2><p class="lede">What the town picks up, where its dump is, and when it&rsquo;s easier to call us.</p></div><div class="r9w r9w-4"><article class="r9w-t rv"><div class="r9w-b"><span class="r9w-i"><svg aria-hidden="true"><use href="#n-house"/></svg></span><h3>Curbside pickup, booked</h3><p>The County of Simcoe picks up bulky items at the curb if you book through Service Simcoe. You pay per pickup, plus extra for mattresses and fridges, and each item has a weight limit.</p></div></article><article class="r9w-t rv"><div class="r9w-b"><span class="r9w-i"><svg aria-hidden="true"><use href="#n-truck"/></svg></span><h3>No landfill in Innisfil</h3><p>Residents use the County&rsquo;s drop-offs on Line 12 in Bradford or Old Barrie Road West in Oro-Medonte, with proof they live in the County. The Barrie landfill only takes Barrie residents.</p></div></article><article class="r9w-t rv"><div class="r9w-b"><span class="r9w-i"><svg aria-hidden="true"><use href="#n-ruler"/></svg></span><h3>A bin on the road</h3><p>A bin on a Town road needs the Town&rsquo;s Right of Way permit, and some roads in Innisfil are County roads with their own rules. Most bins go on the driveway, with wood underneath.</p></div></article><article class="r9w-t rv"><div class="r9w-b"><span class="r9w-i"><svg aria-hidden="true"><use href="#n-steps"/></svg></span><h3>Zone 1 prices</h3><p>Alcona is about 25 minutes from us in Barrie. Innisfil is in Zone 1, so you get our lowest prices, including the 3 day bin.</p></div></article></div><p class="social rv">From the Town of Innisfil and County of Simcoe websites, checked October 2026. Rules and fees change, so check <a href="https://simcoe.ca/residents/organics-recycling-and-garbage/waste-drop-offs/" target="_blank" rel="noopener">simcoe.ca</a> for drop-off hours and current fees.</p><div class="r9-band rv"><div><h3>Rather not haul it yourself?</h3><p>No trailer, no sorting, no line at the scale. Our crew loads it, or we drop a bin and you fill it at your own pace.</p></div><div class="r9-btns"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline" href="#pricing">See Innisfil prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></div></section><section class="sec wash" id="jobs"><div class="wrap"><div class="sec-head rv"><h2>Around <span class="accent">town</span>.</h2><p class="lede">A few recent jobs from our records. Street names only, never addresses.</p></div><div class="cards3"><article class="card rv"><span class="card-i"><svg aria-hidden="true"><use href="#n-ruler"/></svg></span><h3>25th Sideroad</h3><p>A 14 yard bin for 7 days. <a href="mix-bin-rental.html">Bin rental</a>, September 2026.</p></article><article class="card rv"><span class="card-i"><svg aria-hidden="true"><use href="#n-ruler"/></svg></span><h3>Sunnybrae Avenue</h3><p>A 14 yard bin for 3 days. <a href="mix-bin-rental.html">Bin rental</a>, August 2026.</p></article><article class="card rv"><span class="card-i"><svg aria-hidden="true"><use href="#n-ruler"/></svg></span><h3>Maple Road</h3><p>A 20 yard bin for 7 days. <a href="mix-bin-rental.html">Bin rental</a>, July 2026.</p></article></div></div></section><section class="sec " id="nearby"><div class="wrap"><div class="sec-head rv"><h2>Just outside <span class="accent">Innisfil</span>?</h2><p class="lede">We cover these too.</p></div><ul class="townchips rv"><li><a href="mix-area-barrie.html">Barrie</a></li><li><a href="mix-service-areas.html#areas">Bradford</a></li><li><a href="mix-service-areas.html#areas">Gilford</a></li><li><a href="mix-service-areas.html#areas">Beeton</a></li><li><a class="has" href="mix-service-areas.html">All 47 communities</a></li></ul></div></section><section class="sec wash" id="reviews"><div class="wrap"><div class="sec-head rv"><h2>What our customers <span class="accent">say</span>.</h2></div><div class="revs"><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure><figure class="rev rv" style="margin:0"><span class="ph">[★ rating]</span><q>[Real Google review about a job in Innisfil goes here]</q><figcaption class="by">[Customer first name · town]</figcaption></figure></div><p class="more-link"><a class="card-link" href="mix-reviews.html">Read all reviews <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a></p></div></section><section class="sec " id="faq"><div class="wrap"><div class="sec-head rv"><h2>Innisfil, <span class="accent">answered</span>.</h2></div><div class="tqs"><details class="tq rv"><summary>Do you serve all of Innisfil?</summary><div><p>Yes, anywhere in Innisfil, including Alcona, Lefroy, Stroud, Cookstown and Gilford.</p></div></details><details class="tq rv"><summary>How much does junk removal cost in Innisfil?</summary><div><p>Most jobs are priced by how much of our 20 yard bin your junk fills: minimum $125, a quarter bin $250, half a bin $375, three quarters $500 and a full bin $600. Some jobs are priced by labour instead. The quote is free.</p></div></details><details class="tq rv"><summary>How much is a bin rental in Innisfil?</summary><div><p>Innisfil is in Zone 1. The 14 yard bin is $195 for 7 days, or $150 for 3 days, plus the dump fee. The 20 yard bin is $250 for 1 to 7 days, plus the dump fee. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee.</p></div></details><details class="tq rv"><summary>Can I rent a bin for just 3 days in Innisfil?</summary><div><p>Yes. Innisfil is in Zone 1, so the 14 yard bin can go out for 3 days at $150 plus the dump fee.</p></div></details><details class="tq rv"><summary>What is the dump fee?</summary><div><p>The dump fee is $135 for up to 1 tonne (2,200 lb), and it is prorated after that. It applies to the 14 and 20 yard bins only.</p></div></details><details class="tq rv"><summary>Where is the dump for Innisfil?</summary><div><p>There is no landfill in Innisfil. Residents use the County of Simcoe waste drop-offs, mainly on Line 12 in Bradford or Old Barrie Road West in Oro-Medonte, and need proof that they live in the County. The Barrie landfill only takes Barrie residents.</p></div></details><details class="tq rv"><summary>Does Innisfil pick up furniture at the curb?</summary><div><p>Yes, for a fee. The County of Simcoe picks up bulky items at the curb when you book through Service Simcoe, with extra fees for mattresses and fridges. For more than a few items, or anything heavy, a junk removal visit or a bin is simpler.</p></div></details><details class="tq rv"><summary>When are you open?</summary><div><p>Monday to Friday 8am to 7pm, and Saturday 8am to 12pm. We are closed on Sundays and holidays.</p></div></details></div></div></section>
 
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="fB"><div class="fB-call" id="contact"><div class="wrap"><div><p class="k">Free quotes in every location</p><h2>Ready when <span class="accent">you are</span>.</h2></div><div class="btns"><a class="fbtn green" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="fbtn line" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a></div></div></div><div class="wrap"><div class="fB-cols"><div class="brand"><a href="#top" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo-stacked.webp" width="900" height="557" loading="lazy" alt="Jeff's Junk. Bin rentals, junk removals. We haul it all."></a><span class="soc"><a href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener" aria-label="Jeff's Junk on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.facebook.com/jeffsjunkbarrie" target="_blank" rel="noopener" aria-label="Jeff's Junk on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.600c0-.9.3-1.400 1.500-1.400h1.500V4.500c-.3 0-1.200-.1-2.200-.1-2.200 0-3.700 1.300-3.700 3.800v2.300H8.100v3h2.500V21z"/></svg></a><a href="https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw" target="_blank" rel="noopener" aria-label="Jeff's Junk on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.800a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.800-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a></span><a class="hash" href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener">#ShowUsYourJunk</a></div><div><h4>Services</h4><ul><li><a href="mix-junk-removal.html">Junk removal</a></li><li><a href="mix-bin-rental.html">Bin rentals</a></li><li><a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete bins</a></li><li><a href="mix-demolition.html">Demolition</a></li><li><a href="mix-furniture-bank.html">Furniture donation</a></li><li><a href="mix-commercial.html">Commercial</a></li><li><a href="mix-contractors.html">Contractors</a></li></ul></div><div><h4>Popular jobs</h4><ul><li><a href="mix-furniture-removal.html">Furniture removal</a></li><li><a href="mix-appliance-removal.html">Appliance removal</a></li><li><a href="mix-estate-cleanouts.html">Estate clean-outs</a></li><li><a href="mix-hot-tub-removal.html">Hot tub removal</a></li><li><a href="mix-shed-removal.html">Shed removal</a></li></ul></div><div><h4>Company</h4><ul><li><a href="mix-about.html">About us</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-service-areas.html">Service areas</a></li><li><a href="mix-contact.html">Contact us</a></li></ul></div><div class="fhours"><h4>Hours</h4><dl class="hrs2"><dt>Mon to Fri</dt><dd>8am to 6pm</dd><dt>Saturday</dt><dd>8am to 12pm</dd><dt>Sun and holidays</dt><dd>Closed</dd></dl><img class="pay" src="assets/wp-content/uploads/visaMCamex.png" width="145" height="24" alt="We accept Visa, Mastercard and American Express" loading="lazy"><p class="pay-more">Visa Debit and e-Transfer too</p></div></div><div class="fB-bar"><span>© 2026 Jeff's Junk. Licensed by the Ministry of Environment, WSIB.</span><span>92 Davidson Street, Unit 2, Barrie, ON L4M 3R8</span><span>Proudly serving our community since 1992</span></div></div></footer>
+<footer class="fB"><div class="fB-call" id="contact"><div class="wrap"><div><p class="k">Free quotes in every location</p><h2>Ready when <span class="accent">you are</span>.</h2></div><div class="btns"><a class="fbtn green" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="fbtn line" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a></div></div></div><div class="wrap"><div class="fB-cols"><div class="brand"><a href="#top" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo-stacked.webp" width="900" height="557" loading="lazy" alt="Jeff's Junk. Bin rentals, junk removals. We haul it all."></a><span class="soc"><a href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener" aria-label="Jeff's Junk on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.facebook.com/jeffsjunkbarrie" target="_blank" rel="noopener" aria-label="Jeff's Junk on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.600c0-.9.3-1.400 1.500-1.400h1.500V4.500c-.3 0-1.200-.1-2.200-.1-2.200 0-3.700 1.300-3.700 3.800v2.300H8.100v3h2.500V21z"/></svg></a><a href="https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw" target="_blank" rel="noopener" aria-label="Jeff's Junk on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.800a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.800-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a></span><a class="hash" href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener">#ShowUsYourJunk</a></div><div><h4>Services</h4><ul><li><a href="mix-junk-removal.html">Junk removal</a></li><li><a href="mix-bin-rental.html">Bin rentals</a></li><li><a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete bins</a></li><li><a href="mix-demolition.html">Demolition</a></li><li><a href="mix-furniture-bank.html">Furniture donation</a></li><li><a href="mix-commercial.html">Commercial</a></li><li><a href="mix-contractors.html">Contractors</a></li></ul></div><div><h4>Popular jobs</h4><ul><li><a href="mix-furniture-removal.html">Furniture removal</a></li><li><a href="mix-appliance-removal.html">Appliance removal</a></li><li><a href="mix-estate-cleanouts.html">Estate clean-outs</a></li><li><a href="mix-hot-tub-removal.html">Hot tub removal</a></li><li><a href="mix-shed-removal.html">Shed removal</a></li></ul></div><div><h4>Company</h4><ul><li><a href="mix-about.html">About us</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-service-areas.html">Service areas</a></li><li><a href="mix-contact.html">Contact us</a></li></ul></div><div class="fhours"><h4>Hours</h4><dl class="hrs2"><dt>Mon to Fri</dt><dd>8am to 7pm</dd><dt>Saturday</dt><dd>8am to 12pm</dd><dt>Sun and holidays</dt><dd>Closed</dd></dl><img class="pay" src="assets/wp-content/uploads/visaMCamex.png" width="145" height="24" alt="We accept Visa, Mastercard and American Express" loading="lazy"><p class="pay-more">Visa Debit and e-Transfer too</p></div></div><div class="fB-bar"><span>© 2026 Jeff's Junk. Licensed by the Ministry of Environment, WSIB.</span><span>92 Davidson Street, Unit 2, Barrie, ON L4M 3R8</span><span>Proudly serving our community since 1992</span></div></div></footer>
 
 <!-- phones: sticky call bar (charcoal, never green) -->
 <style>
@@ -1815,5 +2350,54 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   if (m) setTimeout(function () { var n = notes.filter(function (x) { return x.id === m[1]; })[0], el = n && byKey(n.sec); if (el) { var r = el.getBoundingClientRect(); window.scrollTo(0, r.top + window.scrollY + r.height * n.y - window.innerHeight / 2); } }, 400);
 })();
 </script>
-<button class="jjwn-tab" type="button" aria-controls="jjwn" aria-expanded="false">What's new</button><div class="jjwn" id="jjwn" role="dialog" aria-label="What was just added" hidden><button class="x" type="button" aria-label="Close">&times;</button><h3>Just added (Oct 15)</h3><p>Marked in gold on the pages. Click one to jump to it.</p><ul><li><a href="mix-favourites.html"><b>New menu</b><small>Furniture donation on top; Contact under About</small></a></li><li><a href="mix-hot-tub-removal.html"><b>Hot tub removal</b><small>New page (was a section on Junk removal)</small></a></li><li><a href="mix-contact.html"><b>Contact</b><small>New page: call, text, email, address, hours and a short form</small></a></li><li><a href="mix-furniture-removal.html"><b>Furniture removal</b><small>New page, linked with Furniture donation</small></a></li><li><a href="mix-appliance-removal.html"><b>Appliance removal</b><small>New page: fridges, washers, dryers, stoves</small></a></li><li><a href="mix-estate-cleanouts.html"><b>Estate clean-outs</b><small>New page</small></a></li><li><a href="mix-shed-removal.html"><b>Shed removal</b><small>New page, under Demolition</small></a></li><li><a href="mix-junk-removal.html#jobs"><b>Common jobs</b><small>Junk removal page: links to each service page</small></a></li><li><a href="mix-junk-removal.html"><b>Video at the top</b><small>Junk removal page: the video plays (muted) where the photo was</small></a></li><li><a href="mix-junk-removal.html"><b>Google rating</b><small>Junk removal page: 4.9 stars under the Call button, reviews section removed</small></a></li><li><a href="mix-favourites.html#take"><b>Can you take my ___?</b><small>Answers now link the matching page: try hot tub, couch, fridge, shed</small></a></li><li><a href="mix-junk-removal.html#pricing"><b>Junk removal prices</b><small>Junk removal page: prices and the 30-second estimator in one</small></a></li><li><a href="mix-bin-rental.html#nogo"><b>What can't go in a bin</b><small>Bin rental page, which now starts with the sizes</small></a></li><li><a href="mix-dirt-concrete-bins.html#nomix"><b>No mixing, ever</b><small>Dirt and concrete bins: the no-mixing rule</small></a></li><li><a href="mix-demolition.html#quote"><b>Photo quotes</b><small>Demolition: priced from photos, one list of jobs, questions</small></a></li><li><a href="mix-commercial.html#terms"><b>Built for business</b><small>Commercial: after hours, invoices and accounts, questions</small></a></li><li><a href="mix-furniture-bank.html#donate"><b>Pickup fee</b><small>Furniture donation: the fee and the tax receipt</small></a></li><li><a href="mix-about.html#story"><b>Our story</b><small>About: Jeff and Barbara, the award, licences</small></a></li><li><a href="mix-service-areas.html#areas"><b>All 47 towns</b><small>Service areas: the town list is now real text Google can read</small></a></li><li><a href="mix-favourites.html"><b>Customer count on the video</b><small>Home: replaces the licence and WSIB line over the video</small></a></li></ul><label><input type="checkbox" id="jjwn-hide"> Hide the gold marks</label></div><script>(function(){var t=document.querySelector('.jjwn-tab'),p=document.getElementById('jjwn'),c=document.getElementById('jjwn-hide'),k='jjHideNew';function get(){try{return localStorage.getItem(k)==='1'}catch(e){return false}}function set(v){try{localStorage.setItem(k,v?'1':'0')}catch(e){}document.documentElement.classList.toggle('jj-hide-new',v);c.checked=v}set(get());t.addEventListener('click',function(){var o=p.hidden;p.hidden=!o;t.setAttribute('aria-expanded',String(o))});p.querySelector('.x').addEventListener('click',function(){p.hidden=true;t.setAttribute('aria-expanded','false')});c.addEventListener('change',function(){set(c.checked)});document.addEventListener('keydown',function(e){if(e.key==='Escape')p.hidden=true});})();</script></body>
+<button class="jjwn-tab" type="button" aria-controls="jjwn" aria-expanded="false">What's new</button><div class="jjwn" id="jjwn" role="dialog" aria-label="What was just added" hidden><button class="x" type="button" aria-label="Close">&times;</button><h3>Just added (Oct 19)</h3><p>Marked in gold on the pages. Click one to jump to it.</p><ul><li><a href="mix-bin-rental.html#jobs-bins"><b>Bin finder quiz</b><small>Bin rental: two quick questions pick your bin (or skip to sizes and prices)</small></a></li><li><a href="mix-bin-rental.html#nogo"><b>Hazard tape: what can't go in</b><small>Bin rental: the no list on hazard tape, Nope and Yep</small></a></li><li><a href="mix-junk-removal.html#more"><b>Taped photo cards</b><small>Junk removal: haul it, load it, donate it or knock it down, as taped photos</small></a></li><li><a href="mix-bin-rental.html#ready"><b>Drop-off day, real photo</b><small>Bin rental: our truck dropping a bin, with numbered callouts</small></a></li><li><a href="mix-junk-removal.html#jobs"><b>Pick your job</b><small>Junk removal: the common jobs as a switcher, with a photo, what is included and a Call button</small></a></li><li><a href="mix-junk-removal.html#more"><b>Four ways we clear it</b><small>Junk removal: haul it, bin it, donate it or knock it down, on one road</small></a></li><li><a href="mix-bin-rental.html#jobs-bins"><b>Bin matcher</b><small>Bin rental: tap your job, see your bin, book it</small></a></li><li><a href="mix-bin-rental.html#ready"><b>Your driveway, drop-off day</b><small>Bin rental: a drawing of the spot, the wood and the truck, with the tips beside it</small></a></li><li><a href="mix-bin-rental.html#nogo"><b>What can't go in</b><small>Bin rental: the six things as stamped tiles</small></a></li><li><a href="mix-commercial.html#business"><b>Who we clear for</b><small>Commercial: property managers, offices, shops, realtors and rentals</small></a></li><li><a href="mix-commercial.html#terms"><b>How a business job runs</b><small>Commercial: walk-through, crew, after hours, one invoice</small></a></li><li><a href="mix-demolition.html#what"><b>Demolition, small to big</b><small>Demolition: the six jobs on a size scale</small></a></li><li><a href="mix-demolition.html#quote"><b>Photo quotes on a phone</b><small>Demolition: what texting us photos looks like</small></a></li><li><a href="mix-contractors.html#work"><b>Job-site spec sheet</b><small>Contractors: the 20 yard bin drawn to size, with what goes in</small></a></li><li><a href="mix-contractors.html#pricing"><b>Rate card</b><small>Contractors: the prices as a rate card</small></a></li><li><a href="mix-contractors.html#trusted"><b>Trusted by (slot)</b><small>Contractors: room for 6 to 8 contractor logos, once they agree</small></a></li><li><a href="mix-furniture-bank.html#donate"><b>A chair's trip</b><small>Furniture donation: from your home to a new one</small></a></li><li><a href="mix-about.html#timeline"><b>Since 1992</b><small>About: the story as a timeline</small></a></li><li><a href="mix-about.html#creds"><b>Badges</b><small>About: licence, WSIB, award and rating as badges</small></a></li><li><a href="mix-guides.html#guides"><b>Guides, magazine style</b><small>Tips & guides: a lead guide, the rest, and what is coming</small></a></li><li><a href="mix-roofing-bins.html"><b>Roofing bins</b><small>New page: bins for shingles and roofers (gaps for Jeff: size, squares, weight)</small></a></li><li><a href="mix-service-areas.html#areas"><b>Nearby towns</b><small>Service areas: "and nearby" in every region, and "don't see your town? call us"</small></a></li></ul><label><input type="checkbox" id="jjwn-hide"> Hide the gold marks</label></div><script>(function(){var t=document.querySelector('.jjwn-tab'),p=document.getElementById('jjwn'),c=document.getElementById('jjwn-hide'),k='jjHideNew';function get(){try{return localStorage.getItem(k)==='1'}catch(e){return false}}function set(v){try{localStorage.setItem(k,v?'1':'0')}catch(e){}document.documentElement.classList.toggle('jj-hide-new',v);c.checked=v}set(get());t.addEventListener('click',function(){var o=p.hidden;p.hidden=!o;t.setAttribute('aria-expanded',String(o))});p.querySelector('.x').addEventListener('click',function(){p.hidden=true;t.setAttribute('aria-expanded','false')});c.addEventListener('change',function(){set(c.checked)});document.addEventListener('keydown',function(e){if(e.key==='Escape')p.hidden=true});})();</script><script>
+(function () {
+  [].forEach.call(document.querySelectorAll('[data-r9tabs]'), function (w) {
+    var tabs = [].slice.call(w.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    function pick(i, focus) {
+      tabs.forEach(function (t, j) { var on = i === j; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
+      if (focus) tabs[i].focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { pick(i); });
+      t.addEventListener('keydown', function (e) {
+        var n = tabs.length, k = e.key;
+        if (k === 'ArrowRight' || k === 'ArrowDown') { e.preventDefault(); pick((i + 1) % n, true); }
+        else if (k === 'ArrowLeft' || k === 'ArrowUp') { e.preventDefault(); pick((i - 1 + n) % n, true); }
+        else if (k === 'Home') { e.preventDefault(); pick(0, true); }
+        else if (k === 'End') { e.preventDefault(); pick(n - 1, true); }
+      });
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('[data-quiz]').forEach(function(q){
+    var steps = q.querySelectorAll('[data-step-id]'), hist = [];
+    function light(lit){
+      q.querySelectorAll('[data-bin]').forEach(function(f){
+        if (lit === null) { f.classList.remove('lit', 'dim'); return; }
+        var l = lit.split(' ').indexOf(f.dataset.bin) >= 0; f.classList.toggle('lit', l); f.classList.toggle('dim', !l); });
+    }
+    function go(id, push){
+      var cur = q.querySelector('[data-step-id]:not([hidden])');
+      if (push && cur) hist.push(cur.dataset.stepId);
+      steps.forEach(function(s){ s.hidden = s.dataset.stepId !== id; });
+      var now = q.querySelector('[data-step-id="' + id + '"]');
+      q.classList.toggle('done', id.charAt(0) === 'r');
+      if (id === 's0') { hist = []; light(null); } else if (id === 's1') light(null);
+      else if (now && now.dataset.lit !== undefined) light(now.dataset.lit);
+      var f = now && now.querySelector('button, a'); if (f && push) f.focus({preventScroll: true});
+    }
+    q.addEventListener('click', function(e){
+      var b = e.target.closest('[data-go]'), k = e.target.closest('[data-back]');
+      if (b) { if (b.dataset.lit !== undefined) light(b.dataset.lit); go(b.dataset.go, b.dataset.go !== 's0'); }
+      else if (k) { go(hist.pop() || 's0', false); }
+    });
+  });
+})();
+</script>
+</body>
 </html>
