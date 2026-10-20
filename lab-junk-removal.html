@@ -3482,7 +3482,7 @@ window.dcViz = function(el){
       p.style.left = x + '%'; p.style.backgroundPosition = Math.round(Math.random() * 100) + '% ' + Math.round(Math.random() * 100) + '%'; drops.appendChild(p);
       var a;
       if (box) {   // land on the load inside the open top: lower when the bin is empty, up near the rim when it's full, then settle out of sight
-        var land = 56 + img.offsetHeight * (.24 - fill * .12 + Math.random() * .05), r2 = r * .25;
+        var land = 56 + img.offsetHeight * (+box.dataset.l0 - fill * +box.dataset.l1 + Math.random() * .05), r2 = r * .25;
         a = p.animate([{transform: 'translateY(-10px) rotate(0deg) scale(1)', opacity: 0},
                        {opacity: 1, offset: .12},
                        {transform: 'translateY(' + land + 'px) rotate(' + r + 'deg) scale(1)', opacity: 1, offset: .72, easing: 'ease-out'},
@@ -3498,9 +3498,15 @@ window.dcViz = function(el){
     bin = String(bin);
     el.querySelectorAll('[data-bin]').forEach(function(x){ x.classList.toggle('off', x.dataset.bin !== bin); });
     var f = Math.max(0, Math.min(frac, 1)), box = el.querySelector('.dc-3dbox'); fill = f;
-    if (box) {   // half fades in over the first half, full over the second
-      box.querySelector('.dc-3d-half').style.opacity = Math.min(f / .5, 1);
-      box.querySelector('.dc-3d-full').style.opacity = Math.max((f - .5) / .5, 0);
+    if (box) {
+      if (box.dataset.mat !== el.dataset.mat) {   // dirt <-> concrete: load the other material's pictures
+        box.dataset.mat = el.dataset.mat;
+        box.querySelector('.dc-3d-half').src = box.dataset.base + el.dataset.mat + '-half.webp';
+        box.querySelector('.dc-3d-full').src = box.dataset.base + el.dataset.mat + '-full.webp';
+      }
+      // clean steps, never left half-blended (that looks hazy): empty, then the half load, then the full load from 75%; the CSS fade smooths the swap
+      box.querySelector('.dc-3d-half').style.opacity = f > .02 ? 1 : 0;
+      box.querySelector('.dc-3d-full').style.opacity = f >= .75 ? 1 : 0;
     } else {
       var lvl = el.querySelector('.dc-load[data-bin="' + bin + '"] .dc-lvl'), L = el.querySelector('.dc-load[data-bin="' + bin + '"]'),
           span = +L.style.getPropertyValue('--bot') - +L.style.getPropertyValue('--top');
