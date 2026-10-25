@@ -1214,48 +1214,6 @@ h1.h-sec{font-size:clamp(2rem,4.4vw,3.5rem);letter-spacing:-.035em;line-height:1
 .cimg.need{border-radius:var(--r-lg) var(--r-lg) 0 0;border-width:0 0 2px}
 .phimg.need{box-shadow:none}
 
-/* ---------- review notes (mock-up tool) ---------- */
-.nt-btn{position:fixed;left:0;top:calc(50% + 78px);z-index:140;display:none;align-items:center;gap:8px;padding:12px 14px 12px 12px;border:0;border-radius:0 14px 14px 0;
-  background:#f2b705;color:#15191c;font:700 .8125rem/1 var(--sans);cursor:pointer;box-shadow:0 0 0 2px #fff,0 10px 26px -10px rgba(0,0,0,.5);writing-mode:vertical-rl}
-.nt-btn b{writing-mode:horizontal-tb;display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#15191c;color:#fff;font-size:.6875rem}
-.nt-btn b:empty{display:none}
-@media (min-width:900px){.nt-btn{display:inline-flex}.mv-btn{top:calc(50% - 60px)}}
-body.nt-on{cursor:crosshair}
-body.nt-on a,body.nt-on button,body.nt-on input{cursor:crosshair}
-.nt-bar{position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:100000;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;max-width:calc(100vw - 20px);padding:8px 10px 8px 16px;border-radius:999px;
-  background:#15191c;color:#fff;font:500 .875rem/1.2 var(--sans);box-shadow:0 14px 34px -12px rgba(0,0,0,.6);cursor:default}
-.nt-bar b{color:#f2b705}
-.nt-bar input{width:120px;height:34px;border:0;border-radius:999px;padding:0 12px;font:500 .875rem/1 var(--sans);background:#2b3138;color:#fff;cursor:text!important}
-.nt-bar input::placeholder{color:#9aa3aa}
-.nt-bar button{border:0;border-radius:999px;height:34px;padding:0 14px;font:600 .8125rem/1 var(--sans);cursor:pointer!important;background:#2b3138;color:#fff}
-.nt-bar button.go{background:#f2b705;color:#15191c}
-.nt-pin{position:absolute;z-index:99990;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50% 50% 50% 4px;background:#f2b705;color:#15191c;border:2px solid #15191c;display:none;place-items:center;
-  font:800 .8125rem/1 var(--sans);cursor:pointer!important;box-shadow:0 6px 14px -4px rgba(0,0,0,.55)}
-body.nt-on .nt-pin{display:grid}
-.nt-pop{position:absolute;z-index:100001;width:min(320px,calc(100vw - 24px));padding:14px;border-radius:16px;background:#fff;color:#15191c;box-shadow:0 24px 50px -16px rgba(0,0,0,.55),0 0 0 1px rgba(21,25,28,.12);cursor:default;font-family:var(--sans)}
-.nt-pop small{display:block;margin-bottom:8px;color:#59616a;font-size:.75rem;line-height:1.35}
-.nt-pop textarea{display:block;width:100%;min-height:92px;box-sizing:border-box;border:1.5px solid #d2d8d4;border-radius:10px;padding:10px;font:400 .9375rem/1.4 var(--sans);resize:vertical;cursor:text!important}
-.nt-pop textarea:focus{outline:0;border-color:#15191c}
-.nt-pop .row{display:flex;gap:8px;margin-top:10px}
-.nt-pop button{border:0;border-radius:999px;height:36px;padding:0 16px;font:600 .8125rem/1 var(--sans);cursor:pointer!important;background:#eef1ef;color:#15191c}
-.nt-pop button.go{background:#15191c;color:#fff}
-.nt-pop button.del{margin-left:auto;color:#b42318;background:#fdeceb}
-.nt-list{position:fixed;inset:0;z-index:100002;display:grid;place-items:center;padding:16px;background:rgba(21,25,28,.6);cursor:default}
-.nt-card{width:min(680px,100%);max-height:calc(100vh - 32px);overflow:auto;border-radius:20px;background:#fff;color:#15191c;padding:22px;font-family:var(--sans)}
-.nt-card h2{font-size:1.375rem;margin:0 0 4px}
-.nt-card p.sub{margin:0 0 14px;color:#59616a;font-size:.875rem}
-.nt-card h3{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#59616a;margin:18px 0 6px}
-.nt-card ol{margin:0;padding:0;list-style:none;display:grid;gap:8px}
-.nt-card li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:10px 12px;border:1px solid #e3e7e4;border-radius:12px}
-.nt-card li i{font-style:normal;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#f2b705;font-weight:800;font-size:.75rem}
-.nt-card li span{font-size:.9375rem;line-height:1.4;white-space:pre-wrap}
-.nt-card li span em{display:block;font-style:normal;font-size:.75rem;color:#59616a;margin-bottom:2px;font-family:var(--sans)!important;color:#59616a!important;font-size:.75rem!important}
-.nt-card li a{font-size:.8125rem;color:#17803a;white-space:nowrap}
-.nt-card .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.nt-card .row button{border:0;border-radius:999px;height:40px;padding:0 18px;font:600 .875rem/1 var(--sans);cursor:pointer;background:#eef1ef;color:#15191c}
-.nt-card .row button.go{background:#15191c;color:#fff}
-.nt-card .row button.del{margin-left:auto;background:#fdeceb;color:#b42318}
-
 /* request forms */
 .reqs{background:#fff;border-top:1px solid var(--line)}
 .req-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
@@ -1502,6 +1460,31 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 .jjwn label{display:flex;gap:8px;align-items:center;font-size:13px;border-top:1px solid #eee;padding-top:10px;cursor:pointer}
 .jjwn .x{position:absolute;right:8px;top:6px;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:#5b6168}
 @media (max-width:899px){.jjwn-tab{top:auto;bottom:96px}.jjwn{top:auto;bottom:90px;transform:none}}
+
+/* demo: the What's new tour (tour.py). The old gold "Just added" pills and dashed outlines are off: the tour shows each change instead */
+.jjnew{display:none!important}
+.jjnew-sec.now,.jjnew-card.now{outline:0!important}
+.jjt-tab{position:fixed;left:0;top:calc(50% + 120px);z-index:9998;writing-mode:vertical-rl;transform:rotate(180deg);background:#f2b705;color:#23282d;
+  border:0;border-radius:0 10px 10px 0;padding:14px 8px;font:700 12px/1 system-ui,sans-serif;letter-spacing:.04em;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.jjt-dim{position:fixed;inset:0;z-index:9995;background:rgba(15,18,20,.5);pointer-events:none}
+.jjt-spot{position:fixed;z-index:9996;border-radius:16px;box-shadow:0 0 0 4px #f2b705;pointer-events:none}
+.jjt-card{position:fixed;z-index:9999;left:24px;bottom:24px;width:min(380px,calc(100vw - 24px));background:#fff;color:#23282d;border-radius:16px;
+  border:2px solid #f2b705;box-shadow:0 18px 50px -10px rgba(0,0,0,.5);padding:16px 18px 14px;font:15px/1.45 system-ui,sans-serif}
+.jjt-card[hidden],.jjt-spot[hidden],.jjt-dim[hidden],.jjt-tab[hidden]{display:none}
+.jjt-k{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8a6a00}
+.jjt-card h3{margin:0 0 6px;font-size:17px;line-height:1.25}
+.jjt-card p.jjt-t{margin:0 0 14px;color:#4a5057;font-size:14px}
+.jjt-row{display:flex;gap:8px;align-items:center}
+.jjt-row button{font:600 14px/1 system-ui,sans-serif;border-radius:999px;padding:11px 16px;cursor:pointer;border:1.5px solid #d2d8d4;background:#fff;color:#23282d}
+.jjt-row .jjt-next{margin-left:auto;background:#23282d;border-color:#23282d;color:#fff}
+.jjt-x{position:absolute;right:8px;top:6px;border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:#5b6168;padding:4px 8px}
+.jjt-dots{display:flex;gap:4px;margin:0 0 10px}
+.jjt-dots i{width:18px;height:4px;border-radius:2px;background:#e6e1cf}
+.jjt-dots i.on{background:#f2b705}
+@media (max-width:767px){
+  .jjt-card{left:12px;right:12px;width:auto;bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  .jjt-tab{top:auto;bottom:150px}
+}
 
 /* ===== round Oct 19: shared bits ===== */
 .r9 .r9-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
@@ -2408,116 +2391,44 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   });
 })();
 </script>
-<script>
-(function () {
-  var KEY = 'jjNotes', WHO = 'jjNotesWho', PAGE = location.pathname.split('/').pop() || 'index.html';
-  var TITLE = /favourites|index/.test(PAGE) ? 'Home' : (document.title || PAGE).replace(/ · Jeff.*$/, '');
-  function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
-  function save(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
-  function who() { try { return localStorage.getItem(WHO) || ''; } catch (e) { return ''; } }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  var notes = load(), on = false, bar, pop;
-
-  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nt-btn';
-  document.body.appendChild(btn);
-  function badge() { btn.innerHTML = (on ? 'Notes on' : 'Add notes') + '<b>' + (notes.length || '') + '</b>'; }
-
-  /* where on the page a note sits: the section it is in, plus how far across and down that section */
-  function blocks() { return [].slice.call(document.querySelectorAll('main > section, main > div > section, header.site-head, footer')); }
-  function keyOf(el) { return el.id ? '#' + el.id : el.tagName.toLowerCase() + ':' + blocks().indexOf(el); }
-  function byKey(k) { if (k.charAt(0) === '#') return document.getElementById(k.slice(1)); var i = +k.split(':')[1]; return blocks()[i] || null; }
-  function label(el) { var h = el.querySelector('h1,h2,h3'); return h ? h.textContent.replace(/\s+/g, ' ').trim().slice(0, 70) : (el.tagName === 'FOOTER' ? 'Footer' : el.tagName === 'HEADER' ? 'Menu bar' : 'Top of page'); }
-
-  function pins() {
-    [].forEach.call(document.querySelectorAll('.nt-pin'), function (p) { p.remove(); });
-    notes.forEach(function (n, i) {
-      if (n.page !== PAGE) return;
-      var el = byKey(n.sec); if (!el) return;
-      var r = el.getBoundingClientRect(), p = document.createElement('button');
-      p.type = 'button'; p.className = 'nt-pin'; p.textContent = i + 1; p.title = n.text;
-      p.style.left = (r.left + window.scrollX + r.width * n.x) + 'px'; p.style.top = (r.top + window.scrollY + r.height * n.y) + 'px';
-      p.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); compose(n, e.pageX, e.pageY); });
-      document.body.appendChild(p);
-    });
-    badge();
-  }
-  function closePop() { if (pop) { pop.remove(); pop = null; } }
-  function compose(n, x, y) {
-    closePop();
-    var isNew = !n.id;
-    pop = document.createElement('div'); pop.className = 'nt-pop';
-    pop.innerHTML = '<small>' + esc(TITLE) + ' › ' + esc(n.where) + '</small><textarea placeholder="What should change here? Add, remove, reword…"></textarea>' +
-      '<div class="row"><button type="button" class="go">Save note</button><button type="button" class="no">Cancel</button>' + (isNew ? '' : '<button type="button" class="del">Delete</button>') + '</div>';
-    document.body.appendChild(pop);
-    var w = pop.offsetWidth; pop.style.left = Math.max(12, Math.min(x - 20, window.scrollX + document.documentElement.clientWidth - w - 12)) + 'px'; pop.style.top = (y + 18) + 'px';
-    var ta = pop.querySelector('textarea'); ta.value = n.text || ''; ta.focus();
-    pop.addEventListener('click', function (e) { e.stopPropagation(); });
-    pop.querySelector('.no').addEventListener('click', closePop);
-    pop.querySelector('.go').addEventListener('click', function () {
-      var t = ta.value.trim(); if (!t) { ta.focus(); return; }
-      n.text = t; n.who = who(); n.at = new Date().toISOString();
-      if (isNew) { n.id = Date.now() + '-' + Math.round(Math.random() * 1e6); notes.push(n); }
-      save(notes); closePop(); pins();
-    });
-    if (!isNew) pop.querySelector('.del').addEventListener('click', function () { notes = notes.filter(function (m) { return m.id !== n.id; }); save(notes); closePop(); pins(); });
-  }
-  function onClick(e) {
-    if (!on || e.target.closest('.nt-bar,.nt-pop,.nt-list,.nt-btn,.nt-pin,.mv-btn,.mv')) return;
-    e.preventDefault(); e.stopPropagation();
-    var el = e.target.closest('main > section, main > div > section, header.site-head, footer') || blocks()[0]; if (!el) return;
-    var r = el.getBoundingClientRect();
-    compose({ page: PAGE, title: TITLE, sec: keyOf(el), where: label(el), x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height, view: window.innerWidth < 700 ? 'phone' : 'desktop' }, e.pageX, e.pageY);
-  }
-  function text() {
-    var out = 'Website notes' + (who() ? ' from ' + who() : '') + '\n', last = '';
-    notes.forEach(function (n, i) { if (n.title !== last) { out += '\n' + n.title.toUpperCase() + '\n'; last = n.title; } out += (i + 1) + '. [' + n.where + (n.view === 'phone' ? ', phone view' : '') + '] ' + n.text + '\n'; });
-    return out;
-  }
-  function list() {
-    var ov = document.createElement('div'); ov.className = 'nt-list';
-    var html = '<div class="nt-card"><h2>All notes (' + notes.length + ')</h2><p class="sub">Saved in this browser. Send them when you are done.</p>', last = '';
-    if (!notes.length) html += '<p class="sub">No notes yet. Close this, then click anything on a page to leave one.</p>';
-    notes.forEach(function (n, i) {
-      if (n.title !== last) { html += (last ? '</ol>' : '') + '<h3>' + esc(n.title) + '</h3><ol>'; last = n.title; }
-      html += '<li><i>' + (i + 1) + '</i><span><em>' + esc(n.where) + (n.view === 'phone' ? ' · phone view' : '') + '</em>' + esc(n.text) + '</span><a href="' + esc(n.page) + '#nt=' + n.id + '">Go to it</a></li>';
-    });
-    html += (last ? '</ol>' : '') + '<div class="row"><button type="button" class="go" data-a="mail">Email my notes</button><button type="button" data-a="copy">Copy all</button><button type="button" data-a="file">Download</button>' +
-      '<button type="button" data-a="close">Close</button>' + (notes.length ? '<button type="button" class="del" data-a="clear">Delete all</button>' : '') + '</div></div>';
-    ov.innerHTML = html; document.body.appendChild(ov);
-    ov.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var a = e.target.getAttribute && e.target.getAttribute('data-a');
-      if (e.target === ov || a === 'close') { ov.remove(); return; }
-      if (a === 'copy') { (navigator.clipboard ? navigator.clipboard.writeText(text()) : Promise.reject()).then(function () { e.target.textContent = 'Copied'; }, function () { window.prompt('Copy the notes:', text()); }); }
-      if (a === 'mail') { location.href = 'mailto:?subject=' + encodeURIComponent("Jeff's Junk website notes" + (who() ? ' from ' + who() : '')) + '&body=' + encodeURIComponent(text()); }
-      if (a === 'file') { var l = document.createElement('a'); l.href = URL.createObjectURL(new Blob([text()], { type: 'text/plain' })); l.download = 'website-notes.txt'; l.click(); }
-      if (a === 'clear' && window.confirm('Delete every note? This cannot be undone.')) { notes = []; save(notes); ov.remove(); pins(); }
-    });
-  }
-  function set(v) {
-    on = v; document.body.classList.toggle('nt-on', on); closePop();
-    if (on && !bar) {
-      bar = document.createElement('div'); bar.className = 'nt-bar';
-      bar.innerHTML = '<span><b>Notes on.</b> Click anything to leave a note.</span><input type="text" placeholder="Your name" aria-label="Your name" maxlength="40"><button type="button" data-a="list">All notes</button><button type="button" class="go" data-a="done">Done</button>';
-      document.body.appendChild(bar);
-      var inp = bar.querySelector('input'); inp.value = who();
-      inp.addEventListener('input', function () { try { localStorage.setItem(WHO, inp.value.trim()); } catch (e) {} });
-      bar.addEventListener('click', function (e) { e.stopPropagation(); var a = e.target.getAttribute('data-a'); if (a === 'list') list(); if (a === 'done') set(false); });
-    }
-    if (bar) bar.style.display = on ? '' : 'none';
-    try { sessionStorage.setItem('jjNotesOn', on ? '1' : ''); } catch (e) {}
-    pins();
-  }
-  btn.addEventListener('click', function (e) { e.stopPropagation(); set(!on); });
-  document.addEventListener('click', onClick, true);
-  window.addEventListener('resize', pins); window.addEventListener('load', pins);
-  var keep = ''; try { keep = sessionStorage.getItem('jjNotesOn'); } catch (e) {}
-  set(keep === '1' || /#nt=/.test(location.hash));
-  var m = /#nt=([\w-]+)/.exec(location.hash);
-  if (m) setTimeout(function () { var n = notes.filter(function (x) { return x.id === m[1]; })[0], el = n && byKey(n.sec); if (el) { var r = el.getBoundingClientRect(); window.scrollTo(0, r.top + window.scrollY + r.height * n.y - window.innerHeight / 2); } }, 400);
-})();
-</script>
-<button class="jjwn-tab" type="button" aria-controls="jjwn" aria-expanded="false">What's new</button><div class="jjwn" id="jjwn" role="dialog" aria-label="What was just added" hidden><button class="x" type="button" aria-label="Close">&times;</button><h3>Just added (Oct 19)</h3><p>Marked in gold on the pages. Click one to jump to it.</p><ul><li><a href="mix-bin-rental.html#jobs-bins"><b>Bin finder quiz</b><small>Bin rental: two quick questions pick your bin (or skip to sizes and prices)</small></a></li><li><a href="mix-bin-rental.html#nogo"><b>Hazard tape: what can't go in</b><small>Bin rental: the no list on hazard tape, Nope and Yep</small></a></li><li><a href="mix-junk-removal.html#more"><b>Taped photo cards</b><small>Junk removal: haul it, load it, donate it or knock it down, as taped photos</small></a></li><li><a href="mix-bin-rental.html#ready"><b>Drop-off day, real photo</b><small>Bin rental: our truck dropping a bin, with numbered callouts</small></a></li><li><a href="mix-junk-removal.html#estimate"><b>20 yard bin callout</b><small>Junk removal: "20 yard bin · About 8 pickup truck loads · Bigger than the 14 yard most companies use" above the slider (no competitor names)</small></a></li><li><a href="mix-junk-removal.html#request"><b>Send photos for a price (form)</b><small>Junk removal: a short photo form after the prices, with your estimate attached. On computers the top and estimator photo buttons now go here instead of opening an email</small></a></li><li><a href="mix-junk-removal.html"><b>Tidier top and shorter phone layout</b><small>Junk removal: the "Or email..." line under the top buttons is gone, the pricing sentence is said once, the estimator picture sits side by side on phones, and the four photo cards swipe on phones</small></a></li><li><a href="mix-junk-removal.html#estimate"><b>Junk removal prices: $125 to $950</b><small>Junk removal page only: the 20 yard bin, minimum $125, then 25, 50, 75 and 100% of $950 rounded to the nearest $25 ($250, $475, $725, $950). New buttons (a little bin fills to each level) and a striped slider with a truck. Other pages still say $600 until Jake says</small></a></li><li><a href="mix-junk-removal.html#estimate"><b>Text a photo with your estimate</b><small>Junk removal: after the estimate, Call to confirm and Text a photo (Email a photo on computers), with the load and price already written in</small></a></li><li><a href="mix-junk-removal.html#how"><b>How junk pickup works</b><small>Junk removal: three steps and a Call / Text row, after the prices</small></a></li><li><a href="mix-junk-removal.html#faq"><b>No deposit on junk removal</b><small>Junk removal: the $450 deposit line is gone from "How can I pay?" (it is for bin rentals in Barrie)</small></a></li><li><a href="mix-contact.html#request"><b>Photo box on the request forms</b><small>Bin rental, Commercial, Contractors, Demolition, Shed removal, Furniture donation and Contact: add up to 3 photos, shrunk in the browser so they send fast. Mockup only: on staging the form needs photo fields first</small></a></li><li><a href="mix-favourites.html"><b>Home: Text a photo for a free quote</b><small>Home: the top now has two buttons, Talk junk with Jeff and a white Text a photo for a free quote (it replaces Get a price in 30 seconds), with a hand-drawn arrow and "Quotes are always free!". Computers: Send a photo, to the Contact form. Home is on WordPress, so it waits for Jake</small></a></li><li><a href="mix-junk-removal.html"><b>Text a photo for a price</b><small>Junk removal, Appliance, Furniture, Estate and Hot tub: a Text button right after Call at the top (site review idea 3); on computers it is an Email a photo button with the address written out (Hot tub keeps its own text button on phones)</small></a></li><li><a href="mix-bin-rental.html"><b>Watch a drop-off in 60 seconds</b><small>Bin rental: a button under the header buttons plays the bin video with sound (idea from quo.com)</small></a></li><li><a href="mix-bin-rental.html"><b>Contractor logo strip</b><small>Bin rental: six logo slots under the trust line, waiting for Jeff (question 21)</small></a></li><li><a href="mix-bin-rental.html#ready-to-book"><b>Ready to book? block</b><small>Bin rental: Call, Book online or Text a photo, just before the booking form</small></a></li><li><a href="mix-junk-removal.html#jobs"><b>Pick your job</b><small>Junk removal: the common jobs as a switcher, with a photo, what is included and a Call button</small></a></li><li><a href="mix-junk-removal.html#more"><b>Four ways we clear it</b><small>Junk removal: haul it, bin it, donate it or knock it down, on one road</small></a></li><li><a href="mix-bin-rental.html#jobs-bins"><b>Bin matcher</b><small>Bin rental: tap your job, see your bin, book it</small></a></li><li><a href="mix-bin-rental.html#ready"><b>Your driveway, drop-off day</b><small>Bin rental: a drawing of the spot, the wood and the truck, with the tips beside it</small></a></li><li><a href="mix-bin-rental.html#nogo"><b>What can't go in</b><small>Bin rental: the six things as stamped tiles</small></a></li><li><a href="mix-commercial.html#business"><b>Who we clear for</b><small>Commercial: property managers, offices, shops, realtors and rentals</small></a></li><li><a href="mix-commercial.html#terms"><b>How a business job runs</b><small>Commercial: walk-through, crew, after hours, one invoice</small></a></li><li><a href="mix-demolition.html#what"><b>Demolition, small to big</b><small>Demolition: the six jobs on a size scale</small></a></li><li><a href="mix-demolition.html#quote"><b>Photo quotes on a phone</b><small>Demolition: what texting us photos looks like</small></a></li><li><a href="mix-contractors.html#work"><b>Job-site spec sheet</b><small>Contractors: the 20 yard bin drawn to size, with what goes in</small></a></li><li><a href="mix-contractors.html#pricing"><b>Rate card</b><small>Contractors: the prices as a rate card</small></a></li><li><a href="mix-contractors.html#trusted"><b>Trusted by (slot)</b><small>Contractors: room for 6 to 8 contractor logos, once they agree</small></a></li><li><a href="mix-furniture-bank.html#donate"><b>A chair's trip</b><small>Furniture donation: from your home to a new one</small></a></li><li><a href="mix-about.html#timeline"><b>Since 1992</b><small>About: the story as a timeline</small></a></li><li><a href="mix-about.html#creds"><b>Badges</b><small>About: licence, WSIB, award and rating as badges</small></a></li><li><a href="mix-guides.html#guides"><b>Guides, magazine style</b><small>Tips & guides: a lead guide, the rest, and what is coming</small></a></li><li><a href="mix-roofing-bins.html"><b>Roofing bins</b><small>New page: bins for shingles and roofers (gaps for Jeff: size, squares, weight)</small></a></li><li><a href="mix-service-areas.html#areas"><b>Nearby towns</b><small>Service areas: "and nearby" in every region, and "don't see your town? call us"</small></a></li></ul><label><input type="checkbox" id="jjwn-hide"> Hide the gold marks</label></div><script>(function(){var t=document.querySelector('.jjwn-tab'),p=document.getElementById('jjwn'),c=document.getElementById('jjwn-hide'),k='jjHideNew';function get(){try{return localStorage.getItem(k)==='1'}catch(e){return false}}function set(v){try{localStorage.setItem(k,v?'1':'0')}catch(e){}document.documentElement.classList.toggle('jj-hide-new',v);c.checked=v}set(get());t.addEventListener('click',function(){var o=p.hidden;p.hidden=!o;t.setAttribute('aria-expanded',String(o))});p.querySelector('.x').addEventListener('click',function(){p.hidden=true;t.setAttribute('aria-expanded','false')});c.addEventListener('change',function(){set(c.checked)});document.addEventListener('keydown',function(e){if(e.key==='Escape')p.hidden=true});})();</script><script>
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-next" type="button">Next</button></div></div><script>(function(){var S=[{"page": "mix-favourites.html", "sel": ".hero .hero-btns", "title": "Two buttons at the top", "text": "Talk junk with Jeff, and Text a photo for a free quote, which replaced \"Get a price in 30 seconds\". The hand-drawn arrow says quotes are always free. On a computer it says Send a photo and goes to the Contact form."}, {"page": "mix-junk-removal.html", "sel": ".pagehead .hero-btns", "title": "Junk removal: the top", "text": "The \"Or email... Text it to...\" line is gone. On a computer the photo button goes to the new photo form instead of opening an email."}, {"page": "mix-junk-removal.html", "sel": "#estimate .bin-tag", "title": "20 yard bin callout", "text": "About 8 pickup truck loads, bigger than the 14 yard most companies use. No competitor names."}, {"page": "mix-junk-removal.html", "sel": "#estimate .range, #estimate .ticks", "title": "New prices, buttons and slider", "text": "$125 / $250 / $475 / $725 / $950. Each button has a little bin filled to its level, and the picked one turns green. The slider has a truck on the handle. Try it."}, {"page": "mix-junk-removal.html", "sel": "#estimate .est-actions", "title": "After the estimate", "text": "Call to confirm, and Text a photo with the load and price already written in. Computers get Send photos. The note says the price is a starting point: heavy items, stairs and basements can add to it."}, {"page": "mix-junk-removal.html", "sel": "#request .req", "title": "Send photos for a price", "text": "A short photo form: name, phone, town, up to 3 photos, and what it is and where. It shows no estimate. Nothing is sent from the mockup."}, {"page": "mix-junk-removal.html", "sel": "#how .sec-head, #how .jrhow-steps", "title": "How junk pickup works", "text": "Three steps with Call and Text buttons. Quotes are free, even if we come out to look."}, {"page": "mix-junk-removal.html", "sel": "#more .lw", "title": "Photo cards", "text": "On phones the four cards are one row you swipe sideways. Computers are unchanged."}, {"page": "mix-junk-removal.html", "sel": "#faq details:nth-of-type(4)", "title": "No deposit on junk removal", "text": "\"How can I pay?\" no longer mentions the $450 deposit. That is for bin rentals in Barrie."}],ID="2026-10-25-junk-home",N={"mix-favourites.html": "Home", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental"};
+var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
+  tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
+  dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),cur=-1,el=null,raf=0,
+  reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!S.length){tab.hidden=true;return;}
+function seen(){try{return localStorage.getItem('jjTourSeen')===ID}catch(e){return false}}
+function done(){try{localStorage.setItem('jjTourSeen',ID)}catch(e){}card.hidden=true;spot.hidden=true;dim.hidden=true;tab.hidden=false;cur=-1;el=null;cancelAnimationFrame(raf);
+  if(location.search.indexOf('jjtour')>-1)history.replaceState(null,'',location.pathname+location.hash);}
+function pname(p){return N[p]||p.replace(/^mix-|\.html$/g,'').replace(/-/g,' ');}
+function box(){var l=1e9,tp=1e9,rr=-1e9,b=-1e9;el.forEach(function(e){var q=e.getBoundingClientRect();if(!q.width&&!q.height)return;l=Math.min(l,q.left);tp=Math.min(tp,q.top);rr=Math.max(rr,q.right);b=Math.max(b,q.bottom);});return {left:l,top:tp,width:rr-l,height:b-tp};}
+function follow(){if(!el)return;var r=box(),pad=8,x=r.left-pad,y=r.top-pad,w=r.width+pad*2,hh=r.height+pad*2;
+  spot.style.left=x+'px';spot.style.top=y+'px';spot.style.width=w+'px';spot.style.height=hh+'px';
+  dim.style.clipPath="path(evenodd,'M0 0H"+innerWidth+"V"+innerHeight+"H0Z M"+x+" "+y+"h"+w+"v"+hh+"h"+(-w)+"Z')";
+  raf=requestAnimationFrame(follow);}
+function fill(i,title,text,nextLabel){dots.innerHTML=S.map(function(_,j){return '<i'+(j===i?' class="on"':'')+'></i>'}).join('');
+  k.textContent="What's new · "+(i+1)+' of '+S.length;h.textContent=title;t.textContent=text;back.hidden=i<=0;next.textContent=nextLabel;card.hidden=false;tab.hidden=true;}
+function go(i){if(i>=S.length){done();return;}var s=S[i];if(s.page!==here){location.href=s.page+'?jjtour='+i;return;}
+  cur=i;el=[].slice.call(document.querySelectorAll(s.sel)).filter(function(e){return e.getClientRects().length;});if(!el.length)el=null;else el.forEach(function(e){if(e.tagName==='DETAILS')e.open=true;});var n=S[i+1];
+  fill(i,s.title,s.text,!n?'Done':(n.page!==here?'Next: '+pname(n.page)+' page →':'Next'));
+  cancelAnimationFrame(raf);
+  if(el){var r=box(),top0=innerWidth<768?84:96,bot0=card.getBoundingClientRect().top-12,
+      room=bot0-top0,off=r.height<room?top0+(room-r.height)/2:top0;
+    window.scrollTo({top:Math.max(0,r.top+scrollY-off),behavior:reduce?'auto':'smooth'});spot.hidden=false;dim.hidden=false;follow();}
+  else{spot.hidden=true;dim.hidden=true;}}
+function intro(i){cur=-1;el=null;spot.hidden=true;dim.hidden=true;
+  fill(0,S.length+' new '+(S.length>1?'things':'thing')+' since last time','The tour starts on the '+pname(S[i].page)+' page and takes you to each one.','Start →');
+  back.hidden=true;next.onclick=function(){next.onclick=null;go(i);};}
+next.addEventListener('click',function(){if(next.onclick)return;go(cur+1);});
+back.addEventListener('click',function(){if(cur>0)go(cur-1);});
+card.querySelector('.jjt-x').addEventListener('click',done);
+tab.addEventListener('click',function(){next.onclick=null;go(0);});
+document.addEventListener('keydown',function(e){if(card.hidden)return;if(e.key==='Escape')done();});
+window.jjTourGo=go;   // for testing: jump to a step
+var m=/[?&]jjtour=(\d+)/.exec(location.search);
+function start(){if(m)go(+m[1]);else if(!seen()){if(S[0].page===here)go(0);else intro(0);}}
+if(document.readyState==='complete')setTimeout(start,400);else addEventListener('load',function(){setTimeout(start,400);});
+})();</script><script>
 (function () {
   [].forEach.call(document.querySelectorAll('[data-r9tabs]'), function (w) {
     var tabs = [].slice.call(w.querySelectorAll('[role="tab"]'));
