@@ -1890,8 +1890,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 .lq-opt:active{transform:translateY(0);box-shadow:0 1px 3px rgba(21,25,28,.12)}
 .lq-opt:focus-visible{outline:3px solid var(--green-d);outline-offset:2px}
 .lq-hint{display:flex;align-items:center;gap:8px;margin:-4px 0 4px;font:600 14px/1.2 var(--sans);color:var(--muted)}
-.lq-hint::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(47,178,85,.5);animation:ltping 1.8s infinite}
-@keyframes ltping{70%{box-shadow:0 0 0 8px rgba(47,178,85,0)}100%{box-shadow:0 0 0 0 rgba(47,178,85,0)}}
+/* no glowing dot before "Tap an answer" (Jake, 2026-10-26: no glowing or pulsing dots anywhere) */
 .lq-back{justify-self:start;display:inline-flex;align-items:center;gap:6px;border:0;background:none;padding:0;font:700 14px/1 var(--sans);color:var(--muted);cursor:pointer}
 .lq-back svg{width:16px;height:16px;transform:rotate(180deg)}
 .lq-job{font-weight:600;color:var(--muted)}
