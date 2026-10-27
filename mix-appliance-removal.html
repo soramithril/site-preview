@@ -2046,6 +2046,34 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   .jrhow-n{grid-row:span 2;margin:0}
   .est-actions .btn,.jrhow-cta .btn{flex:1 1 100%;justify-content:center}
 }
+/* Layout D (Jake, 2026-10-27, picked on the comparison canvas): the slider and prices on top, the price panel with the truck picture
+   underneath, like the home page estimator. No bin cards here: those stay for the bin rental pages. Plain light green, no grid lines. */
+#estimate .est{grid-template-columns:1fr!important;max-width:1060px;margin:0 auto}
+#estimate .est-l{padding:40px 48px 26px;gap:0}
+#estimate .bin-tag{justify-content:center}
+#estimate .est-label{text-align:center}
+#estimate .tk-bin{display:none!important}
+#estimate .ticks.priced{gap:0;margin-top:6px}
+#estimate .ticks.priced button{border:0!important;background:none!important;box-shadow:none!important;transform:none!important;padding:6px 0!important;gap:2px}
+#estimate .ticks.priced button span{font-size:.8125rem}
+#estimate .ticks.priced button b{font-size:1.125rem!important;color:var(--muted)}
+#estimate .ticks.priced button.on b{color:var(--ink-2)}
+#estimate .ticks.priced button.on span{color:var(--green-ink)}
+#estimate #paneJunk:not([hidden]){display:grid}
+#estimate .est-l .est-guide{display:inline-flex;justify-self:center;justify-content:center;gap:8px;margin:14px auto 0;padding:0;border:0;background:none;font-size:.875rem}
+#estimate .est-guide small{display:none}
+#estimate .est-guide b{font-size:.875rem;color:var(--green-d);text-decoration:underline;text-underline-offset:3px}
+#estimate .est-r{border-left:0;border-top:1px solid var(--line);padding:36px 48px 40px;
+  grid-template-columns:1fr 1fr;grid-template-areas:"price pic" "act pic";column-gap:40px;row-gap:22px;align-content:start}
+#estimate .est-r::before{display:none}
+#estimate .est-r>div:nth-of-type(1){grid-area:price}
+#estimate #binVis{grid-area:pic;align-self:center;padding-top:0}
+#estimate .est-r>div:last-child{grid-area:act}
+@media (max-width:760px){
+  #estimate .est-l{padding:24px 18px 18px}
+  #estimate .est-r{padding:24px 18px;grid-template-columns:1fr;grid-template-areas:"price" "pic" "act"}
+  #estimate .ticks.priced button b{font-size:.9375rem!important}
+}
 </style>
 </head>
 <body>
@@ -2535,7 +2563,7 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   });
 })();
 </script>
-<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-next" type="button">Next</button></div></div><script>(function(){var S=[{"page": "mix-furniture-removal.html", "sel": "#mattress .mt-list", "title": "Good mattresses get used again", "text": "\"Still good? It gets used again: a mattress in good shape goes to Furniture Bank, so a family can use it.\" The mattress question says the same."}],ID="2026-10-27-furniture-mattress-fb",N={"mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil"};
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-next" type="button">Next</button></div></div><script>(function(){var S=[{"page": "mix-junk-removal.html", "sel": "#estimate", "title": "New price slider layout", "text": "Our truck slider and the five prices on top, the price panel with the truck picture underneath. No bin cards (those are for the bin rental pages) and no grid lines."}, {"page": "mix-furniture-removal.html", "sel": "#estimate", "title": "Same on Furniture", "text": "Same layout here and on Appliance removal."}],ID="2026-10-27-slider-layout-d",N={"mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil"};
 var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
   tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
   dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),cur=-1,el=null,raf=0,
