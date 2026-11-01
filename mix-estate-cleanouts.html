@@ -2256,13 +2256,43 @@ html[data-look="grog"] .lkg-flav{display:flex !important}
 html:not([data-look="grog"]) .lkg-flav{display:none !important}
 .lkg-flav-l{flex:1 1 440px;min-width:0;padding:56px clamp(16px,5vw,64px);box-sizing:border-box;border-right:3px solid #111}
 .lkg-list{list-style:none;margin:0 0 26px;padding:0}
-.lkg-list button{display:block;border:0;background:none;padding:0;margin:0;cursor:pointer;font:400 clamp(3rem,7.5vw,6.2rem)/1.02 Silkscreen,monospace;text-transform:uppercase;color:#b9c3c6;text-align:left}
+.lkg-list button{display:block;border:0;background:none;padding:0;margin:0;cursor:pointer;font:400 clamp(2.3rem,5.4vw,5.6rem)/1.04 Silkscreen,monospace;text-transform:uppercase;color:#b9c3c6;text-align:left}
 .lkg-list button[aria-pressed="true"]{color:#111}
 .lkg-line{margin:0 0 22px;font-size:18px}.lkg-line b{display:block;font:800 22px/1.2 Rubik,sans-serif;text-transform:uppercase}
 .lkg-flav-r{flex:1 1 480px;min-width:0;position:relative;display:flex;align-items:center;justify-content:center;min-height:440px;transition:background .3s}
-.lkg-flav-r img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.lkg-flav-r{overflow:hidden}
 .lkg-bub{position:absolute;right:7%;top:9%;z-index:2;background:#fff;border:3px solid #111;border-radius:50% 50% 50% 10%;padding:18px 20px;font:900 18px/1 Rubik,sans-serif;text-transform:uppercase;transform:rotate(8deg)}
 /* tiles */
+.lkg-list button{position:relative}
+.lkg-mini{position:absolute;left:calc(100% + 14px);top:50%;width:1.25em;height:auto;transform:translateY(-50%) scale(.4) rotate(-10deg);opacity:0;transition:opacity .2s,transform .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.lkg-list button[aria-pressed="true"] .lkg-mini{opacity:1;transform:translateY(-50%) scale(1) rotate(-6deg)}
+html[data-look="grog"] .lkg-flav-r .lkg-rockbin{position:relative;inset:auto;width:min(78%,560px);height:auto;object-fit:contain;animation:lkg-rock 5s ease-in-out infinite;filter:drop-shadow(0 30px 26px rgba(0,0,0,.22))}
+.lkg-illo-sec{border-bottom:3px solid #111}
+html:not([data-look="grog"]) .lkg-illo-sec{display:none !important}
+.lkg-illos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.lkg-illo{position:relative;display:flex;align-items:center;justify-content:center;padding:34px 26px 78px;border-left:3px solid #111;text-decoration:none}
+.lkg-illo:first-child{border-left:0}
+.lkg-illo img{width:100%;max-width:400px;height:auto;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.lkg-illo:hover img{transform:scale(1.05) rotate(-2deg)}
+.lkg-illo span{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;background:#fdf3a7;border:2.5px solid #111;border-radius:999px;padding:8px 18px;font:900 16px/1 Rubik,sans-serif;text-transform:uppercase;color:#111}
+@media(max-width:800px){.lkg-illos{grid-template-columns:1fr}.lkg-illo{border-left:0;border-top:3px solid #111}.lkg-illo:first-child{border-top:0}.lkg-illo img{max-width:300px}}
+
+.lkg-spin{border-bottom:3px solid #111}
+html[data-look="grog"] .lkg-spin{display:flex !important;flex-wrap:wrap;align-items:center}
+.lkg-spin-l{flex:1 1 420px;min-width:0;padding:56px clamp(16px,5vw,64px);box-sizing:border-box}
+.lkg-spin-l h2{font:800 clamp(1.7rem,3.4vw,2.6rem)/1.12 Rubik,sans-serif !important;text-transform:uppercase;margin:0 0 18px;max-width:18ch}
+.lkg-spin-l p{font:500 15px/1.6 "Space Grotesk",sans-serif;text-transform:uppercase;margin:0 0 12px;max-width:46ch}
+.lkg-spin-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px !important}
+.lkg-spin-r{flex:1 1 440px;min-width:0;display:flex;justify-content:center;padding:24px 16px}
+.lkg-stage{position:relative;width:min(560px,100%);aspect-ratio:1/1}
+.lkg-masc{position:absolute;left:50%;top:0;width:42%;height:auto;transform:translateX(-50%) scale(.6) rotate(-8deg);opacity:0;transition:opacity .35s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.lkg-masc.on{opacity:1;transform:translateX(-50%) scale(1) rotate(-4deg)}
+.lkg-cv{position:absolute;inset:0;width:100%;height:100%}
+.lkg-still{position:absolute;left:8%;bottom:6%;width:84%;height:auto;animation:lkg-rock 5s ease-in-out infinite}
+.lkg-stage.is-3d .lkg-still{display:none}
+@keyframes lkg-rock{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.lkg-still{animation:none}.lkg-masc{transition:none}}
+
 .lkg-tiles-sec{padding:44px 0 0;text-align:center;border-bottom:3px solid #111}
 html:not([data-look="grog"]) .lkg-tiles-sec{display:none !important}
 .lkg-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid #111}
@@ -2554,7 +2584,7 @@ html[data-look="grog"] :is(.sec,.pagehead,main,.wash,.k-tint,.alt){background-co
   });
 })();
 </script>
-<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-favourites.html", "sel": ".lk-bar", "title": "Compare looks", "text": "New: switch the whole site between Now, Studio, Bold and Grog here. Your pick follows you to every page. Send a look to someone by adding ?look=bold (or studio, grog) to any page link."}, {"page": "mix-bin-rental.html", "sel": ".lk-bar", "title": "Try each look on Bin rental", "text": "Studio adds a size picker under the top section. Grog adds the Pick your load panels and new bin art. Bold puts a black bar on top and the photo behind the heading on pages with a top photo."}, {"page": "mix-hot-tub-removal.html", "sel": ".lk-bar", "title": "Every page has the switch", "text": "Same words, prices and headings in every look, so search is the same. Only the look changes. Nothing is on the real site."}],ID="2026-11-01-looks",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-bin-rental.html", "sel": ".lk-bar", "title": "Grog look: new art", "text": "Tap Grog, then scroll down. Pick your load now works like grog.shop: point at Dirt, Concrete, Shingles or Junk and its cartoon mascot pops up while the bin rocks on that colour."}, {"page": "mix-bin-rental.html", "sel": ".lk-bar", "title": "The spinning bin", "text": "Just below that, our green bin turns in 3D like their spinning can, with the mascots swapping behind it. The lettering and phone number are typed in, so they are always right."}, {"page": "mix-favourites.html", "sel": ".lk-bar", "title": "Home in Grog", "text": "Home gets three drawn tiles (Book a bin, Junk removal, Bin sizes), the bin tiles and the spinning bin. The drawings and mascots were made in ChatGPT. Nothing is on the real site."}],ID="2026-11-01-grog-art",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
 var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
   tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
   dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),play=card.querySelector('.jjt-play'),bar=card.querySelector('.jjt-bar'),barI=bar.querySelector('i'),cur=-1,el=null,raf=0,AUTO=false,timer=0,WAIT=10000,introAt=0,
