@@ -2093,233 +2093,77 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
   #estimate .ticks.priced button b{font-size:.9375rem!important}
 }
 </style>
-<script>(function(){try{var F={"studio":"https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap","bold":"https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap","grog":"https://fonts.googleapis.com/css2?family=Rubik:wght@500..900&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400..700&display=swap"},m=/[?&]look=(now|studio|bold|grog)/.exec(location.search),l=m?m[1]:localStorage.getItem("jjLook");if(m)localStorage.setItem("jjLook",l);window.jjLookFonts=F;if(l&&l!=="now"&&F[l]){document.documentElement.setAttribute("data-look",l);var k=document.createElement("link");k.rel="stylesheet";k.href=F[l];k.id="lk-font-"+l;document.head.appendChild(k);}}catch(e){}})();</script><style id="looks">
-.lk-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;padding:7px 12px;background:#f2b705;color:#23282d;font:600 13px/1 system-ui,sans-serif;position:relative;z-index:101}
-.lk-bar .lk-lab{margin-right:4px;font-weight:700}
-.lk-bar button{font:700 13px/1 system-ui,sans-serif;padding:8px 14px;min-height:32px;border-radius:999px;border:1.5px solid #23282d;background:transparent;color:#23282d;cursor:pointer}
-.lk-bar button[aria-pressed="true"]{background:#23282d;color:#fff}
-.lk-only{display:none !important}
-html[data-look="studio"] .lk-studio,html[data-look="bold"] .lk-bold,html[data-look="grog"] .lk-grog{display:block !important}
-@media print{.lk-bar{display:none}}
+<style id="jjguy">
+/* the little guys (2026-11-02): after 2 seconds on the page they pop up with a talking bubble. Charcoal and white, never green fills */
+.jjg{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:flex-end;gap:2px;pointer-events:none;transform:translateY(130%);transition:transform .55s cubic-bezier(.2,1.4,.4,1)}
+.jjg.up{transform:none}
+.jjg-guys{display:flex;align-items:flex-end;pointer-events:auto}
+.jjg-guys img{display:block;width:auto;height:118px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.22))}
+.jjg-guys img.wide{height:84px}
+.jjg-guys img+img{margin-left:-18px}
+.jjg-b{position:relative;align-self:flex-start;margin:0 0 70px 4px;pointer-events:auto;display:grid;gap:8px;padding:14px 38px 14px 16px;border-radius:18px;background:#fff;color:#15191c;
+  border:2px solid #15191c;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);font:600 15px/1.3 var(--sans,system-ui);max-width:230px}
+.jjg-b::before{content:"";position:absolute;left:-11px;bottom:16px;width:18px;height:18px;background:#fff;border-left:2px solid #15191c;border-bottom:2px solid #15191c;transform:rotate(45deg)}
+.jjg-b b{font-weight:700}
+.jjg-b a{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:999px;background:#23282d;color:#fff;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap}
+.jjg-x{position:absolute;top:6px;right:6px;width:28px;height:28px;border:0;border-radius:50%;background:#eef1ef;color:#15191c;font:700 16px/1 system-ui;cursor:pointer}
+.jjg.wave .jjg-guys img{animation:jjgwave .9s ease-in-out 2}
+@keyframes jjgwave{0%,100%{transform:rotate(0)}30%{transform:rotate(-6deg)}60%{transform:rotate(5deg)}}
+@media (max-width:767px){.jjg{left:10px;bottom:76px}.jjg-guys img{height:92px}.jjg-guys img.wide{height:64px}.jjg-b{margin-bottom:52px;font-size:14px;max-width:200px}}
+@media (prefers-reduced-motion:reduce){.jjg{transition:none}.jjg.wave .jjg-guys img{animation:none}}
+</style>
+<style id="mkbar">
+.mk-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:7px 12px;background:#f2b705;color:#15191c;font:600 13px/1.2 system-ui,sans-serif;text-align:center}
+.mk-bar a{color:#15191c;font-weight:800}
+</style>
+<style id="notes">
+/* ---------- review notes (mock-up tool) ---------- */
+.nt-btn{position:fixed;left:0;top:calc(50% + 78px);z-index:140;display:none;align-items:center;gap:8px;padding:12px 14px 12px 12px;border:0;border-radius:0 14px 14px 0;
+  background:#f2b705;color:#15191c;font:700 .8125rem/1 var(--sans);cursor:pointer;box-shadow:0 0 0 2px #fff,0 10px 26px -10px rgba(0,0,0,.5);writing-mode:vertical-rl}
+.nt-btn b{writing-mode:horizontal-tb;display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#15191c;color:#fff;font-size:.6875rem}
+.nt-btn b:empty{display:none}
+@media (min-width:900px){.nt-btn{display:inline-flex}.mv-btn{top:calc(50% - 60px)}}
+body.nt-on{cursor:crosshair}
+body.nt-on a,body.nt-on button,body.nt-on input{cursor:crosshair}
+.nt-bar{position:fixed;left:50%;top:10px;transform:translateX(-50%);z-index:100000;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;max-width:calc(100vw - 20px);padding:8px 10px 8px 16px;border-radius:999px;
+  background:#15191c;color:#fff;font:500 .875rem/1.2 var(--sans);box-shadow:0 14px 34px -12px rgba(0,0,0,.6);cursor:default}
+.nt-bar b{color:#f2b705}
+.nt-bar input{width:120px;height:34px;border:0;border-radius:999px;padding:0 12px;font:500 .875rem/1 var(--sans);background:#2b3138;color:#fff;cursor:text!important}
+.nt-bar input::placeholder{color:#9aa3aa}
+.nt-bar button{border:0;border-radius:999px;height:34px;padding:0 14px;font:600 .8125rem/1 var(--sans);cursor:pointer!important;background:#2b3138;color:#fff}
+.nt-bar button.go{background:#f2b705;color:#15191c}
+.nt-pin{position:absolute;z-index:99990;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50% 50% 50% 4px;background:#f2b705;color:#15191c;border:2px solid #15191c;display:none;place-items:center;
+  font:800 .8125rem/1 var(--sans);cursor:pointer!important;box-shadow:0 6px 14px -4px rgba(0,0,0,.55)}
+body.nt-on .nt-pin{display:grid}
+.nt-pop{position:absolute;z-index:100001;width:min(320px,calc(100vw - 24px));padding:14px;border-radius:16px;background:#fff;color:#15191c;box-shadow:0 24px 50px -16px rgba(0,0,0,.55),0 0 0 1px rgba(21,25,28,.12);cursor:default;font-family:var(--sans)}
+.nt-pop small{display:block;margin-bottom:8px;color:#59616a;font-size:.75rem;line-height:1.35}
+.nt-pop textarea{display:block;width:100%;min-height:92px;box-sizing:border-box;border:1.5px solid #d2d8d4;border-radius:10px;padding:10px;font:400 .9375rem/1.4 var(--sans);resize:vertical;cursor:text!important}
+.nt-pop textarea:focus{outline:0;border-color:#15191c}
+.nt-pop .row{display:flex;gap:8px;margin-top:10px}
+.nt-pop button{border:0;border-radius:999px;height:36px;padding:0 16px;font:600 .8125rem/1 var(--sans);cursor:pointer!important;background:#eef1ef;color:#15191c}
+.nt-pop button.go{background:#15191c;color:#fff}
+.nt-pop button.del{margin-left:auto;color:#b42318;background:#fdeceb}
+.nt-list{position:fixed;inset:0;z-index:100002;display:grid;place-items:center;padding:16px;background:rgba(21,25,28,.6);cursor:default}
+.nt-card{width:min(680px,100%);max-height:calc(100vh - 32px);overflow:auto;border-radius:20px;background:#fff;color:#15191c;padding:22px;font-family:var(--sans)}
+.nt-card h2{font-size:1.375rem;margin:0 0 4px}
+.nt-card p.sub{margin:0 0 14px;color:#59616a;font-size:.875rem}
+.nt-card h3{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#59616a;margin:18px 0 6px}
+.nt-card ol{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.nt-card li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:10px 12px;border:1px solid #e3e7e4;border-radius:12px}
+.nt-card li i{font-style:normal;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#f2b705;font-weight:800;font-size:.75rem}
+.nt-card li span{font-size:.9375rem;line-height:1.4;white-space:pre-wrap}
+.nt-card li span em{display:block;font-style:normal;font-size:.75rem;color:#59616a;margin-bottom:2px;font-family:var(--sans)!important;color:#59616a!important;font-size:.75rem!important}
+.nt-card li a{font-size:.8125rem;color:#17803a;white-space:nowrap}
+.nt-card .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.nt-card .row button{border:0;border-radius:999px;height:40px;padding:0 18px;font:600 .875rem/1 var(--sans);cursor:pointer;background:#eef1ef;color:#15191c}
+.nt-card .row button.go{background:#15191c;color:#fff}
+.nt-card .row button.del{margin-left:auto;background:#fdeceb;color:#b42318}
 
-/* ======================= STUDIO (Red Bull + Rivian) ======================= */
-html[data-look="studio"]{--green:#12803a;--green-d:#0c5f2a;--green-ink:#12803a;--green-wash:#f3f5f4;--green-tint:#e3f2e7;--ink:#111417;--ink-2:#111417;--muted:#5b6168;--line:#e3e7e4;--line-2:#cfd5d1;--paper-2:#f6f7f6}
-html[data-look="studio"] body{font-family:Inter,"Inter Tight",system-ui,sans-serif;color:#111417}
-html[data-look="studio"] :is(h1,h2,h3){font-family:"Inter Tight",Inter,system-ui,sans-serif;font-weight:700;letter-spacing:-.035em}
-html[data-look="studio"] .accent{font-family:inherit !important;font-style:normal !important;font-weight:inherit !important;font-size:1em !important;line-height:inherit !important;color:var(--green-ink) !important;letter-spacing:inherit}
-html[data-look="studio"] .site-head{background:rgba(255,255,255,.88) !important;border-bottom-color:transparent !important}
-html[data-look="studio"] .pagehead{background:linear-gradient(180deg,#f6f7f6 0%,#e7eae8 100%) !important;border-bottom:0 !important}
-html[data-look="studio"] .pagehead h1{font-size:clamp(2.5rem,6vw,4.75rem) !important;letter-spacing:-.04em}
-html[data-look="studio"] .phimg,html[data-look="studio"] .phvid{border-radius:28px !important;box-shadow:0 34px 60px -34px rgba(0,0,0,.45) !important}
-html[data-look="studio"] .btn{border-radius:999px !important;font-family:Inter,system-ui,sans-serif !important;font-weight:600 !important;box-shadow:none !important}
-html[data-look="studio"] .btn-primary{background:#12803a !important;color:#fff !important;border-color:#12803a !important}
-html[data-look="studio"] .btn-primary:hover{background:#0c5f2a !important}
-html[data-look="studio"] .btn-outline{background:transparent !important;color:#111417 !important;border:1.5px solid #c9cfcb !important}
-html[data-look="studio"] .btn-dark{background:#111417 !important;color:#fff !important}
-html[data-look="studio"] :is(.wash,.k-tint,.alt){background:#f6f7f6 !important;border-color:transparent !important}
-html[data-look="studio"] .sec{padding-top:clamp(64px,8vw,112px);padding-bottom:clamp(64px,8vw,112px)}
-html[data-look="studio"] :is(.card,.k-card,.rc,.k-slip,.lb-card){border-radius:22px !important;border-color:transparent !important;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -26px rgba(0,0,0,.3) !important}
-html[data-look="studio"] .stepn{background:transparent !important;color:#12803a !important;border:0 !important;font-family:"Inter Tight",sans-serif;font-weight:700}
-html[data-look="studio"] .trust-strip{background:#fff !important}
-html[data-look="studio"] .foot{background:#f6f7f6 !important}
-html[data-look="studio"] .fc{--display:"Inter Tight",Inter,system-ui,sans-serif;--body:Inter,system-ui,sans-serif;--green-ink:#12803a;--forest:#0c5f2a;--wash:#f3f5f4;--cream:#f6f7f6;--cream-2:#eef1ef}
-html[data-look="studio"] .fd{--fh:"Inter Tight",Inter,sans-serif;--fb:Inter,sans-serif;--bg:#f6f7f6}
-html[data-look="studio"] .ticker{background:#111417 !important}
-/* size picker */
-.lks-pick{background:linear-gradient(180deg,#e7eae8,#f6f7f6);padding:56px 0 72px;text-align:center;overflow:hidden}
-.lks-h{font-size:clamp(2rem,4vw,3rem);margin:0 0 22px}
-.lks-pills{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:5px;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.05)}
-.lks-pills button{min-height:46px;padding:0 22px;border-radius:999px;border:0;background:transparent;font:600 15px/1 Inter,system-ui,sans-serif;color:#3d4349;cursor:pointer}
-.lks-pills button[aria-pressed="true"]{background:#111417;color:#fff}
-.lks-tag{margin:12px 0 0;font-weight:600;font-size:14px;color:#12803a}
-.lks-stage{position:relative;height:clamp(240px,34vw,440px);display:flex;align-items:center;justify-content:center}
-.lks-stage img{position:relative;width:min(620px,90%);height:auto}
-.lks-big{position:absolute;left:50%;top:50%;transform:translate(-50%,-54%);font:800 clamp(180px,30vw,400px)/1 "Inter Tight",sans-serif;letter-spacing:-.06em;color:rgba(17,20,23,.055);white-space:nowrap}
-.lks-floor{position:absolute;left:50%;bottom:8%;width:min(540px,80%);height:42px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.26),rgba(0,0,0,0))}
-.lks-spec{display:flex;flex-wrap:wrap;gap:14px 0;background:#fff;border-radius:24px;padding:24px 28px;text-align:left;box-shadow:0 1px 2px rgba(0,0,0,.04),0 20px 40px -28px rgba(0,0,0,.3)}
-.lks-spec>div{flex:1 1 170px;min-width:0;padding:4px 22px;border-left:1px solid #d5dad7}
-.lks-spec>div:first-child{border-left:0;padding-left:0}
-.lks-spec b{display:block;font:700 26px/1.1 "Inter Tight",sans-serif;letter-spacing:-.03em}
-.lks-spec>div:first-child b{font-size:36px}
-.lks-spec span{display:block;margin-top:6px;font-size:14px;color:#5b6168}
-.lks-go{flex:1 1 230px !important}.lks-go .btn{width:100%}.lks-go span{text-align:center;font-size:13px}
-@media(max-width:700px){.lks-spec>div{flex:1 1 45%;border-left:0;padding:8px 0}}
-
-/* ======================= BOLD (Liquid Death + Monster) ======================= */
-html[data-look="bold"]{--green:#12803a;--green-d:#0c5f2a;--green-ink:#12803a;--green-wash:#f3f5f4;--green-tint:#e3f2e7;--ink:#111417;--ink-2:#111417;--muted:#4a5057;--line:#dfe2e0;--line-2:#111417;--r-sm:2px;--r:4px;--r-lg:4px;--r-xl:6px}
-html[data-look="bold"] body{font-family:Barlow,system-ui,sans-serif;color:#111417}
-html[data-look="bold"] :is(h1,h2,h3){font-family:"Barlow Condensed",Impact,sans-serif !important;font-weight:800 !important;text-transform:uppercase;letter-spacing:.005em !important;line-height:.95 !important}
-html[data-look="bold"] h1{font-size:clamp(3rem,8vw,6.5rem) !important}
-html[data-look="bold"] h2{font-size:clamp(2.4rem,5.4vw,4.4rem) !important}
-html[data-look="bold"] h3{font-size:1.6rem !important}
-html[data-look="bold"] .accent{font-family:inherit !important;font-style:normal !important;font-weight:inherit !important;font-size:1em !important;line-height:inherit !important;color:var(--green-ink) !important}
-.lk-ubar{background:#111417;color:#fff;text-align:center;padding:9px 16px;font:700 14px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase}
-html[data-look="bold"] .site-head{background:#fff !important;border-bottom:1px solid #e5e7e6 !important}
-html[data-look="bold"] .site-head .nav a{font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-html[data-look="bold"] .btn{border-radius:2px !important;font-family:"Barlow Condensed",sans-serif !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:.06em;font-size:18px !important;box-shadow:none !important}
-html[data-look="bold"] .btn-primary{background:#111417 !important;color:#fff !important;border-color:#111417 !important}
-html[data-look="bold"] .btn-outline{background:#fff !important;color:#111417 !important;border:2px solid #111417 !important}
-html[data-look="bold"] .pagehead{background:#fff !important;border-bottom:2px solid #111417 !important}
-html[data-look="bold"] .pagehead .btn-primary{background:#12803a !important;border-color:#12803a !important}
-/* full bleed photo hero where the page has a hero photo */
-@media(min-width:900px){
-html[data-look="bold"] .pagehead:has(.phimg){position:relative;overflow:hidden;padding:0 !important;min-height:680px;display:flex;align-items:flex-end}
-html[data-look="bold"] .pagehead:has(.phimg) .wrap{position:static;width:100%}
-html[data-look="bold"] .pagehead .ph-grid:has(.phimg){display:block !important;position:static}
-html[data-look="bold"] .pagehead .phimg{position:absolute !important;inset:0;width:100% !important;height:100% !important;max-width:none !important;object-fit:cover;border-radius:0 !important;aspect-ratio:auto !important;z-index:0;box-shadow:none !important}
-html[data-look="bold"] .pagehead:has(.phimg)::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.08) 80%)}
-html[data-look="bold"] .pagehead:has(.phimg) .ph-grid>div{position:relative;z-index:2;color:#fff;padding:120px 0 64px;max-width:820px}
-html[data-look="bold"] .pagehead:has(.phimg) :is(h1,.lede,.ph-trust,.ph-trust a,.tp-note,.tp-note a,.ph-rating){color:#fff !important}
-html[data-look="bold"] .pagehead:has(.phimg) .accent{color:#5fd38a !important}
-html[data-look="bold"] .pagehead:has(.phimg) .btn-outline{background:#fff !important;border-color:#fff !important}
-}
-html[data-look="bold"] :is(.wash,.k-tint,.alt){background:#f3f5f4 !important;border-color:transparent !important}
-html[data-look="bold"] .sec-head{border-top:2px solid #111417;padding-top:22px}
-html[data-look="bold"] :is(.card,.k-card,.rc,.k-slip,.lb-card){border-radius:2px !important;box-shadow:none !important;border:2px solid #111417 !important}
-html[data-look="bold"] .stepn{background:transparent !important;color:#12803a !important;border:0 !important;font:800 3rem/1 "Barlow Condensed",sans-serif !important}
-html[data-look="bold"] .fc{--display:"Barlow Condensed",Impact,sans-serif;--body:Barlow,system-ui,sans-serif;--r-xl:4px;--r-lg:4px;--r-md:2px;--r-sm:2px;--green-ink:#12803a}
-html[data-look="bold"] .fd{--fh:"Barlow Condensed",Impact,sans-serif;--fb:Barlow,sans-serif}
-html[data-look="bold"] .ticker{background:#111417 !important}
-html[data-look="bold"] .ticker li{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
-
-/* ======================= GROG (grog.shop) ======================= */
-html[data-look="grog"]{--green:#2fb255;--green-ink:#167a33;--ink:#111;--ink-2:#111;--muted:#2b2f33;--line:#111;--line-2:#111;--paper:#f7fbfc;--paper-2:#f7fbfc;--green-wash:transparent}
-html[data-look="grog"] body{font-family:"Space Grotesk",system-ui,sans-serif;color:#111;background-color:#f7fbfc !important;
-  background-image:linear-gradient(#d3e2e8 1px,transparent 1px),linear-gradient(90deg,#d3e2e8 1px,transparent 1px) !important;background-size:28px 28px !important}
-html[data-look="grog"] :is(h1,h2,h3){font-family:Rubik,system-ui,sans-serif !important;font-weight:900 !important;text-transform:uppercase;letter-spacing:-.01em !important;line-height:.98 !important}
-html[data-look="grog"] h1{font-size:clamp(2.6rem,7vw,5.6rem) !important}
-html[data-look="grog"] .accent{font-family:inherit !important;font-style:normal !important;font-weight:inherit !important;font-size:1em !important;line-height:inherit !important;color:#fff !important;-webkit-text-stroke:3px #111;paint-order:stroke fill}
-html[data-look="grog"] .sec-head h2,html[data-look="grog"] .sec>.wrap>h2{display:inline-block;padding:.18em .7em .14em;border:3px solid #111;border-radius:30px;background:#cde9ea;font-size:clamp(1.5rem,3.4vw,2.6rem) !important}
-html[data-look="grog"] .sec-head h2 .accent,html[data-look="grog"] .sec>.wrap>h2 .accent{-webkit-text-stroke:0;color:#111 !important}
-html[data-look="grog"] .site-head{background:#f7fbfc !important;border-bottom:3px solid #111 !important}
-html[data-look="grog"] .site-head .nav a.top{border:2px solid #111;border-radius:999px;padding:4px 9px;font:700 12px/1 Rubik,sans-serif;text-transform:uppercase;background:#fff}
-html[data-look="grog"] .site-head .btn{font-size:12px !important;padding:0 14px !important}
-html[data-look="bold"] .site-head .btn{font-size:15px !important;padding:0 16px !important}
-html[data-look="grog"] .btn{border-radius:999px !important;border:2.5px solid #111 !important;font-family:Rubik,sans-serif !important;font-weight:800 !important;text-transform:uppercase;letter-spacing:.02em;box-shadow:none !important}
-html[data-look="grog"] .btn-primary{background:#2fb255 !important;color:#111 !important}
-html[data-look="grog"] .btn-outline{background:#fdf3a7 !important;color:#111 !important}
-html[data-look="grog"] .btn-dark{background:#111 !important;color:#fff !important}
-html[data-look="grog"] .pagehead{background:transparent !important;border-bottom:3px solid #111 !important}
-html[data-look="grog"] .phimg{border-radius:26px !important;border:3px solid #111 !important;box-shadow:none !important;-webkit-mask:none;mask:none;transform:rotate(-1.5deg)}
-html[data-look="grog"] .hero-btns{position:relative}
-html[data-look="grog"] .ph-trust,html[data-look="grog"] .ph-rating{font-family:Silkscreen,monospace;font-size:13px !important;text-transform:uppercase}
-html[data-look="grog"] :is(.wash,.k-tint,.alt,.trust-strip){background:transparent !important;border-color:#111 !important}
-html[data-look="grog"] .sec{border-top:3px solid #111}
-html[data-look="grog"] :is(.card,.k-card,.rc,.k-slip,.lb-card){background:#fff !important;border:2.5px solid #111 !important;border-radius:20px !important;box-shadow:none !important}
-html[data-look="grog"] .stepn{background:#fdf3a7 !important;color:#111 !important;border:2.5px solid #111 !important;font-family:Rubik,sans-serif;font-weight:900}
-html[data-look="grog"] .foot{background:#cde9ea !important;border-top:3px solid #111 !important}
-html[data-look="grog"] .fc{--display:Rubik,system-ui,sans-serif;--body:"Space Grotesk",system-ui,sans-serif;--cream:transparent;--cream-2:#cde9ea;--wash:#cde9ea;--green-ink:#167a33}
-html[data-look="grog"] .fd{--fh:Rubik,sans-serif;--fb:"Space Grotesk",sans-serif;--bg:transparent}
-html[data-look="grog"] .ticker{background:#fdf6b7 !important;color:#111 !important;border-block:3px solid #111}
-html[data-look="grog"] .ticker li{font-family:Silkscreen,monospace;text-transform:uppercase}
-html[data-look="grog"] .has-vid .phvid{display:none !important}
-html[data-look="grog"] .has-vid .lkg-hero{display:block !important;width:100%;height:auto;border:3px solid #111;border-radius:28px}
-/* ticker */
-.lkg-tick{overflow:hidden;background:#fdf6b7;border-bottom:3px solid #111;padding:9px 0}
-.lkg-track{display:flex;width:max-content;animation:lkg-move 38s linear infinite}
-.lkg-track ul{display:flex;margin:0;padding:0;list-style:none}
-.lkg-track li{font:700 15px/1 Silkscreen,monospace;text-transform:uppercase;padding:0 18px;white-space:nowrap}
-.lkg-track li::after{content:"\2661";margin-left:36px}
-@keyframes lkg-move{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.lkg-track{animation:none}}
-/* pill label */
-.lkg-pill{display:inline-block;margin:0 0 22px;padding:.3em .9em .25em;border:3px solid #111;border-radius:999px;background:#cde9ea;font:900 clamp(1.3rem,2.6vw,2rem)/1 Rubik,sans-serif;text-transform:uppercase}
-/* flavour panels */
-.lkg-flav{flex-wrap:wrap;border-bottom:3px solid #111}
-html[data-look="grog"] .lkg-flav{display:flex !important}
-html:not([data-look="grog"]) .lkg-flav{display:none !important}
-.lkg-flav-l{flex:1 1 440px;min-width:0;padding:56px clamp(16px,5vw,64px);box-sizing:border-box;border-right:3px solid #111}
-.lkg-list{list-style:none;margin:0 0 26px;padding:0}
-.lkg-list button{display:block;border:0;background:none;padding:0;margin:0;cursor:pointer;font:400 clamp(2.3rem,5.4vw,5.6rem)/1.04 Silkscreen,monospace;text-transform:uppercase;color:#b9c3c6;text-align:left}
-.lkg-list button[aria-pressed="true"]{color:#111}
-.lkg-line{margin:0 0 22px;font-size:18px}.lkg-line b{display:block;font:800 22px/1.2 Rubik,sans-serif;text-transform:uppercase}
-.lkg-flav-r{flex:1 1 480px;min-width:0;position:relative;display:flex;align-items:center;justify-content:center;min-height:440px;transition:background .3s}
-.lkg-flav-r{overflow:hidden}
-.lkg-bub{position:absolute;right:7%;top:9%;z-index:2;background:#fff;border:3px solid #111;border-radius:50% 50% 50% 10%;padding:18px 20px;font:900 18px/1 Rubik,sans-serif;text-transform:uppercase;transform:rotate(8deg)}
-/* tiles */
-.lkg-list button{position:relative}
-.lkg-mini{position:absolute;left:calc(100% + 14px);top:50%;height:1.15em;width:auto;max-width:2.4em;object-fit:contain;transform:translateY(-50%) scale(.4) rotate(-10deg);opacity:0;transition:opacity .2s,transform .35s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
-.lkg-list button[aria-pressed="true"] .lkg-mini{opacity:1;transform:translateY(-50%) scale(1) rotate(-6deg)}
-html[data-look="grog"] .lkg-pic{border:0 !important;outline:0 !important}
-.lkg-pic{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%;padding:40px 24px;box-sizing:border-box;animation:lkg-rock 5s ease-in-out infinite}
-.lkg-pic.pop{animation:lkg-pop .45s cubic-bezier(.3,1.6,.5,1),lkg-rock 5s .45s ease-in-out infinite}
-@keyframes lkg-pop{0%{transform:scale(.82) rotate(-6deg)}100%{transform:scale(1) rotate(-4deg)}}
-.lkg-ph{position:relative;display:block;width:min(78%,560px)}
-html[data-look="grog"] .lkg-pic img{position:static;display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 30px 26px rgba(0,0,0,.22))}
-.lkg-pic[data-kind="photo"] .lkg-ph{width:min(76%,500px)}
-html[data-look="grog"] .lkg-pic[data-kind="photo"] img{aspect-ratio:4/3;object-fit:cover;border:3px solid #111;border-radius:22px;filter:none}
-.lkg-pic[data-kind="photo"] .lkg-ph::before{content:"";position:absolute;z-index:2;left:50%;top:-6px;width:118px;height:32px;transform:translate(-50%,-50%) rotate(-5deg);background:rgba(255,246,190,.85);border-left:2px dashed rgba(0,0,0,.12);border-right:2px dashed rgba(0,0,0,.12)}
-.lkg-n5 button{font-size:clamp(2.1rem,4.9vw,5rem) !important}
-@media (prefers-reduced-motion:reduce){.lkg-pic,.lkg-pic.pop{animation:none}}
-.lkg-illo-sec{border-bottom:3px solid #111}
-html:not([data-look="grog"]) .lkg-illo-sec{display:none !important}
-.lkg-illos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.lkg-illo{position:relative;display:flex;align-items:center;justify-content:center;padding:34px 26px 78px;border-left:3px solid #111;text-decoration:none}
-.lkg-illo:first-child{border-left:0}
-.lkg-illo img{width:100%;max-width:400px;height:auto;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
-.lkg-illo:hover img{transform:scale(1.05) rotate(-2deg)}
-.lkg-illo span{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);white-space:nowrap;background:#fdf3a7;border:2.5px solid #111;border-radius:999px;padding:8px 18px;font:900 16px/1 Rubik,sans-serif;text-transform:uppercase;color:#111}
-@media(max-width:800px){.lkg-illos{grid-template-columns:1fr}.lkg-illo{border-left:0;border-top:3px solid #111}.lkg-illo:first-child{border-top:0}.lkg-illo img{max-width:300px}}
-.lkg-cta{border-top:3px solid #111;background:#fde27a;padding:44px 16px;text-align:center;position:relative;overflow:hidden}
-html[data-look="grog"] .lkg-cta{display:flex !important;align-items:center;justify-content:center;gap:clamp(12px,3vw,40px)}
-.lkg-cta img{width:clamp(150px,20vw,280px);height:auto;flex:0 0 auto}
-.lkg-cta-bin{animation:lkg-rock 4.6s ease-in-out infinite}
-.lkg-cta-truck{animation:lkg-rock 5.4s ease-in-out infinite reverse}
-.lkg-cta-h{font:900 clamp(1.8rem,4vw,3.2rem)/1.05 Rubik,sans-serif;text-transform:uppercase;margin:0 0 8px}
-.lkg-cta-s{font:500 15px/1.5 "Space Grotesk",sans-serif;text-transform:uppercase;margin:0 0 18px}
-.lkg-cta-b{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0}
-@media(max-width:800px){html[data-look="grog"] .lkg-cta{flex-wrap:wrap}.lkg-cta-mid{order:-1;flex:1 1 100%}.lkg-cta img{width:42%}}
-@media (prefers-reduced-motion:reduce){.lkg-cta img{animation:none}}
-
-.lkg-spin{border-bottom:3px solid #111}
-html[data-look="grog"] .lkg-spin{display:flex !important;flex-wrap:wrap;align-items:center}
-.lkg-spin-l{flex:1 1 420px;min-width:0;padding:56px clamp(16px,5vw,64px);box-sizing:border-box}
-.lkg-spin-l h2{font:800 clamp(1.7rem,3.4vw,2.6rem)/1.12 Rubik,sans-serif !important;text-transform:uppercase;margin:0 0 18px;max-width:18ch}
-.lkg-spin-l p{font:500 15px/1.6 "Space Grotesk",sans-serif;text-transform:uppercase;margin:0 0 12px;max-width:46ch}
-.lkg-spin-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px !important}
-.lkg-spin-r{flex:1 1 440px;min-width:0;display:flex;justify-content:center;padding:24px 16px}
-.lkg-stage{position:relative;width:min(560px,100%);aspect-ratio:1/1}
-.lkg-masc{position:absolute;left:50%;top:0;width:42%;height:auto;transform:translateX(-50%) scale(.6) rotate(-8deg);opacity:0;transition:opacity .35s,transform .5s cubic-bezier(.3,1.6,.5,1)}
-.lkg-masc.on{opacity:1;transform:translateX(-50%) scale(1) rotate(-4deg)}
-.lkg-cv{position:absolute;inset:0;width:100%;height:100%}
-.lkg-still{position:absolute;left:8%;bottom:6%;width:84%;height:auto;animation:lkg-rock 5s ease-in-out infinite}
-.lkg-stage.is-3d .lkg-still{display:none}
-@keyframes lkg-rock{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-10px)}}
-@media (prefers-reduced-motion:reduce){.lkg-still{animation:none}.lkg-masc{transition:none}}
-
-.lkg-tiles-sec{padding:44px 0 0;text-align:center;border-bottom:3px solid #111}
-html:not([data-look="grog"]) .lkg-tiles-sec{display:none !important}
-.lkg-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid #111}
-.lkg-tile{position:relative;display:block;aspect-ratio:4/5;border-left:3px solid #111;text-decoration:none;overflow:hidden}
-.lkg-tile:first-child{border-left:0}
-.lkg-tile img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-.lkg-tile:hover img{transform:scale(1.05) rotate(-2deg)}
-.lkg-tile span{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);background:#fdf3a7;border:2.5px solid #111;border-radius:999px;padding:8px 18px;font:900 16px/1 Rubik,sans-serif;text-transform:uppercase;color:#111}
-@media(max-width:800px){.lkg-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.lkg-tile:nth-child(3){border-left:0}.lkg-tile:nth-child(n+3){border-top:3px solid #111}
-  .lkg-flav-l{border-right:0;border-bottom:3px solid #111}.lkg-flav-r{min-height:340px}}
-
-/* ---- shared fixes: script font, trust strip, price cards ---- */
-html[data-look="studio"] :is(.lx-scrib,.hp-note,.hash,main em){font-family:"Inter Tight",sans-serif !important;font-style:normal !important;font-weight:700 !important;letter-spacing:-.02em}
-html[data-look="bold"] :is(.lx-scrib,.hp-note,.hash,main em){font-family:"Barlow Condensed",sans-serif !important;font-style:normal !important;font-weight:800 !important;text-transform:uppercase;letter-spacing:.02em}
-html[data-look="grog"] :is(.lx-scrib,.hp-note,.hash,main em){font-family:Rubik,sans-serif !important;font-style:normal !important;font-weight:900 !important;text-transform:uppercase}
-html[data-look="studio"] .trust-strip{background:#fff !important;color:#4a5057 !important}
-html[data-look="studio"] .trust-strip li b{color:#111417 !important}
-html[data-look="grog"] .trust-strip{background:#cde9ea !important;color:#111 !important;border-block:3px solid #111}
-html[data-look="grog"] .trust-strip li b{color:#111 !important}
-html[data-look="grog"] .trust-strip svg{color:#111 !important}
-html[data-look] .plan.feat{color:#111417 !important}
-html[data-look] .plan.feat :is(h3,p,li,span,b,small,.plan-amt){color:#111417 !important}
-html[data-look] .plan.feat :is(.plan-sub,small){color:#4a5057 !important}
-html[data-look="studio"] .plan.feat{background:#fff !important;border:0 !important;border-radius:22px !important;box-shadow:0 1px 2px rgba(0,0,0,.04),0 20px 40px -26px rgba(0,0,0,.3) !important}
-html[data-look="studio"] .plan.feat .pill-k{background:#f1f3f2 !important;color:#111417 !important}
-html[data-look="bold"] .plan.feat{background:#fff !important;border:2px solid #111417 !important;border-radius:2px !important;box-shadow:none !important}
-html[data-look="bold"] .plan.feat .pill-k{background:#111417 !important;color:#fff !important;border-radius:2px !important}
-html[data-look="bold"] .plan.feat h3{font-size:2.2rem !important}
-html[data-look="grog"] .plan.feat{background:#fff !important;border:2.5px solid #111 !important;border-radius:20px !important;box-shadow:none !important}
-html[data-look="grog"] .plan.feat .pill-k{background:#fdf3a7 !important;color:#111 !important;border:2px solid #111}
-html[data-look="grog"] :is(.sec,.pagehead,main,.wash,.k-tint,.alt){background-color:transparent !important}
-</style></head>
-<body><div class="lk-bar" role="group" aria-label="Compare looks for the new website"><span class="lk-lab">Compare looks:</span><button type="button" data-lk="now">Now</button><button type="button" data-lk="studio">Studio</button><button type="button" data-lk="bold">Bold</button><button type="button" data-lk="grog">Grog</button></div><div class="lk-only lk-bold lk-ubar">Family run since 1992 · 5.0 from 260 Google reviews · Call 705.333.7767</div>
+.nt-btn{display:inline-flex!important;top:calc(50% - 170px)!important}
+@media (max-width:899px){.nt-btn{padding:10px 9px;font-size:.75rem}.nt-bar{top:auto;bottom:84px}}
+</style>
+</head>
+<body><div class="mk-bar">This is the mockup we&rsquo;re going with. <a href="mix-grog-art.html">See the Grog art</a></div>
 
 <!-- icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -2423,7 +2267,7 @@ html[data-look="grog"] :is(.sec,.pagehead,main,.wash,.k-tint,.alt){background-co
 </header>
 
 <main id="main">
-<section class="pagehead" data-page="Junk removal"><div class="wrap"><div class="ph-grid has-pic has-vid"><div><h1>Junk removal in Barrie &amp; <span class="accent">Simcoe County</span>.</h1><p class="lede">You call us, we pick it up. Our crew does the sorting, lifting, carrying, loading, hauling and disposal. Most jobs are priced by the space your junk takes up in the bin, and the quote is free.</p><div class="hero-btns" data-track="hero"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline btn-textpic tp-phone" href="sms:+17053337767"><svg aria-hidden="true"><use href="#i-msg"/></svg>Text a photo for a price</a><a class="btn btn-outline btn-textpic tp-desk" href="#request"><svg aria-hidden="true"><use href="#ci-camera"/></svg>Send photos for a price</a><a class="btn btn-outline" href="#pricing">See prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="jjnew" title="Added in the Oct 19 round">Just added</span></div><a class="ph-rating" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b><span data-jj="rating">5.0</span></b> from <span data-jj="reviews">260</span> Google reviews</span><span class="sr-only"> (opens in a new tab)</span></a></div><div class="phvid" data-yt="dTFvH7SqVuU"><button type="button" class="yt-btn" data-yt="dTFvH7SqVuU" aria-label="Play video: Junk removal"><img src="https://i.ytimg.com/vi/dTFvH7SqVuU/hqdefault.jpg" alt="" onerror="this.remove()"><span class="yt-play"></span></button></div><script>(function(){var box=document.currentScript.previousElementSibling;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce), (max-width: 767px)').matches)return;function go(){var b=box.querySelector('.yt-btn');if(!b)return;var id=box.dataset.yt,f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&loop=1&playlist='+id+'&playsinline=1&rel=0&modestbranding=1';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.getAttribute('aria-label');b.replaceWith(f);}if(document.readyState==='complete')setTimeout(go,300);else addEventListener('load',function(){setTimeout(go,300);});})();</script></div></div></section><div class="lk-only lk-grog lkg-tick" aria-hidden="true"><div class="lkg-track"><ul><li>Bin rental</li><li>Junk removal</li><li>Family run since 1992</li><li>Barrie and Simcoe County</li><li>Wood under every bin</li><li>Free quotes</li><li>705.333.7767</li></ul><ul><li>Bin rental</li><li>Junk removal</li><li>Family run since 1992</li><li>Barrie and Simcoe County</li><li>Wood under every bin</li><li>Free quotes</li><li>705.333.7767</li></ul></div></div><section class="lk-only lk-grog lkg-flav" aria-label="Pick what we are hauling" data-lk-pick="[{&quot;name&quot;: &quot;Couches&quot;, &quot;bg&quot;: &quot;#ff8a80&quot;, &quot;kind&quot;: &quot;photo&quot;, &quot;img&quot;: &quot;assets/wp-content/uploads/job-sectional-sofa-top.webp&quot;, &quot;alt&quot;: &quot;A sectional sofa we hauled away&quot;, &quot;masc&quot;: &quot;assets/wp-content/uploads/grog/mascot-couch.webp&quot;, &quot;line&quot;: &quot;Couches, mattresses, dressers&quot;, &quot;price&quot;: &quot;Carried out from any room. Good pieces donated where we can.&quot;, &quot;href&quot;: &quot;mix-furniture-removal.html&quot;, &quot;btn&quot;: &quot;Furniture removal&quot;, &quot;bub&quot;: &quot;We carry it!&quot;}, {&quot;name&quot;: &quot;Fridges&quot;, &quot;bg&quot;: &quot;#bee4e5&quot;, &quot;kind&quot;: &quot;photo&quot;, &quot;img&quot;: &quot;assets/wp-content/uploads/job-old-fridges-basement-top.webp&quot;, &quot;alt&quot;: &quot;Old fridges we carried out of a basement&quot;, &quot;masc&quot;: &quot;assets/wp-content/uploads/grog/mascot-fridge.webp&quot;, &quot;line&quot;: &quot;Fridges, washers, dryers, stoves&quot;, &quot;price&quot;: &quot;Picked up from wherever they are and taken to be recycled.&quot;, &quot;href&quot;: &quot;mix-appliance-removal.html&quot;, &quot;btn&quot;: &quot;Appliance removal&quot;, &quot;bub&quot;: &quot;Recycled!&quot;}, {&quot;name&quot;: &quot;Hot tubs&quot;, &quot;bg&quot;: &quot;#a9c8ff&quot;, &quot;kind&quot;: &quot;photo&quot;, &quot;img&quot;: &quot;assets/wp-content/uploads/job-hot-tub-taken-apart-top.webp&quot;, &quot;alt&quot;: &quot;A hot tub we cut up and hauled away&quot;, &quot;masc&quot;: &quot;assets/wp-content/uploads/grog/mascot-hottub.webp&quot;, &quot;line&quot;: &quot;Cut up where it sits&quot;, &quot;price&quot;: &quot;Carried out and hauled away in one visit, priced from a photo.&quot;, &quot;href&quot;: &quot;mix-hot-tub-removal.html&quot;, &quot;btn&quot;: &quot;Hot tub removal&quot;, &quot;bub&quot;: &quot;One visit!&quot;}, {&quot;name&quot;: &quot;Sheds&quot;, &quot;bg&quot;: &quot;#f7a63a&quot;, &quot;kind&quot;: &quot;photo&quot;, &quot;img&quot;: &quot;assets/wp-content/uploads/job-wood-shed-falling-down-top.webp&quot;, &quot;alt&quot;: &quot;An old wood shed we took down&quot;, &quot;masc&quot;: &quot;assets/wp-content/uploads/grog/mascot-shed.webp&quot;, &quot;line&quot;: &quot;Wood or metal, pad and all&quot;, &quot;price&quot;: &quot;Taken down and hauled away in one visit, priced from photos.&quot;, &quot;href&quot;: &quot;mix-shed-removal.html&quot;, &quot;btn&quot;: &quot;Shed removal&quot;, &quot;bub&quot;: &quot;Pad too!&quot;}, {&quot;name&quot;: &quot;Estates&quot;, &quot;bg&quot;: &quot;#d292e4&quot;, &quot;kind&quot;: &quot;photo&quot;, &quot;img&quot;: &quot;assets/wp-content/uploads/job-empty-room-after.webp&quot;, &quot;alt&quot;: &quot;An empty room after an estate clean out&quot;, &quot;masc&quot;: &quot;assets/wp-content/uploads/grog/mascot-junk.webp&quot;, &quot;line&quot;: &quot;Estate clean outs and downsizing&quot;, &quot;price&quot;: &quot;We sort, lift, load and haul. Good furniture donated where we can.&quot;, &quot;href&quot;: &quot;mix-estate-cleanouts.html&quot;, &quot;btn&quot;: &quot;Estate clean outs&quot;, &quot;bub&quot;: &quot;We sort it!&quot;}]" data-lk-hover><div class="lkg-flav-l"><p class="lkg-pill">What are we hauling?</p><ul class="lkg-list lkg-n5"><li><button type="button" data-i="0" aria-pressed="true">Couches<img class="lkg-mini" src="assets/wp-content/uploads/grog/mascot-couch.webp" alt="" width="420" height="420" loading="lazy"></button></li><li><button type="button" data-i="1" aria-pressed="false">Fridges<img class="lkg-mini" src="assets/wp-content/uploads/grog/mascot-fridge.webp" alt="" width="420" height="420" loading="lazy"></button></li><li><button type="button" data-i="2" aria-pressed="false">Hot tubs<img class="lkg-mini" src="assets/wp-content/uploads/grog/mascot-hottub.webp" alt="" width="420" height="420" loading="lazy"></button></li><li><button type="button" data-i="3" aria-pressed="false">Sheds<img class="lkg-mini" src="assets/wp-content/uploads/grog/mascot-shed.webp" alt="" width="420" height="420" loading="lazy"></button></li><li><button type="button" data-i="4" aria-pressed="false">Estates<img class="lkg-mini" src="assets/wp-content/uploads/grog/mascot-junk.webp" alt="" width="420" height="420" loading="lazy"></button></li></ul><p class="lkg-line"><b data-f="line">Couches, mattresses, dressers</b><span data-f="price">Carried out from any room. Good pieces donated where we can.</span></p><a class="btn btn-primary" data-f="href" href="mix-furniture-removal.html"><span data-f="btn">Furniture removal</span></a></div><div class="lkg-flav-r" data-f="bg" style="background:#ff8a80"><div class="lkg-pic" data-f="kind" data-kind="photo"><span class="lkg-ph"><img data-f="img" src="assets/wp-content/uploads/job-sectional-sofa-top.webp" alt="A sectional sofa we hauled away" width="700" height="520" loading="lazy"></span></div><span class="lkg-bub" data-f="bub">We carry it!</span></div></section><span id="pricing" aria-hidden="true"></span><section class="sec jjnew-sec est-wide" id="estimate" aria-labelledby="est-h">
+<section class="pagehead" data-page="Junk removal"><div class="wrap"><div class="ph-grid has-pic has-vid"><div><h1>Junk removal in Barrie &amp; <span class="accent">Simcoe County</span>.</h1><p class="lede">You call us, we pick it up. Our crew does the sorting, lifting, carrying, loading, hauling and disposal. Most jobs are priced by the space your junk takes up in the bin, and the quote is free.</p><div class="hero-btns" data-track="hero"><a class="btn btn-primary" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="btn btn-outline btn-textpic tp-phone" href="sms:+17053337767"><svg aria-hidden="true"><use href="#i-msg"/></svg>Text a photo for a price</a><a class="btn btn-outline btn-textpic tp-desk" href="#request"><svg aria-hidden="true"><use href="#ci-camera"/></svg>Send photos for a price</a><a class="btn btn-outline" href="#pricing">See prices <svg class="arrow" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a><span class="jjnew" title="Added in the Oct 19 round">Just added</span></div><a class="ph-rating" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b><span data-jj="rating">5.0</span></b> from <span data-jj="reviews">260</span> Google reviews</span><span class="sr-only"> (opens in a new tab)</span></a></div><div class="phvid" data-yt="dTFvH7SqVuU"><button type="button" class="yt-btn" data-yt="dTFvH7SqVuU" aria-label="Play video: Junk removal"><img src="https://i.ytimg.com/vi/dTFvH7SqVuU/hqdefault.jpg" alt="" onerror="this.remove()"><span class="yt-play"></span></button></div><script>(function(){var box=document.currentScript.previousElementSibling;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce), (max-width: 767px)').matches)return;function go(){var b=box.querySelector('.yt-btn');if(!b)return;var id=box.dataset.yt,f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&loop=1&playlist='+id+'&playsinline=1&rel=0&modestbranding=1';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.getAttribute('aria-label');b.replaceWith(f);}if(document.readyState==='complete')setTimeout(go,300);else addEventListener('load',function(){setTimeout(go,300);});})();</script></div></div></section><span id="pricing" aria-hidden="true"></span><section class="sec jjnew-sec est-wide" id="estimate" aria-labelledby="est-h">
   <div class="wrap">
     <div class="sec-head center rv">
       <h2 id="est-h">Junk removal prices, <span class="accent">by the load</span>.<span class="jjnew old" title="Added in the Oct 15 round">Just added</span></h2>
@@ -2659,7 +2503,7 @@ html[data-look="grog"] :is(.sec,.pagehead,main,.wash,.k-tint,.alt){background-co
 </main>
 
 <!-- ============ FOOTER ============ -->
-<section class="lk-only lk-grog lkg-cta" aria-label="Call or book"><img class="lkg-cta-bin" src="assets/wp-content/uploads/grog/mascot-bin.webp" alt="" width="520" height="313" loading="lazy"><div class="lkg-cta-mid"><p class="lkg-cta-h">Need a bin or a hand?</p><p class="lkg-cta-s">Family run in Barrie since 1992. Free quotes.</p><p class="lkg-cta-b"><a class="btn btn-primary" href="tel:+17053337767">Call 705.333.7767</a> <a class="btn btn-outline" href="mix-bin-rental.html#request">Book a bin</a> <a class="btn btn-outline" href="sms:+17053337767">Text a photo</a></p></div><img class="lkg-cta-truck" src="assets/wp-content/uploads/grog/mascot-truck.webp" alt="" width="520" height="318" loading="lazy"></section><div class="lk-only lk-grog lkg-tick" aria-hidden="true"><div class="lkg-track"><ul><li>Bin rental</li><li>Junk removal</li><li>Family run since 1992</li><li>Barrie and Simcoe County</li><li>Wood under every bin</li><li>Free quotes</li><li>705.333.7767</li></ul><ul><li>Bin rental</li><li>Junk removal</li><li>Family run since 1992</li><li>Barrie and Simcoe County</li><li>Wood under every bin</li><li>Free quotes</li><li>705.333.7767</li></ul></div></div><footer class="fB"><div class="fB-call" id="contact"><div class="wrap"><div><p class="k">Free quotes in every location</p><h2>Ready when <span class="accent">you are</span>.</h2></div><div class="btns"><a class="fbtn green" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="fbtn line" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a></div></div></div><div class="wrap"><div class="fB-cols"><div class="brand"><a href="#top" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo-stacked.webp" width="900" height="557" loading="lazy" alt="Jeff's Junk. Bin rentals, junk removals. We haul it all."></a><span class="soc"><a href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener" aria-label="Jeff's Junk on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.facebook.com/jeffsjunkbarrie" target="_blank" rel="noopener" aria-label="Jeff's Junk on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.600c0-.9.3-1.400 1.500-1.400h1.500V4.500c-.3 0-1.200-.1-2.200-.1-2.200 0-3.700 1.300-3.700 3.800v2.300H8.100v3h2.500V21z"/></svg></a><a href="https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw" target="_blank" rel="noopener" aria-label="Jeff's Junk on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.800a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.800-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a></span><a class="hash" href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener">#ShowUsYourJunk</a></div><div><h3>Services</h3><ul><li><a href="mix-junk-removal.html">Junk removal</a></li><li><a href="mix-bin-rental.html">Bin rentals</a></li><li><a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete bins</a></li><li><a href="mix-demolition.html">Demolition</a></li><li><a href="mix-furniture-bank.html">Furniture donation</a></li><li><a href="mix-commercial.html">Commercial</a></li><li><a href="mix-contractors.html">Contractors</a></li></ul></div><div><h3>Popular jobs</h3><ul><li><a href="mix-furniture-removal.html">Furniture removal</a></li><li><a href="mix-appliance-removal.html">Appliance removal</a></li><li><a href="mix-estate-cleanouts.html">Estate clean outs</a></li><li><a href="mix-hot-tub-removal.html">Hot tub removal</a></li><li><a href="mix-shed-removal.html">Shed removal</a></li></ul></div><div><h3>Company</h3><ul><li><a href="mix-about.html">About us</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-service-areas.html">Service areas</a></li><li><a href="mix-contact.html">Contact us</a></li></ul></div><div class="fhours"><h3>Hours</h3><dl class="hrs2"><dt>Mon to Fri</dt><dd>8am to 7pm</dd><dt>Saturday</dt><dd>8am to 12pm</dd><dt>Sun and holidays</dt><dd>Closed</dd></dl><img class="pay" src="assets/wp-content/uploads/visaMCamex.png" width="145" height="24" alt="We accept Visa, Mastercard and American Express" loading="lazy"><p class="pay-more">Visa Debit and e-Transfer too</p></div></div><div class="fB-bar"><span>© 2026 Jeff's Junk. Licensed by the Ministry of Environment, WSIB.</span><span>92 Davidson Street, Unit 2, Barrie, ON L4M 3R8</span><span>Proudly serving our community since 1992</span></div></div></footer>
+<footer class="fB"><div class="fB-call" id="contact"><div class="wrap"><div><p class="k">Free quotes in every location</p><h2>Ready when <span class="accent">you are</span>.</h2></div><div class="btns"><a class="fbtn green" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 705.333.7767</a><a class="fbtn line" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a></div></div></div><div class="wrap"><div class="fB-cols"><div class="brand"><a href="#top" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo-stacked.webp" width="900" height="557" loading="lazy" alt="Jeff's Junk. Bin rentals, junk removals. We haul it all."></a><span class="soc"><a href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener" aria-label="Jeff's Junk on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a><a href="https://www.facebook.com/jeffsjunkbarrie" target="_blank" rel="noopener" aria-label="Jeff's Junk on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.600c0-.9.3-1.400 1.500-1.400h1.500V4.500c-.3 0-1.200-.1-2.200-.1-2.200 0-3.700 1.300-3.700 3.800v2.300H8.100v3h2.500V21z"/></svg></a><a href="https://www.youtube.com/channel/UCwiP1hzxeR97RsRcsH4xiOw" target="_blank" rel="noopener" aria-label="Jeff's Junk on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4a2.5 2.5 0 0 0-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.800a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.800-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/></svg></a></span><a class="hash" href="https://www.instagram.com/jeffsjunkbarrie/" target="_blank" rel="noopener">#ShowUsYourJunk</a></div><div><h3>Services</h3><ul><li><a href="mix-junk-removal.html">Junk removal</a></li><li><a href="mix-bin-rental.html">Bin rentals</a></li><li><a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete bins</a></li><li><a href="mix-demolition.html">Demolition</a></li><li><a href="mix-furniture-bank.html">Furniture donation</a></li><li><a href="mix-commercial.html">Commercial</a></li><li><a href="mix-contractors.html">Contractors</a></li></ul></div><div><h3>Popular jobs</h3><ul><li><a href="mix-furniture-removal.html">Furniture removal</a></li><li><a href="mix-appliance-removal.html">Appliance removal</a></li><li><a href="mix-estate-cleanouts.html">Estate clean outs</a></li><li><a href="mix-hot-tub-removal.html">Hot tub removal</a></li><li><a href="mix-shed-removal.html">Shed removal</a></li></ul></div><div><h3>Company</h3><ul><li><a href="mix-about.html">About us</a></li><li><a href="mix-reviews.html">Reviews</a></li><li><a href="mix-guides.html">Tips &amp; guides</a></li><li><a href="mix-service-areas.html">Service areas</a></li><li><a href="mix-contact.html">Contact us</a></li></ul></div><div class="fhours"><h3>Hours</h3><dl class="hrs2"><dt>Mon to Fri</dt><dd>8am to 7pm</dd><dt>Saturday</dt><dd>8am to 12pm</dd><dt>Sun and holidays</dt><dd>Closed</dd></dl><img class="pay" src="assets/wp-content/uploads/visaMCamex.png" width="145" height="24" alt="We accept Visa, Mastercard and American Express" loading="lazy"><p class="pay-more">Visa Debit and e-Transfer too</p></div></div><div class="fB-bar"><span>© 2026 Jeff's Junk. Licensed by the Ministry of Environment, WSIB.</span><span>92 Davidson Street, Unit 2, Barrie, ON L4M 3R8</span><span>Proudly serving our community since 1992</span></div></div></footer>
 
 <!-- phones: sticky call bar (charcoal, never green) -->
 <style>
@@ -2957,7 +2801,7 @@ html[data-look="grog"] :is(.sec,.pagehead,main,.wash,.k-tint,.alt){background-co
   });
 })();
 </script>
-<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-bin-rental.html", "sel": "#jobs-bins .lq-line", "title": "Bins two by two", "text": "The four bins in the bin finder now sit two by two, so each one is bigger and easier to see."}, {"page": "mix-bin-rental.html", "sel": "#jobs-bins .lq-main", "title": "&ldquo;No&rdquo; comes first", "text": "The first answer is now &ldquo;No, help me pick&rdquo;, in green so it stands out. &ldquo;Three steps, one driveway&rdquo; was removed from this page."}],ID="2026-11-02-bin-finder-2x2",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-bin-rental.html", "sel": "#ready", "title": "Drop-off day, Home style", "text": "Your driveway, drop-off day is now a charcoal panel with green numbers, like &ldquo;You call, we haul&rdquo; on Home."}, {"page": "mix-bin-rental.html", "sel": "#take", "title": "Can you take my ___?", "text": "The hazard tape &ldquo;What can&rsquo;t go in a bin&rdquo; is gone. Bin rental and Shed removal now use the item checker from Home."}, {"page": "mix-area-barrie.html", "sel": "#ferndale", "title": "Every page looks like Home", "text": "Receipts, sticky notes, signposts and tape are now plain Home cards and chips, with the same headings, greens and spacing on every page except Home and Junk removal."}, {"page": "mix-appliance-removal.html", "sel": "#faq", "title": "Questions like Home", "text": "Every page&rsquo;s questions now sit beside the heading and call card, like Home, instead of a half width list."}, {"page": "mix-contractors.html", "sel": "#sizes", "title": "The little guys", "text": "Stay on Junk removal, Bin rental, Contractors or Furniture donation for 2 seconds: the truck, the bin, dirt and concrete, or the couch and box pop up with &ldquo;Need more help? Call Jeff&rsquo;s Junk.&rdquo;"}, {"page": "mix-contractors.html", "sel": ".nt-btn", "title": "Notes for Sam", "text": "Tap Add notes, then tap anything on any page to leave a note. Notes stay in your browser; send them with Email my notes or Copy all."}, {"page": "mix-grog-art.html", "sel": ".ga-top", "title": "Studio and Bold are gone", "text": "Now is the mockup. All the Grog art lives on this one page, every picture with its file name, so we can pick what to keep."}],ID="2026-11-02-brand-pass",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
 var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
   tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
   dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),play=card.querySelector('.jjt-play'),bar=card.querySelector('.jjt-bar'),barI=bar.querySelector('i'),cur=-1,el=null,raf=0,AUTO=false,timer=0,WAIT=10000,introAt=0,
@@ -3097,18 +2941,126 @@ if(document.readyState==='complete')setTimeout(start,400);else addEventListener(
   document.querySelectorAll('.ticks button').forEach(function(b){ b.addEventListener('click', function(){ setTimeout(estUse, 0); }); });
 })();
 </script>
-<script>(function(){var bar=document.querySelector('.lk-bar');if(!bar)return;
-function cur(){return document.documentElement.getAttribute('data-look')||'now'}
-function mark(){var c=cur();[].forEach.call(bar.querySelectorAll('button'),function(b){b.setAttribute('aria-pressed',b.dataset.lk===c?'true':'false')})}
-function setLook(l){try{localStorage.setItem('jjLook',l)}catch(e){}
-  if(l==='now')document.documentElement.removeAttribute('data-look');else{document.documentElement.setAttribute('data-look',l);
-    var F=window.jjLookFonts||{};if(F[l]&&!document.getElementById('lk-font-'+l)){var k=document.createElement('link');k.rel='stylesheet';k.href=F[l];k.id='lk-font-'+l;document.head.appendChild(k);}}
-  if(/[?&]look=/.test(location.search))history.replaceState(null,'',location.pathname+location.hash);mark();}
-bar.addEventListener('click',function(e){var b=e.target.closest('button[data-lk]');if(b)setLook(b.dataset.lk)});mark();
-// Studio size picker and Grog flavour panels
-[].forEach.call(document.querySelectorAll('[data-lk-pick]'),function(box){var opts=JSON.parse(box.getAttribute('data-lk-pick'));
-  var btns=box.querySelectorAll('[data-i]');function show(i){var o=opts[i];[].forEach.call(btns,function(b){b.setAttribute('aria-pressed',+b.dataset.i===i?'true':'false')});
-    [].forEach.call(box.querySelectorAll('[data-f]'),function(el){var f=el.dataset.f;if(f==='img'){el.src=o.img;el.alt=o.alt}else if(f==='bg'){el.style.background=o.bg}else if(f==='href'){el.href=o.href}else if(f==='kind'){el.dataset.kind=o.kind;el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}else el.textContent=o[f]})}
-  [].forEach.call(btns,function(b){b.addEventListener('click',function(){show(+b.dataset.i)});if(box.hasAttribute('data-lk-hover'))b.addEventListener('mouseenter',function(){show(+b.dataset.i)})});});
-})();</script></body>
+<div class="jjg" hidden><div class="jjg-guys" aria-hidden="true"><img data-src="assets/wp-content/uploads/grog/mascot-truck.webp" alt="" class="wide" decoding="async" width="520" height="315"></div><div class="jjg-b" role="status"><span><b>Need more help?</b> Call Jeff&rsquo;s Junk.</span><a href="tel:+17053337767"><svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg>705.333.7767</a><button type="button" class="jjg-x" aria-label="Close">&times;</button></div></div><script>
+(function () {
+  var g = document.querySelector('.jjg'); if (!g) return;
+  var K = 'jjGuyShut:' + location.pathname;
+  try { if (sessionStorage.getItem(K)) return; } catch (e) {}
+  setTimeout(function () { [].forEach.call(g.querySelectorAll('img[data-src]'), function (i) { i.src = i.getAttribute('data-src'); }); }, 1000);
+  setTimeout(function () { g.hidden = false; requestAnimationFrame(function () { g.classList.add('up', 'wave'); }); }, 2000);
+  g.querySelector('.jjg-x').addEventListener('click', function () {
+    g.classList.remove('up'); try { sessionStorage.setItem(K, '1'); } catch (e) {}
+  });
+})();
+</script>
+<script>
+(function () {
+  var KEY = 'jjNotes', WHO = 'jjNotesWho', PAGE = location.pathname.split('/').pop() || 'index.html';
+  var TITLE = /favourites|index/.test(PAGE) ? 'Home' : (document.title || PAGE).replace(/ · Jeff.*$/, '');
+  function load() { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } }
+  function save(a) { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch (e) {} }
+  function who() { try { return localStorage.getItem(WHO) || ''; } catch (e) { return ''; } }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  var notes = load(), on = false, bar, pop;
+
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'nt-btn';
+  document.body.appendChild(btn);
+  function badge() { btn.innerHTML = (on ? 'Notes on' : 'Add notes') + '<b>' + (notes.length || '') + '</b>'; }
+
+  /* where on the page a note sits: the section it is in, plus how far across and down that section */
+  function blocks() { return [].slice.call(document.querySelectorAll('main > section, main > div > section, header.site-head, footer')); }
+  function keyOf(el) { return el.id ? '#' + el.id : el.tagName.toLowerCase() + ':' + blocks().indexOf(el); }
+  function byKey(k) { if (k.charAt(0) === '#') return document.getElementById(k.slice(1)); var i = +k.split(':')[1]; return blocks()[i] || null; }
+  function label(el) { var h = el.querySelector('h1,h2,h3'); return h ? h.textContent.replace(/\s+/g, ' ').trim().slice(0, 70) : (el.tagName === 'FOOTER' ? 'Footer' : el.tagName === 'HEADER' ? 'Menu bar' : 'Top of page'); }
+
+  function pins() {
+    [].forEach.call(document.querySelectorAll('.nt-pin'), function (p) { p.remove(); });
+    notes.forEach(function (n, i) {
+      if (n.page !== PAGE) return;
+      var el = byKey(n.sec); if (!el) return;
+      var r = el.getBoundingClientRect(), p = document.createElement('button');
+      p.type = 'button'; p.className = 'nt-pin'; p.textContent = i + 1; p.title = n.text;
+      p.style.left = (r.left + window.scrollX + r.width * n.x) + 'px'; p.style.top = (r.top + window.scrollY + r.height * n.y) + 'px';
+      p.addEventListener('click', function (e) { e.stopPropagation(); e.preventDefault(); compose(n, e.pageX, e.pageY); });
+      document.body.appendChild(p);
+    });
+    badge();
+  }
+  function closePop() { if (pop) { pop.remove(); pop = null; } }
+  function compose(n, x, y) {
+    closePop();
+    var isNew = !n.id;
+    pop = document.createElement('div'); pop.className = 'nt-pop';
+    pop.innerHTML = '<small>' + esc(TITLE) + ' › ' + esc(n.where) + '</small><textarea placeholder="What should change here? Add, remove, reword…"></textarea>' +
+      '<div class="row"><button type="button" class="go">Save note</button><button type="button" class="no">Cancel</button>' + (isNew ? '' : '<button type="button" class="del">Delete</button>') + '</div>';
+    document.body.appendChild(pop);
+    var w = pop.offsetWidth; pop.style.left = Math.max(12, Math.min(x - 20, window.scrollX + document.documentElement.clientWidth - w - 12)) + 'px'; pop.style.top = (y + 18) + 'px';
+    var ta = pop.querySelector('textarea'); ta.value = n.text || ''; ta.focus();
+    pop.addEventListener('click', function (e) { e.stopPropagation(); });
+    pop.querySelector('.no').addEventListener('click', closePop);
+    pop.querySelector('.go').addEventListener('click', function () {
+      var t = ta.value.trim(); if (!t) { ta.focus(); return; }
+      n.text = t; n.who = who(); n.at = new Date().toISOString();
+      if (isNew) { n.id = Date.now() + '-' + Math.round(Math.random() * 1e6); notes.push(n); }
+      save(notes); closePop(); pins();
+    });
+    if (!isNew) pop.querySelector('.del').addEventListener('click', function () { notes = notes.filter(function (m) { return m.id !== n.id; }); save(notes); closePop(); pins(); });
+  }
+  function onClick(e) {
+    if (!on || e.target.closest('.nt-bar,.nt-pop,.nt-list,.nt-btn,.nt-pin,.mv-btn,.mv')) return;
+    e.preventDefault(); e.stopPropagation();
+    var el = e.target.closest('main > section, main > div > section, header.site-head, footer') || blocks()[0]; if (!el) return;
+    var r = el.getBoundingClientRect();
+    compose({ page: PAGE, title: TITLE, sec: keyOf(el), where: label(el), x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height, view: window.innerWidth < 700 ? 'phone' : 'desktop' }, e.pageX, e.pageY);
+  }
+  function text() {
+    var out = 'Website notes' + (who() ? ' from ' + who() : '') + '\n', last = '';
+    notes.forEach(function (n, i) { if (n.title !== last) { out += '\n' + n.title.toUpperCase() + '\n'; last = n.title; } out += (i + 1) + '. [' + n.where + (n.view === 'phone' ? ', phone view' : '') + '] ' + n.text + '\n'; });
+    return out;
+  }
+  function list() {
+    var ov = document.createElement('div'); ov.className = 'nt-list';
+    var html = '<div class="nt-card"><h2>All notes (' + notes.length + ')</h2><p class="sub">Saved in this browser. Send them when you are done.</p>', last = '';
+    if (!notes.length) html += '<p class="sub">No notes yet. Close this, then click anything on a page to leave one.</p>';
+    notes.forEach(function (n, i) {
+      if (n.title !== last) { html += (last ? '</ol>' : '') + '<h3>' + esc(n.title) + '</h3><ol>'; last = n.title; }
+      html += '<li><i>' + (i + 1) + '</i><span><em>' + esc(n.where) + (n.view === 'phone' ? ' · phone view' : '') + '</em>' + esc(n.text) + '</span><a href="' + esc(n.page) + '#nt=' + n.id + '">Go to it</a></li>';
+    });
+    html += (last ? '</ol>' : '') + '<div class="row"><button type="button" class="go" data-a="mail">Email my notes</button><button type="button" data-a="copy">Copy all</button><button type="button" data-a="file">Download</button>' +
+      '<button type="button" data-a="close">Close</button>' + (notes.length ? '<button type="button" class="del" data-a="clear">Delete all</button>' : '') + '</div></div>';
+    ov.innerHTML = html; document.body.appendChild(ov);
+    ov.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var a = e.target.getAttribute && e.target.getAttribute('data-a');
+      if (e.target === ov || a === 'close') { ov.remove(); return; }
+      if (a === 'copy') { (navigator.clipboard ? navigator.clipboard.writeText(text()) : Promise.reject()).then(function () { e.target.textContent = 'Copied'; }, function () { window.prompt('Copy the notes:', text()); }); }
+      if (a === 'mail') { location.href = 'mailto:?subject=' + encodeURIComponent("Jeff's Junk website notes" + (who() ? ' from ' + who() : '')) + '&body=' + encodeURIComponent(text()); }
+      if (a === 'file') { var l = document.createElement('a'); l.href = URL.createObjectURL(new Blob([text()], { type: 'text/plain' })); l.download = 'website-notes.txt'; l.click(); }
+      if (a === 'clear' && window.confirm('Delete every note? This cannot be undone.')) { notes = []; save(notes); ov.remove(); pins(); }
+    });
+  }
+  function set(v) {
+    on = v; document.body.classList.toggle('nt-on', on); closePop();
+    if (on && !bar) {
+      bar = document.createElement('div'); bar.className = 'nt-bar';
+      bar.innerHTML = '<span><b>Notes on.</b> Click anything to leave a note.</span><input type="text" placeholder="Your name" aria-label="Your name" maxlength="40"><button type="button" data-a="list">All notes</button><button type="button" class="go" data-a="done">Done</button>';
+      document.body.appendChild(bar);
+      var inp = bar.querySelector('input'); inp.value = who();
+      inp.addEventListener('input', function () { try { localStorage.setItem(WHO, inp.value.trim()); } catch (e) {} });
+      bar.addEventListener('click', function (e) { e.stopPropagation(); var a = e.target.getAttribute('data-a'); if (a === 'list') list(); if (a === 'done') set(false); });
+    }
+    if (bar) bar.style.display = on ? '' : 'none';
+    try { sessionStorage.setItem('jjNotesOn', on ? '1' : ''); } catch (e) {}
+    pins();
+  }
+  btn.addEventListener('click', function (e) { e.stopPropagation(); set(!on); });
+  document.addEventListener('click', onClick, true);
+  window.addEventListener('resize', pins); window.addEventListener('load', pins);
+  var keep = ''; try { keep = sessionStorage.getItem('jjNotesOn'); } catch (e) {}
+  set(keep === '1' || /#nt=/.test(location.hash));
+  var m = /#nt=([\w-]+)/.exec(location.hash);
+  if (m) setTimeout(function () { var n = notes.filter(function (x) { return x.id === m[1]; })[0], el = n && byKey(n.sec); if (el) { var r = el.getBoundingClientRect(); window.scrollTo(0, r.top + window.scrollY + r.height * n.y - window.innerHeight / 2); } }, 400);
+})();
+</script>
+</body>
 </html>
