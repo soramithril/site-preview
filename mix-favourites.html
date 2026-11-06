@@ -2038,6 +2038,21 @@ html.jj-hide-new .jjnew-sec,html.jj-hide-new .jjnew-card{outline:0}
 .mk-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:7px 12px;background:#f2b705;color:#15191c;font:600 13px/1.2 system-ui,sans-serif;text-align:center}
 .mk-bar a{color:#15191c;font-weight:800}
 </style>
+<style id="fx05">
+/* fx05 3: hand drawn marker underline, one per page */
+.fx-ul{position:relative;display:inline-block}
+.fx-ul>.fx-ul-s{position:absolute;left:-3%;width:106%;bottom:-.3em;height:.42em;overflow:visible;pointer-events:none}
+.fx-ul path{fill:none;stroke:#2fb255;stroke-width:5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0}
+.fx-ul.fx-wait path{stroke-dashoffset:1}
+.fx-ul.fx-go path{animation:fxdraw .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fxdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.fx-ul.fx-wait path{stroke-dashoffset:0}.fx-ul.fx-go path{animation:none}}
+
+/* fx05 4: "We haul ..." flips through a few jobs once, then lands on "it all". The widest word sets the width, so nothing jumps */
+.fx-rw{display:inline-grid;vertical-align:bottom;overflow:hidden;padding:.12em 0;margin:-.12em 0;text-align:center;justify-items:center}
+.fx-rw::before{content:attr(data-w);grid-area:1/1;visibility:hidden}
+.fx-rw>span{grid-area:1/1;white-space:nowrap}
+</style>
 <style id="notes">
 /* ---------- review notes (mock-up tool) ---------- */
 .nt-btn{position:fixed;left:0;top:calc(50% + 78px);z-index:140;display:none;align-items:center;gap:8px;padding:12px 14px 12px 12px;border:0;border-radius:0 14px 14px 0;
@@ -2224,7 +2239,7 @@ body.nt-on .nt-pin{display:grid}
   <div class="wrap">
     <div class="hero-copy">
       <p class="since"><span>Proudly serving our community since 1992</span><b>Experience you can see. Service you trust.</b></p>
-      <h1 id="hero-h">Junk removal &amp; bin rentals <span class="accent">We haul it all</span></h1>
+      <h1 id="hero-h">Junk removal &amp; bin rentals <span class="accent">We haul <span class="fx-rw" data-w="pianos"><span>it all</span><span aria-hidden="true"></span></span></span></h1>
       <div class="hero-btns">
         <a class="btn btn-primary" aria-label="Call Jeff's Junk on 705.333.7767" href="tel:+17053337767"><svg aria-hidden="true"><use href="#i-phone"/></svg>Talk junk with Jeff</a>
         <span class="hp-wrap"><span class="hp-note" aria-hidden="true"><svg class="hp-arrow hp-arrow-down" viewBox="0 0 80 64" aria-hidden="true"><path d="M66 6c4 18-4 34-22 44-6 3-12 5-18 6" /><path d="M25 56l12-11M25 56l14 5" /></svg><svg class="hp-arrow hp-arrow-up" viewBox="0 0 90 64" aria-hidden="true"><path d="M84 52c-22 6-44-2-58-22-3-4-5-9-6-14" /><path d="M20 15l-6 15M20 15l12 10" /></svg><span>Quotes are always free!</span></span><a class="btn hp-btn hp-phone" href="sms:+17053337767?&amp;body=Hi%20Jeff%27s%20Junk!%20I%27d%20like%20a%20free%20quote.%20Here%27s%20a%20photo.%20Town%3A%20"><svg aria-hidden="true" class="hp-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Text a photo for a free quote</a><a class="btn hp-btn hp-desk" href="mix-contact.html#request"><svg aria-hidden="true" class="hp-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Send a photo for a free quote</a><span class="jjnew" title="Added in the Oct 19 round">Just added</span></span>
@@ -2308,7 +2323,7 @@ body.nt-on .nt-pin{display:grid}
 <section class="sec" id="pricing" aria-labelledby="price-h">
   <div class="wrap">
     <div class="sec-head center rv">
-      <h2 id="price-h">Straight prices, <span class="accent">no surprises</span>.</h2>
+      <h2 id="price-h">Straight prices, <span class="accent fx-ul">no surprises<svg class="fx-ul-s" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13C40 7 90 5 130 7s52 3 66 1"/></svg></span>.</h2>
       <p class="lede">Most junk removal is priced by how much space it takes. The 14 and 20 yard bins are a flat rental plus the dump fee. The 4 and 7 yard bins are a flat rate.</p>
     </div>
 
@@ -2688,7 +2703,7 @@ body.nt-on .nt-pin{display:grid}
     var from = shown, t0 = null;
     function step(ts){
       if (!t0) t0 = ts;
-      var t = Math.min(1, (ts - t0) / 380), e = 1 - Math.pow(1 - t, 3);
+      var t = Math.min(1, (ts - t0) / 600), e = 1 - Math.pow(1 - t, 3);
       shown = Math.round(from + (to - from) * e);
       elP.textContent = '$' + shown;
       if (t < 1) raf = requestAnimationFrame(step);
@@ -3018,7 +3033,7 @@ body.nt-on .nt-pin{display:grid}
   });
 })();
 </script>
-<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-demolition.html", "sel": "#what", "title": "We tear down houses", "text": "House and large scale demolition, since 2025: whole houses and anything else. The page title, intro and a new &ldquo;Do you tear down houses?&rdquo; question say it too. It needs a real photo of a house coming down."}, {"page": "mix-about.html", "sel": "#timeline", "title": "2025 on the timeline", "text": "The 2025 step now says whole houses, and the What we do card lists them."}],ID="2026-11-03-house-demo",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-favourites.html", "sel": "#hero-h", "title": "We haul ... it all", "text": "After a second the tagline flips through sofas, sheds, decks, pianos and BBQs, then lands back on &ldquo;We haul it all&rdquo;. It runs once. Google and screen readers only see &ldquo;We haul it all&rdquo;."}, {"page": "mix-favourites.html", "sel": "#estimate", "title": "The price rolls to the number", "text": "Move the slider: the price counts up or down to the new number. It was already there but too quick to notice, so it now takes 0.6 seconds. Same on Junk removal, Furniture and Appliance removal."}, {"page": "mix-favourites.html", "sel": "#price-h", "title": "A marker line that draws itself", "text": "The green marker word gets a hand drawn line when it scrolls into view. One per page, so it stays special."}, {"page": "mix-bin-rental.html", "sel": "#bin-scale", "title": "How big is each bin?", "text": "New: tap a size and the bin grows or shrinks next to a 6 ft person, with the photo, size and price. Also in the bin size guide."}, {"page": "mix-dirt-concrete-bins.html", "sel": ".fx-ul", "title": "No mixing, underlined", "text": "On this page the marker line goes under the rule people miss."}, {"page": "mix-guide-bin-size.html", "sel": ".fxs", "title": "Guides: bin sizes and a reading bar", "text": "The guide has the same to scale bins, and every guide now has a thin green bar at the top that fills as you read."}],ID="2026-11-06-effects",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
 var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
   tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
   dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),play=card.querySelector('.jjt-play'),bar=card.querySelector('.jjt-bar'),barI=bar.querySelector('i'),cur=-1,el=null,raf=0,AUTO=false,timer=0,WAIT=10000,introAt=0,
@@ -3112,6 +3127,20 @@ if(document.readyState==='complete')setTimeout(start,400);else addEventListener(
   });
 })();
 </script>
+<script>(function(){var u=document.querySelectorAll('.fx-ul');if(!u.length||!('IntersectionObserver' in window))return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('fx-wait');e.target.classList.add('fx-go');io.unobserve(e.target)}})},{threshold:.9});
+u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)return;x.classList.add('fx-wait');io.observe(x)});})();(function(){var r=document.querySelector('.fx-rw');if(!r)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var W=['sofas','sheds','decks','pianos','BBQs','it all'],a=r.children[0],b=r.children[1],i=0,E='cubic-bezier(.2,.7,.2,1)';
+function step(){var w=W[i++];b.textContent=w;
+a.animate([{transform:'none',opacity:1},{transform:'translateY(-100%)',opacity:0}],{duration:420,easing:E,fill:'forwards'});
+b.animate([{transform:'translateY(100%)',opacity:0},{transform:'none',opacity:1}],{duration:420,easing:E,fill:'forwards'});
+var t=a;a=b;b=t;b.setAttribute('aria-hidden','true');a.removeAttribute('aria-hidden');
+setTimeout(function(){b.textContent='';b.getAnimations().forEach(function(x){x.cancel()});b.style.opacity=0;if(i<W.length)setTimeout(step,i===W.length-1?650:420)},440)}
+if(!r.animate)return;
+var go=function(){var q=r.getBoundingClientRect();if(q.top<innerHeight&&q.bottom>0)step()};
+setTimeout(go,1800);})();</script>
 <script>
 (function () {
   var KEY = 'jjNotes', WHO = 'jjNotesWho', PAGE = location.pathname.split('/').pop() || 'index.html';
