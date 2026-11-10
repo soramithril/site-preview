@@ -2407,10 +2407,10 @@ html{scroll-padding-top:96px}
 .v2-rcpt dd{margin:0;font-weight:600;font-size:19px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .v2-rcpt dd.v2-free{color:var(--green)}
 .v2-rcpt-f{margin-top:16px;font-size:14.5px;color:var(--mute)}
-.v2-pay-copy .v2-pts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
-.v2-pay-copy .v2-pts li{display:grid;grid-template-columns:auto 1fr;gap:14px;font-size:16.5px;color:#3b454b}
-.v2-pay-copy .v2-pts b{color:var(--ink)}
-.v2-pay-copy .v2-pts .v2-ck{width:28px;height:28px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;margin-top:1px}
+.v2-pts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
+.v2-pts li{display:grid;grid-template-columns:auto 1fr;gap:14px;font-size:16.5px;color:#3b454b}
+.v2-pts b{color:var(--ink)}
+.v2-pts .v2-ck{width:28px;height:28px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;margin-top:1px}
 .v2-zone{margin-top:26px;font-size:14.5px;color:var(--mute)}
 .v2-zone a{color:var(--ink);font-weight:600}
 
@@ -2553,17 +2553,55 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
   .v2-tbl tr.v2-sel{box-shadow:inset 4px 0 0 var(--go);background:#f6fbf7}
   .v2-tbl tr.v2-sel>th{box-shadow:none}
 }
-.v2-pay{margin-top:56px}
+.v2-facts{margin-top:44px}
+@media (min-width:860px){.v2-facts .v2-pts{grid-template-columns:1fr 1fr;gap:18px 48px;margin-top:0}}
+.v2-facts .v2-zone{max-width:60em}
 
-/* the real floating call bar, plus one more pill: book the bin you picked (white on charcoal, never green) */
+/* floating buttons. Phones: the real bar plus a white Book part. Desktop: one charcoal bar with the bin you picked
+   (white Book button, never green), in the spot the real buttons use, so the little guy still stands on it. */
 .jj-call a.v2-jb{background:#fff;color:#23282d}
 .jj-call a.v2-jb:hover,.jj-call a.v2-jb:focus{background:#e6ede8;color:#23282d}
+.v2-dock{display:none}
 @media (max-width:768px){
   .jj-call-phone a{font-size:16px;padding-left:6px;padding-right:6px}
   .jj-call-phone .jj-call-num{display:none}
   .jj-call-phone .jj-call-text,.jj-call-phone .jj-call-call{flex:1 1 0}
   .jj-call-phone a.v2-jb{flex:1.5 1 0}
 }
+@media (min-width:769px){
+  .jj-call-desktop{display:none}
+  .v2-dock{position:fixed;right:24px;bottom:24px;z-index:9999;display:flex;align-items:center;gap:12px;background:#23282d;color:#fff;border-radius:999px;padding:8px 8px 8px 16px;box-shadow:0 0 0 3px #fff,0 4px 18px rgba(0,0,0,.3);font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .v2-dock img{width:64px;height:auto;display:block}
+  .v2-dock-t{line-height:1.2;padding-right:4px}
+  .v2-dock-t b{display:block;font-size:16px;font-weight:600;white-space:nowrap}
+  .v2-dock-t span{font-size:13.5px;color:#c9d1cc;white-space:nowrap}
+  .v2-dock a{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 18px;border-radius:999px;font-weight:600;font-size:15.5px;text-decoration:none;white-space:nowrap;transition:background .18s}
+  .v2-dock-call{background:#3a4249;color:#fff}
+  .v2-dock-call:hover{background:#000;color:#fff}
+  .v2-dock-book{background:#fff;color:#23282d}
+  .v2-dock-book:hover{background:#dfe9e2;color:#23282d}
+  .jjg{bottom:92px}
+}
+@media (min-width:769px) and (max-width:1023px){.v2-dock img,.v2-dock-t span{display:none}}
+
+/* form extras */
+.v2-pref{grid-template-columns:repeat(3,1fr)}
+@media (max-width:560px){.v2-pref{grid-template-columns:repeat(3,1fr)}}
+.v2-more{border:1.5px solid #d3dad6;border-radius:14px;background:var(--bg)}
+.v2-more summary{list-style:none;cursor:pointer;padding:15px 16px;font-weight:600;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.v2-more summary::-webkit-details-marker{display:none}
+.v2-more summary::before{content:"+";width:26px;height:26px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;font-weight:700;flex:none}
+.v2-more[open] summary::before{content:"–"}
+.v2-more summary small{font-weight:400;color:var(--mute);font-size:14px}
+.v2-more-in{display:grid;gap:16px;grid-template-columns:1fr 1fr;padding:4px 16px 18px}
+@media (max-width:560px){.v2-more-in>*{grid-column:1/-1}}
+.v2-next{list-style:none;counter-reset:n;margin:22px 0 0;padding:0;display:grid;gap:12px}
+.v2-next li{counter-increment:n;display:flex;gap:12px;align-items:flex-start;font-size:16px;color:#3b454b}
+.v2-next li::before{content:counter(n);flex:none;width:28px;height:28px;border-radius:50%;background:var(--char);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+.v2-next .ph{display:block;margin-top:6px;width:fit-content}
+.v2-next b{color:var(--ink)}
+.v2-rather{margin-top:20px!important;font-size:16px;color:#3b454b}
+.v2-rather a{font-weight:600;color:var(--ink)}
 
 /* scroll reveals: pure CSS, only where supported, never when motion is reduced */
 @media (prefers-reduced-motion:no-preference){
@@ -2663,7 +2701,7 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
     </nav>
     <div class="head-cta">
       <div class="head-contact"><a class="head-phone" href="tel:+17053337767" aria-label="Call 705.333.7767"><span class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span class="num">705.333.7767</span></a><a class="head-mail" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a></div>
-      <a class="btn btn-dark btn-sm head-get" href="mix-favourites.html#estimate">Get a price</a>
+      <a class="btn btn-dark btn-sm head-get" href="#request" style="background:#23282d!important;border-color:#23282d!important;color:#fff!important">Book a bin</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -2788,15 +2826,7 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
         <tr data-row="20"><th scope="row">20 yard bin<small>Job sites</small></th><td data-l="Size">12 ft long, 8 ft wide, 5.5 ft high</td><td data-l="Price"><span class="v2-p">$250 for 1–7 days<small>Zone 1 price</small></span></td><td data-l="Dump fee">$135 up to 1 tonne</td><td data-l="Good for"><span>Big renos and construction jobs. About 10 pickup truck loads. <a href="mix-contractors.html">Contractors</a></span></td><td><a class="v2-btn v2-btn-dark v2-btn-sm" href="#request" data-pick="20">Book a 20 yard</a></td></tr>
       </tbody>
     </table>
-    <div class="v2-pay">
-    <div class="v2-rv">
-      <div class="v2-rcpt">
-        <div class="v2-rcpt-h"><img src="assets/wp-content/uploads/jeffs-junk-logo-222.webp" width="222" height="100" alt="" loading="lazy"><span data-b="rcTitle">14 yard bin</span></div>
-        <dl id="rcpt"></dl>
-        <p class="v2-rcpt-f" data-b="rcFoot"></p>
-      </div>
-    </div>
-    <div class="v2-pay-copy">
+    <div class="v2-facts">
       <ul class="v2-pts">
         <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>How the dump fee works.</b> It's $135 for up to 1 tonne (2,200 lb), prorated after that. It applies to the 14 and 20 yard bins.</span></li>
         <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Dirt and concrete bins are a flat rate.</b> The 4 and 7 yard bins have no dump fee. One material per bin, no mixing.</span></li>
@@ -2804,7 +2834,6 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
         <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Pay how you like.</b> Visa, Mastercard, American Express, Visa Debit and e-Transfer.</span></li>
       </ul>
       <p class="v2-zone">Zone 1 is Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and <a href="mix-area-innisfil.html">Innisfil</a>. Anywhere else, call for the price. We deliver across Simcoe County, including <a href="mix-area-orillia.html">Orillia</a>. <a href="mix-service-areas.html">See every town we serve</a>.</p>
-    </div>
     </div>
   </div>
 </section>
@@ -2878,9 +2907,9 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
         <p class="v2-cap">Your driveway, drop off day</p>
         <h3 style="margin-top:8px">A few minutes before the truck comes saves a lot of back and forth.</h3>
         <ul>
-          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Pick the spot.</b> Every bin is 12 ft long. If a car fits in the spot, our truck fits too.</span></li>
-          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Clear the way.</b> Move cars out of the driveway on drop off and pickup day. The truck needs 9 ft of clear height, so watch for low wires and branches.</span></li>
-          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Load it smart.</b> Flat, heavy things first, then the bulky ones. Load it level, with nothing above the top edge, and close the door before pickup day.</span></li>
+          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Pick the spot.</b> If a car fits there, our truck fits too.</span></li>
+          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Clear the way.</b> Cars out of the driveway, and 9 ft of clear height for the truck.</span></li>
+          <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Load it level.</b> Nothing above the top edge, and close the door before pickup day.</span></li>
         </ul>
       </div>
     </div>
@@ -2976,27 +3005,26 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
 <section class="v2-sec v2-book" id="request">
   <div class="v2-wrap v2-book-in">
     <div class="v2-book-side">
-      <p class="v2-cap">Your bin, your day</p>
-      <h2 style="margin-top:10px">Book a bin <span class="v2-mk">online</span>.</h2>
-      <p>Tell us where and when, and we'll call or email to confirm your bin, your price and your deposit.</p>
+      <p class="v2-cap">Five quick questions</p>
+      <h2 style="margin-top:10px">Request your bin <span class="v2-mk">online</span>.</h2>
+      <p>Send this and we get back to you to confirm your bin, your price and your deposit. Nothing is paid on this page.</p>
       <div class="v2-sum" aria-live="polite">
         <img id="sumImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="1000" height="566" alt="" loading="lazy">
         <div><b data-b="name">14 yard bin</b><span data-b="dims">12 ft long · 7 ft wide · 5 ft high</span><span class="v2-p" data-b="line">$195 / 7 days + dump fee</span></div>
       </div>
-      <ul class="v2-ticks">
-        <li><svg class="v2-ic"><use href="#v2i-check"/></svg>Wood under every bin</li>
-        <li><svg class="v2-ic"><use href="#v2i-check"/></svg>You choose the pickup day</li>
-        <li><svg class="v2-ic"><use href="#v2i-check"/></svg>Rather text? 705.333.7767</li>
-      </ul>
-      
+      <ol class="v2-next">
+        <li><span><b>You send the request.</b> It takes about five answers.</span></li>
+        <li><span><b>We get back to you</b> the way you pick: a call, a text or an email. <span class="ph">[Jeff: how fast do we get back to people during office hours?]</span></span></li>
+        <li><span><b>We drop the bin on your day</b>, with wood underneath.</span></li>
+      </ol>
+      <p class="v2-rather">Rather not fill anything in? <a href="tel:+17053337767">Call</a> or <a href="sms:+17053337767">text 705.333.7767</a>.</p>
     </div>
 
     <form class="v2-form" id="form" novalidate>
-      <div class="v2-f"><label for="fn">Full name</label><input id="fn" type="text" autocomplete="name" required></div>
+      <div class="v2-f"><label for="fn">Your name</label><input id="fn" type="text" autocomplete="name" required></div>
       <div class="v2-f"><label for="fp">Phone number</label><input id="fp" type="tel" autocomplete="tel" inputmode="tel" required></div>
-      <div class="v2-f"><label for="fe">Email</label><input id="fe" type="email" autocomplete="email"></div>
-      <div class="v2-f"><label for="ft">Town</label><input id="ft" type="text" autocomplete="address-level2"></div>
-      <div class="v2-f v2-full"><label for="fw">Where should the bin go?</label><input id="fw" type="text" placeholder="Driveway, beside the garage…"></div>
+      <div class="v2-f"><label for="ft">Town</label><input id="ft" type="text" autocomplete="address-level2" required></div>
+      <div class="v2-f"><label for="fd">Drop off day</label><input id="fd" type="date" required></div>
       <fieldset class="v2-f v2-full"><legend>Which bin?</legend>
         <div class="v2-sizes" id="formSizes">
           <label><input type="radio" name="bin" value="4">4 yard</label>
@@ -3006,16 +3034,29 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
           <label><input type="radio" name="bin" value="0">Not sure</label>
         </div>
       </fieldset>
-      <div class="v2-f"><label for="fd">Drop off day</label><input id="fd" type="date" required></div>
-      <div class="v2-f"><label for="fu">Pickup day <small>(optional)</small></label><input id="fu" type="date"></div>
-      <div class="v2-f v2-full">
-        <label for="fph">Photo of what's going in <small>(optional, up to 3)</small></label>
-        <label class="v2-drop" for="fph"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-cam"/></svg></i><span><b id="phT">Add photos</b><span>Not sure which size? A photo helps us pick the right bin.</span></span></label>
-        <input class="v2-sr" id="fph" type="file" accept="image/*" multiple>
-      </div>
-      <div class="v2-f v2-full"><label for="fm">What's going in it? <small>(optional)</small></label><textarea id="fm"></textarea></div>
+      <fieldset class="v2-f v2-full"><legend>How should we reach you?</legend>
+        <div class="v2-sizes v2-pref" id="formPref">
+          <label><input type="radio" name="reach" value="call" checked>Call me</label>
+          <label><input type="radio" name="reach" value="text">Text me</label>
+          <label><input type="radio" name="reach" value="email">Email me</label>
+        </div>
+      </fieldset>
+      <div class="v2-f v2-full" id="emailRow" hidden><label for="fe">Email</label><input id="fe" type="email" autocomplete="email"></div>
+      <details class="v2-more v2-full">
+        <summary>Add details <small>(optional: a photo, the pickup day, where it goes)</small></summary>
+        <div class="v2-more-in">
+          <div class="v2-f v2-full"><label for="fw">Where should the bin go?</label><input id="fw" type="text" placeholder="Driveway, beside the garage…"></div>
+          <div class="v2-f"><label for="fu">Pickup day</label><input id="fu" type="date"></div>
+          <div class="v2-f"><label for="fm">What's going in it?</label><input id="fm" type="text"></div>
+          <div class="v2-f v2-full">
+            <label for="fph">Photo of what's going in <small>(up to 3)</small></label>
+            <label class="v2-drop" for="fph"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-cam"/></svg></i><span><b id="phT">Add photos</b><span>Not sure which size? A photo helps us pick the right bin.</span></span></label>
+            <input class="v2-sr" id="fph" type="file" accept="image/*" multiple>
+          </div>
+        </div>
+      </details>
       <button class="v2-btn v2-btn-go v2-btn-wide v2-full" type="submit"><span data-b="req">Request my 14 yard bin</span><svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></button>
-      <p class="v2-form-foot v2-full">We answer during office hours: Monday to Friday 8 to 7, Saturday 8 to 12. Rather talk it through? <a href="tel:+17053337767" style="color:var(--ink);font-weight:600">Call 705.333.7767</a></p>
+      <p class="v2-form-foot v2-full">We answer during office hours: Monday to Friday 8 to 7, Saturday 8 to 12.</p>
     </form>
   </div>
 </section>
@@ -3503,26 +3544,27 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
        n:10,loads:'About 10 pickup truck loads. Big renos and construction sites.'}
   };
   var JOBS=[
-    ['Garage or basement',14,null,'Most homeowners pick this one.'],
-    ['Moving or downsizing',14,null,'Rather not load it yourself? <a href="mix-junk-removal.html">Our crew can do it for you</a>.'],
+    ['Household clean out',14,null,'A garage, a basement or a move. Most homeowners pick this one. Rather not load it yourself? <a href="mix-junk-removal.html">Our crew can do it for you</a>.'],
     ['Whole house or estate',20,null,'Or <a href="mix-estate-cleanouts.html">let our crew clear it</a>.'],
-    ['Bathroom reno',14,null,''],
-    ['Kitchen or basement reno',20,null,''],
-    ['Construction or demolition',20,null,'The one our contractors use most. Debris goes straight in.'],
-    ['Deck or fence',20,null,'Or <a href="mix-demolition.html">we take it down for you</a>.'],
+    ['Renovation',14,null,'A small reno, like a bathroom, fits a 14 yard. A kitchen or a basement needs the 20 yard.'],
+    ['Construction or demolition',20,null,'The one our contractors use most. Debris goes straight in. A deck or fence coming down? <a href="mix-demolition.html">We can take it down for you</a>.'],
     ['Roof shingles',14,null,'Shingles are heavy, so it’s all about weight: the 14 yard is the one for a roof. <a href="mix-roofing-bins.html">Roofing bins</a>'],
     ['Yard waste',14,null,'A 4 yard for a small clean up, a 14 yard for a big one. Branches, brush and leaves: no dirt.'],
-    ['Dirt from digging',4,'dirt','A 4 or 7 yard dirt bin. Flat rate, no dump fee. Dirt only.'],
-    ['Broken concrete',4,'concrete','A 4 or 7 yard concrete bin. Flat rate, no dump fee. Concrete only.']
+    ['Dirt or concrete',4,'dirt','A 4 or 7 yard bin. Flat rate, no dump fee. One material per bin, so pick dirt or concrete below.']
   ];
+
   var S={size:14,opt:'7',job:-1},first=true;
   var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var bind=function(k,v,html){$$('[data-b="'+k+'"]').forEach(function(e){html?e.innerHTML=v:e.textContent=v})};
   var tick=function(t,no){return '<li'+(no?' class="v2-no"':'')+'><svg class="v2-ic"><use href="#v2i-'+(no?'x':'check')+'"/></svg>'+t+'</li>'};
 
-  // the real floating call bar gets one more pill: book the bin you picked
-  [['.jj-call-desktop','barD'],['.jj-call-phone','barP']].forEach(function(x){var el=$(x[0]);
-    if(el)el.insertAdjacentHTML('beforeend','<a class="v2-jb" href="#request" data-book><span data-b="'+x[1]+'"></span></a>')});
+  // floating buttons. Phones: the real Text / Call bar gets a third part, Book. Desktop: one bar with the bin you picked.
+  var jp=$('.jj-call-phone');
+  if(jp)jp.insertAdjacentHTML('beforeend','<a class="v2-jb" href="#request" data-book><span data-b="barP"></span></a>');
+  document.body.insertAdjacentHTML('beforeend','<div class="v2-dock" aria-label="Your bin"><img id="dockImg" src="'+UP+'14-yard-w800.webp" width="1000" height="566" alt="">'+
+    '<div class="v2-dock-t"><b data-b="name"></b><span data-b="line"></span></div>'+
+    '<a class="v2-dock-call" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call 705.333.7767</a>'+
+    '<a class="v2-dock-book" href="#request" data-book>Book it</a></div>');
 
   // job chips
   $('#jobs').innerHTML=JOBS.map(function(j,i){return '<button type="button" class="v2-job" aria-pressed="false" data-j="'+i+'">'+j[0]+'</button>'}).join('');
@@ -3555,7 +3597,7 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
     $$('.v2-job').forEach(function(x){x.setAttribute('aria-pressed',+x.dataset.j===S.job)});
     bind('num',S.size);bind('tag',b.tag);bind('tag2',b.tag);bind('name',name);bind('dims',dims);bind('unit',unit+(isFlat?'':', Zone 1'));
     bind('fits',b.fits);bind('book','Book a '+S.size+' yard');bind('req','Request my '+S.size+' yard bin');bind('foot',b.foot,true);
-    bind('line','$'+price+' '+unit);bind('barD','Book '+S.size+' yard · $'+price);bind('barP','Book '+S.size+' yard');$$('[data-row]').forEach(function(r){r.classList.toggle('v2-sel',+r.dataset.row===S.size)});bind('w',b.w);bind('h',b.h);bind('loads',b.loads);bind('rcTitle',name);
+    bind('line','$'+price+' '+unit);bind('barP','Book '+S.size+' yard');$$('[data-row]').forEach(function(r){r.classList.toggle('v2-sel',+r.dataset.row===S.size)});bind('w',b.w);bind('h',b.h);bind('loads',b.loads);bind('rcTitle',name);
     roll(price);
     // options
     var row=$('#optRow');
@@ -3569,13 +3611,7 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
     // images
     var src=UP+S.size+'-yard-w800.webp',im=$('#binImg');
     if(im.getAttribute('src')!==src){im.srcset=src+' 1000w, '+UP+S.size+'-yard.webp 1600w';im.src=src;im.alt='A green '+S.size+" yard Jeff's Junk bin";
-      im.classList.remove('v2-swap');void im.offsetWidth;im.classList.add('v2-swap');$('#sumImg').src=src}
-    // receipt
-    var li=function(a,s,v,free){return '<div class="v2-li"><dt>'+a+(s?'<small>'+s+'</small>':'')+'</dt><dd'+(free?' class="v2-free"':'')+'>'+v+'</dd></div>'};
-    $('#rcpt').innerHTML=isFlat
-      ? li(name,'1–7 days, flat rate','$'+price)+li('Dump fee','None on dirt and concrete bins','$0',1)+li('Wood under the bin','So it doesn’t mark the driveway','Always',1)+li('Deposit when you book','Depends on your location','from $450')
-      : li(name,(three?'3 day deal, Zone 1 only':(S.size===14?'7 days, Zone 1':'1–7 days, Zone 1')),'$'+price)+li('Dump fee','Up to 1 tonne (2,200 lb), prorated after that','$135')+li('Wood under the bin','So it doesn’t mark the driveway','Always',1)+li('Deposit when you book','Depends on your location','from $450');
-    bind('rcFoot',isFlat?'One material per bin, no mixing. Need more time? You can extend your rental for a fee.':'Need more time? You can extend your rental for a fee. Outside Zone 1, call for the price.');
+      im.classList.remove('v2-swap');void im.offsetWidth;im.classList.add('v2-swap');$('#sumImg').src=src;$('#dockImg').src=src}
     // scale
     var r=$('#scaleBin');r.style.y=(262-b.px)+'px';r.style.height=b.px+'px';r.setAttribute('y',262-b.px);r.setAttribute('height',b.px);
     var sh=$('#scaleH');sh.textContent=b.h+' ft';sh.setAttribute('y',262-b.px/2+5);sh.setAttribute('x',590);
@@ -3601,6 +3637,7 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
   var today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#fd').min=today;$('#fu').min=today;
   $('#fd').addEventListener('change',function(){$('#fu').min=this.value||today});
   $('#fph').addEventListener('change',function(){var n=Math.min(3,this.files.length);$('#phT').textContent=n?n+(n>1?' photos added':' photo added'):'Add photos'});
+  $('#formPref').addEventListener('change',function(e){var em=e.target.value==='email';$('#emailRow').hidden=!em;$('#fe').required=em;if(em)$('#fe').focus()});
   $('#form').addEventListener('submit',function(e){e.preventDefault();var bad=$$('[required]',this).filter(function(i){return !i.value.trim()})[0];
     if(bad){bad.focus();bad.style.borderColor='#c0392b';bad.addEventListener('input',function(){bad.style.borderColor=''},{once:true});return}
     this.innerHTML='<div class="v2-done"><span class="v2-ok"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><h3>That’s the form filled in.</h3><p>This is the mockup, so nothing was sent. On the real site your request goes to hello@jeffsjunk.ca, the same as the form does today.</p><a class="v2-btn v2-btn-line" href="mix-bin-rental-v2.html#request" onclick="location.reload()">Fill it in again</a></div>'});
