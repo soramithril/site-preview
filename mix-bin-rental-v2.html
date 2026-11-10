@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bin Rentals in Barrie: Sizes & Prices | Jeff's Junk (version 2 concept)</title>
+<meta name="description" content="Bin, dumpster and garbage bin rental in Barrie and Simcoe County: 4 to 20 yard bins, prices online, wood under every bin. Call 705.333.7767.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" type="image/webp">
+<style>
+/* ============ Version 2 concept: Bin rental. Standalone page, no shared CSS. ============ */
+:root{
+  --ink:#14181b; --char:#23282d; --char2:#2d343a; --mute:#5b666d; --soft:#8a959b;
+  --green:#17803a; --go:#1a9a45; --bin:#02a650; --deep:#005b2a;
+  --mint:#f1f8f3; --mint2:#e3f1e7; --line:#e3e7e4; --bg:#fafbfa; --white:#fff;
+  --r-xl:32px; --r-lg:24px; --r-md:16px;
+  --shadow:0 30px 60px -48px rgba(20,40,28,.45);
+  --wrap:1180px;
+  --f:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --marker:"Permanent Marker","Inter Tight",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f);color:var(--ink);background:var(--white);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:0}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:600;letter-spacing:-.03em;line-height:1.04;text-wrap:balance}
+p{text-wrap:pretty}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
+.mk{font-family:var(--marker);font-weight:400;color:var(--green);letter-spacing:0}
+.cap{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--deep)}
+.ic{width:1.1em;height:1.1em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:3px solid var(--go);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:54px;padding:0 26px;border-radius:999px;border:1px solid transparent;font-weight:600;font-size:17px;text-decoration:none;white-space:nowrap;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.btn:active{transform:scale(.98)}
+.btn-go{background:var(--green);color:#fff}
+.btn-go:hover{background:var(--deep)}
+.btn-dark{background:var(--char);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-line{background:#fff;border-color:#cfd6d2;color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-sm{min-height:44px;padding:0 18px;font-size:15px}
+.btn-wide{width:100%}
+.btn .arr{transition:transform .18s ease}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* concept strip + header */
+.strip{background:var(--char);color:#dfe5e1;font-size:13.5px;text-align:center;padding:8px 16px}
+.strip a{color:#fff;font-weight:600}
+.head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.head.stuck{border-color:var(--line)}
+.head-in{display:flex;align-items:center;gap:18px;height:72px}
+.logo img{width:111px;height:auto}
+.nav{display:none;gap:4px;margin-left:10px}
+.nav a{white-space:nowrap;padding:8px 11px;border-radius:999px;text-decoration:none;font-size:15.5px;font-weight:500;color:#333b40}
+.nav a:hover{background:var(--mint)}
+.nav a[aria-current]{color:var(--deep);font-weight:600}
+.head-r{margin-left:auto;display:flex;align-items:center;gap:10px}
+.open{display:none;font-size:14px;color:var(--mute);align-items:center;gap:7px;white-space:nowrap}
+.open b{color:var(--ink);font-weight:600}
+.open i{width:8px;height:8px;border-radius:50%;background:#b9c2bd;display:block}
+.open.on i{background:var(--go)}
+.head .tel span{display:none}
+.head .tel{padding:0;width:44px}
+@media (min-width:560px){.head .tel{width:auto;padding:0 18px}.head .tel span{display:inline}}
+@media (min-width:1020px){.nav{display:flex}}
+@media (min-width:1280px){.open{display:flex}}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:clip;background:
+  radial-gradient(900px 520px at 88% 8%,#dff2e5 0,transparent 62%),
+  radial-gradient(700px 420px at -6% 96%,#eaf6ee 0,transparent 60%),#fff}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#cfdcd4 1px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent,#000 30%,transparent 92%);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,transparent 92%);opacity:.5;pointer-events:none}
+.hero-in{position:relative;display:grid;gap:34px;padding:38px 0 64px}
+.hero-in>*{min-width:0}
+.crumb{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:14px;font-weight:500;color:#333b40;text-decoration:none}
+.crumb .stars{color:#f5a700;letter-spacing:1px;font-size:13px}
+.crumb b{font-weight:700;color:var(--ink)}
+.hero h1{font-size:clamp(46px,8.4vw,92px);letter-spacing:-.045em;margin-top:20px}
+.hero h1 .mk{font-size:.94em;position:relative;display:inline-block;padding:0 .04em}
+.hero h1 .mk::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:.14em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M3 9C60 3 120 12 170 6s90-2 127 2' fill='none' stroke='%231a9a45' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;transform-origin:left;animation:draw .7s .35s both cubic-bezier(.2,.7,.2,1)}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero .tag{font-size:clamp(24px,3.6vw,36px);font-weight:600;letter-spacing:-.03em;margin-top:8px;color:var(--char)}
+.hero .lede{margin-top:16px;max-width:33em;color:#3b454b;font-size:18px}
+.ask{margin-top:28px}
+.ask h2{font-size:21px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ask h2 small{font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0}
+.jobs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.job{border:1px solid #d6ddd9;background:#fff;border-radius:999px;padding:10px 16px;font-size:15.5px;font-weight:500;line-height:1.2;transition:background .15s,border-color .15s,color .15s,transform .15s}
+.job:hover{border-color:var(--ink);transform:translateY(-1px)}
+.job[aria-pressed="true"]{background:var(--char);border-color:var(--char);color:#fff}
+@media (max-width:640px){.jobs{display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;margin-inline:-20px;padding:2px 20px 10px;scrollbar-width:none;scroll-snap-type:x proximity}.jobs::-webkit-scrollbar{display:none}.job{scroll-snap-align:start}.hero .lede{font-size:16.5px}.ask{margin-top:22px}.ask h2 small{flex-basis:100%}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
+.hero-cta .or{font-size:15px;color:var(--mute)}
+.hero-cta .or a{color:var(--ink);font-weight:600}
+
+/* the picker card */
+.pick{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow);overflow:hidden;container-type:inline-size}
+.pick-top{padding:22px 22px 0}
+.pick-top h2{font-size:15px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--deep);line-height:1.3}
+.seg{position:relative;display:grid;grid-template-columns:repeat(4,1fr);background:#f0f3f1;border-radius:999px;padding:5px;margin-top:14px}
+.seg button{position:relative;z-index:1;border:0;background:none;border-radius:999px;min-height:46px;font-weight:600;font-size:16px;color:#49545a;transition:color .2s}
+.seg button[aria-checked="true"]{color:#fff}
+.seg .thumb{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/4);border-radius:999px;background:var(--char);transition:transform .34s cubic-bezier(.3,1.3,.5,1)}
+.stage{position:relative;margin:16px 22px 0;border-radius:var(--r-lg);background:linear-gradient(180deg,#f4faf6,#e6f3ea);aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden}
+.stage .big{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-size:min(62cqw,330px);font-weight:700;letter-spacing:-.07em;line-height:.8;color:#d6ecdd;opacity:.75;user-select:none;pointer-events:none}
+.stage .floor{position:absolute;left:12%;right:12%;bottom:9%;height:9%;background:radial-gradient(closest-side,rgba(10,50,25,.28),transparent);filter:blur(4px)}
+.stage img{position:relative;width:84%;filter:drop-shadow(0 14px 18px rgba(10,50,25,.18))}
+.badge{position:absolute;top:14px;right:14px;background:#fff;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--deep)}
+.pick-body{padding:20px 22px 22px;display:grid;gap:14px}
+.pick-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.pick-name{font-size:28px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.pick-dims{color:var(--mute);font-size:15.5px;margin-top:4px}
+.price{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.price .n{font-size:64px;font-weight:600;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.price .u{font-size:15px;color:var(--mute);font-weight:500;white-space:normal;max-width:9.5em;line-height:1.25}
+.opt{display:inline-flex;background:#f0f3f1;border-radius:999px;padding:4px;gap:2px}
+.opt button{border:0;background:none;border-radius:999px;padding:8px 14px;font-size:14.5px;font-weight:600;color:#49545a}
+.opt button[aria-checked="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.opt-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--mute)}
+.fits{background:var(--mint);border-radius:var(--r-md);padding:14px 16px;font-size:15.5px}
+.fits b{color:var(--deep)}
+.note{font-size:15px;color:#3b454b;border-left:3px solid var(--go);padding-left:12px}
+.note a{font-weight:600}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.ticks li{display:inline-flex;align-items:center;gap:6px;border:1px solid #e1e6e3;border-radius:999px;padding:6px 12px;font-size:14px;background:#fff}
+.ticks .ic{color:var(--go);stroke-width:2.6}
+.ticks li.no{background:var(--char);border-color:var(--char);color:#fff}
+.ticks li.no .ic{color:#fff}
+.pick-cta{display:grid;gap:8px;grid-template-columns:1fr}
+@container (min-width:430px){.pick-cta{grid-template-columns:1.25fr 1fr}}
+.pick-foot{font-size:14px;color:var(--mute);text-align:center}
+.pick-foot a{color:var(--ink);font-weight:600}
+@media (min-width:980px){
+  .hero-in{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:54px;align-items:start;padding:54px 0 84px}
+  .pick{position:sticky;top:96px}
+}
+
+/* ============ sections ============ */
+.sec{padding:clamp(64px,9vw,112px) 0}
+.sec.alt{background:var(--bg)}
+.sec-h{max-width:760px}
+.sec-h.c{text-align:center;margin-inline:auto}
+.sec-h h2{font-size:clamp(34px,5.2vw,58px);margin-top:10px}
+.sec-h p{margin-top:16px;color:#3b454b;font-size:18.5px}
+
+/* bento */
+.bento{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:0}
+.tile{border-radius:var(--r-lg);border:1px solid var(--line);background:#fff;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;min-height:168px;position:relative;overflow:hidden;text-decoration:none}
+.tile .num{font-size:clamp(44px,6vw,72px);font-weight:600;letter-spacing:-.05em;line-height:.95}
+.tile .lbl{font-size:15.5px;color:#3b454b;margin-top:8px}
+.tile.mint{background:var(--mint);border-color:var(--mint2)}
+.tile.dark{background:var(--char);border-color:var(--char);color:#fff}
+.tile.dark .lbl{color:#c9d1cc}
+.tile.photo{grid-column:1/-1;min-height:300px;padding:0;border:0;color:#fff}
+.tile.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,14,12,.82))}
+.tile.photo figcaption{position:relative;z-index:1;padding:22px;font-size:16.5px;max-width:30em}
+.tile.photo figcaption b{display:block;font-size:22px;letter-spacing:-.02em;margin-bottom:4px}
+.tile .stars{color:#f5a700;font-size:18px;letter-spacing:2px}
+.tile .go{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;border:1px solid #d6ddd9;display:grid;place-items:center}
+@media (min-width:900px){
+  .bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(190px,auto)}
+  .tile.photo{grid-column:span 2;grid-row:span 2}
+}
+
+/* receipt */
+.pay{display:grid;gap:40px;align-items:center}
+@media (min-width:900px){.pay{grid-template-columns:1fr 1fr;gap:72px}}
+.rcpt{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px 22px 0 0;padding:28px 26px 34px;box-shadow:var(--shadow);max-width:470px;width:100%;margin-inline:auto;transform:rotate(-1.2deg)}
+.rcpt::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-11px;height:12px;background:
+  linear-gradient(135deg,#fff 50%,transparent 50%) 0 0/16px 12px repeat-x,
+  linear-gradient(225deg,#fff 50%,transparent 50%) 0 0/16px 12px repeat-x;filter:drop-shadow(0 1px 0 var(--line))}
+.rcpt-h{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:2px dashed #d5dcd8}
+.rcpt-h img{width:92px}
+.rcpt-h span{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--deep)}
+.rcpt dl{margin:0;display:grid}
+.rcpt .li{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid #eef1ef;align-items:baseline}
+.rcpt dt{font-weight:600;font-size:16.5px}
+.rcpt dt small{display:block;font-weight:400;color:var(--mute);font-size:14px;margin-top:2px}
+.rcpt dd{margin:0;font-weight:600;font-size:19px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rcpt dd.free{color:var(--green)}
+.rcpt-f{margin-top:16px;font-size:14.5px;color:var(--mute)}
+.pay-copy .pts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
+.pay-copy .pts li{display:grid;grid-template-columns:auto 1fr;gap:14px;font-size:16.5px;color:#3b454b}
+.pay-copy .pts b{color:var(--ink)}
+.pay-copy .pts .ck{width:28px;height:28px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;margin-top:1px}
+.zone{margin-top:26px;font-size:14.5px;color:var(--mute)}
+.zone a{color:var(--ink);font-weight:600}
+
+/* scale */
+.scale{margin-top:44px;border:1px solid var(--line);border-radius:var(--r-xl);background:#fff;box-shadow:var(--shadow);display:grid;overflow:hidden}
+.scale-draw{padding:26px 22px 18px;background:linear-gradient(180deg,#fff,#f7faf8)}
+.scale-draw svg{width:100%;height:auto;display:block}
+.scale-draw .bin{transition:y .45s cubic-bezier(.3,1.2,.5,1),height .45s cubic-bezier(.3,1.2,.5,1)}
+.scale .seg{max-width:420px;margin:14px auto 0}
+.scale-info{background:var(--mint);padding:28px 26px;display:grid;gap:18px;align-content:center}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.trio div{background:#fff;border-radius:var(--r-md);padding:14px 12px}
+.trio b{display:block;font-size:34px;font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.trio span{font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--deep)}
+.loads{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.loads svg{width:38px;height:22px;color:var(--deep)}
+.loads-t{font-size:15.5px;color:#3b454b}
+@media (min-width:900px){.scale{grid-template-columns:1.35fr 1fr}}
+
+/* how it works */
+.how{background:var(--char);color:#fff;border-radius:clamp(24px,4vw,44px);padding:clamp(28px,5vw,64px);margin-inline:auto;width:min(100% - 24px,1320px)}
+.how .cap{color:#7fdc9c}
+.how h2{font-size:clamp(34px,5.2vw,58px);margin-top:10px}
+.how h2 .mk{color:#5fd384}
+.steps{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--char2);border:1px solid #3a4249;border-radius:var(--r-lg);padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--go);font-weight:700;font-size:18px;margin-bottom:18px}
+.steps h3{font-size:22px;letter-spacing:-.02em}
+.steps p{margin-top:8px;color:#c9d1cc;font-size:16px}
+@media (min-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1080px){.steps{grid-template-columns:repeat(4,1fr)}}
+.prep{display:grid;gap:22px;margin-top:22px}
+@media (min-width:900px){.prep{grid-template-columns:1fr 1fr;align-items:stretch}}
+.vid{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:#000;border:0;padding:0;width:100%;display:block}
+.vid img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .2s,transform .4s}
+.vid:hover img{opacity:1;transform:scale(1.03)}
+.vid .play{position:absolute;inset:auto auto 18px 18px;display:flex;align-items:center;gap:12px;color:#fff;font-weight:600;font-size:16px;text-align:left}
+.vid .play i{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;flex:none}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.check{background:#fff;color:var(--ink);border-radius:var(--r-lg);padding:26px}
+.check h3{font-size:24px}
+.check ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.check li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:16px;color:#3b454b}
+.check li .ic{color:var(--go);stroke-width:2.6;margin-top:4px}
+.check li b{color:var(--ink)}
+
+/* can it go in */
+.canit{display:grid;gap:34px}
+@media (min-width:900px){.canit{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+.askbox{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow);padding:24px}
+.askbox label{font-size:22px;font-weight:600;letter-spacing:-.02em;display:block}
+.field{position:relative;margin-top:14px}
+.field .ic{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--mute);width:20px;height:20px}
+.field input{width:100%;height:60px;border-radius:999px;border:1.5px solid #cfd6d2;padding:0 20px 0 50px;font:inherit;font-size:18px;background:#fff}
+.field input:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 4px var(--mint2)}
+.try{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:14.5px;color:var(--mute);align-items:center}
+.try button{border:1px solid #d6ddd9;background:#fff;border-radius:999px;padding:5px 12px;font-size:14.5px}
+.try button:hover{border-color:var(--ink)}
+.ans{margin-top:16px;border-radius:var(--r-md);padding:16px 18px;background:var(--bg);font-size:16.5px;min-height:62px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.ans .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e4e9e6;color:var(--mute);font-weight:700}
+.ans.yes{background:var(--mint)}.ans.yes .dot{background:var(--go);color:#fff}
+.ans.no{background:#23282d;color:#fff}.ans.no .dot{background:#fff;color:var(--ink)}
+.ans a{font-weight:600}
+.lists{display:grid;gap:22px}
+.lists h3{font-size:20px;letter-spacing:-.02em;margin-bottom:12px}
+
+/* reviews */
+.rev-top{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.rev-top .n{font-size:clamp(84px,13vw,150px);font-weight:600;letter-spacing:-.06em;line-height:.85}
+.rev-top .stars{color:#f5a700;font-size:28px;letter-spacing:3px}
+.rev-top p{color:#3b454b}
+.revs{display:grid;gap:14px;margin-top:40px}
+@media (min-width:800px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:#fff;display:grid;gap:14px}
+.rev .stars{color:#f5a700;letter-spacing:2px}
+.rev blockquote{margin:0;font-size:17px;color:#3b454b}
+.rev cite{font-style:normal;font-size:14.5px;color:var(--mute)}
+.rev-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
+/* faq */
+.faq{display:grid;gap:36px}
+@media (min-width:940px){.faq{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}.faq-side{position:sticky;top:104px}}
+.faq-side .btn{margin-top:22px}
+.qa{border-bottom:1px solid var(--line)}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 2px;font-size:19.5px;font-weight:600;letter-spacing:-.02em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";flex:none;width:34px;height:34px;border-radius:50%;border:1px solid #d6ddd9;background:
+  linear-gradient(var(--ink),var(--ink)) center/12px 2px no-repeat,
+  linear-gradient(var(--ink),var(--ink)) center/2px 12px no-repeat;transition:transform .25s,background-color .2s}
+.qa[open] summary::after{transform:rotate(45deg);background-color:var(--mint)}
+.qa .a{padding:0 44px 22px 2px;color:#3b454b;font-size:17px}
+.qa .a a{font-weight:600;color:var(--ink)}
+
+/* book */
+.book{background:
+  radial-gradient(800px 480px at 100% 0,#dff2e5 0,transparent 60%),var(--mint)}
+.book-in{display:grid;gap:34px}
+@media (min-width:960px){.book-in{grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.book-side{position:sticky;top:104px}}
+.book-side h2{font-size:clamp(38px,5.6vw,64px)}
+.book-side>p{margin-top:16px;font-size:18px;color:#3b454b}
+.sum{margin-top:26px;background:#fff;border:1px solid var(--mint2);border-radius:var(--r-lg);padding:16px;display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center}
+.sum img{background:var(--mint);border-radius:14px;padding:8px}
+.sum b{font-size:20px;letter-spacing:-.02em;display:block}
+.sum span{font-size:15px;color:var(--mute);display:block}
+.sum .p{color:var(--ink);font-weight:600;margin-top:4px}
+.book-side .ticks{margin-top:18px}
+.book-side .mascot{width:150px;margin-top:26px;display:none}
+@media (min-width:960px){.book-side .mascot{display:block}}
+.form{background:#fff;border-radius:var(--r-xl);border:1px solid var(--mint2);box-shadow:var(--shadow);padding:clamp(20px,3.4vw,36px);display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.form .full{grid-column:1/-1}
+@media (max-width:560px){.form>*{grid-column:1/-1}}
+.f label,.f legend{display:block;font-size:14.5px;font-weight:600;margin-bottom:7px;padding:0}
+.f label small,.f legend small{font-weight:400;color:var(--mute)}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f input[type=date],.f textarea{width:100%;border:1.5px solid #d3dad6;border-radius:14px;padding:14px 16px;font:inherit;font-size:17px;background:#fff;min-height:54px}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 4px var(--mint2)}
+fieldset.f{border:0;margin:0;padding:0;min-width:0}
+.sizes{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media (max-width:560px){.sizes{grid-template-columns:repeat(3,1fr)}}
+.sizes label{margin:0;position:relative;display:grid;place-items:center;text-align:center;border:1.5px solid #d3dad6;border-radius:14px;min-height:60px;padding:8px 6px;font-size:15.5px;font-weight:600;cursor:pointer;line-height:1.15;transition:background .15s,border-color .15s,color .15s}
+.sizes input{position:absolute;opacity:0;inset:0}
+.sizes label:has(input:checked){background:var(--char);border-color:var(--char);color:#fff}
+.sizes label:has(input:focus-visible){outline:3px solid var(--go);outline-offset:2px}
+.f .drop{display:flex;margin:0;font-weight:400;align-items:center;gap:14px;border:1.5px dashed #b9c5be;border-radius:14px;padding:16px;cursor:pointer;background:var(--bg)}
+.drop:hover{border-color:var(--ink)}
+.drop i{width:46px;height:46px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;flex:none}
+.drop b{display:block;font-size:16px}
+.drop span{font-size:14px;color:var(--mute)}
+.form-foot{font-size:14.5px;color:var(--mute);text-align:center}
+.done{grid-column:1/-1;text-align:center;padding:30px 10px;display:grid;gap:14px;justify-items:center}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--go);color:#fff;display:grid;place-items:center}
+.done .ok .ic{width:30px;height:30px;stroke-width:3}
+.done h3{font-size:30px}
+.done p{color:#3b454b;max-width:30em}
+
+/* footer */
+.foot{background:var(--ink);color:#c9d1cc;padding:64px 0 120px}
+.foot-top{display:flex;justify-content:space-between;gap:26px;align-items:center;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid #2c3338}
+.foot-top h2{color:#fff;font-size:clamp(34px,5vw,56px)}
+.foot-top h2 .mk{color:#5fd384}
+.foot-top .btns{display:flex;gap:10px;flex-wrap:wrap}
+.foot .btn-line{background:transparent;color:#fff;border-color:#4a545b}
+.foot .btn-line:hover{border-color:#fff}
+.foot-g{display:grid;gap:30px;grid-template-columns:repeat(2,1fr);padding-top:40px;font-size:15.5px}
+@media (min-width:860px){.foot-g{grid-template-columns:1.2fr repeat(4,1fr)}}
+.foot-g h3{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:12px}
+.foot-g a{display:block;text-decoration:none;padding:4px 0;color:#c9d1cc}
+.foot-g a:hover{color:#fff}
+.foot-g img{width:150px;background:#fff;border-radius:14px;padding:10px}
+.fine{margin-top:36px;font-size:13.5px;color:#8a959b}
+
+/* dock */
+.dock{position:fixed;left:50%;bottom:14px;z-index:60;transform:translate(-50%,140%);transition:transform .4s cubic-bezier(.3,1.2,.5,1);width:min(100% - 20px,640px);background:rgba(28,32,36,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;border-radius:999px;padding:8px 8px 8px 12px;display:flex;align-items:center;gap:12px;box-shadow:0 18px 40px -18px rgba(0,0,0,.55)}
+.dock.show{transform:translate(-50%,0)}
+.dock img{width:58px;flex:none}
+.dock .t{min-width:0;flex:1;line-height:1.2}
+.dock .t b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock .t span{font-size:13.5px;color:#c9d1cc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.dock .btn{min-height:46px;padding:0 18px;font-size:15.5px}
+.dock .call{background:#3a4249;color:#fff;width:46px;padding:0}
+.dock .btn-go{background:var(--go)}
+@media (min-width:560px){.dock .call{width:auto;padding:0 18px}}
+.dock .call span{display:none}
+@media (min-width:560px){.dock .call span{display:inline}}
+
+/* scroll reveals: pure CSS, only where supported, never when motion is reduced */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 38%}
+    @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  }
+  .swap{animation:swap .42s cubic-bezier(.2,.9,.3,1.15)}
+  @keyframes swap{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.1 1 .4 1.900.7 2.800a2 2 0 0 1-.5 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.9.300 1.800.600 2.800.700a2 2 0 0 1 1.700 2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.500-3.500"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.500"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l11-6.500z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 38 22"><path d="M1 6h20v9H1zM21 9h8l5 4v2H21z" fill="currentColor"/><circle cx="8" cy="17" r="3.200" fill="currentColor" stroke="#f1f8f3" stroke-width="1.500"/><circle cx="27" cy="17" r="3.200" fill="currentColor" stroke="#f1f8f3" stroke-width="1.500"/></symbol>
+</svg>
+
+<div class="strip">Version 2 concept of the Bin rental page. <a href="mix-bin-rental.html">See the current page</a></div>
+
+<header class="head" id="top">
+  <div class="wrap head-in">
+    <a class="logo" href="mix-favourites.html" aria-label="Jeff's Junk home"><img src="assets/wp-content/uploads/jeffs-junk-logo.webp" srcset="assets/wp-content/uploads/jeffs-junk-logo-222.webp 222w, assets/wp-content/uploads/jeffs-junk-logo.webp 448w" sizes="111px" width="448" height="202" alt="Jeff's Junk"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="mix-junk-removal.html">Junk removal</a>
+      <a href="mix-bin-rental.html" aria-current="page">Bin rentals</a>
+      <a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete</a>
+      <a href="mix-demolition.html">Demolition</a>
+      <a href="mix-guides.html">Guides</a>
+      <a href="mix-contact.html">Contact</a>
+    </nav>
+    <div class="head-r">
+      <span class="open" id="openNow"><i></i><span></span></span>
+      <a class="btn btn-dark btn-sm tel" href="tel:+17053337767" aria-label="Call 705.333.7767"><svg class="ic"><use href="#i-phone"/></svg><span>705.333.7767</span></a>
+      <a class="btn btn-go btn-sm" href="#request">Book a bin</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO: the job question and the answer ================= -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <a class="crumb" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span><span><b>5.0</b> from 260 Google reviews</span><span class="sr">(opens in a new tab)</span></a>
+      <h1>Bin rentals in <span class="mk">Barrie</span>.</h1>
+      <p class="tag">We leave it, you load it.</p>
+      <p class="lede">Bin rental (some call it a dumpster, a garbage bin or a disposal bin) in four sizes, dropped on driveways in Barrie and across Simcoe County, with wood underneath so it doesn't leave a mark.</p>
+
+      <div class="ask">
+        <h2 id="askH">What are you getting rid of? <small>Tap a job to see your bin and price.</small></h2>
+        <div class="jobs" id="jobs" role="group" aria-labelledby="askH"></div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="tel:+17053337767"><svg class="ic"><use href="#i-phone"/></svg>Call 705.333.7767</a>
+        <span class="or">or text a photo to <a href="sms:+17053337767">705.333.7767</a> and we'll pick the bin with you.</span>
+      </div>
+    </div>
+
+    <div class="pick" id="sizes" aria-live="polite">
+      <div class="pick-top">
+        <h2>Garbage bin sizes and prices</h2>
+        <div class="seg" role="radiogroup" aria-label="Bin size" data-seg>
+          <span class="thumb"></span>
+          <button role="radio" data-size="4">4 yard</button>
+          <button role="radio" data-size="7">7 yard</button>
+          <button role="radio" data-size="14">14 yard</button>
+          <button role="radio" data-size="20">20 yard</button>
+        </div>
+      </div>
+      <div class="stage">
+        <span class="big" data-b="num" aria-hidden="true">14</span>
+        <span class="floor"></span>
+        <img id="binImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" srcset="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp 1000w, assets/wp-content/uploads/bins-2026/bin-14-yard.webp 1600w" sizes="(min-width:980px) 460px, 84vw" width="1000" height="566" alt="A green 14 yard Jeff's Junk bin" fetchpriority="high">
+        <span class="badge" data-b="tag">Most booked</span>
+      </div>
+      <div class="pick-body">
+        <div class="pick-row">
+          <div>
+            <p class="pick-name" data-b="name">14 yard bin</p>
+            <p class="pick-dims" data-b="dims">12 ft long · 7 ft wide · 5 ft high</p>
+          </div>
+          <p class="price"><span class="n" id="priceN">$195</span><span class="u" data-b="unit">/ 7 days + dump fee</span></p>
+        </div>
+        <div class="opt-row" id="optRow"></div>
+        <p class="fits"><b>What fits:</b> <span data-b="fits">A garage or basement clean out, a small reno or a move.</span></p>
+        <p class="note" id="jobNote" hidden></p>
+        <ul class="ticks" id="ticks"></ul>
+        <div class="pick-cta">
+          <a class="btn btn-go" href="#request" data-book><span data-b="book">Book a 14 yard</span><svg class="ic arr"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line" href="tel:+17053337767"><svg class="ic"><use href="#i-phone"/></svg>Call</a>
+        </div>
+        <p class="pick-foot" data-b="foot"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF ================= -->
+<section class="sec" aria-label="Why Jeff's Junk">
+  <div class="wrap">
+    <div class="bento">
+      <figure class="tile photo rv" style="margin:0">
+        <img src="assets/wp-content/uploads/bin-truck-drop.webp" width="800" height="533" loading="lazy" alt="The Jeff's Junk truck tipping a bin onto a driveway, with a wood plank under the bin">
+        <figcaption><b>Wood under every bin.</b>A real drop off: the bin slides off the back of the truck onto wood, so it doesn't mark the driveway.</figcaption>
+      </figure>
+      <div class="tile mint rv"><span class="num">1992</span><span class="lbl">Family run since</span></div>
+      <a class="tile rv" href="mix-reviews.html"><span class="go"><svg class="ic"><use href="#i-up"/></svg></span><span class="stars" aria-hidden="true">★★★★★</span><span class="num">5.0</span><span class="lbl">from 260 Google reviews</span></a>
+      <div class="tile dark rv"><span class="num">11,000+</span><span class="lbl">customers</span></div>
+      <div class="tile rv"><span class="num" style="font-size:clamp(34px,4.4vw,50px)">Same day</span><span class="lbl">Usually dropped off the same day you call, even in spring and summer.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU PAY ================= -->
+<section class="sec alt" id="price">
+  <div class="wrap pay">
+    <div class="rv">
+      <div class="rcpt">
+        <div class="rcpt-h"><img src="assets/wp-content/uploads/jeffs-junk-logo-222.webp" width="222" height="100" alt="" loading="lazy"><span data-b="rcTitle">14 yard bin</span></div>
+        <dl id="rcpt"></dl>
+        <p class="rcpt-f" data-b="rcFoot"></p>
+      </div>
+    </div>
+    <div class="pay-copy">
+      <div class="sec-h">
+        <p class="cap">What you pay</p>
+        <h2>Prices online, <span class="mk">no surprises</span>.</h2>
+        <p>Pick a size above and this slip changes with it. It's the same thing we'll tell you on the phone.</p>
+      </div>
+      <ul class="pts">
+        <li><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span><span><b>How the dump fee works.</b> It's $135 for up to 1 tonne (2,200 lb), prorated after that. It applies to the 14 and 20 yard bins.</span></li>
+        <li><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Dirt and concrete bins are a flat rate.</b> The 4 and 7 yard bins have no dump fee. One material per bin, no mixing.</span></li>
+        <li><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Deposit when you book.</b> It starts at $450 and depends on your location. We confirm it when we call.</span></li>
+        <li><span class="ck"><svg class="ic"><use href="#i-check"/></svg></span><span><b>Pay how you like.</b> Visa, Mastercard, American Express, Visa Debit and e-Transfer.</span></li>
+      </ul>
+      <p class="zone">Zone 1 is Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and <a href="mix-area-innisfil.html">Innisfil</a>. Anywhere else, call for the price. We deliver across Simcoe County, including <a href="mix-area-orillia.html">Orillia</a>. <a href="mix-service-areas.html">See every town we serve</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCALE ================= -->
+<section class="sec" id="bin-scale">
+  <div class="wrap">
+    <div class="sec-h c">
+      <p class="cap">To scale</p>
+      <h2>How big is <span class="mk">each bin</span>?</h2>
+      <p>Every bin is 12 ft long. What changes is the height and the width. Each one is drawn to scale next to a 6 ft person, so you can see what fits your driveway and your job.</p>
+    </div>
+    <div class="scale rv">
+      <div class="scale-draw">
+        <svg viewBox="0 0 640 290" role="img" aria-label="A bin drawn to scale next to a 6 ft person" id="scaleSvg">
+          <line x1="20" y1="262" x2="620" y2="262" stroke="#cfd6d2" stroke-width="2"/>
+          <g fill="#c3ccc7"><circle cx="78" cy="62" r="16"/><rect x="56" y="82" width="44" height="100" rx="14"/><rect x="60" y="170" width="16" height="92" rx="7"/><rect x="80" y="170" width="16" height="92" rx="7"/></g>
+          <text x="78" y="34" text-anchor="middle" font-size="15" font-weight="600" fill="#5b666d">6 ft</text>
+          <g fill="none" stroke="#b9c5be" stroke-width="1.500" stroke-dasharray="5 5">
+            <rect x="150" y="190" width="432" height="72" rx="4"/><rect x="150" y="136" width="432" height="126" rx="4"/><rect x="150" y="82" width="432" height="180" rx="4"/><rect x="150" y="64" width="432" height="198" rx="4"/>
+          </g>
+          <rect class="bin" id="scaleBin" x="150" y="82" width="432" height="180" rx="6" fill="#02a650"/>
+          <text x="366" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" letter-spacing="1">JEFF'S JUNK</text>
+          <line x1="150" y1="278" x2="582" y2="278" stroke="#5b666d" stroke-width="1.500"/><path d="M150 272v12M582 272v12" stroke="#5b666d" stroke-width="1.500"/>
+          <rect x="336" y="268" width="60" height="20" fill="#fbfcfb"/><text x="366" y="284" text-anchor="middle" font-size="15" font-weight="600" fill="#5b666d">12 ft</text>
+          <text id="scaleH" x="600" y="176" font-size="15" font-weight="700" fill="#005b2a">5 ft</text>
+        </svg>
+        <div class="seg" role="radiogroup" aria-label="Bin size" data-seg>
+          <span class="thumb"></span>
+          <button role="radio" data-size="4">4 yard</button>
+          <button role="radio" data-size="7">7 yard</button>
+          <button role="radio" data-size="14">14 yard</button>
+          <button role="radio" data-size="20">20 yard</button>
+        </div>
+      </div>
+      <div class="scale-info">
+        <p class="cap" data-b="tag2">Most booked</p>
+        <div class="trio">
+          <div><b>12</b><span>ft long</span></div>
+          <div><b data-b="w">7</b><span>ft wide</span></div>
+          <div><b data-b="h">5</b><span>ft high</span></div>
+        </div>
+        <div>
+          <div class="loads" id="loads" aria-hidden="true"></div>
+          <p class="loads-t" data-b="loads"></p>
+        </div>
+        <a class="btn btn-dark" href="#request" data-book><span data-b="book">Book a 14 yard</span><svg class="ic arr"><use href="#i-arrow"/></svg></a>
+        <p id="loadsNote" style="font-size:14.5px;color:var(--mute)">Pickup truck loads are for a standard pickup filled level with its sides. More in our <a href="mix-guide-bin-size.html" style="color:var(--ink);font-weight:600">bin size guide</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT GOES ================= -->
+<section class="sec" id="ready" style="padding-top:0">
+  <div class="how">
+    <p class="cap">How it goes</p>
+    <h2>Four steps. You only do <span class="mk">one</span> of them.</h2>
+    <ol class="steps">
+      <li class="rv"><h3>Book it</h3><p>Call, text or book online. We can usually drop a bin off the same day you call.</p></li>
+      <li class="rv"><h3>We drop it</h3><p>On your driveway, with wood underneath so it doesn't mark the surface.</p></li>
+      <li class="rv"><h3>You load it</h3><p>At your own pace. The 14 and 20 yard bins have a door at the back, so you can walk things in.</p></li>
+      <li class="rv"><h3>We haul it</h3><p>You choose the pickup day when you book. Finished early? Call and we'll come sooner.</p></li>
+    </ol>
+    <div class="prep">
+      <button class="vid rv" id="vid" type="button" aria-label="Play the video: Jeff's Junk, rent a bin">
+        <img src="https://i.ytimg.com/vi/oOlUJzRvCBM/hqdefault.jpg" width="480" height="360" loading="lazy" alt="">
+        <span class="play"><i><svg class="ic" style="width:22px;height:22px"><use href="#i-play"/></svg></i><span>Watch: rent a bin<br><small style="font-weight:400;opacity:.85">1 minute</small></span></span>
+      </button>
+      <div class="check rv">
+        <p class="cap">Your driveway, drop off day</p>
+        <h3 style="margin-top:8px">A few minutes before the truck comes saves a lot of back and forth.</h3>
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Pick the spot.</b> Every bin is 12 ft long. If a car fits in the spot, our truck fits too.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Clear the way.</b> Move cars out of the driveway on drop off and pickup day. The truck needs 9 ft of clear height, so watch for low wires and branches.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Load it smart.</b> Flat, heavy things first, then the bulky ones. Load it level, with nothing above the top edge, and close the door before pickup day.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAN IT GO IN ================= -->
+<section class="sec" id="take">
+  <div class="wrap canit">
+    <div>
+      <div class="sec-h">
+        <p class="cap">What goes in</p>
+        <h2>What we take, and what we <span class="mk">can't</span>.</h2>
+        <p>Type an item, like "fridge" or "swing set", and get an answer right away.</p>
+      </div>
+      <div class="askbox rv" style="margin-top:28px">
+        <label for="q">Can you take my…</label>
+        <div class="field"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="text" autocomplete="off" placeholder="hot tub" aria-describedby="ans"></div>
+        <div class="try">Try: <button type="button">hot tub</button><button type="button">drywall</button><button type="button">couch</button><button type="button">paint</button></div>
+        <div class="ans" id="ans" aria-live="polite"><span class="dot">?</span><span>Ask us anything. The answer shows up here.</span></div>
+      </div>
+    </div>
+    <div class="lists">
+      <div class="rv">
+        <h3>Yes, we take</h3>
+        <ul class="ticks" id="yesList"></ul>
+      </div>
+      <div class="rv">
+        <h3>Sorry, we can't take</h3>
+        <ul class="ticks" id="noList"></ul>
+      </div>
+      <p style="font-size:15.5px;color:var(--mute)">Want the full rundown? <a href="mix-junk-removal.html#take" style="color:var(--ink);font-weight:600">What counts as junk</a>. Rather not load it yourself? <a href="mix-junk-removal.html" style="color:var(--ink);font-weight:600">Our crew can do it for you</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec alt" id="reviews">
+  <div class="wrap">
+    <div class="sec-h c"><h2>Don't take <span class="mk">our</span> word for it.</h2></div>
+    <div class="rev-top rv">
+      <span class="n">5.0</span>
+      <div><div class="stars" aria-hidden="true">★★★★★</div><p>from 260 Google reviews</p></div>
+    </div>
+    <div class="revs">
+      <figure class="rev rv" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[Real Google review goes here]</blockquote><cite>[Customer first name · town]</cite></figure>
+      <figure class="rev rv" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[Real Google review goes here]</blockquote><cite>[Customer first name · town]</cite></figure>
+      <figure class="rev rv" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[Real Google review goes here]</blockquote><cite>[Customer first name · town]</cite></figure>
+    </div>
+    <div class="rev-cta">
+      <a class="btn btn-dark" href="mix-reviews.html">Read all reviews<svg class="ic arr"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-line" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener">See them on Google<svg class="ic"><use href="#i-up"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec" id="faq">
+  <div class="wrap faq">
+    <div class="faq-side">
+      <p class="cap">Questions</p>
+      <h2 style="font-size:clamp(34px,5.2vw,58px);margin-top:10px">Good questions, <span class="mk">straight</span> answers.</h2>
+      <p style="margin-top:16px;color:#3b454b;font-size:18px">Still wondering? We'd rather you ask than guess. Call during business hours or text us anytime.</p>
+      <a class="btn btn-dark" href="tel:+17053337767"><svg class="ic"><use href="#i-phone"/></svg>705.333.7767</a>
+    </div>
+    <div>
+      <details class="qa" name="faq" open><summary>Which bin size should I rent?</summary><div class="a">Most homeowners go with our 14 yard bin. It's the right size for a garage or basement clean out, a small reno or a move. Some people upgrade to our 20 yard bin, the one our contractors use most for big jobs. Digging up the garden or breaking up an old patio? Our 4 and 7 yard bins are made for dirt and concrete. Still not sure? Tell us what you're clearing out and we'll help you pick. Our <a href="mix-guide-bin-size.html">bin size guide</a> has the details.</div></details>
+      <details class="qa" name="faq"><summary>How long can I keep my bin?</summary><div class="a">As long as you need it. You choose the pickup day when you book, and we come and get the bin that day. Finished early? Give us a call and we'll pick it up sooner. Need more time? You can extend your rental for a fee. Long term rentals are available too.</div></details>
+      <details class="qa" name="faq"><summary>How does the dump fee work?</summary><div class="a">The dump fee is $135 for up to 1 tonne (2,200 lb), prorated after that. It applies to the 14 and 20 yard bins. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee.</div></details>
+      <details class="qa" name="faq"><summary>How do you protect my driveway?</summary><div class="a">We've got wood. When our drivers drop a bin, they put wood underneath so it won't damage your driveway.</div></details>
+      <details class="qa" name="faq"><summary>Is there anything you can't take?</summary><div class="a">In a bin, we can't take paint, oils or other liquids, chemicals, solvents, asbestos, oil drums, propane tanks, tires or medical waste. Most everything else, from appliances and furniture to drywall, concrete and yard waste, is fair game.</div></details>
+      <details class="qa" name="faq"><summary>How can I pay?</summary><div class="a">We accept Visa, Mastercard, American Express, Visa Debit and e-Transfer. For bin rentals, we ask for a deposit when you book, starting at $450. The amount depends on your location, and we'll confirm it when we call.</div></details>
+      <details class="qa" name="faq"><summary>Is a bin the same as a dumpster or a garbage bin?</summary><div class="a">Yes. Bin rental, dumpster rental, garbage bin rental and disposal bin rental all mean the same thing; around Barrie most people just say bin. We rent 4, 7, 14 and 20 yard bins, dropped on your driveway with wood underneath.</div></details>
+      <details class="qa" name="faq"><summary>How soon can you drop off a bin?</summary><div class="a">Usually the same day you call, even in spring and summer.</div></details>
+      <details class="qa" name="faq"><summary>Do I need a permit for a bin?</summary><div class="a">Not if it goes on your driveway. If it has to sit on the road, you need a road permit from your town, and getting it is up to you.</div></details>
+      <details class="qa" name="faq"><summary>Can roof shingles go in a bin?</summary><div class="a">Yes, in a 14 yard bin. With shingles it's all about weight: a bundle weighs about 80 lb, and a double layer or heavier shingles weigh more, so tell us about the roof when you book. <a href="mix-roofing-bins.html">Roofing bins</a></div></details>
+      <details class="qa" name="faq"><summary>What if my bin is too heavy or overfilled?</summary><div class="a">On the 14 and 20 yard bins, the dump fee covers up to 1 tonne (2,200 lb) and is prorated after that, so a heavier load costs a little more at the dump. The 4 and 7 yard dirt and concrete bins have no weight limit, as long as the load is clean: one material, nothing mixed in. Fill it no higher than the top edge, with nothing sticking out over the sides. An overfilled bin isn't safe to haul, so we can't take it until the load is level. Usually that just means moving a few things around to fill the gaps.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="sec book" id="request">
+  <div class="wrap book-in">
+    <div class="book-side">
+      <p class="cap">Your bin, your day</p>
+      <h2 style="margin-top:10px">Book a bin <span class="mk">online</span>.</h2>
+      <p>Tell us where and when, and we'll call or email to confirm your bin, your price and your deposit.</p>
+      <div class="sum" aria-live="polite">
+        <img id="sumImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="1000" height="566" alt="" loading="lazy">
+        <div><b data-b="name">14 yard bin</b><span data-b="dims">12 ft long · 7 ft wide · 5 ft high</span><span class="p" data-b="line">$195 / 7 days + dump fee</span></div>
+      </div>
+      <ul class="ticks">
+        <li><svg class="ic"><use href="#i-check"/></svg>Wood under every bin</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You choose the pickup day</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>Rather text? 705.333.7767</li>
+      </ul>
+      <img class="mascot" src="assets/wp-content/uploads/grog/mascot-bin.webp" width="520" height="313" alt="" loading="lazy">
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="f"><label for="fn">Full name</label><input id="fn" type="text" autocomplete="name" required></div>
+      <div class="f"><label for="fp">Phone number</label><input id="fp" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      <div class="f"><label for="fe">Email</label><input id="fe" type="email" autocomplete="email"></div>
+      <div class="f"><label for="ft">Town</label><input id="ft" type="text" autocomplete="address-level2"></div>
+      <div class="f full"><label for="fw">Where should the bin go?</label><input id="fw" type="text" placeholder="Driveway, beside the garage…"></div>
+      <fieldset class="f full"><legend>Which bin?</legend>
+        <div class="sizes" id="formSizes">
+          <label><input type="radio" name="bin" value="4">4 yard</label>
+          <label><input type="radio" name="bin" value="7">7 yard</label>
+          <label><input type="radio" name="bin" value="14" checked>14 yard</label>
+          <label><input type="radio" name="bin" value="20">20 yard</label>
+          <label><input type="radio" name="bin" value="0">Not sure</label>
+        </div>
+      </fieldset>
+      <div class="f"><label for="fd">Drop off day</label><input id="fd" type="date" required></div>
+      <div class="f"><label for="fu">Pickup day <small>(optional)</small></label><input id="fu" type="date"></div>
+      <div class="f full">
+        <label for="fph">Photo of what's going in <small>(optional, up to 3)</small></label>
+        <label class="drop" for="fph"><i><svg class="ic" style="width:22px;height:22px"><use href="#i-cam"/></svg></i><span><b id="phT">Add photos</b><span>Not sure which size? A photo helps us pick the right bin.</span></span></label>
+        <input class="sr" id="fph" type="file" accept="image/*" multiple>
+      </div>
+      <div class="f full"><label for="fm">What's going in it? <small>(optional)</small></label><textarea id="fm"></textarea></div>
+      <button class="btn btn-go btn-wide full" type="submit"><span data-b="req">Request my 14 yard bin</span><svg class="ic arr"><use href="#i-arrow"/></svg></button>
+      <p class="form-foot full">We answer during office hours: Monday to Friday 8 to 7, Saturday 8 to 12. Rather talk it through? <a href="tel:+17053337767" style="color:var(--ink);font-weight:600">Call 705.333.7767</a></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <h2>Ready when <span class="mk">you</span> are.</h2>
+      <div class="btns">
+        <a class="btn btn-go" href="tel:+17053337767"><svg class="ic"><use href="#i-phone"/></svg>Call 705.333.7767</a>
+        <a class="btn btn-line" href="mailto:hello@jeffsjunk.ca">hello@jeffsjunk.ca</a>
+      </div>
+    </div>
+    <div class="foot-g">
+      <div><img src="assets/wp-content/uploads/jeffs-junk-logo-222.webp" width="222" height="100" alt="Jeff's Junk" loading="lazy"><p style="margin-top:14px">Free quotes in every location. Proudly serving our community since 1992.</p></div>
+      <div><h3>Services</h3><a href="mix-junk-removal.html">Junk removal</a><a href="mix-bin-rental.html">Bin rentals</a><a href="mix-dirt-concrete-bins.html">Dirt &amp; concrete bins</a><a href="mix-roofing-bins.html">Roofing bins</a><a href="mix-demolition.html">Demolition</a><a href="mix-contractors.html">Contractors</a></div>
+      <div><h3>Popular jobs</h3><a href="mix-furniture-removal.html">Furniture removal</a><a href="mix-appliance-removal.html">Appliance removal</a><a href="mix-estate-cleanouts.html">Estate clean outs</a><a href="mix-hot-tub-removal.html">Hot tub removal</a><a href="mix-shed-removal.html">Shed removal</a></div>
+      <div><h3>Company</h3><a href="mix-about.html">About us</a><a href="mix-reviews.html">Reviews</a><a href="mix-guides.html">Tips &amp; guides</a><a href="mix-service-areas.html">Service areas</a><a href="mix-contact.html">Contact us</a></div>
+      <div><h3>Hours</h3><p>Mon to Fri 8am to 7pm<br>Saturday 8am to 12pm<br>Sun and holidays closed</p></div>
+    </div>
+    <p class="fine">© 2026 Jeff's Junk. Licensed by the Ministry of Environment, WSIB.</p>
+  </div>
+</footer>
+
+<!-- the dock: your bin follows you down the page -->
+<div class="dock" id="dock" aria-label="Your bin">
+  <img id="dockImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="1000" height="566" alt="">
+  <div class="t"><b data-b="name">14 yard bin</b><span data-b="line">$195 / 7 days + dump fee</span></div>
+  <a class="btn call" href="tel:+17053337767" aria-label="Call 705.333.7767"><svg class="ic"><use href="#i-phone"/></svg><span>Call</span></a>
+  <a class="btn btn-go" href="#request">Book</a>
+</div>
+
+<script>
+(function(){
+  var UP='assets/wp-content/uploads/bins-2026/bin-';
+  var BINS={
+    4:{tag:'Dirt & concrete',w:'4.5',h:'2',px:72,opts:[['dirt','Dirt',325],['concrete','Concrete',375]],unit:'/ 1–7 days',
+       fits:'A garden dig or a small patio: about 4 cubic yards of material.',
+       ticks:['Flat rate, no dump fee','Yard waste, dirt or concrete only'],no:'No mixing: one material per bin',
+       foot:'More about <a href="mix-dirt-concrete-bins.html">dirt and concrete bins</a>',
+       loads:'For dirt, concrete or yard waste. One material per bin, no mixing.'},
+    7:{tag:'Dirt & concrete',w:'4.5',h:'3.5',px:126,opts:[['dirt','Dirt',425],['concrete','Concrete',475]],unit:'/ 1–7 days',
+       fits:'A bigger dig or a large patio. A driveway depends on its size: call and we’ll tell you.',
+       ticks:['Flat rate, no dump fee','Dirt or concrete only'],no:'No mixing: one material per bin',
+       foot:'More about <a href="mix-dirt-concrete-bins.html">dirt and concrete bins</a>',
+       loads:'For dirt or concrete. One material per bin, no mixing.'},
+    14:{tag:'Most booked',w:'7',h:'5',px:180,opts:[['7','7 days',195],['3','3 day deal',150]],unit:'/ 7 days + dump fee',
+       fits:'A garage or basement clean out, a small reno or a move.',
+       ticks:['About 7 pickup truck loads','Wood under the bin','A door at the back, so you can walk things in'],
+       foot:'Zone 1 price. Not sure? Read the <a href="mix-guide-bin-size.html">bin size guide</a>',
+       n:7,loads:'About 7 pickup truck loads. Renos, clean outs and moves.'},
+    20:{tag:'Job sites',w:'8',h:'5.5',px:198,opts:[['1','1–7 days',250]],unit:'/ 1–7 days + dump fee',
+       fits:'Big renos and construction jobs; it’s the one our contractors use most.',
+       ticks:['About 10 pickup truck loads','Demolition debris goes straight in','A door at the back, so you can walk things in'],
+       foot:'Zone 1 price. On a job site? See <a href="mix-contractors.html">contractors</a>',
+       n:10,loads:'About 10 pickup truck loads. Big renos and construction sites.'}
+  };
+  var JOBS=[
+    ['Garage or basement',14,null,'Most homeowners pick this one.'],
+    ['Moving or downsizing',14,null,'Rather not load it yourself? <a href="mix-junk-removal.html">Our crew can do it for you</a>.'],
+    ['Whole house or estate',20,null,'Or <a href="mix-estate-cleanouts.html">let our crew clear it</a>.'],
+    ['Bathroom reno',14,null,''],
+    ['Kitchen or basement reno',20,null,''],
+    ['Construction or demolition',20,null,'The one our contractors use most. Debris goes straight in.'],
+    ['Deck or fence',20,null,'Or <a href="mix-demolition.html">we take it down for you</a>.'],
+    ['Roof shingles',14,null,'Shingles are heavy, so it’s all about weight: the 14 yard is the one for a roof. <a href="mix-roofing-bins.html">Roofing bins</a>'],
+    ['Yard waste',14,null,'A 4 yard for a small clean up, a 14 yard for a big one. Branches, brush and leaves: no dirt.'],
+    ['Dirt from digging',4,'dirt','A 4 or 7 yard dirt bin. Flat rate, no dump fee. Dirt only.'],
+    ['Broken concrete',4,'concrete','A 4 or 7 yard concrete bin. Flat rate, no dump fee. Concrete only.']
+  ];
+  var S={size:14,opt:'7',job:-1},first=true;
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var bind=function(k,v,html){$$('[data-b="'+k+'"]').forEach(function(e){html?e.innerHTML=v:e.textContent=v})};
+  var tick=function(t,no){return '<li'+(no?' class="no"':'')+'><svg class="ic"><use href="#i-'+(no?'x':'check')+'"/></svg>'+t+'</li>'};
+
+  // job chips
+  $('#jobs').innerHTML=JOBS.map(function(j,i){return '<button type="button" class="job" aria-pressed="false" data-j="'+i+'">'+j[0]+'</button>'}).join('');
+  $('#jobs').addEventListener('click',function(e){var b=e.target.closest('.job');if(!b)return;var i=+b.dataset.j,j=JOBS[i];S.job=i;set(j[1],j[2]);
+    if(matchMedia('(max-width:979px)').matches)$('#sizes').scrollIntoView({behavior:'smooth',block:'start'})});
+
+  // size tabs (hero + scale)
+  $$('[data-seg] button').forEach(function(b){b.addEventListener('click',function(){S.job=-1;set(+b.dataset.size)})});
+  $$('[data-seg]').forEach(function(g){g.addEventListener('keydown',function(e){var k=[4,7,14,20],i=k.indexOf(S.size);
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();i=(i+(e.key==='ArrowRight'?1:3))%4;S.job=-1;set(k[i]);$('button[data-size="'+k[i]+'"]',g).focus()}})});
+
+  function set(size,opt){var b=BINS[size];S.size=size;
+    S.opt=opt&&b.opts.some(function(o){return o[0]===opt})?opt:(size===S.lastSize&&!opt?S.opt:b.opts[0][0]);
+    if(!b.opts.some(function(o){return o[0]===S.opt}))S.opt=b.opts[0][0];S.lastSize=size;render()}
+
+  var priceNow=195,raf;
+  function roll(to){var el=$('#priceN'),from=priceNow,t0=performance.now();cancelAnimationFrame(raf);priceNow=to;
+    if(first||matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent='$'+to;return}
+    (function f(t){var p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);el.textContent='$'+Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(f)})(t0)}
+
+  function render(){
+    var b=BINS[S.size],o=b.opts.filter(function(x){return x[0]===S.opt})[0],price=o[2];
+    var isFlat=S.size<14,three=S.size===14&&S.opt==='3';
+    var unit=isFlat?b.unit:(three?'/ 3 days + dump fee':b.unit);
+    var kind=isFlat?(S.opt==='concrete'?' concrete':' dirt'):'';
+    var name=S.size+' yard'+kind+' bin';
+    var dims='12 ft long · '+b.w+' ft wide · '+b.h+' ft high';
+    $$('[data-seg]').forEach(function(g){var i=[4,7,14,20].indexOf(S.size);$('.thumb',g).style.transform='translateX('+(i*100)+'%)';
+      $$('button',g).forEach(function(x){var on=+x.dataset.size===S.size;x.setAttribute('aria-checked',on);x.tabIndex=on?0:-1})});
+    $$('.job').forEach(function(x){x.setAttribute('aria-pressed',+x.dataset.j===S.job)});
+    bind('num',S.size);bind('tag',b.tag);bind('tag2',b.tag);bind('name',name);bind('dims',dims);bind('unit',unit+(isFlat?'':', Zone 1'));
+    bind('fits',b.fits);bind('book','Book a '+S.size+' yard');bind('req','Request my '+S.size+' yard bin');bind('foot',b.foot,true);
+    bind('line','$'+price+' '+unit);bind('w',b.w);bind('h',b.h);bind('loads',b.loads);bind('rcTitle',name);
+    roll(price);
+    // options
+    var row=$('#optRow');
+    if(b.opts.length>1){row.hidden=false;row.innerHTML='<span class="opt" role="radiogroup" aria-label="'+(isFlat?'What is going in':'Rental length')+'">'+b.opts.map(function(x){
+      return '<button type="button" role="radio" aria-checked="'+(x[0]===S.opt)+'" data-o="'+x[0]+'">'+x[1]+' $'+x[2]+'</button>'}).join('')+'</span>'+
+      '<span>'+(isFlat?'One material per bin':(three?'Zone 1 only':'The one most people rent'))+'</span>'}
+    else{row.hidden=false;row.innerHTML='<span>For big renos and construction sites.</span>'}
+    $('#ticks').innerHTML=b.ticks.map(function(t){return tick(t)}).join('')+(b.no?tick(b.no,true):'');
+    var n=$('#jobNote'),j=S.job>-1?JOBS[S.job]:null;
+    if(j&&j[3]){n.hidden=false;n.innerHTML='<b>'+j[0]+':</b> '+j[3]}else n.hidden=true;
+    // images
+    var src=UP+S.size+'-yard-w800.webp',im=$('#binImg');
+    if(im.getAttribute('src')!==src){im.srcset=src+' 1000w, '+UP+S.size+'-yard.webp 1600w';im.src=src;im.alt='A green '+S.size+" yard Jeff's Junk bin";
+      im.classList.remove('swap');void im.offsetWidth;im.classList.add('swap');$('#sumImg').src=src;$('#dockImg').src=src}
+    // receipt
+    var li=function(a,s,v,free){return '<div class="li"><dt>'+a+(s?'<small>'+s+'</small>':'')+'</dt><dd'+(free?' class="free"':'')+'>'+v+'</dd></div>'};
+    $('#rcpt').innerHTML=isFlat
+      ? li(name,'1–7 days, flat rate','$'+price)+li('Dump fee','None on dirt and concrete bins','$0',1)+li('Wood under the bin','So it doesn’t mark the driveway','Always',1)+li('Deposit when you book','Depends on your location','from $450')
+      : li(name,(three?'3 day deal, Zone 1 only':(S.size===14?'7 days, Zone 1':'1–7 days, Zone 1')),'$'+price)+li('Dump fee','Up to 1 tonne (2,200 lb), prorated after that','$135')+li('Wood under the bin','So it doesn’t mark the driveway','Always',1)+li('Deposit when you book','Depends on your location','from $450');
+    bind('rcFoot',isFlat?'One material per bin, no mixing. Need more time? You can extend your rental for a fee.':'Need more time? You can extend your rental for a fee. Outside Zone 1, call for the price.');
+    // scale
+    var r=$('#scaleBin');r.style.y=(262-b.px)+'px';r.style.height=b.px+'px';r.setAttribute('y',262-b.px);r.setAttribute('height',b.px);
+    var sh=$('#scaleH');sh.textContent=b.h+' ft';sh.setAttribute('y',262-b.px/2+5);sh.setAttribute('x',590);
+    $('#loadsNote').hidden=!b.n;$('#loads').innerHTML=b.n?new Array(b.n+1).join('<svg><use href="#i-truck"/></svg>'):'';
+    // form
+    var rd=$('#formSizes input[value="'+S.size+'"]');if(rd&&!$('#formSizes input[value="0"]').checked)rd.checked=true;
+    first=false;
+  }
+  document.addEventListener('click',function(e){var o=e.target.closest('[data-o]');if(o){S.opt=o.dataset.o;render();var f=$('[data-o="'+S.opt+'"]');f&&f.focus()}
+    if(e.target.closest('[data-book]')){var z=$('#formSizes input[value="0"]');if(z.checked){z.checked=false;render()}}});
+  $('#formSizes').addEventListener('change',function(e){var v=+e.target.value;if(v){S.job=-1;set(v)}else bind('req','Request my bin')});
+  render();
+
+  // can it go in
+  var YES='appliances,BBQs,furniture,hot tubs,pianos,e-waste,electronics,construction materials,drywall,concrete,dirt,tile,carpets,exercise equipment,office furniture,filing cabinets,yard waste,swing sets,toilets,sinks,fridges,freezers,stoves,washers,dryers,toys,books,boxes'.split(',');
+  var NO='paint,oils,chemicals,solvents,asbestos,oil drums,propane tanks,tires'.split(',');
+  $('#yesList').innerHTML=YES.map(function(t){return tick(t)}).join('');
+  $('#noList').innerHTML=NO.map(function(t){return tick(t,true)}).join('');
+  var ALSO={couch:'furniture',sofa:'furniture',chair:'furniture',table:'furniture',dresser:'furniture',desk:'office furniture',bed:'furniture',tv:'electronics',computer:'electronics',branch:'yard waste',brush:'yard waste',leaves:'yard waste',shingle:'shingles',oil:'oils',liquid:'oils',medical:'medical waste',tire:'tires',propane:'propane tanks',bbq:'BBQs',barbecue:'BBQs',fridge:'fridges',freezer:'freezers',stove:'stoves',washer:'washers',dryer:'dryers',treadmill:'exercise equipment',carpet:'carpets',piano:'pianos',toilet:'toilets',sink:'sinks'};
+  var norm=function(s){return s.toLowerCase().replace(/[^a-z ]/g,'').replace(/s\b/g,'').trim()};
+  function answer(q){var a=$('#ans'),n=norm(q),hit,kind;
+    if(n.length<2){a.className='ans';a.innerHTML='<span class="dot">?</span><span>Ask us anything. The answer shows up here.</span>';return}
+    var find=function(list){return list.filter(function(x){var y=norm(x);return y.indexOf(n)>-1||n.indexOf(y)>-1})[0]};
+    var alias;Object.keys(ALSO).some(function(k){if(n.indexOf(norm(k))>-1){alias=ALSO[k];return true}});
+    if(find(NO)||(alias&&(NO.indexOf(alias)>-1||alias==='medical waste'))){hit=find(NO)||alias;kind='no'}
+    else if(alias==='shingles'){a.className='ans yes';a.innerHTML='<span class="dot">✓</span><span><b>Yes, in a 14 yard bin.</b> With shingles it’s all about weight, so tell us about the roof when you book. <a href="mix-roofing-bins.html">Roofing bins</a></span>';return}
+    else if(find(YES)||alias){hit=find(YES)||alias;kind='yes'}
+    if(kind==='no'){a.className='ans no';a.innerHTML='<span class="dot">✕</span><span><b>Sorry, we can’t take '+hit+'.</b> Not sure about something close to it? Call or text 705.333.7767.</span>'}
+    else if(kind==='yes'){var dc=hit==='dirt'||hit==='concrete';a.className='ans yes';a.innerHTML='<span class="dot">✓</span><span><b>Yes, we take '+hit+'.</b> '+(dc?'It goes in a 4 or 7 yard bin: one material per bin, no mixing. <a href="mix-dirt-concrete-bins.html">Dirt and concrete bins</a>':'<a href="#request">Book a bin</a> or call 705.333.7767.')+'</span>'}
+    else{a.className='ans';a.innerHTML='<span class="dot">?</span><span><b>That one isn’t on our list.</b> Call or text <a href="tel:+17053337767">705.333.7767</a> and ask before you load it.</span>'}}
+  $('#q').addEventListener('input',function(){answer(this.value)});
+  $$('.try button').forEach(function(b){b.addEventListener('click',function(){$('#q').value=b.textContent;answer(b.textContent)})});
+
+  // video: nothing from YouTube loads until the tap
+  $('#vid').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/oOlUJzRvCBM?autoplay=1&rel=0" title="Jeff\'s Junk: rent a bin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'},{once:true});
+
+  // office hours chip (Mon to Fri 8 to 7, Sat 8 to 12, Barrie time; holidays are not known here)
+  try{var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+    var h=(+p.hour%24)+(+p.minute)/60,d=p.weekday,close=d==='Sun'?0:(d==='Sat'?12:19),on=close&&h>=8&&h<close,el=$('#openNow');
+    el.classList.toggle('on',!!on);el.lastElementChild.innerHTML=on?'<b>Open now</b> until '+(close===12?'noon':'7pm'):'<b>Closed now</b>, text us anytime'}catch(e){}
+
+  // header line + dock
+  var head=$('.head');addEventListener('scroll',function(){head.classList.toggle('stuck',scrollY>40)},{passive:true});
+  var dock=$('#dock'),vis={};
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.id]=e.isIntersecting});
+      dock.classList.toggle('show',!vis.sizes&&!vis.request&&scrollY>300)},{threshold:0.05});io.observe($('#sizes'));io.observe($('#request'))}
+
+  // form (mockup: nothing is sent)
+  var today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#fd').min=today;$('#fu').min=today;
+  $('#fd').addEventListener('change',function(){$('#fu').min=this.value||today});
+  $('#fph').addEventListener('change',function(){var n=Math.min(3,this.files.length);$('#phT').textContent=n?n+(n>1?' photos added':' photo added'):'Add photos'});
+  $('#form').addEventListener('submit',function(e){e.preventDefault();var bad=$$('[required]',this).filter(function(i){return !i.value.trim()})[0];
+    if(bad){bad.focus();bad.style.borderColor='#c0392b';bad.addEventListener('input',function(){bad.style.borderColor=''},{once:true});return}
+    this.innerHTML='<div class="done"><span class="ok"><svg class="ic"><use href="#i-check"/></svg></span><h3>That’s the form filled in.</h3><p>This is the mockup, so nothing was sent. On the real site your request goes to hello@jeffsjunk.ca, the same as the form does today.</p><a class="btn btn-line" href="mix-bin-rental-v2.html#request" onclick="location.reload()">Fill it in again</a></div>'});
+})();
+</script>
+</body>
+</html>
