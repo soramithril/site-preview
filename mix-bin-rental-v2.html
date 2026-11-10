@@ -2242,9 +2242,9 @@ body.nt-on .nt-pin{display:grid}
 @media (max-width:899px){.nt-btn{padding:10px 9px;font-size:.75rem}.nt-bar{top:auto;bottom:84px}}
 }</style>
 <meta name="robots" content="noindex">
-<link rel="preload" as="image" href="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/wp-content/uploads/bins-2026/bin-14-yard-w360.webp" type="image/webp">
 <style id="binv2">
-/* ===== Bin rental, version 2 concept (mockup-build/binv2). Everything is prefixed v2- and scoped to .v2-page, so the
+/* ===== Bin rental, version 2 (mockup-build/binv2): the parts kept from round 3. The price board is in board.css. Everything is prefixed v2- and scoped to .v2-page, so the
    real header, footer, call bar and "what we take" section keep their own styles. ===== */
 .v2-page{
   --ink:#14181b; --char:#23282d; --char2:#2d343a; --mute:#5b666d; --soft:#8a959b;
@@ -2291,77 +2291,6 @@ html{scroll-padding-top:96px}
 .v2-open b{color:var(--ink);font-weight:600}
 .v2-open i{width:9px;height:9px;border-radius:50%;background:#b9c2bd;display:block}
 .v2-open.v2-on i{background:var(--go)}
-
-/* ============ HERO ============ */
-.v2-hero{position:relative;overflow:clip;background:
-  radial-gradient(900px 520px at 88% 8%,#dff2e5 0,transparent 62%),
-  radial-gradient(700px 420px at -6% 96%,#eaf6ee 0,transparent 60%),#fff}
-.v2-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#cfdcd4 1px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent,#000 30%,transparent 92%);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,transparent 92%);opacity:.5;pointer-events:none}
-.v2-hero-in{position:relative;display:grid;gap:34px;padding:38px 0 64px}
-.v2-hero-in>*{min-width:0}
-.v2-crumb{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 8px;font-size:14px;font-weight:500;color:#333b40;text-decoration:none}
-.v2-crumb .v2-stars{color:#f5a700;letter-spacing:1px;font-size:13px}
-.v2-crumb b{font-weight:700;color:var(--ink)}
-.v2-hero h1{font-size:clamp(46px,8.4vw,92px);letter-spacing:-.045em;margin-top:20px}
-.v2-hero h1 .v2-mk{font-size:.94em;position:relative;display:inline-block;padding:0 .04em}
-.v2-hero h1 .v2-mk::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:.14em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M3 9C60 3 120 12 170 6s90-2 127 2' fill='none' stroke='%231a9a45' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;transform-origin:left;animation:draw .7s .35s both cubic-bezier(.2,.7,.2,1)}
-@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.v2-hero .v2-tag{font-size:clamp(24px,3.6vw,36px);font-weight:600;letter-spacing:-.03em;margin-top:8px;color:var(--char)}
-.v2-hero .v2-lede{margin-top:16px;max-width:33em;color:#3b454b;font-size:18px}
-.v2-ask{margin-top:28px}
-.v2-ask h2{font-size:21px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.v2-ask h2 small{font-size:14px;font-weight:500;color:var(--mute);letter-spacing:0}
-.v2-jobs{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.v2-job{border:1px solid #d6ddd9;background:#fff;border-radius:999px;padding:10px 16px;font-size:15.5px;font-weight:500;line-height:1.2;transition:background .15s,border-color .15s,color .15s,transform .15s}
-.v2-job:hover{border-color:var(--ink);transform:translateY(-1px)}
-.v2-job[aria-pressed="true"]{background:var(--char);border-color:var(--char);color:#fff}
-@media (max-width:640px){.v2-jobs{display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;margin-inline:-20px;padding:2px 20px 10px;scrollbar-width:none;scroll-snap-type:x proximity}.v2-jobs::-webkit-scrollbar{display:none}.v2-job{scroll-snap-align:start}.v2-hero .v2-lede{font-size:16.5px}.v2-ask{margin-top:22px}.v2-ask h2 small{flex-basis:100%}}
-.v2-hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center}
-.v2-hero-cta .v2-or{font-size:15px;color:var(--mute)}
-.v2-hero-cta .v2-or a{color:var(--ink);font-weight:600}
-
-/* the picker card */
-.v2-pick{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow);overflow:hidden;container-type:inline-size}
-.v2-pick-top{padding:22px 22px 0}
-.v2-pick-top h2{font-size:15px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--deep);line-height:1.3}
-.v2-seg{position:relative;display:grid;grid-template-columns:repeat(4,1fr);background:#f0f3f1;border-radius:999px;padding:5px;margin-top:14px}
-.v2-seg button{position:relative;z-index:1;border:0;background:none;border-radius:999px;min-height:46px;font-weight:600;font-size:16px;color:#49545a;transition:color .2s}
-.v2-seg button[aria-checked="true"]{color:#fff}
-.v2-seg .v2-thumb{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/4);border-radius:999px;background:var(--char);transition:transform .34s cubic-bezier(.3,1.3,.5,1)}
-.v2-stage{position:relative;margin:16px 22px 0;border-radius:var(--r-lg);background:linear-gradient(180deg,#f4faf6,#e6f3ea);aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden}
-.v2-stage .v2-big{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-size:min(62cqw,330px);font-weight:700;letter-spacing:-.07em;line-height:.8;color:#d6ecdd;opacity:.75;user-select:none;pointer-events:none}
-.v2-stage .v2-floor{position:absolute;left:12%;right:12%;bottom:9%;height:9%;background:radial-gradient(closest-side,rgba(10,50,25,.28),transparent);filter:blur(4px)}
-.v2-stage img{position:relative;width:84%;filter:drop-shadow(0 14px 18px rgba(10,50,25,.18))}
-.v2-badge{position:absolute;top:14px;right:14px;background:#fff;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--deep)}
-.v2-pick-body{padding:20px 22px 22px;display:grid;gap:14px}
-.v2-pick-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.v2-pick-name{font-size:28px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
-.v2-pick-dims{color:var(--mute);font-size:15.5px;margin-top:4px}
-.v2-price{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
-.v2-price .v2-n{font-size:64px;font-weight:600;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
-.v2-price .v2-u{font-size:15px;color:var(--mute);font-weight:500;white-space:normal;max-width:9.5em;line-height:1.25}
-.v2-opt{display:inline-flex;background:#f0f3f1;border-radius:999px;padding:4px;gap:2px}
-.v2-opt button{border:0;background:none;border-radius:999px;padding:8px 14px;font-size:14.5px;font-weight:600;color:#49545a}
-.v2-opt button[aria-checked="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.v2-opt-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--mute)}
-.v2-fits{background:var(--mint);border-radius:var(--r-md);padding:14px 16px;font-size:15.5px}
-.v2-fits b{color:var(--deep)}
-.v2-note{font-size:15px;color:#3b454b;border-left:3px solid var(--go);padding-left:12px}
-.v2-note a{font-weight:600}
-.v2-ticks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 8px}
-.v2-ticks li{display:inline-flex;align-items:center;gap:6px;border:1px solid #e1e6e3;border-radius:999px;padding:6px 12px;font-size:14px;background:#fff}
-.v2-ticks .v2-ic{color:var(--go);stroke-width:2.6}
-.v2-ticks li.v2-no{background:var(--char);border-color:var(--char);color:#fff}
-.v2-ticks li.v2-no .v2-ic{color:#fff}
-.v2-pick-cta{display:grid;gap:8px;grid-template-columns:1fr}
-@container (min-width:430px){.v2-pick-cta{grid-template-columns:1.25fr 1fr}}
-.v2-pick-foot{font-size:14px;color:var(--mute);text-align:center}
-.v2-pick-foot a{color:var(--ink);font-weight:600}
-@media (min-width:980px){
-  .v2-hero-in{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:54px;align-items:start;padding:54px 0 84px}
-  .v2-pick{position:sticky;top:96px}
-}
-
 /* ============ sections ============ */
 .v2-sec{padding:clamp(64px,9vw,112px) 0}
 .v2-sec.v2-alt{background:var(--bg)}
@@ -2369,79 +2298,17 @@ html{scroll-padding-top:96px}
 .v2-sec-h.v2-c{text-align:center;margin-inline:auto}
 .v2-sec-h h2{font-size:clamp(34px,5.2vw,58px);margin-top:10px}
 .v2-sec-h p{margin-top:16px;color:#3b454b;font-size:18.5px}
-
-/* bento */
-.v2-bento{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);margin-top:0}
-.v2-tile{border-radius:var(--r-lg);border:1px solid var(--line);background:#fff;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;min-height:168px;position:relative;overflow:hidden;text-decoration:none}
-.v2-tile .v2-num{font-size:clamp(44px,6vw,72px);font-weight:600;letter-spacing:-.05em;line-height:.95}
-.v2-tile .v2-lbl{font-size:15.5px;color:#3b454b;margin-top:8px}
-.v2-tile.v2-mint{background:var(--mint);border-color:var(--mint2)}
-.v2-tile.v2-dark{background:var(--char);border-color:var(--char);color:#fff}
-.v2-tile.v2-dark .v2-lbl{color:#c9d1cc}
-.v2-tile.v2-photo{grid-column:1/-1;min-height:300px;padding:0;border:0;color:#fff}
-.v2-tile.v2-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.v2-tile.v2-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,14,12,.82))}
-.v2-tile.v2-photo figcaption{position:relative;z-index:1;padding:22px;font-size:16.5px;max-width:30em}
-.v2-tile.v2-photo figcaption b{display:block;font-size:22px;letter-spacing:-.02em;margin-bottom:4px}
-.v2-tile .v2-stars{color:#f5a700;font-size:18px;letter-spacing:2px}
-.v2-tile .v2-go{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;border:1px solid #d6ddd9;display:grid;place-items:center}
-@media (min-width:900px){
-  .v2-bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(190px,auto)}
-  .v2-tile.v2-photo{grid-column:span 2;grid-row:span 2}
-}
-
-/* receipt */
-.v2-pay{display:grid;gap:40px;align-items:center}
-@media (min-width:900px){.v2-pay{grid-template-columns:1fr 1fr;gap:72px}}
-.v2-rcpt{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px 22px 0 0;padding:28px 26px 34px;box-shadow:var(--shadow);max-width:470px;width:100%;margin-inline:auto;transform:rotate(-1.2deg)}
-.v2-rcpt::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-11px;height:12px;background:
-  linear-gradient(135deg,#fff 50%,transparent 50%) 0 0/16px 12px repeat-x,
-  linear-gradient(225deg,#fff 50%,transparent 50%) 0 0/16px 12px repeat-x;filter:drop-shadow(0 1px 0 var(--line))}
-.v2-rcpt-h{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:2px dashed #d5dcd8}
-.v2-rcpt-h img{width:92px}
-.v2-rcpt-h span{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--deep)}
-.v2-rcpt dl{margin:0;display:grid}
-.v2-rcpt .v2-li{display:grid;grid-template-columns:1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid #eef1ef;align-items:baseline}
-.v2-rcpt dt{font-weight:600;font-size:16.5px}
-.v2-rcpt dt small{display:block;font-weight:400;color:var(--mute);font-size:14px;margin-top:2px}
-.v2-rcpt dd{margin:0;font-weight:600;font-size:19px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.v2-rcpt dd.v2-free{color:var(--green)}
-.v2-rcpt-f{margin-top:16px;font-size:14.5px;color:var(--mute)}
 .v2-pts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
 .v2-pts li{display:grid;grid-template-columns:auto 1fr;gap:14px;font-size:16.5px;color:#3b454b}
 .v2-pts b{color:var(--ink)}
 .v2-pts .v2-ck{width:28px;height:28px;border-radius:50%;background:var(--mint2);color:var(--deep);display:grid;place-items:center;margin-top:1px}
 .v2-zone{margin-top:26px;font-size:14.5px;color:var(--mute)}
 .v2-zone a{color:var(--ink);font-weight:600}
-
-/* scale */
-.v2-scale{margin-top:44px;border:1px solid var(--line);border-radius:var(--r-xl);background:#fff;box-shadow:var(--shadow);display:grid;overflow:hidden}
-.v2-scale-draw{padding:26px 22px 18px;background:linear-gradient(180deg,#fff,#f7faf8)}
-.v2-scale-draw svg{width:100%;height:auto;display:block}
-.v2-scale-draw .v2-bin{transition:y .45s cubic-bezier(.3,1.2,.5,1),height .45s cubic-bezier(.3,1.2,.5,1)}
-.v2-scale .v2-seg{max-width:420px;margin:14px auto 0}
-.v2-scale-info{background:var(--mint);padding:28px 26px;display:grid;gap:18px;align-content:center}
-.v2-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.v2-trio div{background:#fff;border-radius:var(--r-md);padding:14px 12px}
-.v2-trio b{display:block;font-size:34px;font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
-.v2-trio span{font-size:13px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--deep)}
-.v2-loads{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.v2-loads svg{width:38px;height:22px;color:var(--deep)}
-.v2-loads-t{font-size:15.5px;color:#3b454b}
-@media (min-width:900px){.v2-scale{grid-template-columns:1.35fr 1fr}}
-
 /* how it works */
 .v2-how{background:var(--char);color:#fff;border-radius:clamp(24px,4vw,44px);padding:clamp(28px,5vw,64px);margin-inline:auto;width:min(100% - 24px,1320px)}
 .v2-how .v2-cap{color:#7fdc9c}
 .v2-how h2{font-size:clamp(34px,5.2vw,58px);margin-top:10px}
 .v2-how h2 .v2-mk{color:#5fd384}
-.v2-steps{list-style:none;padding:0;margin:40px 0 0;display:grid;gap:14px;counter-reset:s}
-.v2-steps li{counter-increment:s;background:var(--char2);border:1px solid #3a4249;border-radius:var(--r-lg);padding:22px}
-.v2-steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--go);font-weight:700;font-size:18px;margin-bottom:18px}
-.v2-steps h3{font-size:22px;letter-spacing:-.02em}
-.v2-steps p{margin-top:8px;color:#c9d1cc;font-size:16px}
-@media (min-width:720px){.v2-steps{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1080px){.v2-steps{grid-template-columns:repeat(4,1fr)}}
 .v2-prep{display:grid;gap:22px;margin-top:22px}
 @media (min-width:900px){.v2-prep{grid-template-columns:1fr 1fr;align-items:stretch}}
 .v2-vid{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:#000;border:0;padding:0;width:100%;display:block}
@@ -2456,12 +2323,6 @@ html{scroll-padding-top:96px}
 .v2-check li{display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:16px;color:#3b454b}
 .v2-check li .v2-ic{color:var(--go);stroke-width:2.6;margin-top:4px}
 .v2-check li b{color:var(--ink)}
-
-/* reviews */
-.v2-rev-top{display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:8px}
-.v2-rev-top .v2-n{font-size:clamp(84px,13vw,150px);font-weight:600;letter-spacing:-.06em;line-height:.85}
-.v2-rev-top .v2-stars{color:#f5a700;font-size:28px;letter-spacing:3px}
-.v2-rev-top p{color:#3b454b}
 .v2-revs{display:grid;gap:14px;margin-top:40px}
 @media (min-width:800px){.v2-revs{grid-template-columns:repeat(3,1fr)}}
 .v2-rev{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:#fff;display:grid;gap:14px}
@@ -2469,7 +2330,6 @@ html{scroll-padding-top:96px}
 .v2-rev blockquote{margin:0;font-size:17px;color:#3b454b}
 .v2-rev cite{font-style:normal;font-size:14.5px;color:var(--mute)}
 .v2-rev-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-
 /* faq */
 .v2-faq{display:grid;gap:36px}
 @media (min-width:940px){.v2-faq{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}.v2-faq-side{position:sticky;top:104px}}
@@ -2484,7 +2344,6 @@ html{scroll-padding-top:96px}
 .v2-qa[open] summary::after{transform:rotate(45deg);background-color:var(--mint)}
 .v2-qa .v2-a{padding:0 44px 22px 2px;color:#3b454b;font-size:17px}
 .v2-qa .v2-a a{font-weight:600;color:var(--ink)}
-
 /* book */
 .v2-book{background:
   radial-gradient(800px 480px at 100% 0,#dff2e5 0,transparent 60%),var(--mint)}
@@ -2492,12 +2351,6 @@ html{scroll-padding-top:96px}
 @media (min-width:960px){.v2-book-in{grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}.v2-book-side{position:sticky;top:104px}}
 .v2-book-side h2{font-size:clamp(38px,5.6vw,64px)}
 .v2-book-side>p{margin-top:16px;font-size:18px;color:#3b454b}
-.v2-sum{margin-top:26px;background:#fff;border:1px solid var(--mint2);border-radius:var(--r-lg);padding:16px;display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center}
-.v2-sum img{background:var(--mint);border-radius:14px;padding:8px}
-.v2-sum b{font-size:20px;letter-spacing:-.02em;display:block}
-.v2-sum span{font-size:15px;color:var(--mute);display:block}
-.v2-sum .v2-p{color:var(--ink);font-weight:600;margin-top:4px}
-.v2-book-side .v2-ticks{margin-top:18px}
 .v2-form{background:#fff;border-radius:var(--r-xl);border:1px solid var(--mint2);box-shadow:var(--shadow);padding:clamp(20px,3.4vw,36px);display:grid;gap:18px;grid-template-columns:1fr 1fr}
 .v2-form .v2-full{grid-column:1/-1}
 @media (max-width:560px){.v2-form>*{grid-column:1/-1}}
@@ -2524,39 +2377,6 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
 .v2-done .v2-ok .v2-ic{width:30px;height:30px;stroke-width:3}
 .v2-done h3{font-size:30px}
 .v2-done p{color:#3b454b;max-width:30em}
-
-/* comparison table: every size and price in plain HTML */
-.v2-tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;font-size:16px;box-shadow:var(--shadow)}
-.v2-tbl th,.v2-tbl td{padding:18px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #eef1ef;font-weight:400}
-.v2-tbl thead th{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--deep);background:var(--mint);font-weight:700}
-.v2-tbl tbody tr:last-child>*{border-bottom:0}
-.v2-tbl tbody th{font-size:21px;font-weight:600;letter-spacing:-.02em;white-space:nowrap}
-.v2-tbl tbody th small{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--deep);font-weight:700;margin-top:4px}
-.v2-tbl .v2-p{font-weight:600}
-.v2-tbl .v2-p small,.v2-tbl td small{display:block;font-weight:400;color:var(--mute);font-size:14px}
-.v2-tbl td a:not(.v2-btn){font-weight:600}
-.v2-tbl tr.v2-sel>*{background:#f6fbf7}
-.v2-tbl tr.v2-sel>th{box-shadow:inset 4px 0 0 var(--go)}
-@media (max-width:860px){
-  .v2-tbl,.v2-tbl tbody,.v2-tbl tr,.v2-tbl th,.v2-tbl td{display:block}
-  .v2-tbl thead{display:none}
-  .v2-tbl tbody tr{padding:18px 16px;border-bottom:1px solid var(--line)}
-  .v2-tbl tbody tr:last-child{border-bottom:0}
-  .v2-tbl th,.v2-tbl td{padding:0;border:0}
-  .v2-tbl tbody th{margin-bottom:10px}
-  .v2-tbl tbody th small{display:inline-block;margin:0 0 0 8px;vertical-align:middle}
-  .v2-tbl td{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:6px 0}
-  .v2-tbl td::before{content:attr(data-l);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--deep);font-weight:700;padding-top:3px}
-  .v2-tbl td:last-child{display:block;padding-top:12px}
-  .v2-tbl td:last-child::before{content:none}
-  .v2-tbl td:last-child .v2-btn{width:100%}
-  .v2-tbl tr.v2-sel{box-shadow:inset 4px 0 0 var(--go);background:#f6fbf7}
-  .v2-tbl tr.v2-sel>th{box-shadow:none}
-}
-.v2-facts{margin-top:44px}
-@media (min-width:860px){.v2-facts .v2-pts{grid-template-columns:1fr 1fr;gap:18px 48px;margin-top:0}}
-.v2-facts .v2-zone{max-width:60em}
-
 /* floating buttons. Phones: the real bar plus a white Book part. Desktop: one charcoal bar with the bin you picked
    (white Book button, never green), in the spot the real buttons use, so the little guy still stands on it. */
 .jj-call a.v2-jb{background:#fff;color:#23282d}
@@ -2613,9 +2433,138 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
   @keyframes swap{from{opacity:0;transform:translateY(14px) scale(.94)}to{opacity:1;transform:none}}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* ============ round 4 (2026-11-09): the price board. This file is joined onto the kept parts of round 3 by binv2.py ============ */
+.v2-jeff{display:block;margin-top:8px;width:fit-content;border:1.5px dashed #b98a1c;background:#fff8e6;color:#7a5600;border-radius:10px;padding:6px 10px;font-size:14px;line-height:1.35}
+.v2-stars{color:#f5a700;letter-spacing:1px}
+
+/* hero: heading, then the board, then call / hours / proof. On wide screens the board sits on the right */
+.v2-hero{background:radial-gradient(900px 520px at 92% 0,#e3f3e8 0,transparent 62%),#fff}
+.v2-hero-in{display:grid;gap:14px;padding:14px 0 48px}
+.v2-hero-in>*{min-width:0}
+.v2-hd{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+.v2-hero h1{font-size:clamp(35px,9.6vw,84px);letter-spacing:-.045em}
+.v2-hero h1 .v2-mk{display:block;font-size:.72em;line-height:1.05;margin-top:.08em;text-transform:uppercase}
+.v2-guy{width:clamp(92px,26vw,190px);margin-bottom:-2px}
+.v2-hero .v2-lede{margin-top:8px;max-width:34em;color:#3b454b;font-size:15.5px;line-height:1.4}
+.v2-hero-more{display:grid;gap:14px;justify-items:start}
+.v2-hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.v2-hero-cta .v2-or{font-size:15.5px;color:var(--mute);max-width:24em}
+.v2-hero-cta .v2-or a,.v2-proof a{color:var(--ink);font-weight:600}
+.v2-proof{font-size:15.5px;color:#3b454b;max-width:34em}
+.v2-proof a{text-decoration:none;white-space:nowrap}
+.v2-proof a:hover{text-decoration:underline}
+@media (min-width:980px){
+  .v2-hero-in{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);grid-template-rows:auto 1fr;column-gap:56px;row-gap:26px;padding:48px 0 84px;align-items:start}
+  .v2-hero-copy{grid-column:1;grid-row:1}
+  .v2-board{grid-column:2;grid-row:1/3}
+  .v2-hero-more{grid-column:1;grid-row:2;gap:18px}
+  .v2-hd{grid-template-columns:1fr;gap:0}
+  .v2-guy{order:-1;margin:0 0 14px -6px}
+  .v2-hero .v2-lede{font-size:18.5px;margin-top:18px}
+}
+
+/* the board */
+.v2-board{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.v2-board-cap,.v2-board-grp{font-family:var(--f);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--deep);line-height:1.3;padding:12px 16px 9px}
+.v2-board-grp{border-top:1px solid var(--line);background:var(--bg);padding:10px 16px}
+.v2-row{border-top:1px solid var(--line)}
+.v2-row summary{position:relative;list-style:none;cursor:pointer;display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 16px;-webkit-tap-highlight-color:transparent}
+.v2-row summary::-webkit-details-marker{display:none}
+.v2-row summary img{width:68px}
+.v2-row-t{font-size:18.5px;letter-spacing:-.02em;line-height:1.15}
+.v2-row-t .v2-tag{position:absolute;left:10px;top:4px;font:700 9px/1 var(--f);letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--deep);border-radius:999px;padding:3px 6px}
+.v2-row-t span{display:block;font-size:13px;font-weight:400;letter-spacing:0;color:var(--mute);line-height:1.3;margin-top:3px}
+.v2-row-p{text-align:right;display:grid;justify-items:end}
+.v2-row-p b{font-size:30px;font-weight:600;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.v2-row-p small{font-size:11.5px;color:var(--mute);margin-top:4px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.v2-row-p small::after{content:"";width:7px;height:7px;border-right:2px solid #7d8a84;border-bottom:2px solid #7d8a84;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.v2-row[open] .v2-row-p small::after{transform:translateY(2px) rotate(225deg)}
+.v2-row:not([open]) summary:hover{background:var(--bg)}
+.v2-row[open]{background:var(--mint)}
+.v2-row-b{padding:2px 16px 16px}
+.v2-row-in{display:grid;gap:12px}
+.v2-row-in>p{font-size:14.5px;line-height:1.45;color:#3b454b}
+.v2-row-in>p a{font-weight:600;color:var(--ink)}
+.v2-row-big{display:none}
+.v2-bill{margin:0;display:grid;gap:6px;font-size:15px}
+.v2-bill div{display:flex;align-items:baseline;gap:8px}
+.v2-bill dt{flex:1;display:flex;align-items:baseline;gap:8px}
+.v2-bill dt::after{content:"";flex:1;min-width:14px;border-bottom:2px dotted #b7cbbf;transform:translateY(-4px)}
+.v2-bill dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+.v2-row-in>p.v2-nomix{display:flex;align-items:center;gap:8px;background:var(--char);color:#fff;border-radius:12px;padding:9px 12px;font-size:14.5px;font-weight:600}
+.v2-row-cta{display:grid;grid-template-columns:1fr auto;gap:8px}
+.v2-row-cta .v2-btn{min-height:50px;padding:0 20px;font-size:16.5px}
+.v2-board-foot{border-top:1px solid var(--line);padding:12px 16px;font-size:13.5px;color:var(--mute)}
+.v2-board-foot a{color:var(--ink);font-weight:600}
+@media (min-width:980px){
+  .v2-board{border-radius:var(--r-xl)}
+  .v2-board-cap{padding:22px 26px 14px;font-size:13px}
+  .v2-board-grp{padding:12px 26px}
+  .v2-row summary{grid-template-columns:120px minmax(0,1fr) auto;gap:18px;padding:14px 26px}
+  .v2-row summary img{width:120px}
+  .v2-row-t{font-size:24px}
+  .v2-row-t .v2-tag{left:22px;top:6px;font-size:10px;padding:4px 8px}
+  .v2-row-t span{font-size:15px}
+  .v2-row-p b{font-size:40px}
+  .v2-row-p small{font-size:13.5px}
+  .v2-row-b{padding:4px 26px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:22px;align-items:center}
+  .v2-row-big{display:block;filter:drop-shadow(0 14px 18px rgba(10,50,25,.18))}
+  .v2-row-in>p{font-size:15.5px}
+  .v2-row-cta{grid-template-columns:1fr auto}
+  .v2-board-foot{padding:14px 26px;font-size:14.5px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .v2-row[open] .v2-row-b{animation:v2open .28s ease-out}
+  @keyframes v2open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+}
+
+/* the same on every bin: Home's split card, photo half and mint half */
+.v2-every{display:grid;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.v2-every-pic{position:relative;min-height:240px}
+.v2-every-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.v2-every-pic figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font-size:15px;background:linear-gradient(180deg,transparent,rgba(10,14,12,.8))}
+.v2-every-t{background:var(--mint);padding:clamp(22px,4vw,48px)}
+.v2-every-t h2{font-size:clamp(32px,4.6vw,52px);margin-top:10px}
+.v2-every .v2-pts{margin-top:22px}
+@media (min-width:900px){.v2-every{grid-template-columns:.9fr 1.1fr}.v2-every-pic{min-height:0}}
+
+/* which bin for which job */
+.v2-jt{width:100%;border-collapse:collapse;margin-top:36px;font-size:16.5px;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;border-style:hidden;box-shadow:0 0 0 1px var(--line)}
+.v2-jt th,.v2-jt td{text-align:left;vertical-align:top;padding:16px 18px;border-bottom:1px solid #eef1ef;font-weight:400;color:#3b454b}
+.v2-jt thead th{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--deep);font-weight:700;background:var(--mint)}
+.v2-jt tbody th{font-weight:600;color:var(--ink);font-size:18px;letter-spacing:-.01em;width:28%}
+.v2-jt td:nth-child(2){white-space:nowrap;font-weight:600;color:var(--ink);width:1%}
+.v2-jt td:nth-child(2) a{display:inline-block;background:var(--char);color:#fff;border-radius:999px;padding:5px 12px;font-size:14.5px;text-decoration:none}
+.v2-jt td:nth-child(2) a:hover{background:#000}
+.v2-jt td:last-child a{font-weight:600;color:var(--ink)}
+.v2-jt tbody tr:last-child>*{border-bottom:0}
+@media (max-width:760px){
+  .v2-jt,.v2-jt tbody,.v2-jt th,.v2-jt td{display:block;width:auto}
+  .v2-jt thead{display:none}
+  .v2-jt tbody tr{padding:13px 16px;border-bottom:1px solid #eef1ef;display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center}
+  .v2-jt tbody tr:last-child{border-bottom:0}
+  .v2-jt th,.v2-jt td{padding:0;border:0}
+  .v2-jt td:nth-child(2){margin:0;width:auto}
+  .v2-jt tbody th{font-size:17px;width:auto}
+  .v2-jt td:last-child{grid-column:1/-1}
+  .v2-jt td:last-child{font-size:15.5px}
+}
+.v2-unsure{margin:28px auto 0;max-width:720px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.v2-unsure img{width:clamp(84px,16vw,128px)}
+.v2-unsure h3{font-size:clamp(22px,3vw,28px);letter-spacing:-.02em}
+.v2-unsure p{margin-top:6px;color:#3b454b}
+.v2-unsure a{font-weight:600;color:var(--ink)}
+
+/* drop off day: the charcoal panel without the old four steps */
+.v2-how .v2-prep{margin-top:30px}
+.v2-revs{margin-top:36px}
+
+/* the floating little guy stays, but on phones his speech bubble sat on top of the Book and Call buttons of an open row */
+@media (max-width:768px){.jjg .jjg-b{display:none}.jjg .jjg-guys img.wide{height:62px}}
 </style>
 </head>
-<body class="bf"><div class="mk-bar">Version 2 concept of the Bin rental page. <a href="mix-bin-rental.html">See the current page</a> &middot; <a href="mix-grog-art.html">See the Grog art</a></div>
+<body class="bf"><div class="mk-bar">Version 2 of the Bin rental page: the price board. <a href="mix-bin-rental.html">See the current page</a> &middot; <a href="mix-grog-art.html">See the Grog art</a></div>
 
 <!-- icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -2726,186 +2675,198 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
   <symbol id="v2i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="v2i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="v2i-up" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
-  <symbol id="v2i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.500-3.500"/></symbol>
   <symbol id="v2i-cam" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.500"/></symbol>
   <symbol id="v2i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l11-6.500z" fill="currentColor" stroke="none"/></symbol>
-  <symbol id="v2i-truck" viewBox="0 0 38 22"><path d="M1 6h20v9H1zM21 9h8l5 4v2H21z" fill="currentColor"/><circle cx="8" cy="17" r="3.200" fill="currentColor" stroke="#f1f8f3" stroke-width="1.500"/><circle cx="27" cy="17" r="3.200" fill="currentColor" stroke="#f1f8f3" stroke-width="1.500"/></symbol>
 </svg>
 
 
-<!-- ================= HERO: the job question and the answer ================= -->
+<!-- ================= THE PRICE BOARD: every size and price, and the way to book ================= -->
 <section class="v2-hero">
   <div class="v2-wrap v2-hero-in">
     <div class="v2-hero-copy">
-      <a class="v2-crumb" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener"><span class="v2-stars" aria-hidden="true">★★★★★</span><span><b>5.0</b> from 260 Google reviews</span><span class="v2-sr">(opens in a new tab)</span></a>
-      <h1>Bin rentals in <span class="v2-mk">Barrie</span>.</h1>
-      <p class="v2-tag">We leave it, you load it.</p>
-      <p class="v2-lede">Bin rental (some call it a dumpster, a garbage bin or a disposal bin) in four sizes, dropped on driveways in Barrie and across Simcoe County, with wood underneath so it doesn't leave a mark.</p>
-
-      <div class="v2-ask">
-        <h2 id="askH">What are you getting rid of? <small>Tap a job to see your bin and price.</small></h2>
-        <div class="v2-jobs" id="jobs" role="group" aria-labelledby="askH"></div>
+      <div class="v2-hd">
+        <h1>Bin rentals in Barrie <span class="v2-mk">sizes &amp; prices</span></h1>
+        <img class="v2-guy" src="assets/wp-content/uploads/grog/mascot-truck-w260.webp" width="260" height="159" alt="">
       </div>
+      <p class="v2-lede">We leave it, you load it. Some call it a dumpster, a garbage bin or a disposal bin: around Barrie it's a bin.</p>
+    </div>
 
+    <div class="v2-board" id="sizes">
+      <h2 class="v2-board-cap">Garbage bin sizes and prices</h2>
+
+      <details class="v2-row" name="v2bin" data-size="14" data-line="$195 / 7 days + dump fee" open>
+        <summary>
+          <img src="assets/wp-content/uploads/bins-2026/bin-14-yard-w360.webp" width="360" height="204" alt="A green 14 yard Jeff's Junk bin" fetchpriority="high">
+          <h3 class="v2-row-t">14 yard bin <i class="v2-tag">Most booked</i><span>Clean outs, small renos, a roof</span></h3>
+          <span class="v2-row-p"><b>$195</b><small>7 days + dump fee</small></span>
+        </summary>
+        <div class="v2-row-b">
+          <div class="v2-row-in">
+            <p>12 ft long, 7 ft wide, 5 ft high. About 7 pickup truck loads, with a door at the back so you can walk things in.</p>
+            <dl class="v2-bill">
+              <div><dt>Dump fee, up to 1 tonne (2,200 lb)</dt><dd>$135</dd></div>
+              <div><dt>Over 1 tonne</dt><dd>prorated</dd></div>
+              <div><dt>Only need it for 3 days?</dt><dd>$150</dd></div>
+            </dl>
+            <div class="v2-row-cta">
+              <a class="v2-btn v2-btn-go" href="#request" data-pick="14">Book a 14 yard<svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
+              <a class="v2-btn v2-btn-line" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call</a>
+            </div>
+          </div>
+          <img class="v2-row-big" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="1000" height="566" alt="" loading="lazy">
+        </div>
+      </details>
+
+      <details class="v2-row" name="v2bin" data-size="20" data-line="$250 / 1 to 7 days + dump fee">
+        <summary>
+          <img src="assets/wp-content/uploads/bins-2026/bin-20-yard-w360.webp" width="360" height="203" alt="A green 20 yard Jeff's Junk bin">
+          <h3 class="v2-row-t">20 yard bin <span>Big renos and job sites</span></h3>
+          <span class="v2-row-p"><b>$250</b><small>1 to 7 days + dump fee</small></span>
+        </summary>
+        <div class="v2-row-b">
+          <div class="v2-row-in">
+            <p>12 ft long, 8 ft wide, 5.5 ft high. About 10 pickup truck loads, with a door at the back. It's the one our <a href="mix-contractors.html">contractors</a> use most: demolition debris goes straight in.</p>
+            <dl class="v2-bill">
+              <div><dt>Dump fee, up to 1 tonne (2,200 lb)</dt><dd>$135</dd></div>
+              <div><dt>Over 1 tonne</dt><dd>prorated</dd></div>
+            </dl>
+            <div class="v2-row-cta">
+              <a class="v2-btn v2-btn-go" href="#request" data-pick="20">Book a 20 yard<svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
+              <a class="v2-btn v2-btn-line" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call</a>
+            </div>
+          </div>
+          <img class="v2-row-big" src="assets/wp-content/uploads/bins-2026/bin-20-yard-w800.webp" width="1000" height="563" alt="" loading="lazy">
+        </div>
+      </details>
+
+      <p class="v2-board-grp">Dirt and concrete bins: flat rate, no dump fee</p>
+
+      <details class="v2-row" name="v2bin" data-size="4" data-line="$325 dirt, $375 concrete, flat rate">
+        <summary>
+          <img src="assets/wp-content/uploads/bins-2026/bin-4-yard-w360.webp" width="360" height="203" alt="A green 4 yard Jeff's Junk bin">
+          <h3 class="v2-row-t">4 yard bin <span>A garden dig or a small patio</span></h3>
+          <span class="v2-row-p"><b>$325</b><small>as a dirt bin</small></span>
+        </summary>
+        <div class="v2-row-b">
+          <div class="v2-row-in">
+            <p>12 ft long, 4.5 ft wide, 2 ft high: about 4 cubic yards. Yard waste, dirt or concrete only. <a href="mix-dirt-concrete-bins.html">Dirt and concrete bins</a></p>
+            <dl class="v2-bill">
+              <div><dt>As a concrete bin</dt><dd>$375</dd></div>
+              <div><dt>How long</dt><dd>1 to 7 days</dd></div>
+              <div><dt>Dump fee</dt><dd>none</dd></div>
+            </dl>
+            <p class="v2-nomix"><svg class="v2-ic"><use href="#v2i-x"/></svg>No mixing. One material per bin, no exceptions.</p>
+            <div class="v2-row-cta">
+              <a class="v2-btn v2-btn-go" href="#request" data-pick="4">Book a 4 yard<svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
+              <a class="v2-btn v2-btn-line" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call</a>
+            </div>
+          </div>
+          <img class="v2-row-big" src="assets/wp-content/uploads/bins-2026/bin-4-yard-w800.webp" width="1000" height="563" alt="" loading="lazy">
+        </div>
+      </details>
+
+      <details class="v2-row" name="v2bin" data-size="7" data-line="$425 dirt, $475 concrete, flat rate">
+        <summary>
+          <img src="assets/wp-content/uploads/bins-2026/bin-7-yard-w360.webp" width="360" height="203" alt="A green 7 yard Jeff's Junk bin">
+          <h3 class="v2-row-t">7 yard bin <span>A bigger dig or a large patio</span></h3>
+          <span class="v2-row-p"><b>$425</b><small>as a dirt bin</small></span>
+        </summary>
+        <div class="v2-row-b">
+          <div class="v2-row-in">
+            <p>12 ft long, 4.5 ft wide, 3.5 ft high. Dirt or concrete only. A driveway depends on its size: call and we'll tell you.</p>
+            <dl class="v2-bill">
+              <div><dt>As a concrete bin</dt><dd>$475</dd></div>
+              <div><dt>How long</dt><dd>1 to 7 days</dd></div>
+              <div><dt>Dump fee</dt><dd>none</dd></div>
+            </dl>
+            <p class="v2-nomix"><svg class="v2-ic"><use href="#v2i-x"/></svg>No mixing. One material per bin, no exceptions.</p>
+            <div class="v2-row-cta">
+              <a class="v2-btn v2-btn-go" href="#request" data-pick="7">Book a 7 yard<svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
+              <a class="v2-btn v2-btn-line" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call</a>
+            </div>
+          </div>
+          <img class="v2-row-big" src="assets/wp-content/uploads/bins-2026/bin-7-yard-w800.webp" width="1000" height="563" alt="" loading="lazy">
+        </div>
+      </details>
+
+      <script>if(matchMedia('(max-width:979px)').matches)document.querySelector('.v2-row[open]').open=false</script>
+      <p class="v2-board-foot">Prices are for Zone 1: Barrie and the towns around it. <a href="#every">Which towns?</a></p>
+    </div>
+
+    <div class="v2-hero-more">
       <div class="v2-hero-cta">
         <a class="v2-btn v2-btn-dark" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call 705.333.7767</a>
-        <span class="v2-or">or text a photo to <a href="sms:+17053337767">705.333.7767</a> and we'll pick the bin with you.</span>
+        <span class="v2-or">Not sure which size? Text a photo to <a href="sms:+17053337767">705.333.7767</a> and we'll pick the bin with you.</span>
       </div>
-      <p class="v2-open" id="openNow" style="margin-top:14px"><i></i><span>Monday to Friday 8 to 7, Saturday 8 to 12</span></p>
-    </div>
-
-    <div class="v2-pick" id="sizes" aria-live="polite">
-      <div class="v2-pick-top">
-        <h2>Garbage bin sizes and prices</h2>
-        <div class="v2-seg" role="radiogroup" aria-label="Bin size" data-seg>
-          <span class="v2-thumb"></span>
-          <button role="radio" data-size="4">4 yard</button>
-          <button role="radio" data-size="7">7 yard</button>
-          <button role="radio" data-size="14">14 yard</button>
-          <button role="radio" data-size="20">20 yard</button>
-        </div>
-      </div>
-      <div class="v2-stage">
-        <span class="v2-big" data-b="num" aria-hidden="true">14</span>
-        <span class="v2-floor"></span>
-        <img id="binImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" srcset="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp 1000w, assets/wp-content/uploads/bins-2026/bin-14-yard.webp 1600w" sizes="(min-width:980px) 460px, 84vw" width="1000" height="566" alt="A green 14 yard Jeff's Junk bin" fetchpriority="high">
-        <span class="v2-badge" data-b="tag">Most booked</span>
-      </div>
-      <div class="v2-pick-body">
-        <div class="v2-pick-row">
-          <div>
-            <p class="v2-pick-name" data-b="name">14 yard bin</p>
-            <p class="v2-pick-dims" data-b="dims">12 ft long · 7 ft wide · 5 ft high</p>
-          </div>
-          <p class="v2-price"><span class="v2-n" id="priceN">$195</span><span class="v2-u" data-b="unit">/ 7 days + dump fee</span></p>
-        </div>
-        <div class="v2-opt-row" id="optRow"></div>
-        <p class="v2-fits"><b>What fits:</b> <span data-b="fits">A garage or basement clean out, a small reno or a move.</span></p>
-        <p class="v2-note" id="jobNote" hidden></p>
-        <ul class="v2-ticks" id="ticks"></ul>
-        <div class="v2-pick-cta">
-          <a class="v2-btn v2-btn-go" href="#request" data-book><span data-b="book">Book a 14 yard</span><svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
-          <a class="v2-btn v2-btn-line" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call</a>
-        </div>
-        <p class="v2-pick-foot" data-b="foot"></p>
-      </div>
+      <p class="v2-open" id="openNow"><i></i><span>Monday to Friday 8 to 7, Saturday 8 to 12.</span></p>
+      <p class="v2-proof">Usually dropped off the same day you call, even in spring and summer. <a href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener"><span class="v2-stars" aria-hidden="true">★★★★★</span> <b><span data-jj="rating">5.0</span></b> from <span data-jj="reviews">260</span> Google reviews<span class="v2-sr"> (opens in a new tab)</span></a>, hauling since 1992.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PROOF ================= -->
-<section class="v2-sec" aria-label="Why Jeff's Junk">
+<!-- ================= THE SAME ON EVERY BIN ================= -->
+<section class="v2-sec" id="every">
   <div class="v2-wrap">
-    <div class="v2-bento">
-      <figure class="v2-tile v2-photo v2-rv" style="margin:0">
+    <div class="v2-every v2-rv">
+      <figure class="v2-every-pic">
         <img src="assets/wp-content/uploads/bin-truck-drop.webp" width="800" height="533" loading="lazy" alt="The Jeff's Junk truck tipping a bin onto a driveway, with a wood plank under the bin">
-        <figcaption><b>Wood under every bin.</b>A real drop off: the bin slides off the back of the truck onto wood, so it doesn't mark the driveway.</figcaption>
+        <figcaption>A real drop off: the bin slides off the back of the truck onto wood.</figcaption>
       </figure>
-      <div class="v2-tile v2-mint v2-rv"><span class="v2-num">1992</span><span class="v2-lbl">Family run since</span></div>
-      <a class="v2-tile v2-rv" href="mix-reviews.html"><span class="v2-go"><svg class="v2-ic"><use href="#v2i-up"/></svg></span><span class="v2-stars" aria-hidden="true">★★★★★</span><span class="v2-num">5.0</span><span class="v2-lbl">from 260 Google reviews</span></a>
-      <div class="v2-tile v2-dark v2-rv"><span class="v2-num">11,000+</span><span class="v2-lbl">customers</span></div>
-      <div class="v2-tile v2-rv"><span class="v2-num" style="font-size:clamp(34px,4.4vw,50px)">Same day</span><span class="v2-lbl">Usually dropped off the same day you call, even in spring and summer.</span></div>
+      <div class="v2-every-t">
+        <p class="v2-cap">Whatever size you rent</p>
+        <h2>The same on <span class="v2-mk">every</span> bin.</h2>
+        <ul class="v2-pts">
+          <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Wood underneath, no charge.</b> Our drivers put wood under the bin so it won't damage your driveway.</span></li>
+          <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>A deposit when you book.</b> It starts at $450 and depends on your location. We confirm it when we call.</span></li>
+          <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Pay how you like.</b> Visa, Mastercard, American Express, Visa Debit and e-Transfer.</span></li>
+        </ul>
+        <p class="v2-zone"><b>Zone 1</b> is Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and <a href="mix-area-innisfil.html">Innisfil</a>. Anywhere else, call for the price. We deliver across Simcoe County, including <a href="mix-area-orillia.html">Orillia</a>. <a href="mix-service-areas.html">See every town we serve</a>.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHAT YOU PAY ================= -->
-<section class="v2-sec v2-alt" id="price">
+<!-- ================= WHICH BIN FOR WHICH JOB ================= -->
+<section class="v2-sec v2-alt" id="jobs">
   <div class="v2-wrap">
     <div class="v2-sec-h v2-c">
-      <p class="v2-cap">What you pay</p>
-      <h2>Bin rental prices, <span class="v2-mk">no surprises</span>.</h2>
-      <p>Every garbage bin we rent, with its size and its price. It's the same thing we'll tell you on the phone.</p>
+      <p class="v2-cap">What are you getting rid of?</p>
+      <h2>Which bin for <span class="v2-mk">which</span> job?</h2>
     </div>
-    <table class="v2-tbl v2-rv">
-      <thead><tr><th scope="col">Bin</th><th scope="col">Size</th><th scope="col">Price</th><th scope="col">Dump fee</th><th scope="col">Good for</th><th scope="col"><span class="v2-sr">Book</span></th></tr></thead>
+    <table class="v2-jt v2-rv">
+      <thead><tr><th scope="col">The job</th><th scope="col">The bin</th><th scope="col">Good to know</th></tr></thead>
       <tbody>
-        <tr data-row="4"><th scope="row">4 yard bin<small>Dirt &amp; concrete</small></th><td data-l="Size">12 ft long, 4.5 ft wide, 2 ft high</td><td data-l="Price"><span class="v2-p">$325 as a dirt bin<br>$375 as a concrete bin<small>1–7 days, flat rate</small></span></td><td data-l="Dump fee">None</td><td data-l="Good for"><span>A garden dig or a small patio: about 4 cubic yards. Yard waste, dirt or concrete only. <a href="mix-dirt-concrete-bins.html">Dirt and concrete bins</a></span></td><td><a class="v2-btn v2-btn-dark v2-btn-sm" href="#request" data-pick="4">Book a 4 yard</a></td></tr>
-        <tr data-row="7"><th scope="row">7 yard bin<small>Dirt &amp; concrete</small></th><td data-l="Size">12 ft long, 4.5 ft wide, 3.5 ft high</td><td data-l="Price"><span class="v2-p">$425 as a dirt bin<br>$475 as a concrete bin<small>1–7 days, flat rate</small></span></td><td data-l="Dump fee">None</td><td data-l="Good for"><span>A bigger dig or a large patio. Dirt or concrete only, one material per bin.</span></td><td><a class="v2-btn v2-btn-dark v2-btn-sm" href="#request" data-pick="7">Book a 7 yard</a></td></tr>
-        <tr data-row="14"><th scope="row">14 yard bin<small>Most booked</small></th><td data-l="Size">12 ft long, 7 ft wide, 5 ft high</td><td data-l="Price"><span class="v2-p">$195 for 7 days<small>3 day deal $150. Zone 1 prices</small></span></td><td data-l="Dump fee">$135 up to 1 tonne</td><td data-l="Good for"><span>A garage or basement clean out, a small reno, a move or a roof. About 7 pickup truck loads. <a href="mix-guide-bin-size.html">Bin size guide</a></span></td><td><a class="v2-btn v2-btn-dark v2-btn-sm" href="#request" data-pick="14">Book a 14 yard</a></td></tr>
-        <tr data-row="20"><th scope="row">20 yard bin<small>Job sites</small></th><td data-l="Size">12 ft long, 8 ft wide, 5.5 ft high</td><td data-l="Price"><span class="v2-p">$250 for 1–7 days<small>Zone 1 price</small></span></td><td data-l="Dump fee">$135 up to 1 tonne</td><td data-l="Good for"><span>Big renos and construction jobs. About 10 pickup truck loads. <a href="mix-contractors.html">Contractors</a></span></td><td><a class="v2-btn v2-btn-dark v2-btn-sm" href="#request" data-pick="20">Book a 20 yard</a></td></tr>
+        <tr><th scope="row">A garage, a basement or a move</th><td><a href="#sizes" data-open="14">14 yard</a></td><td>Most homeowners pick this one. Rather not load it yourself? <a href="mix-junk-removal.html">Our crew can do it for you</a>.</td></tr>
+        <tr><th scope="row">A whole house or an estate</th><td><a href="#sizes" data-open="20">20 yard</a></td><td>Or <a href="mix-estate-cleanouts.html">let our crew clear it</a>.</td></tr>
+        <tr><th scope="row">A renovation</th><td><a href="#sizes" data-open="14">14</a> or <a href="#sizes" data-open="20">20 yard</a></td><td>A small reno, like a bathroom, fits a 14 yard. A kitchen or a basement needs the 20 yard.</td></tr>
+        <tr><th scope="row">Construction or demolition</th><td><a href="#sizes" data-open="20">20 yard</a></td><td>A deck or a fence coming down? <a href="mix-demolition.html">We can take it down for you</a>.</td></tr>
+        <tr><th scope="row">Roof shingles</th><td><a href="#sizes" data-open="14">14 yard</a></td><td>With shingles it's all about weight. A bundle weighs about 80 lb, and a double layer or heavier shingles weigh more, so tell us about the roof when you book. <a href="mix-roofing-bins.html">Roofing bins</a></td></tr>
+        <tr><th scope="row">Yard waste</th><td><a href="#sizes" data-open="4">4</a> or <a href="#sizes" data-open="14">14 yard</a></td><td>A 4 yard yard waste bin suits a small clean up and a 14 yard a big one. Branches, brush and leaves can all go in, with no dirt mixed in.</td></tr>
+        <tr><th scope="row">Dirt or concrete</th><td><a href="#sizes" data-open="4">4</a> or <a href="#sizes" data-open="7">7 yard</a></td><td>Dirt removal or concrete, never both in one bin.</td></tr>
       </tbody>
     </table>
-    <div class="v2-facts">
-      <ul class="v2-pts">
-        <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>How the dump fee works.</b> It's $135 for up to 1 tonne (2,200 lb), prorated after that. It applies to the 14 and 20 yard bins.</span></li>
-        <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Dirt and concrete bins are a flat rate.</b> The 4 and 7 yard bins have no dump fee. One material per bin, no mixing.</span></li>
-        <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Deposit when you book.</b> It starts at $450 and depends on your location. We confirm it when we call.</span></li>
-        <li><span class="v2-ck"><svg class="v2-ic"><use href="#v2i-check"/></svg></span><span><b>Pay how you like.</b> Visa, Mastercard, American Express, Visa Debit and e-Transfer.</span></li>
-      </ul>
-      <p class="v2-zone">Zone 1 is Barrie, Midhurst, Shanty Bay, Minesing, Thornton, Anten Mills, Hillsdale, Oro-Medonte, Angus, Elmvale and <a href="mix-area-innisfil.html">Innisfil</a>. Anywhere else, call for the price. We deliver across Simcoe County, including <a href="mix-area-orillia.html">Orillia</a>. <a href="mix-service-areas.html">See every town we serve</a>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SCALE ================= -->
-<section class="v2-sec" id="bin-scale">
-  <div class="v2-wrap">
-    <div class="v2-sec-h v2-c">
-      <p class="v2-cap">To scale</p>
-      <h2>How big is <span class="v2-mk">each bin</span>?</h2>
-      <p>Every bin is 12 ft long. What changes is the height and the width. Each one is drawn to scale next to a 6 ft person, so you can see what fits your driveway and your job.</p>
-    </div>
-    <div class="v2-scale v2-rv">
-      <div class="v2-scale-draw">
-        <svg viewBox="0 0 640 290" role="img" aria-label="A bin drawn to scale next to a 6 ft person" id="scaleSvg">
-          <line x1="20" y1="262" x2="620" y2="262" stroke="#cfd6d2" stroke-width="2"/>
-          <g fill="#c3ccc7"><circle cx="78" cy="62" r="16"/><rect x="56" y="82" width="44" height="100" rx="14"/><rect x="60" y="170" width="16" height="92" rx="7"/><rect x="80" y="170" width="16" height="92" rx="7"/></g>
-          <text x="78" y="34" text-anchor="middle" font-size="15" font-weight="600" fill="#5b666d">6 ft</text>
-          <g fill="none" stroke="#b9c5be" stroke-width="1.500" stroke-dasharray="5 5">
-            <rect x="150" y="190" width="432" height="72" rx="4"/><rect x="150" y="136" width="432" height="126" rx="4"/><rect x="150" y="82" width="432" height="180" rx="4"/><rect x="150" y="64" width="432" height="198" rx="4"/>
-          </g>
-          <rect class="v2-bin" id="scaleBin" x="150" y="82" width="432" height="180" rx="6" fill="#02a650"/>
-          <text x="366" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" letter-spacing="1">JEFF'S JUNK</text>
-          <line x1="150" y1="278" x2="582" y2="278" stroke="#5b666d" stroke-width="1.500"/><path d="M150 272v12M582 272v12" stroke="#5b666d" stroke-width="1.500"/>
-          <rect x="336" y="268" width="60" height="20" fill="#fbfcfb"/><text x="366" y="284" text-anchor="middle" font-size="15" font-weight="600" fill="#5b666d">12 ft</text>
-          <text id="scaleH" x="600" y="176" font-size="15" font-weight="700" fill="#005b2a">5 ft</text>
-        </svg>
-        <div class="v2-seg" role="radiogroup" aria-label="Bin size" data-seg>
-          <span class="v2-thumb"></span>
-          <button role="radio" data-size="4">4 yard</button>
-          <button role="radio" data-size="7">7 yard</button>
-          <button role="radio" data-size="14">14 yard</button>
-          <button role="radio" data-size="20">20 yard</button>
-        </div>
-      </div>
-      <div class="v2-scale-info">
-        <p class="v2-cap" data-b="tag2">Most booked</p>
-        <div class="v2-trio">
-          <div><b>12</b><span>ft long</span></div>
-          <div><b data-b="w">7</b><span>ft wide</span></div>
-          <div><b data-b="h">5</b><span>ft high</span></div>
-        </div>
-        <div>
-          <div class="v2-loads" id="loads" aria-hidden="true"></div>
-          <p class="v2-loads-t" data-b="loads"></p>
-        </div>
-        <a class="v2-btn v2-btn-dark" href="#request" data-book><span data-b="book">Book a 14 yard</span><svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
-        <p id="loadsNote" style="font-size:14.5px;color:var(--mute)">Pickup truck loads are for a standard pickup filled level with its sides. More in our <a href="mix-guide-bin-size.html" style="color:var(--ink);font-weight:600">bin size guide</a>.</p>
+    <div class="v2-unsure v2-rv">
+      <img src="assets/wp-content/uploads/grog/mascot-junk.webp" width="420" height="426" loading="lazy" alt="">
+      <div>
+        <h3>Still not sure? Send us a photo.</h3>
+        <p>Text a photo of what's going in to <a href="sms:+17053337767">705.333.7767</a> and we'll tell you which bin. Our <a href="mix-guide-bin-size.html">bin size guide</a> has the details.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= HOW IT GOES ================= -->
-<section class="v2-sec" id="ready" style="padding-top:0">
+<!-- ================= DROP OFF DAY ================= -->
+<section class="v2-sec" id="ready">
   <div class="v2-how">
-    <p class="v2-cap">How it goes</p>
-    <h2>Four steps. You only do <span class="v2-mk">one</span> of them.</h2>
-    <ol class="v2-steps">
-      <li class="v2-rv"><h3>Book it</h3><p>Call, text or book online. We can usually drop a bin off the same day you call.</p></li>
-      <li class="v2-rv"><h3>We drop it</h3><p>On your driveway, with wood underneath so it doesn't mark the surface.</p></li>
-      <li class="v2-rv"><h3>You load it</h3><p>At your own pace. The 14 and 20 yard bins have a door at the back, so you can walk things in.</p></li>
-      <li class="v2-rv"><h3>We haul it</h3><p>You choose the pickup day when you book. Finished early? Call and we'll come sooner.</p></li>
-    </ol>
+    <p class="v2-cap">Your driveway, drop off day</p>
+    <h2>Before the <span class="v2-mk">truck</span> comes.</h2>
     <div class="v2-prep">
       <button class="v2-vid v2-rv" id="vid" type="button" aria-label="Play the video: Jeff's Junk, rent a bin">
         <img src="https://i.ytimg.com/vi/oOlUJzRvCBM/hqdefault.jpg" width="480" height="360" loading="lazy" alt="">
         <span class="v2-play"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-play"/></svg></i><span>Watch: rent a bin<br><small style="font-weight:400;opacity:.85">1 minute</small></span></span>
       </button>
       <div class="v2-check v2-rv">
-        <p class="v2-cap">Your driveway, drop off day</p>
-        <h3 style="margin-top:8px">A few minutes before the truck comes saves a lot of back and forth.</h3>
+        <h3>A few minutes now saves a lot of back and forth.</h3>
         <ul>
           <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Pick the spot.</b> If a car fits there, our truck fits too.</span></li>
           <li><svg class="v2-ic"><use href="#v2i-check"/></svg><span><b>Clear the way.</b> Cars out of the driveway, and 9 ft of clear height for the truck.</span></li>
@@ -2959,10 +2920,6 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
 <section class="v2-sec v2-alt" id="reviews">
   <div class="v2-wrap">
     <div class="v2-sec-h v2-c"><h2>Don't take <span class="v2-mk">our</span> word for it.</h2></div>
-    <div class="v2-rev-top v2-rv">
-      <span class="v2-n">5.0</span>
-      <div><div class="v2-stars" aria-hidden="true">★★★★★</div><p>from 260 Google reviews</p></div>
-    </div>
     <div class="v2-revs">
       <figure class="v2-rev v2-rv" style="margin:0"><span class="v2-stars" aria-hidden="true">★★★★★</span><blockquote>[Real Google review goes here]</blockquote><cite>[Customer first name · town]</cite></figure>
       <figure class="v2-rev v2-rv" style="margin:0"><span class="v2-stars" aria-hidden="true">★★★★★</span><blockquote>[Real Google review goes here]</blockquote><cite>[Customer first name · town]</cite></figure>
@@ -2970,52 +2927,38 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
     </div>
     <div class="v2-rev-cta">
       <a class="v2-btn v2-btn-dark" href="mix-reviews.html">Read all reviews<svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></a>
-      <a class="v2-btn v2-btn-line" href="https://www.google.com/search?q=Jeff%27s+Junk+Barrie#lrd=0x882abd31c9ba9d3b:0x908dc8a66b17b1c2,1,,,," target="_blank" rel="noopener">See them on Google<svg class="v2-ic"><use href="#v2i-up"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
+<!-- ================= FAQ: only what the page has not already answered ================= -->
 <section class="v2-sec" id="faq">
   <div class="v2-wrap v2-faq">
     <div class="v2-faq-side">
       <p class="v2-cap">Questions</p>
       <h2 style="font-size:clamp(34px,5.2vw,58px);margin-top:10px">Good questions, <span class="v2-mk">straight</span> answers.</h2>
-      <p style="margin-top:16px;color:#3b454b;font-size:18px">Still wondering? We'd rather you ask than guess. Call during business hours or text us anytime.</p>
-      <a class="v2-btn v2-btn-dark" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>705.333.7767</a>
+      <p style="margin-top:16px;color:#3b454b;font-size:18px">Still wondering? We'd rather you ask than guess.</p>
     </div>
     <div>
-      <details class="v2-qa" name="faq" open><summary>Which bin size should I rent?</summary><div class="v2-a">Most homeowners go with our 14 yard bin. It's the right size for a garage or basement clean out, a small reno or a move. Some people upgrade to our 20 yard bin, the one our contractors use most for big jobs. Digging up the garden or breaking up an old patio? Our 4 and 7 yard bins are made for dirt and concrete. Still not sure? Tell us what you're clearing out and we'll help you pick. Our <a href="mix-guide-bin-size.html">bin size guide</a> has the details.</div></details>
-      <details class="v2-qa" name="faq"><summary>How long can I keep my bin?</summary><div class="v2-a">As long as you need it. You choose the pickup day when you book, and we come and get the bin that day. Finished early? Give us a call and we'll pick it up sooner. Need more time? You can extend your rental for a fee. Long term rentals are available too.</div></details>
-      <details class="v2-qa" name="faq"><summary>How does the dump fee work?</summary><div class="v2-a">The dump fee is $135 for up to 1 tonne (2,200 lb), prorated after that. It applies to the 14 and 20 yard bins. The 4 and 7 yard dirt and concrete bins are a flat rate with no dump fee.</div></details>
-      <details class="v2-qa" name="faq"><summary>How do you protect my driveway?</summary><div class="v2-a">We've got wood. When our drivers drop a bin, they put wood underneath so it won't damage your driveway.</div></details>
-      <details class="v2-qa" name="faq"><summary>Is there anything you can't take?</summary><div class="v2-a">In a bin, we can't take paint, oils or other liquids, chemicals, solvents, asbestos, oil drums, propane tanks, tires or medical waste. Most everything else, from appliances and furniture to drywall, concrete and yard waste, is fair game.</div></details>
-      <details class="v2-qa" name="faq"><summary>How can I pay?</summary><div class="v2-a">We accept Visa, Mastercard, American Express, Visa Debit and e-Transfer. For bin rentals, we ask for a deposit when you book, starting at $450. The amount depends on your location, and we'll confirm it when we call.</div></details>
-      <details class="v2-qa" name="faq"><summary>Is a bin the same as a dumpster or a garbage bin?</summary><div class="v2-a">Yes. Bin rental, dumpster rental, garbage bin rental and disposal bin rental all mean the same thing; around Barrie most people just say bin. We rent 4, 7, 14 and 20 yard bins, dropped on your driveway with wood underneath.</div></details>
-      <details class="v2-qa" name="faq"><summary>How soon can you drop off a bin?</summary><div class="v2-a">Usually the same day you call, even in spring and summer.</div></details>
-      <details class="v2-qa" name="faq"><summary>Do you rent a yard waste bin?</summary><div class="v2-a">Yes. A 4 yard bin suits a small clean up and a 14 yard bin a big one. Branches, brush and leaves can all go in, with no dirt mixed in.</div></details>
+      <details class="v2-qa" name="faq" open><summary>How long can I keep my bin?</summary><div class="v2-a">As long as you need it. You choose the pickup day when you book, and we come and get the bin that day. Finished early? Give us a call and we'll pick it up sooner. Need more time? You can extend your rental for a fee. Long term rentals are available too.</div></details>
+      <details class="v2-qa" name="faq"><summary>What if my bin is too heavy or overfilled?</summary><div class="v2-a">On the 14 and 20 yard bins, a load over 1 tonne costs a little more at the dump. The 4 and 7 yard dirt and concrete bins have no weight limit, as long as the load is clean: one material, nothing mixed in. Fill any bin no higher than the top edge, with nothing sticking out over the sides. An overfilled bin isn't safe to haul, so we can't take it until the load is level. Usually that just means moving a few things around to fill the gaps.</div></details>
       <details class="v2-qa" name="faq"><summary>Do I need a permit for a bin?</summary><div class="v2-a">Not if it goes on your driveway. If it has to sit on the road, you need a road permit from your town, and getting it is up to you.</div></details>
-      <details class="v2-qa" name="faq"><summary>Can roof shingles go in a bin?</summary><div class="v2-a">Yes, in a 14 yard bin. With shingles it's all about weight: a bundle weighs about 80 lb, and a double layer or heavier shingles weigh more, so tell us about the roof when you book. <a href="mix-roofing-bins.html">Roofing bins</a></div></details>
-      <details class="v2-qa" name="faq"><summary>What if my bin is too heavy or overfilled?</summary><div class="v2-a">On the 14 and 20 yard bins, the dump fee covers up to 1 tonne (2,200 lb) and is prorated after that, so a heavier load costs a little more at the dump. The 4 and 7 yard dirt and concrete bins have no weight limit, as long as the load is clean: one material, nothing mixed in. Fill it no higher than the top edge, with nothing sticking out over the sides. An overfilled bin isn't safe to haul, so we can't take it until the load is level. Usually that just means moving a few things around to fill the gaps.</div></details>
+      <details class="v2-qa" name="faq"><summary>Is a bin the same as a dumpster or a garbage bin?</summary><div class="v2-a">Yes. Bin rental, dumpster rental, garbage bin rental and disposal bin rental all mean the same thing. Around Barrie most people just say bin.</div></details>
     </div>
   </div>
 </section>
 
-<!-- ================= BOOK ================= -->
+<!-- ================= REQUEST ================= -->
 <section class="v2-sec v2-book" id="request">
   <div class="v2-wrap v2-book-in">
     <div class="v2-book-side">
       <p class="v2-cap">Five quick questions</p>
       <h2 style="margin-top:10px">Request your bin <span class="v2-mk">online</span>.</h2>
       <p>Send this and we get back to you to confirm your bin, your price and your deposit. Nothing is paid on this page.</p>
-      <div class="v2-sum" aria-live="polite">
-        <img id="sumImg" src="assets/wp-content/uploads/bins-2026/bin-14-yard-w800.webp" width="1000" height="566" alt="" loading="lazy">
-        <div><b data-b="name">14 yard bin</b><span data-b="dims">12 ft long · 7 ft wide · 5 ft high</span><span class="v2-p" data-b="line">$195 / 7 days + dump fee</span></div>
-      </div>
       <ol class="v2-next">
-        <li><span><b>You send the request.</b> It takes about five answers.</span></li>
-        <li><span><b>We get back to you</b> the way you pick: a call, a text or an email. <span class="ph">[Jeff: how fast do we get back to people during office hours?]</span></span></li>
-        <li><span><b>We drop the bin on your day</b>, with wood underneath.</span></li>
+        <li><span><b>You send the request.</b></span></li>
+        <li><span><b>We get back to you</b> the way you pick: a call, a text or an email. <span class="v2-jeff">Jeff: how fast do we get back to people during office hours?</span></span></li>
+        <li><span><b>We drop the bin on your day.</b></span></li>
       </ol>
       <p class="v2-rather">Rather not fill anything in? <a href="tel:+17053337767">Call</a> or <a href="sms:+17053337767">text 705.333.7767</a>.</p>
     </div>
@@ -3050,13 +2993,12 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
           <div class="v2-f"><label for="fm">What's going in it?</label><input id="fm" type="text"></div>
           <div class="v2-f v2-full">
             <label for="fph">Photo of what's going in <small>(up to 3)</small></label>
-            <label class="v2-drop" for="fph"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-cam"/></svg></i><span><b id="phT">Add photos</b><span>Not sure which size? A photo helps us pick the right bin.</span></span></label>
+            <label class="v2-drop" for="fph"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-cam"/></svg></i><span><b id="phT">Add photos</b><span>A photo helps us pick the right bin.</span></span></label>
             <input class="v2-sr" id="fph" type="file" accept="image/*" multiple>
           </div>
         </div>
       </details>
       <button class="v2-btn v2-btn-go v2-btn-wide v2-full" type="submit"><span data-b="req">Request my 14 yard bin</span><svg class="v2-ic v2-arr"><use href="#v2i-arrow"/></svg></button>
-      <p class="v2-form-foot v2-full">We answer during office hours: Monday to Friday 8 to 7, Saturday 8 to 12.</p>
     </form>
   </div>
 </section>
@@ -3201,7 +3143,7 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
   });
 })();
 </script>
-<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-favourites.html", "sel": "#hero-h", "title": "We haul ... it all", "text": "After a second the tagline flips through sofas, sheds, decks, pianos and BBQs, then lands back on &ldquo;We haul it all&rdquo;. It runs once. Google and screen readers only see &ldquo;We haul it all&rdquo;."}, {"page": "mix-favourites.html", "sel": "#estimate", "title": "The price rolls to the number", "text": "Move the slider: the price counts up or down to the new number. It was already there but too quick to notice, so it now takes 0.6 seconds. Same on Junk removal, Furniture and Appliance removal."}, {"page": "mix-favourites.html", "sel": "#price-h", "title": "A marker line that draws itself", "text": "The green marker word gets a hand drawn line when it scrolls into view. One per page, so it stays special."}, {"page": "mix-bin-rental.html", "sel": "#bin-scale", "title": "How big is each bin?", "text": "New: tap a size and the bin grows or shrinks next to a 6 ft person, with the photo, size and price. Also in the bin size guide."}, {"page": "mix-dirt-concrete-bins.html", "sel": ".fx-ul", "title": "No mixing, underlined", "text": "On this page the marker line goes under the rule people miss."}, {"page": "mix-guide-bin-size.html", "sel": ".fxs", "title": "Guides: bin sizes and a reading bar", "text": "The guide has the same to scale bins, and every guide now has a thin green bar at the top that fills as you read."}],ID="2026-11-06-effects",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
+<button class="jjt-tab" type="button">What's new</button><div class="jjt-dim" hidden></div><div class="jjt-spot" hidden></div><div class="jjt-card" role="dialog" aria-live="polite" aria-label="What's new" hidden><button class="jjt-x" type="button" aria-label="Close the tour">&times;</button><div class="jjt-dots"></div><p class="jjt-k"></p><h3></h3><p class="jjt-t"></p><div class="jjt-row"><button class="jjt-back" type="button">Back</button><button class="jjt-play" type="button">&#9654; Play</button><button class="jjt-next" type="button">Next</button></div><div class="jjt-bar" hidden><i></i></div></div><script>(function(){var S=[{"page": "mix-bin-rental-v2.html", "sel": "#sizes", "title": "The price board", "text": "All four bins with a photo and a price, on the first screen. Tap a row: it opens with the dump fee, the size and Book or Call. The bin that is open is the one the Book button and the form use."}, {"page": "mix-bin-rental-v2.html", "sel": "#every", "title": "Said once", "text": "Wood under the bin, the deposit, how to pay and the Zone 1 towns are here and nowhere else on the page."}, {"page": "mix-bin-rental-v2.html", "sel": "#jobs", "title": "Which bin for which job", "text": "The old job chips as a plain table Google can read. Tap a bin and the board opens on it."}, {"page": "mix-bin-rental-v2.html", "sel": "#faq", "title": "Four questions, not twelve", "text": "Only the questions the page has not already answered."}, {"page": "mix-bin-rental-v2.html", "sel": "#request", "title": "The request form", "text": "Same form as before. It already knows which bin you had open."}],ID="2026-11-09-binv2-board",N={"mix-reviews.html": "Reviews", "mix-guides.html": "Guides", "mix-guide-bin-size.html": "Bin size guide", "mix-guide-barrie-dump.html": "Barrie dump guide", "mix-guide-junk-or-bin.html": "Junk or bin guide", "mix-area-barrie.html": "Barrie", "mix-area-innisfil.html": "Innisfil", "mix-area-wasaga-beach.html": "Wasaga Beach", "mix-area-bradford.html": "Bradford", "mix-area-orillia.html": "Orillia", "mix-furniture-bank.html": "Furniture donation", "mix-about.html": "About", "mix-contact.html": "Contact", "mix-service-areas.html": "Service areas", "mix-hot-tub-removal.html": "Hot tub removal", "mix-demolition.html": "Demolition", "mix-shed-removal.html": "Shed removal", "mix-commercial.html": "Commercial", "mix-dirt-concrete-bins.html": "Dirt & concrete bins", "mix-roofing-bins.html": "Roofing bins", "mix-contractors.html": "Contractors", "mix-favourites.html": "Home", "lab-appliance.html": "Appliance lab", "mix-junk-removal.html": "Junk removal", "mix-bin-rental.html": "Bin rental", "mix-guide-junk-removal-cost.html": "cost guide", "mix-appliance-removal.html": "Appliance removal", "mix-furniture-removal.html": "Furniture removal", "mix-estate-cleanouts.html": "Estate clean outs"};
 var here=location.pathname.split('/').pop()||'index.html',card=document.querySelector('.jjt-card'),spot=document.querySelector('.jjt-spot'),
   tab=document.querySelector('.jjt-tab'),dim=document.querySelector('.jjt-dim'),k=card.querySelector('.jjt-k'),h=card.querySelector('h3'),t=card.querySelector('.jjt-t'),
   dots=card.querySelector('.jjt-dots'),back=card.querySelector('.jjt-back'),next=card.querySelector('.jjt-next'),play=card.querySelector('.jjt-play'),bar=card.querySelector('.jjt-bar'),barI=bar.querySelector('i'),cur=-1,el=null,raf=0,AUTO=false,timer=0,WAIT=10000,introAt=0,
@@ -3521,117 +3463,40 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
 
 (function(){
   var UP='assets/wp-content/uploads/bins-2026/bin-';
-  var BINS={
-    4:{tag:'Dirt & concrete',w:'4.5',h:'2',px:72,opts:[['dirt','Dirt',325],['concrete','Concrete',375]],unit:'/ 1–7 days',
-       fits:'A garden dig or a small patio: about 4 cubic yards of material.',
-       ticks:['Flat rate, no dump fee','Yard waste, dirt or concrete only'],no:'No mixing: one material per bin',
-       foot:'More about <a href="mix-dirt-concrete-bins.html">dirt and concrete bins</a>',
-       loads:'For dirt, concrete or yard waste. One material per bin, no mixing.'},
-    7:{tag:'Dirt & concrete',w:'4.5',h:'3.5',px:126,opts:[['dirt','Dirt',425],['concrete','Concrete',475]],unit:'/ 1–7 days',
-       fits:'A bigger dig or a large patio. A driveway depends on its size: call and we’ll tell you.',
-       ticks:['Flat rate, no dump fee','Dirt or concrete only'],no:'No mixing: one material per bin',
-       foot:'More about <a href="mix-dirt-concrete-bins.html">dirt and concrete bins</a>',
-       loads:'For dirt or concrete. One material per bin, no mixing.'},
-    14:{tag:'Most booked',w:'7',h:'5',px:180,opts:[['7','7 days',195],['3','3 day deal',150]],unit:'/ 7 days + dump fee',
-       fits:'A garage or basement clean out, a small reno or a move.',
-       ticks:['About 7 pickup truck loads','Wood under the bin','A door at the back, so you can walk things in'],
-       foot:'Zone 1 price. Not sure? Read the <a href="mix-guide-bin-size.html">bin size guide</a>',
-       n:7,loads:'About 7 pickup truck loads. Renos, clean outs and moves.'},
-    20:{tag:'Job sites',w:'8',h:'5.5',px:198,opts:[['1','1–7 days',250]],unit:'/ 1–7 days + dump fee',
-       fits:'Big renos and construction jobs; it’s the one our contractors use most.',
-       ticks:['About 10 pickup truck loads','Demolition debris goes straight in','A door at the back, so you can walk things in'],
-       foot:'Zone 1 price. On a job site? See <a href="mix-contractors.html">contractors</a>',
-       n:10,loads:'About 10 pickup truck loads. Big renos and construction sites.'}
-  };
-  var JOBS=[
-    ['Household clean out',14,null,'A garage, a basement or a move. Most homeowners pick this one. Rather not load it yourself? <a href="mix-junk-removal.html">Our crew can do it for you</a>.'],
-    ['Whole house or estate',20,null,'Or <a href="mix-estate-cleanouts.html">let our crew clear it</a>.'],
-    ['Renovation',14,null,'A small reno, like a bathroom, fits a 14 yard. A kitchen or a basement needs the 20 yard.'],
-    ['Construction or demolition',20,null,'The one our contractors use most. Debris goes straight in. A deck or fence coming down? <a href="mix-demolition.html">We can take it down for you</a>.'],
-    ['Roof shingles',14,null,'Shingles are heavy, so it’s all about weight: the 14 yard is the one for a roof. <a href="mix-roofing-bins.html">Roofing bins</a>'],
-    ['Yard waste',14,null,'A 4 yard for a small clean up, a 14 yard for a big one. Branches, brush and leaves: no dirt.'],
-    ['Dirt or concrete',4,'dirt','A 4 or 7 yard bin. Flat rate, no dump fee. One material per bin, so pick dirt or concrete below.']
-  ];
-
-  var S={size:14,opt:'7',job:-1},first=true;
   var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
-  var bind=function(k,v,html){$$('[data-b="'+k+'"]').forEach(function(e){html?e.innerHTML=v:e.textContent=v})};
-  var tick=function(t,no){return '<li'+(no?' class="v2-no"':'')+'><svg class="v2-ic"><use href="#v2i-'+(no?'x':'check')+'"/></svg>'+t+'</li>'};
+  var bind=function(k,v){$$('[data-b="'+k+'"]').forEach(function(e){e.textContent=v})};
+  var rows=$$('.v2-row'),size=14;
+  var rowOf=function(n){return $('.v2-row[data-size="'+n+'"]')};
 
-  // floating buttons. Phones: the real Text / Call bar gets a third part, Book. Desktop: one bar with the bin you picked.
+  // floating buttons. Phones: the real Text / Call bar gets a third part, Book. Desktop: one bar with the bin that is open.
   var jp=$('.jj-call-phone');
   if(jp)jp.insertAdjacentHTML('beforeend','<a class="v2-jb" href="#request" data-book><span data-b="barP"></span></a>');
-  document.body.insertAdjacentHTML('beforeend','<div class="v2-dock" aria-label="Your bin"><img id="dockImg" src="'+UP+'14-yard-w800.webp" width="1000" height="566" alt="">'+
+  document.body.insertAdjacentHTML('beforeend','<div class="v2-dock" aria-label="Your bin"><img id="dockImg" src="'+UP+'14-yard-w360.webp" width="360" height="204" alt="">'+
     '<div class="v2-dock-t"><b data-b="name"></b><span data-b="line"></span></div>'+
     '<a class="v2-dock-call" href="tel:+17053337767"><svg class="v2-ic"><use href="#v2i-phone"/></svg>Call 705.333.7767</a>'+
     '<a class="v2-dock-book" href="#request" data-book>Book it</a></div>');
 
-  // job chips
-  $('#jobs').innerHTML=JOBS.map(function(j,i){return '<button type="button" class="v2-job" aria-pressed="false" data-j="'+i+'">'+j[0]+'</button>'}).join('');
-  $('#jobs').addEventListener('click',function(e){var b=e.target.closest('.v2-job');if(!b)return;var i=+b.dataset.j,j=JOBS[i];S.job=i;set(j[1],j[2]);
-    if(matchMedia('(max-width:979px)').matches)$('#sizes').scrollIntoView({behavior:'smooth',block:'start'})});
-
-  // size tabs (hero + scale)
-  $$('[data-seg] button').forEach(function(b){b.addEventListener('click',function(){S.job=-1;set(+b.dataset.size)})});
-  $$('[data-seg]').forEach(function(g){g.addEventListener('keydown',function(e){var k=[4,7,14,20],i=k.indexOf(S.size);
-    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();i=(i+(e.key==='ArrowRight'?1:3))%4;S.job=-1;set(k[i]);$('button[data-size="'+k[i]+'"]',g).focus()}})});
-
-  function set(size,opt){var b=BINS[size];S.size=size;
-    S.opt=opt&&b.opts.some(function(o){return o[0]===opt})?opt:(size===S.lastSize&&!opt?S.opt:b.opts[0][0]);
-    if(!b.opts.some(function(o){return o[0]===S.opt}))S.opt=b.opts[0][0];S.lastSize=size;render()}
-
-  var priceNow=195,raf;
-  function roll(to){var el=$('#priceN'),from=priceNow,t0=performance.now();cancelAnimationFrame(raf);priceNow=to;
-    if(first||matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent='$'+to;return}
-    (function f(t){var p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);el.textContent='$'+Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(f)})(t0)}
-
-  function render(){
-    var b=BINS[S.size],o=b.opts.filter(function(x){return x[0]===S.opt})[0],price=o[2];
-    var isFlat=S.size<14,three=S.size===14&&S.opt==='3';
-    var unit=isFlat?b.unit:(three?'/ 3 days + dump fee':b.unit);
-    var kind=isFlat?(S.opt==='concrete'?' concrete':' dirt'):'';
-    var name=S.size+' yard'+kind+' bin';
-    var dims='12 ft long · '+b.w+' ft wide · '+b.h+' ft high';
-    $$('[data-seg]').forEach(function(g){var i=[4,7,14,20].indexOf(S.size);$('.v2-thumb',g).style.transform='translateX('+(i*100)+'%)';
-      $$('button',g).forEach(function(x){var on=+x.dataset.size===S.size;x.setAttribute('aria-checked',on);x.tabIndex=on?0:-1})});
-    $$('.v2-job').forEach(function(x){x.setAttribute('aria-pressed',+x.dataset.j===S.job)});
-    bind('num',S.size);bind('tag',b.tag);bind('tag2',b.tag);bind('name',name);bind('dims',dims);bind('unit',unit+(isFlat?'':', Zone 1'));
-    bind('fits',b.fits);bind('book','Book a '+S.size+' yard');bind('req','Request my '+S.size+' yard bin');bind('foot',b.foot,true);
-    bind('line','$'+price+' '+unit);bind('barP','Book '+S.size+' yard');$$('[data-row]').forEach(function(r){r.classList.toggle('v2-sel',+r.dataset.row===S.size)});bind('w',b.w);bind('h',b.h);bind('loads',b.loads);bind('rcTitle',name);
-    roll(price);
-    // options
-    var row=$('#optRow');
-    if(b.opts.length>1){row.hidden=false;row.innerHTML='<span class="v2-opt" role="radiogroup" aria-label="'+(isFlat?'What is going in':'Rental length')+'">'+b.opts.map(function(x){
-      return '<button type="button" role="radio" aria-checked="'+(x[0]===S.opt)+'" data-o="'+x[0]+'">'+x[1]+' $'+x[2]+'</button>'}).join('')+'</span>'+
-      '<span>'+(isFlat?'One material per bin':(three?'Zone 1 only':'The one most people rent'))+'</span>'}
-    else{row.hidden=false;row.innerHTML='<span>For big renos and construction sites.</span>'}
-    $('#ticks').innerHTML=b.ticks.map(function(t){return tick(t)}).join('')+(b.no?tick(b.no,true):'');
-    var n=$('#jobNote'),j=S.job>-1?JOBS[S.job]:null;
-    if(j&&j[3]){n.hidden=false;n.innerHTML='<b>'+j[0]+':</b> '+j[3]}else n.hidden=true;
-    // images
-    var src=UP+S.size+'-yard-w800.webp',im=$('#binImg');
-    if(im.getAttribute('src')!==src){im.srcset=src+' 1000w, '+UP+S.size+'-yard.webp 1600w';im.src=src;im.alt='A green '+S.size+" yard Jeff's Junk bin";
-      im.classList.remove('v2-swap');void im.offsetWidth;im.classList.add('v2-swap');$('#sumImg').src=src;$('#dockImg').src=src}
-    // scale
-    var r=$('#scaleBin');r.style.y=(262-b.px)+'px';r.style.height=b.px+'px';r.setAttribute('y',262-b.px);r.setAttribute('height',b.px);
-    var sh=$('#scaleH');sh.textContent=b.h+' ft';sh.setAttribute('y',262-b.px/2+5);sh.setAttribute('x',590);
-    $('#loadsNote').hidden=!b.n;$('#loads').innerHTML=b.n?new Array(b.n+1).join('<svg><use href="#v2i-truck"/></svg>'):'';
-    // form
-    var rd=$('#formSizes input[value="'+S.size+'"]');if(rd&&!$('#formSizes input[value="0"]').checked)rd.checked=true;
-    first=false;
-  }
-  document.addEventListener('click',function(e){var pk=e.target.closest('[data-pick]');if(pk){S.job=-1;$('#formSizes input[value="0"]').checked=false;set(+pk.dataset.pick)}var o=e.target.closest('[data-o]');if(o){S.opt=o.dataset.o;render();var f=$('[data-o="'+S.opt+'"]');f&&f.focus()}
-    if(e.target.closest('[data-book]')){var z=$('#formSizes input[value="0"]');if(z.checked){z.checked=false;render()}}});
-  $('#formSizes').addEventListener('change',function(e){var v=+e.target.value;if(v){S.job=-1;set(v)}else bind('req','Request my bin')});
-  render();
+  // the bin that is open on the board is "your bin": the bar, the desktop dock and the form follow it
+  function set(n,fromForm){size=n;var r=rowOf(n);
+    bind('name',n+' yard bin');bind('line',r.dataset.line);bind('barP','Book '+n+' yard');bind('req','Request my '+n+' yard bin');
+    $('#dockImg').src=UP+n+'-yard-w360.webp';
+    if(!fromForm){var rd=$('#formSizes input[value="'+n+'"]');if(rd)rd.checked=true}}
+  rows.forEach(function(r){r.addEventListener('toggle',function(){if(!r.open)return;
+    rows.forEach(function(o){if(o!==r)o.open=false});set(+r.dataset.size)})});   // the name attribute does this where browsers support it
+  document.addEventListener('click',function(e){
+    var pk=e.target.closest('[data-pick]');if(pk)set(+pk.dataset.pick);
+    var op=e.target.closest('[data-open]');if(op){var r=rowOf(op.dataset.open);r.open=true;set(+op.dataset.open);
+      e.preventDefault();r.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'})}});
+  $('#formSizes').addEventListener('change',function(e){var v=+e.target.value;if(v)set(v,true);else bind('req','Request my bin')});
+  set(14);
 
   // video: nothing from YouTube loads until the tap
   $('#vid').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/oOlUJzRvCBM?autoplay=1&rel=0" title="Jeff\'s Junk: rent a bin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'},{once:true});
 
-  // office hours chip (Mon to Fri 8 to 7, Sat 8 to 12, Barrie time; holidays are not known here)
+  // office hours line (Mon to Fri 8 to 7, Sat 8 to 12, Barrie time; holidays are not known here)
   try{var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
     var h=(+p.hour%24)+(+p.minute)/60,d=p.weekday,close=d==='Sun'?0:(d==='Sat'?12:19),on=close&&h>=8&&h<close,el=$('#openNow');
-    el.classList.toggle('v2-on',!!on);el.lastElementChild.innerHTML=on?'<b>Open now</b> until '+(close===12?'noon':'7pm')+'. Call or text.':'<b>Closed right now.</b> Text us anytime, or book online.'}catch(e){}
+    el.classList.toggle('v2-on',!!on);el.lastElementChild.innerHTML=on?'<b>Open now</b> until '+(close===12?'noon':'7pm')+'. Call or text.':'<b>Closed right now.</b> Text us anytime, or book online. Monday to Friday 8 to 7, Saturday 8 to 12.'}catch(e){}
 
   // form (mockup: nothing is sent)
   var today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);$('#fd').min=today;$('#fu').min=today;
