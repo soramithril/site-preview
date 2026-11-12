@@ -2314,14 +2314,15 @@ html{scroll-padding-top:96px}
 @media (min-width:900px){.v2-prep{grid-template-columns:1fr 1fr;align-items:stretch}}
 .v2-vid{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:#000;border:0;padding:0;width:100%;display:block;cursor:pointer}
 .v2-vid img{width:100%;height:100%;object-fit:cover;filter:brightness(.9);transition:filter .2s,transform .4s}
-.v2-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.44));pointer-events:none}
+.v2-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.34));pointer-events:none}
 .v2-vid.playing::after{display:none}
 .v2-vid:hover img,.v2-vid:focus-visible img{filter:brightness(1);transform:scale(1.03)}
-.v2-vid .v2-play{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font-weight:700;font-size:17px;text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.v2-vid .v2-play{position:absolute;inset:0;z-index:1;display:grid;place-items:center;color:#fff}
 .v2-vid .v2-play i{width:78px;height:78px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;flex:none;padding-left:5px;transition:transform .2s,background .2s,color .2s}
 .v2-vid:hover .v2-play i,.v2-vid:focus-visible .v2-play i{transform:scale(1.07);background:#02a650;color:#fff}
-.v2-vid .v2-play small{display:block;font-weight:400;font-size:14px;opacity:.9;margin-top:3px}
-@media (max-width:600px){.v2-vid .v2-play i{width:64px;height:64px}.v2-vid .v2-play{font-size:16px}}
+.v2-vid .v2-vlen{position:absolute;z-index:1;right:14px;bottom:14px;background:rgba(35,40,45,.88);color:#fff;font:600 13px/1 system-ui,sans-serif;letter-spacing:.02em;padding:7px 10px;border-radius:7px}
+.v2-vid.playing .v2-vlen{display:none}
+@media (max-width:600px){.v2-vid .v2-play i{width:64px;height:64px}}
 .v2-vid iframe{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0}
 .v2-check{background:#fff;color:var(--ink);border-radius:var(--r-lg);padding:26px}
 .v2-check h3{font-size:24px}
@@ -2869,7 +2870,7 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
     <div class="v2-prep">
       <button class="v2-vid v2-rv" id="vid" type="button" aria-label="Play the video: Jeff's Junk, rent a bin">
         <img src="https://i.ytimg.com/vi/oOlUJzRvCBM/hqdefault.jpg" width="480" height="360" loading="lazy" alt="">
-        <span class="v2-play"><i><svg class="v2-ic" style="width:30px;height:30px"><use href="#v2i-play"/></svg></i><span>Watch: rent a bin<small>1 minute &middot; no sound needed</small></span></span>
+        <span class="v2-play"><i><svg class="v2-ic" style="width:30px;height:30px"><use href="#v2i-play"/></svg></i></span><span class="v2-vlen">1 min</span>
       </button>
       <div class="v2-check v2-rv">
         <h3>A few minutes now saves a lot of back and forth.</h3>
