@@ -2312,12 +2312,17 @@ html{scroll-padding-top:96px}
 .v2-how h2 .v2-mk{color:#5fd384}
 .v2-prep{display:grid;gap:22px;margin-top:22px}
 @media (min-width:900px){.v2-prep{grid-template-columns:1fr 1fr;align-items:stretch}}
-.v2-vid{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:#000;border:0;padding:0;width:100%;display:block}
-.v2-vid img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .2s,transform .4s}
-.v2-vid:hover img{opacity:1;transform:scale(1.03)}
-.v2-vid .v2-play{position:absolute;inset:auto auto 18px 18px;display:flex;align-items:center;gap:12px;color:#fff;font-weight:600;font-size:16px;text-align:left}
-.v2-vid .v2-play i{width:54px;height:54px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;flex:none}
-.v2-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.v2-vid{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:#000;border:0;padding:0;width:100%;display:block;cursor:pointer}
+.v2-vid img{width:100%;height:100%;object-fit:cover;filter:brightness(.9);transition:filter .2s,transform .4s}
+.v2-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.44));pointer-events:none}
+.v2-vid.playing::after{display:none}
+.v2-vid:hover img,.v2-vid:focus-visible img{filter:brightness(1);transform:scale(1.03)}
+.v2-vid .v2-play{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font-weight:700;font-size:17px;text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+.v2-vid .v2-play i{width:78px;height:78px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;flex:none;padding-left:5px;transition:transform .2s,background .2s,color .2s}
+.v2-vid:hover .v2-play i,.v2-vid:focus-visible .v2-play i{transform:scale(1.07);background:#02a650;color:#fff}
+.v2-vid .v2-play small{display:block;font-weight:400;font-size:14px;opacity:.9;margin-top:3px}
+@media (max-width:600px){.v2-vid .v2-play i{width:64px;height:64px}.v2-vid .v2-play{font-size:16px}}
+.v2-vid iframe{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0}
 .v2-check{background:#fff;color:var(--ink);border-radius:var(--r-lg);padding:26px}
 .v2-check h3{font-size:24px}
 .v2-check ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
@@ -2860,11 +2865,11 @@ fieldset.v2-f{border:0;margin:0;padding:0;min-width:0}
 <section class="v2-sec" id="ready">
   <div class="v2-how">
     <p class="v2-cap">Your driveway, drop off day</p>
-    <h2>Before the <span class="v2-mk">truck</span> comes.</h2>
+    <h2>Watch us in <span class="v2-mk">action</span>.</h2>
     <div class="v2-prep">
       <button class="v2-vid v2-rv" id="vid" type="button" aria-label="Play the video: Jeff's Junk, rent a bin">
         <img src="https://i.ytimg.com/vi/oOlUJzRvCBM/hqdefault.jpg" width="480" height="360" loading="lazy" alt="">
-        <span class="v2-play"><i><svg class="v2-ic" style="width:22px;height:22px"><use href="#v2i-play"/></svg></i><span>Watch: rent a bin<br><small style="font-weight:400;opacity:.85">1 minute</small></span></span>
+        <span class="v2-play"><i><svg class="v2-ic" style="width:30px;height:30px"><use href="#v2i-play"/></svg></i><span>Watch: rent a bin<small>1 minute &middot; no sound needed</small></span></span>
       </button>
       <div class="v2-check v2-rv">
         <h3>A few minutes now saves a lot of back and forth.</h3>
@@ -3492,7 +3497,7 @@ u.forEach(function(x){var r=x.getBoundingClientRect();if(r.top<innerHeight&&r.bo
   set(14);
 
   // video: nothing from YouTube loads until the tap
-  $('#vid').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/oOlUJzRvCBM?autoplay=1&rel=0" title="Jeff\'s Junk: rent a bin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'},{once:true});
+  $('#vid').addEventListener('click',function(){this.classList.add('playing');this.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/oOlUJzRvCBM?autoplay=1&rel=0" title="Jeff\'s Junk: rent a bin" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'},{once:true});
 
   // office hours line (Mon to Fri 8 to 7, Sat 8 to 12, Barrie time; holidays are not known here)
   try{var p={};new Intl.DateTimeFormat('en-CA',{timeZone:'America/Toronto',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
