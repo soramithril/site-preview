@@ -1,8 +1,24 @@
 /* Jeff's Junk version 2: the only script. Menu, the price slider, and which board row starts open. */
 (function () {
   var each = function (l, f) { Array.prototype.forEach.call(l, f); };
-  var hd = document.querySelector('.hd'), mb = document.querySelector('.menu-b');
-  if (mb) mb.addEventListener('click', function () { var o = hd.classList.toggle('open'); mb.setAttribute('aria-expanded', o); mb.textContent = o ? 'Close' : 'Menu'; });
+  // the header is the current mockup's, so its menu works the same way: line under it once you scroll, phone menu, dropdowns
+  var head = document.querySelector('.site-head'), mBtn = document.querySelector('.menu-btn'), mNav = document.getElementById('mnav');
+  if (head) {
+    var onScroll = function () { head.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    mBtn.addEventListener('click', function () { var o = mNav.classList.toggle('open'); mBtn.setAttribute('aria-expanded', o); mBtn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+    mNav.addEventListener('click', function (e) { if (e.target.closest('a')) { mNav.classList.remove('open'); mBtn.setAttribute('aria-expanded', 'false'); } });
+    each(mNav.querySelectorAll('.m-more'), function (b) { b.addEventListener('click', function () { b.setAttribute('aria-expanded', b.closest('.mrow').classList.toggle('open')); }); });
+    var dds = head.querySelectorAll('.nav .dd'), shut = function (keep) { each(dds, function (d) { if (d !== keep) { d.classList.remove('open'); d.querySelector('.dd-btn').setAttribute('aria-expanded', 'false'); } }); };
+    each(dds, function (d) {
+      var b = d.querySelector('.dd-btn');
+      b.addEventListener('click', function (e) { e.stopPropagation(); shut(d); d.classList.remove('shut'); b.setAttribute('aria-expanded', d.classList.toggle('open')); });
+      d.querySelector('.dd-panel').addEventListener('click', function (e) { if (!e.target.closest('a')) return; d.classList.remove('open'); d.classList.add('shut'); b.setAttribute('aria-expanded', 'false'); });
+      d.addEventListener('mouseleave', function () { d.classList.remove('shut'); });
+    });
+    document.addEventListener('click', function () { shut(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(null); });
+  }
 
   // desktop has room to start with the most booked row open; phones start closed so every price fits the first screen
   if (window.matchMedia('(min-width:900px)').matches) each(document.querySelectorAll('.board details[data-first]'), function (d) { d.open = true; });
