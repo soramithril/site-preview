@@ -15,11 +15,29 @@
       var j = mode === 'j', i = +range.value, r = j ? J[i] : B[bi];
       q('.big').textContent = r.p; q('.sayline').textContent = r.say; q('.from').hidden = !(j && i === 0);
       q('.polar').hidden = !j; if (j) { q('.pile').src = r.img; q('.cap2').textContent = r.cap; }
-      q('.cta').textContent = j ? 'Text a photo to confirm' : 'Book this bin';
+      q('.cta').textContent = j ? 'Text a photo to confirm' : 'Book this bin'; q('.cta').href = j ? c.dataset.text : c.dataset.book;
     }
     each(segs, function (b) { b.addEventListener('click', function () { mode = b.dataset.m; each(segs, function (x) { x.setAttribute('aria-pressed', x === b); }); q('.pj').hidden = mode !== 'j'; q('.pb').hidden = mode !== 'b'; draw(); }); });
     range.addEventListener('input', draw);
     each(sizes, function (b) { b.addEventListener('click', function () { bi = +b.dataset.i; each(sizes, function (x) { x.setAttribute('aria-pressed', x === b); }); draw(); }); });
     draw();
   });
+
+  // "Can you take my ...?": answers from the two lists on the page
+  each(document.querySelectorAll('[data-take]'), function (box) {
+    var sec = box.parentElement, out = box.querySelector('.take-a'), inp = box.querySelector('input');
+    var list = function (sel) { var a = []; each(sec.querySelectorAll(sel + ' .chip'), function (c) { a.push(c.textContent.trim().toLowerCase()); }); return a; };
+    var yes = list('[data-yes]'), no = list('[data-no]');
+    var hit = function (a, v) { for (var i = 0; i < a.length; i++) { var w = a[i].replace(/s$/, ''); if (v.indexOf(w) > -1 || (v.length > 2 && a[i].indexOf(v) > -1)) return a[i]; } };
+    inp.addEventListener('input', function () {
+      var v = inp.value.trim().toLowerCase().replace(/s$/, ''), n, y; out.className = 'take-a';
+      if (v.length < 3) { out.textContent = 'Type an item, like "fridge" or "swing set".'; return; }
+      if ((n = hit(no, v))) { out.textContent = "Sorry, we can't take " + n + '.'; out.classList.add('n'); }
+      else if ((y = hit(yes, v))) { out.textContent = 'Yes, we take ' + y + '.'; out.classList.add('y'); }
+      else out.textContent = 'Not on our lists. Call or text and we will tell you.';
+    });
+  });
+
+  // the mockup's forms send nothing
+  each(document.querySelectorAll('form[data-mock]'), function (f) { f.addEventListener('submit', function (e) { e.preventDefault(); f.querySelector('.sent').hidden = false; }); });
 })();
